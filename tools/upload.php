@@ -78,14 +78,14 @@ function upload_files(){
         */
 
         ////////////////////////////////////////////////////////////////////////////
-    $upfile = $_SERVER['DOCUMENT_ROOT'].'/Exercise_3/media/'.$_FILES['avatar']['name'];
+    $upfile = $_SERVER['DOCUMENT_ROOT'].'/Servidor/Exercise_3/media/'.$_FILES['avatar']['name'];
     if (is_uploaded_file($_FILES['file']['tmp_name'])){
         if (is_file($_FILES['file']['tmp_name'])) {
             $idUnico = rand();
             $nombreFichero = $idUnico."-".$_FILES['file']['name'];
             $copiarFichero = true;
             // I use absolute route to move_uploaded_file because this happens when i run ajax
-            $upfile = $_SERVER['DOCUMENT_ROOT'].'/Exercise_3/media/'.$nombreFichero;
+            $upfile = $_SERVER['DOCUMENT_ROOT'].'/Servidor/Exercise_3/media/'.$nombreFichero;
         }else{
                 $error .=   "Invalid File...";
         }
