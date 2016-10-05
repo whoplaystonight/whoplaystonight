@@ -1,9 +1,8 @@
 <?php
-session_start();
-	//$_SESSItON['result_avatar']=array();
+	session_start();
+	$_SESSION['result_avatar']=array();
 	require_once("view/inc/header.html");
 	require_once("view/inc/menu.php");
-
 	include 'tools/tools.inc.php';
 
 

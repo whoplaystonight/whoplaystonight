@@ -251,32 +251,32 @@ $("#dropzone").dropzone({
             success: function (data) {
               //console.log("estic dins del delete");
               console.log(data);
-                // $("#progress").hide();
-                // $('.msg').text('').removeClass('msg_ok');
-                // $('.msg').text('').removeClass('msg_error');
-                // $("#e_avatar").html("");
-                //
-                // var json = JSON.parse(data);
-                // if (json.res === true) {
-                //     var element;
-                //     if ((element = file.previewElement) !== null) {
-                //         element.parentNode.removeChild(file.previewElement);
-                //         //alert("Imagen eliminada: " + name);
-                //     } else {
-                //         false;
-                //     }
-                // } else { //json.res == false, elimino la imagen también
-                //     var element;
-                //     if ((element = file.previewElement) !== null) {
-                //         element.parentNode.removeChild(file.previewElement);
-                //     } else {
-                //         false;
-                //     }
-                // }
-            }
-        });
-    }
-});
+                $("#progress").hide();
+                $('.msg').text('').removeClass('msg_ok');
+                $('.msg').text('').removeClass('msg_error');
+                $("#e_avatar").html("");
+
+                var json = JSON.parse(data);
+                if (json.res === true) {
+                    var element;
+                    if ((element = file.previewElement) !== null) {
+                        element.parentNode.removeChild(file.previewElement);
+                        //alert("Imagen eliminada: " + name);
+                    } else {
+                      return  false;
+                    }//end of 2nd else
+                } else { //json.res == false, elimino la imagen también
+                    var element;
+                    if ((element = file.previewElement) !== null) {
+                        element.parentNode.removeChild(file.previewElement);
+                    } else {
+                        return false;
+                    }//end of 3rd else
+                }//end of 1st else
+            }//end of success function
+        });//end of $.ajax
+    }//End of removedfile function
+});//End of Dropzone
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -345,29 +345,28 @@ function validate_user(){
 
 
   // // /*To state the regular expresions to validate de entered data.*/
-  // var event_id_re=/^[E]{1}[0-9]{10}$/;
+  var event_id_re=/^[E]{1}[0-9]{10}$/;
   // var band_id_re=/^[B]{1}[0-9]{10}$/;
   // var band_name_re=/^(.){1,50}$/;
   // var description_re=/^(.){1,500}$/;
   // var n_participants_re=/^[1-9]{1,3}$/;
   // var date_event_re=/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/;
   //
-  // /*To remove the previous error message */
-  // $(".error").remove();
-  //
-  // /*CHECK event_id FIELD*/
-  // /*To avoid the field event_id is empty*/
-  // if($("#event_id").val()===""||$("#event_id").val()==="Enter event ID"){
-  //     $("#event_id").focus().after("<span class='error'>Enter event ID</span>");
-  //     return false;
-  //     /*to test the regular expression*/
-  // }else if(!event_id_re.test($("#event_id").val())){
-  //     $("#event_id").focus().after("<span class='error'>Event ID must have one E follow by 10 digits</span>");
-  //     return false;
-  // }//end of else if
-  // /*END OF FUNCTION*/
-  //
-  //
+   /*To remove the previous error message */
+  $(".error").remove();
+
+  /*CHECK event_id FIELD*/
+  /*To avoid the field event_id is empty*/
+  if($("#event_id").val()===""||$("#event_id").val()==="Enter event ID"){
+      $("#event_id").focus().after("<span class='error'>Enter event ID</span>");
+      return false;
+      /*to test the regular expression*/
+  }else if(!event_id_re.test($("#event_id").val())){
+      $("#event_id").focus().after("<span class='error'>Event ID must have one E follow by 10 digits</span>");
+      return false;
+  }//end of else if
+  /*END OF FUNCTION*/
+
   // /*CHECK band_id FIELD*/
   // /*To avoid the field band_id is empty*/
   // if($("#band_id").val()===""||$("#band_id").val()==="Enter band ID"){
@@ -534,6 +533,7 @@ function validate_user(){
 
     }, "json").fail(function (xhr){
               console.log("Estoy en el fail");
+                  console.log(xhr);
               // if(xhr.reponseJSON.error.name){
               //   $("#event_id").focus().after("<span class='error1'>" + xhr.responseJSON.error.event_id + "<span>");
               // }

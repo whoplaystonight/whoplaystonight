@@ -9,25 +9,25 @@ function validate_product($paramether) {
             'options'=> array('regexp'=>'/^[E]{1}[0-9]{10}+$/'),
         ),//end of event_id array
 
-        'band_id'=> array(
-            'filter'=> FILTER_VALIDATE_REGEXP,
-            'options'=> array('regexp'=>'/^[B]{1}[0-9]{10}+$/'),
-        ),//end of band_id array
-
-        'band_name'=> array(
-            'filter'=> FILTER_VALIDATE_REGEXP,
-            'options'=> array('regexp'=>'/^(.){1,50}$/'),
-        ),//end of band_name array
-
-        'description'=> array(
-            'filter'=> FILTER_VALIDATE_REGEXP,
-            'options'=> array('regexp'=>'/^(.){20,500}$/'),
-        ),//end of description array
-
-        'n_participants'=> array(
-            'filter'=> FILTER_VALIDATE_REGEXP,
-            'options'=> array('regexp'=>'/^[1-9]{1,3}$/'),
-        ),//end of description array
+        // 'band_id'=> array(
+        //     'filter'=> FILTER_VALIDATE_REGEXP,
+        //     'options'=> array('regexp'=>'/^[B]{1}[0-9]{10}+$/'),
+        // ),//end of band_id array
+        //
+        // 'band_name'=> array(
+        //     'filter'=> FILTER_VALIDATE_REGEXP,
+        //     'options'=> array('regexp'=>'/^(.){1,50}$/'),
+        // ),//end of band_name array
+        //
+        // 'description'=> array(
+        //     'filter'=> FILTER_VALIDATE_REGEXP,
+        //     'options'=> array('regexp'=>'/^(.){20,500}$/'),
+        // ),//end of description array
+        //
+        // 'n_participants'=> array(
+        //     'filter'=> FILTER_VALIDATE_REGEXP,
+        //     'options'=> array('regexp'=>'/^[1-9]{1,3}$/'),
+        // ),//end of description array
 
 
     );//end of filter array

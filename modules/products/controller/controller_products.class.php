@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-//include ($_SERVER['DOCUMENT_ROOT']."modules/products/tools/functions_products.inc.php");
- include($_SERVER['DOCUMENT_ROOT']."/Servidor/Exercise_3/tools/upload.php");
+//include ($_SERVER['DOCUMENT_ROOT']."/Exercise_3/modules/products/tools/functions_products.inc.php");
+include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/tools/upload.php");
 
 if((isset($_GET["upload"]))&& ($_GET["upload"]==true)){
   $result_avatar = upload_files();
@@ -18,7 +18,7 @@ function register_event(){
 
 	$jsondata=array();
 	$eventJSON=json_decode($_POST["register_event_json"],true);
-  //$result = validate_product($usersJSON);
+  //$result = validate_product($eventJSON);
 
   if(empty($_SESSION['result_avatar'])){
     $_SESSION['result_avatar']=array('resultado'=> true, 'error'=> "",'datos'=> 'media/default-avatar.png');
@@ -34,14 +34,14 @@ function register_event(){
 
 }//End function register_event_json
 
-if(isset($_GET["delete"])&& $_GET["delete"]==true){
+if(isset($_GET["delete"])&& ($_GET["delete"]==true)){
 	$_SESSION['result_avatar']=array();
   $result=remove_files();
-  // if($result===true){
-  //   echo json_encode("res"=>true));
-  // }else{
-  //   echo json_encode(array("res"=>false));
-  // }
+  if($result===true){
+    echo json_encode(array("res"=>true));
+  }else{
+    echo json_encode(array("res"=>false));
+  }
 
 }
 
