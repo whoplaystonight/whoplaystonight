@@ -25,59 +25,40 @@
 
 						<tr>
 							<td width="24%">Band ID</td>
-						  	<td width="76%"><input name="band_id" placeholder="Band ID" type="text" id="band_id" value="">
+						  	<td width="76%">
+									<input name="band_id" placeholder="Band ID" type="text" id="band_id" value="">
 									<div id="e_band_id"></div>
 						  	</td>
 						</tr>
 
 						<tr>
 						  	<td width="24%">Artist or Band Name</td>
-						  	<td width="76%"><input name="band_name" placeholder="Artist or Band Name" type="text" id="band_name" value="<?php
-						  		if(!isset($error['band_name'])){
-						  			echo $_POST?$_POST['band_name']:"";
-						  		}
-						  		?>">
-						  		<?php
-						  			if(isset($error['band_name'])){
-						  				print("<br><span style='color:#ff0000'>"."*".$error['band_name']. "<span><br/>");
-						  				}
-						  		?>
-
-						  		</td>
+						  	<td width="76%">
+									<input name="band_name" placeholder="Artist or Band Name" type="text" id="band_name" value="">
+						  		<div id="e_band_name"></div>
+								</td>
 						</tr>
 
 						<tr><td><br></td></tr>
 
 						<tr>
 							<td width="24%">Description</td>
-						  	<td width="76%"><textarea name="description" rows="3" cols="38"form="products_form" placeholder="Description" id="description" >
-						  		<?php
-						  		if(!isset($error['description'])){
-						  			echo $_POST?$_POST['description']:"";
-						  		}
-						  	 	?>
-						  	</textarea>
-						  	 	<?php
-						  			if(isset($error['description'])){
-						  				print("<br><span style='color:#ff0000'>"."*".$error['description']. "<span><br/>");
-						  				}
-						  		?>
-						  	 	</td>
+						  	<td width="76%">
+									<textarea name="description" rows="3" cols="38"form="products_form" placeholder="Description" id="description" ></textarea>
+									<div id="e_description"></div>
+				  	 		</td>
 						</tr>
 
 						<tr><td><br></td></tr>
 
 						<tr>
 						  	<td width="24%">Type of event </td>
-						  	<td width="76%"><input type="radio" name="type_event" id="type_event" value="presentation"><text id="presentation">  Presentation Ceremony</text><br>
+						  	<td width="76%">
+									<input type="radio" name="type_event" id="type_event" value="presentation"><text id="presentation">  Presentation Ceremony</text><br>
 						  		<input type="radio" name="type_event" id="type_event"  value="concert"><text id="concert">  Concert</text><br>
-								<input type="radio" name="type_event" id="type_event" value="unplugged"><text id="unplugged">  Unplugged</text><br>
-								<input type="radio" name="type_event" id="type_event" value="Performance"><text id="Performance">  Performance</text><br>
-								<?php
-						  			if(isset($error['type_event'])){
-						  				print("<br><span style='color:#ff0000'>"."*".$error['type_event']. "<span><br/>");
-						  				}
-						  		?>
+								  <input type="radio" name="type_event" id="type_event" value="unplugged"><text id="unplugged">  Unplugged</text><br>
+								  <input type="radio" name="type_event" id="type_event" value="Performance"><text id="Performance">  Performance</text><br>
+									<div id="e_type_event"><div>
 							</td>
 						</tr>
 
@@ -85,60 +66,34 @@
 
 						<tr>
 						  <td width="24%">Number of Participants</td>
-						  <td width="76%"><input name="n_participants" placeholder="Number of Participants" type="text" id="n_participants" value="<?php
-							if(!isset($error['n_participants'])){
-						  	echo $_POST?$_POST['n_participants']:"";
-						  	}
-						  	?>">
-						  	<?php
-						  		if(isset($error['n_participants'])){
-						  			print("<br><span style='color:#ff0000'>"."*".$error['n_participants']. "<span><br/>");
-						  			}
-						  	?>
+						  <td width="76%">
+								<input name="n_participants" placeholder="Number of Participants" type="text" id="n_participants" value="">
 						  	</td>
 						</tr>
 
 						<tr>
 						  <td width="24%">Date of event</td>
-						  <td width="76%"><input name="date_event" placeholder="Date of event" type="text" id="date_event" readonly value="<?php
-							if(!isset($error['date_event'])){
-						  	echo $_POST?$_POST['date_event']:"";
-							}
-						  	?>">
-						  	<?php
-						  		if(isset($error['date_event'])){
-						  			print("<br><span style='color:#ff0000'>"."*".$error['date_event']. "<span><br/>");
-						  			}
-						  	?>
-						  	</td>
+						  <td width="76%">
+								<input name="date_event" placeholder="Date of event" type="text" id="date_event" readonly value="">
+					  	</td>
 						</tr>
+
 						<tr><td><br></td></tr>
+
 						<tr>
 							<td width="24%">Type of access</td>
 							<td><input type="checkbox" name="type_access[]" id="type_access" class="messageCheckbox" value="Ticket" onchange="enable_date_ticket()"><text id="ticket">  Ticket</text><br>
 									<input type="checkbox" name="type_access[]" id="type_access" class="messageCheckbox" value="Invitation"><text id="invitation">  Invitation</text><br>
 									<input type="checkbox" name="type_access[]" id="type_access" class="messageCheckbox" value="Free admission" onchange="disable_date_ticket()"><text id="free">  Free admission</text><br>
-									<?php
-							  			if(isset($error['type_access'])){
-							  				print("<br><span style='color:#ff0000'>"."*".$error['type_access']. "<span><br/>");
-							  				}
-							  		?>
 							</td>
 						</tr>
+
 						<tr><td><br></td></tr>
+
 						<tr>
 						  <td width="24%">Date of ticket sales</td>
-						  <td width="76%"><input name="date_ticket" placeholder="Date of ticket sales" type="text" id="date_ticket" readonly value="<?php
-							if(!isset($error['date_ticket'])){
-						  		echo $_POST?$_POST['date_ticket']:"";
-							}
-							?>">
-							<?php
-						  		if(isset($error['date_ticket'])){
-						  			print("<br><span style='color:#ff0000'>"."*".$error['date_ticket']. "<span><br/>");
-						  			}
-						  	?>
-
+						  <td width="76%">
+								<input name="date_ticket" placeholder="Date of ticket sales" type="text" id="date_ticket" readonly value="">
 							</td>
 						</tr>
 
@@ -172,11 +127,7 @@
 								<option value="21:00">21:00</option>
 								<option value="22:00">22:00</option>
 								<option value="23:00">23:00</option>
-							  </select><?php
-									  		if(isset($error['openning'])){
-									  			print("<br><span style='color:#ff0000'>"."*".$error['openning']. "<span><br/>");
-									  			}
-									  	?>
+							  </select>
 							</td>
 						</tr>
 
@@ -208,11 +159,7 @@
 								<option value="21:00">21:00</option>
 								<option value="22:00">22:00</option>
 								<option value="23:00">23:00</option>
-							  </select><?php
-									  		if(isset($error['start'])){
-									  			print("<br><span style='color:#ff0000'>"."*".$error['start']. "<span><br/>");
-									  			}
-									  	?>
+							  </select>
 							</td>
 						</tr>
 
@@ -244,11 +191,7 @@
 								<option value="21:00">21:00</option>
 								<option value="22:00">22:00</option>
 								<option value="23:00">23:00</option>
-							  </select><?php
-									  		if(isset($error['end'])){
-									  			print("<br><span style='color:#ff0000'>"."*".$error['end']. "<span><br/>");
-									  			}
-									  	?>
+							  </select>
 							</td>
 						</tr>
 						<tr><td><br></td></tr>

@@ -20,8 +20,7 @@ function register_event(){
 	$eventJSON=json_decode($_POST["register_event_json"],true);
 
   $result = validate_product($eventJSON);
-  // echo json_encode($result);
-  // exit;
+
 
 
 
@@ -79,6 +78,8 @@ function register_event(){
 
   }//End of if-else result
 }//end of register_event function
+
+
 
   if(isset($_GET["delete"])&& ($_GET["delete"]==true)){
   	$_SESSION['result_avatar']=array();

@@ -359,11 +359,18 @@ function validate_user(){
   var result=true;
 
   var event_id=document.getElementById('event_id').value;
-  console.log(event_id);
   var band_id=document.getElementById('band_id').value;
   var band_name=document.getElementById('band_name').value;
   var description=document.getElementById('description').value;
-  var type_event=document.getElementById('type_event').value;
+  var type_event;
+  var type_event_v=document.getElementsByName('type_event');
+  for(var z=0; z<type_event_v.length;z++){
+       if(type_event_v[z].checked){
+         type_event=type_event_v[z].value;
+         break;
+         }
+  }
+  console.log(type_event);
   var n_participants=document.getElementById('n_participants').value;
   var date_event=document.getElementById('date_event').value;
   var type_access=[];
@@ -563,7 +570,6 @@ function validate_user(){
     /*To create a JavaScript array that contains the event data*/
     var data={"event_id":event_id, "band_id":band_id, "band_name":band_name, "description":description, "type_event":type_event, "n_participants":n_participants,
               "date_event":date_event, "type_access":type_access, "date_ticket":date_ticket, "openning":openning, "start":start, "end":end};
-    console.log(data.event_id);
 
     /*To convert the JavaScript array in a JSON string*/
     var event_data_JSON=JSON.stringify(data);
@@ -572,18 +578,66 @@ function validate_user(){
             {register_event_json:event_data_JSON},
     function(response){
 
-    //console.log(response);
+    console.log(response);
       if(response.success){
         window.location.href=response.redirect;
       }
 
 
     }, "json").fail(function (xhr){
-              console.log("Estoy en el fail");
-              console.log(xhr);
-              // if(xhr.reponseJSON.error.event_id){
-              //    $("#event_id").focus().after("<span class='error1'>" + xhr.responseJSON.error.event_id + "<span>");
-              //  }
+              // console.log("Estoy en el fail");
+              // console.log(xhr.responseJSON.error.event_id);
+              if(xhr.responseJSON.error.event_id){
+                 $("#event_id").focus().after("<span class='error1'>" + xhr.responseJSON.error.event_id + "<span>");
+               }
+
+              if(xhr.responseJSON.error.band_id){
+                  $("#band_id").focus().after("<span class='error1'>" + xhr.responseJSON.error.band_id + "<span>");
+              }
+
+              if(xhr.responseJSON.error.band_name){
+                  $("#band_name").focus().after("<span class='error1'>" + xhr.responseJSON.error.band_name + "<span>");
+              }
+
+              if(xhr.responseJSON.error.description){
+                  $("#description").focus().after("<span class='error1'>" + xhr.responseJSON.error.description + "<span>");
+              }
+
+              if(xhr.responseJSON.error.type_event){
+                  $("#type_event").focus().after("<span class='error1'>" + xhr.responseJSON.error.type_event + "<span>");
+              }
+
+              if(xhr.responseJSON.error.n_participants){
+                  $("#n_participants").focus().after("<span class='error1'>" + xhr.responseJSON.error.n_participants + "<span>");
+              }
+
+              if(xhr.responseJSON.error.date_event){
+                  $("#date_event").focus().after("<span class='error1'>" + xhr.responseJSON.error.date_event + "<span>");
+              }
+
+              if(xhr.responseJSON.error.type_access){
+                  $("#type_access").focus().after("<span class='error1'>" + xhr.responseJSON.error.type_access + "<span>");
+              }
+
+              if(xhr.responseJSON.error.date_ticket){
+                  $("#date_ticket").focus().after("<span class='error1'>" + xhr.responseJSON.error.date_ticket + "<span>");
+              }
+
+              if(xhr.responseJSON.error.openning){
+                  $("#openning").focus().after("<span class='error1'>" + xhr.responseJSON.error.openning + "<span>");
+              }
+
+              if(xhr.responseJSON.error.start){
+                  $("#start").focus().after("<span class='error1'>" + xhr.responseJSON.error.start + "<span>");
+              }
+
+              if(xhr.responseJSON.error.end){
+                  $("#end").focus().after("<span class='error1'>" + xhr.responseJSON.error.end + "<span>");
+              }
+
+
+
+
             });//end of .fail
 
   }//End of if result

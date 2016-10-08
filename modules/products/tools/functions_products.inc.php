@@ -1,8 +1,7 @@
 <?php
 
 function validate_product($paramether) {
-// echo json_encode($paramether);
-// exit;
+
     $error =array();
     $valid = true;
     $filter= array(
@@ -67,7 +66,7 @@ function validate_product($paramether) {
 
          if(!$result_1['band_name']){
 
-            $error['band_name']='Band name must not have more than 50 characters';
+            $error['band_name']='Band name must have between 1 and 50 characters';
             $valid=false;
 
         }
