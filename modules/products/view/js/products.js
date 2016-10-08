@@ -147,7 +147,7 @@ jQuery.fn.fill_or_clean=function(){
 
 
 //////////////////////////////////////////////////////////////////////////////////
-                    /*   ENABLE-DISABLE DATPICKER FUNCTIONS  */
+                    /*   ENABLE-DISABLE DATEPICKER FUNCTIONS  */
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -172,9 +172,26 @@ jQuery.fn.fill_or_clean=function(){
 
         }//end disable_date_ticket;
 
-/***********************    END OF FILL OR CLEAN FUNCTIONS    ******************/
+/***********************    END OF ENABLE-DISABLE DATEPICKER FUNCTIONS    ******************/
 
 
+
+
+//////////////////////////////////////////////////////////////////////////////////
+                    /*   ENABLE-DISABLE FREE ADMISSION FUNCTIONS  */
+//////////////////////////////////////////////////////////////////////////////////
+
+        function disable_free_admission(){
+
+            var type_access_options=document.getElementsByName('type_access[]');
+            if(type_access_options[0].value()==="Ticket"){
+              type_access_options[2].prop(disabled,true);
+            }
+        }
+
+
+
+/***********************    END OF ENABLE-DISABLE DATEPICKER FUNCTIONS    ******************/
 
 
 /* To fix Uncaugh Error: Dropzone already attached*/
@@ -342,30 +359,51 @@ function validate_user(){
   var result=true;
 
   var event_id=document.getElementById('event_id').value;
+  console.log(event_id);
+  var band_id=document.getElementById('band_id').value;
+  var band_name=document.getElementById('band_name').value;
+  var description=document.getElementById('description').value;
+  var type_event=document.getElementById('type_event').value;
+  var n_participants=document.getElementById('n_participants').value;
+  var date_event=document.getElementById('date_event').value;
+  var type_access=[];
+  var type_access_options=document.getElementsByName('type_access[]');
+  var j=0;
+  for (var i=0; i< type_access_options.length; i++){
+    if(type_access_options[i].checked){
+      type_access[j]=type_access_options[i].value;
+      j++;
+    }
+  }
+  var date_ticket=document.getElementById('date_ticket').value;
+  var openning=document.getElementById('openning').value;
+  var start=document.getElementById('start').value;
+  var end=document.getElementById('end').value;
+  //console.log(date_ticket);
 
 
   // // /*To state the regular expresions to validate de entered data.*/
-  var event_id_re=/^[E]{1}[0-9]{10}$/;
-  // var band_id_re=/^[B]{1}[0-9]{10}$/;
+  //var event_id_re=/^[E]{1}[0-9]{10}$/;
+  // var band_id_re=/^[B]{1}[0-9]{10}$/;xº
   // var band_name_re=/^(.){1,50}$/;
   // var description_re=/^(.){1,500}$/;
   // var n_participants_re=/^[1-9]{1,3}$/;
   // var date_event_re=/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/;
   //
    /*To remove the previous error message */
-  $(".error").remove();
+  //$(".error").remove();
 
-  /*CHECK event_id FIELD*/
-  /*To avoid the field event_id is empty*/
-  if($("#event_id").val()===""||$("#event_id").val()==="Enter event ID"){
-      $("#event_id").focus().after("<span class='error'>Enter event ID</span>");
-      return false;
-      /*to test the regular expression*/
-  }else if(!event_id_re.test($("#event_id").val())){
-      $("#event_id").focus().after("<span class='error'>Event ID must have one E follow by 10 digits</span>");
-      return false;
-  }//end of else if
-  /*END OF FUNCTION*/
+  // /*CHECK event_id FIELD*/
+  // /*To avoid the field event_id is empty*/
+  // if($("#event_id").val()===""||$("#event_id").val()==="Enter event ID"){
+  //     $("#event_id").focus().after("<span class='error'>Enter event ID</span>");
+  //     return false;
+  //     /*to test the regular expression*/
+  // }else if(!event_id_re.test($("#event_id").val())){
+  //     $("#event_id").focus().after("<span class='error'>Event ID must have one E follow by 10 digits</span>");
+  //     return false;
+  // }//end of else if
+  // /*END OF FUNCTION*/
 
   // /*CHECK band_id FIELD*/
   // /*To avoid the field band_id is empty*/
@@ -477,6 +515,9 @@ function validate_user(){
   //     return false;
   // }
   // /*END OF FUNCTION*/
+
+
+
   //
   // /*CHECK OPTION LIST OPENNING*/
   // /*Function to check if an option of a list has been selected*/
@@ -520,7 +561,10 @@ function validate_user(){
 
   if(result){
     /*To create a JavaScript array that contains the event data*/
-    var data={"event id":event_id};
+    var data={"event_id":event_id, "band_id":band_id, "band_name":band_name, "description":description, "type_event":type_event, "n_participants":n_participants,
+              "date_event":date_event, "type_access":type_access, "date_ticket":date_ticket, "openning":openning, "start":start, "end":end};
+    console.log(data.event_id);
+
     /*To convert the JavaScript array in a JSON string*/
     var event_data_JSON=JSON.stringify(data);
 
@@ -528,15 +572,18 @@ function validate_user(){
             {register_event_json:event_data_JSON},
     function(response){
 
-      console.log(response);
+    //console.log(response);
+      if(response.success){
+        window.location.href=response.redirect;
+      }
 
 
     }, "json").fail(function (xhr){
               console.log("Estoy en el fail");
-                  console.log(xhr);
-              // if(xhr.reponseJSON.error.name){
-              //   $("#event_id").focus().after("<span class='error1'>" + xhr.responseJSON.error.event_id + "<span>");
-              // }
+              console.log(xhr);
+              // if(xhr.reponseJSON.error.event_id){
+              //    $("#event_id").focus().after("<span class='error1'>" + xhr.responseJSON.error.event_id + "<span>");
+              //  }
             });//end of .fail
 
   }//End of if result

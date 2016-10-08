@@ -19,23 +19,15 @@
 							<td width="24%">Event ID</td>
 						  	<td width="76%">
 									<input name="event_id" placeholder="Event ID" type="text" id="event_id" value="" >
-									<!----><div id="e_name"></div>
+									<div id="e_event_id"></div>
 						  	</td>
 						</tr>
 
 						<tr>
 							<td width="24%">Band ID</td>
-						  	<td width="76%"><input name="band_id" placeholder="Band ID" type="text" id="band_id" value="<?php
-						  		if(!isset($error['band_id'])){
-						  		echo $_POST?$_POST['band_id']:"";
-						  		}
-						  		?>" >
-						  		<?php
-						  				if(isset($error['band_id'])){
-						  				print("<br><span style='color:#ff0000'>"."*".$error['band_id']. "<span><br/>");
-						  				}
-						  		?>
-						  		</td>
+						  	<td width="76%"><input name="band_id" placeholder="Band ID" type="text" id="band_id" value="">
+									<div id="e_band_id"></div>
+						  	</td>
 						</tr>
 
 						<tr>
@@ -123,14 +115,14 @@
 						<tr><td><br></td></tr>
 						<tr>
 							<td width="24%">Type of access</td>
-							<td><input type="checkbox" name="type_access[]" id="type_access" value="Ticket" onchange="enable_date_ticket()"><text id="ticket">  Ticket</text><br>
-								<input type="checkbox" name="type_access[]" id="type_access" value="Invitation"><text id="invitation">  Invitation</text><br>
-								<input type="checkbox" name="type_access[]" id="type_access" value="Free admission" onchange="disable_date_ticket()"><text id="free">  Free admission</text><br>
-								<?php
-						  			if(isset($error['type_access'])){
-						  				print("<br><span style='color:#ff0000'>"."*".$error['type_access']. "<span><br/>");
-						  				}
-						  		?>
+							<td><input type="checkbox" name="type_access[]" id="type_access" class="messageCheckbox" value="Ticket" onchange="enable_date_ticket()"><text id="ticket">  Ticket</text><br>
+									<input type="checkbox" name="type_access[]" id="type_access" class="messageCheckbox" value="Invitation"><text id="invitation">  Invitation</text><br>
+									<input type="checkbox" name="type_access[]" id="type_access" class="messageCheckbox" value="Free admission" onchange="disable_date_ticket()"><text id="free">  Free admission</text><br>
+									<?php
+							  			if(isset($error['type_access'])){
+							  				print("<br><span style='color:#ff0000'>"."*".$error['type_access']. "<span><br/>");
+							  				}
+							  		?>
 							</td>
 						</tr>
 						<tr><td><br></td></tr>

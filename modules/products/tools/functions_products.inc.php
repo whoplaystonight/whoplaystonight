@@ -1,50 +1,55 @@
 <?php
 
 function validate_product($paramether) {
+// echo json_encode($paramether);
+// exit;
     $error =array();
     $valid = true;
     $filter= array(
-        'event_id'=> array(
-            'filter'=> FILTER_VALIDATE_REGEXP,
-            'options'=> array('regexp'=>'/^[E]{1}[0-9]{10}+$/'),
-        ),//end of event_id array
+      'event_id'=> array(
+          'filter'=> FILTER_VALIDATE_REGEXP,
+          'options'=> array('regexp'=>'/^[E]{1}[0-9]{10}+$/'),
+      ),//end of band_id array
 
-        // 'band_id'=> array(
-        //     'filter'=> FILTER_VALIDATE_REGEXP,
-        //     'options'=> array('regexp'=>'/^[B]{1}[0-9]{10}+$/'),
-        // ),//end of band_id array
-        //
-        // 'band_name'=> array(
-        //     'filter'=> FILTER_VALIDATE_REGEXP,
-        //     'options'=> array('regexp'=>'/^(.){1,50}$/'),
-        // ),//end of band_name array
-        //
-        // 'description'=> array(
-        //     'filter'=> FILTER_VALIDATE_REGEXP,
-        //     'options'=> array('regexp'=>'/^(.){20,500}$/'),
-        // ),//end of description array
-        //
-        // 'n_participants'=> array(
-        //     'filter'=> FILTER_VALIDATE_REGEXP,
-        //     'options'=> array('regexp'=>'/^[1-9]{1,3}$/'),
-        // ),//end of description array
+        'band_id'=> array(
+            'filter'=> FILTER_VALIDATE_REGEXP,
+            'options'=> array('regexp'=>'/^[B]{1}[0-9]{10}+$/'),
+        ),//end of band_id array
+
+        'band_name'=> array(
+            'filter'=> FILTER_VALIDATE_REGEXP,
+            'options'=> array('regexp'=>'/^(.){1,50}$/'),
+        ),//end of band_name array
+
+        'description'=> array(
+            'filter'=> FILTER_VALIDATE_REGEXP,
+            'options'=> array('regexp'=>'/^(.){20,500}$/'),
+        ),//end of description array
+
+        'n_participants'=> array(
+            'filter'=> FILTER_VALIDATE_REGEXP,
+            'options'=> array('regexp'=>'/^[1-9]{1,3}$/'),
+        ),//end of description array
 
 
     );//end of filter array
 
-    $result_1=filter_input_array(INPUT_POST,$filter);
-    $result_1['type_event']=$_POST['type_event'];
-    $result_1['date_event']=$_POST['date_event'];
-    $result_1['type_access']=$_POST['type_access'];
-    $result_1['date_ticket']=$_POST['date_ticket'];
-    $result_1['openning']=$_POST['openning'];
-    $result_1['start']=$_POST['start'];
-    $result_1['end']=$_POST['end'];
+    $result_1=filter_var_array($paramether,$filter);
+
+    //return json_encode($result_1);
+
+    $result_1['type_event']=$paramether['type_event'];
+    $result_1['date_event']=$paramether['date_event'];
+    $result_1['type_access']=$paramether['type_access'];
+    $result_1['date_ticket']=$paramether['date_ticket'];
+    $result_1['openning']=$paramether['openning'];
+    $result_1['start']=$paramether['start'];
+    $result_1['end']=$paramether['end'];
 
 
 
     /*IF CHECK $result*/
-    if($result_1 !=null && $result_1){
+     if($result_1 !=null && $result_1){
 
         if(!$result_1['event_id']){
 
@@ -101,7 +106,7 @@ function validate_product($paramether) {
 
         }
 
-         if(($result_1['date_event']==null)||($result_1['date_event']=='Enter date of event')){
+        if(($result_1['date_event']==null)||($result_1['date_event']=='Enter date of event')){
 
             $error['date_event']='Event date field can\'t be empty';
             $valid=false;
@@ -112,8 +117,9 @@ function validate_product($paramether) {
             $valid=false;
 
         }else{
+            if($result_1['date_ticket']!="Free admission"){
 
-            $check_dates= compare_dates($_POST['date_ticket'],$_POST['date_event']);
+            $check_dates= compare_dates($result_1['date_ticket'],$result_1['date_event']);
 
 
             if(!$check_dates){
@@ -121,6 +127,7 @@ function validate_product($paramether) {
                 $error['date_ticket']='Date of ticket sales can \'t be later than the event date ';
                 $valid=false;
             }
+          }
         }
 
         if($result_1['openning']==null){
@@ -141,7 +148,7 @@ function validate_product($paramether) {
     }else{
         $valid=false;
     };/*END IF CHECK $result*/
-    return $return=array('result'=> $valid, 'error'=>$error, 'data'=>$result_1);
+     return $return=array('result'=> $valid, 'error'=>$error, 'data'=>$result_1);
 
 
 }//End of validate_user function
