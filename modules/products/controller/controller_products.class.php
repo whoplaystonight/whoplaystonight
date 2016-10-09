@@ -154,3 +154,24 @@ function close_session(){
   session_destroy();
 
 }//end of close_session
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+                          /*LOAD OR DELETE DATA STATEMENT*/
+////////////////////////////////////////////////////////////////////////////////
+
+if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
+  $jsondata=array();
+
+  if (isset($_SESSION['event'])){
+    $jsondata["event"]=$_SESSION['event'];
+    echo json_encode($jsondata);
+    exit;
+  }else{
+    $jsondata["event"]="";
+    echo json_encode($jsondata);
+    exit;
+  }//end of else
+
+}//end of load data

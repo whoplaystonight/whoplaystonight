@@ -150,7 +150,6 @@ jQuery.fn.fill_or_clean=function(){
                     /*   ENABLE-DISABLE DATEPICKER FUNCTIONS  */
 //////////////////////////////////////////////////////////////////////////////////
 
-
       /*TO ENABLE DATE_TICKET INPUT**/
 
        function enable_date_ticket(){
@@ -228,8 +227,71 @@ $(document).ready(function(){
     });//end of submit_products function
 
 
-    /*To invoque the fill_or_clean pluggin*/
-    //$(this).fill_or_clean();
+
+
+////////////////////////////////////////////////////////////////////////////////
+                      /*  TO LOAD OR DELETE DATA AT THE FORM  */
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+    $.get("modules/products/controller/controller_products.class.php?load_data=true",
+          function(response){
+            if(response.event===""){
+              $("#event_id").val('');
+              $("#band_id").val('');
+              $("#band_name").val('');
+              $("#description").val('');
+              var type_event_d=document.getElementsByName('type_event');
+              for(var i=0; i<type_event_d.length;i++){
+                type_event_d[i].checked=false;
+              }
+              $("#n_participants").val('');
+              $("#date_event").val('');
+              var type_access_d=document.getElementsByName('type_access[]');
+              for(i=0;i<type_access_d.length; i++){
+                if(type_access_d[i].checked){
+                  type_access_d[i].checked=false;
+                }//end if checked
+              }//end for
+              $("#date_ticket").val('');
+              $("#openning").val('');
+              $("#start").val('');
+              $("#end").val('');
+              /*To invoque the fill_or_clean pluggin*/
+              $(this).fill_or_clean();
+
+            }else{
+              
+              $("#event_id").val(response.event.event_id);
+              $("#band_id").val(response.event.band_id);
+              $("#band_name").val(response.event.band_name);
+              $("#description").val(response.event.description);
+              var type_event_checked=response.event.type_event;
+              var type_event=document.getElementsByName('type_event');
+              for(var j=0; j<type_event.length; j++){
+                if(type_event[j].value===type_event_checked){
+                  type_event[j].checked=true;
+                }//End of if
+              }//end of for
+              $("#n_participants").val(response.event.n_participants);
+              $("#date_event").val(response.event.date_event);
+              var type_access_checked=response.event.type_access;
+              var type_access_f=document.getElementsByName('type_access[]');
+              for (var z=0; z<type_access_checked.length;z++){
+                for(var y=0; y<type_access_f.length;y++){
+                  if(type_access_checked[z]===type_access_f[y]){
+                    type_access_f[y].checked=true;
+                  }//end if
+                }//end 2nd for
+              }//end 1st for
+              $("#date_ticket").val(response.event.date_ticket);
+              $("#openning").val(response.event.openning);
+              $("#start").val(response.event.start);
+              $("#end").val(response.event.end);
+            }//end if-else response.event
+          }, "json");//end $.get
 
     /*Dropzone function */
 $("#dropzone").dropzone({
@@ -242,7 +304,7 @@ $("#dropzone").dropzone({
 
           this.on("success", function (file, response) {
             //console.log("estic dins del upload");
-            console.log(response);
+            //console.log(response);
             //alert(response);
             $("#progress").show();
             $("#bar").width('100%');
@@ -303,48 +365,48 @@ $("#dropzone").dropzone({
         /*FUNCTIONS TO DELETE THE ERROR MESSAGE WHEN THE EXPRESION IS CORRECT*/
 
         /*To state the regular expresions to validate de entered data.*/
-        // var event_id_re=/^[E]{1}[0-9]{10}$/;
-        // var band_id_re=/^[B]{1}[0-9]{10}$/;
-        // var band_name_re=/^(.){1,50}$/;
-        // var description_re=/^(.){1,500}$/;
-        // var n_participants_re=/^[1-9]{1,3}$/;
-        // var date_event_re=/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/;
-        //
-        //
-        // $("#event_id").keyup(function () {
-        //     if ($(this).val() !== "" && event_id_re.test($(this).val())) {
-        //         $(".error").fadeOut();
-        //         return false;
-        //     }
-        // });
-        //
-        // $("#band_id").keyup(function(){
-        //     if($(this).val() !=="" && band_id_re.test($(this).val())){
-        //         $(".error").fadeOut();
-        //         return false;
-        //     }
-        // });
-        //
-        // $("#band_name").keyup(function(){
-        //     if($(this).val() !=="" && band_name_re.test($(this).val())){
-        //         $(".error").fadeOut();
-        //         return false;
-        //     }
-        // });
-        //
-        // $("#description").keyup(function(){
-        //     if($(this).val() !=="" && description_re.test($(this).val())){
-        //         $(".error").fadeOut();
-        //         return false;
-        //     }
-        // });
-        //
-        // $("#n_participants").keyup(function(){
-        //     if($(this).val() !=="" && n_participants_re.test($(this).val())){
-        //         $(".error").fadeOut();
-        //         return false;
-        //     }
-        // });
+        var event_id_re=/^[E]{1}[0-9]{10}$/;
+        var band_id_re=/^[B]{1}[0-9]{10}$/;
+        var band_name_re=/^(.){1,50}$/;
+        var description_re=/^(.){1,500}$/;
+        var n_participants_re=/^[1-9]{1,3}$/;
+        var date_event_re=/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/;
+
+
+        $("#event_id").keyup(function () {
+            if ($(this).val() !== "" && event_id_re.test($(this).val())) {
+                $(".error").fadeOut();
+                return false;
+            }
+        });
+
+        $("#band_id").keyup(function(){
+            if($(this).val() !=="" && band_id_re.test($(this).val())){
+                $(".error").fadeOut();
+                return false;
+            }
+        });
+
+        $("#band_name").keyup(function(){
+            if($(this).val() !=="" && band_name_re.test($(this).val())){
+                $(".error").fadeOut();
+                return false;
+            }
+        });
+
+        $("#description").keyup(function(){
+            if($(this).val() !=="" && description_re.test($(this).val())){
+                $(".error").fadeOut();
+                return false;
+            }
+        });
+
+        $("#n_participants").keyup(function(){
+            if($(this).val() !=="" && n_participants_re.test($(this).val())){
+                $(".error").fadeOut();
+                return false;
+            }
+        });
 
 
 /***********************    END OF FADEOUT FUNCTIONS    ******************/
@@ -389,180 +451,173 @@ function validate_user(){
   //console.log(date_ticket);
 
 
-  // // /*To state the regular expresions to validate de entered data.*/
-  //var event_id_re=/^[E]{1}[0-9]{10}$/;
-  // var band_id_re=/^[B]{1}[0-9]{10}$/;xº
-  // var band_name_re=/^(.){1,50}$/;
-  // var description_re=/^(.){1,500}$/;
-  // var n_participants_re=/^[1-9]{1,3}$/;
-  // var date_event_re=/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/;
-  //
-   /*To remove the previous error message */
-  //$(".error").remove();
+  /*To state the regular expresions to validate de entered data.*/
+  var event_id_re=/^[E]{1}[0-9]{10}$/;
+  var band_id_re=/^[B]{1}[0-9]{10}$/;
+  var band_name_re=/^(.){1,50}$/;
+  var description_re=/^(.){1,500}$/;
+  var n_participants_re=/^[1-9]{1,3}$/;
+  var date_event_re=/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/;
 
-  // /*CHECK event_id FIELD*/
-  // /*To avoid the field event_id is empty*/
-  // if($("#event_id").val()===""||$("#event_id").val()==="Enter event ID"){
-  //     $("#event_id").focus().after("<span class='error'>Enter event ID</span>");
-  //     return false;
-  //     /*to test the regular expression*/
-  // }else if(!event_id_re.test($("#event_id").val())){
-  //     $("#event_id").focus().after("<span class='error'>Event ID must have one E follow by 10 digits</span>");
-  //     return false;
-  // }//end of else if
-  // /*END OF FUNCTION*/
+  /*To remove the previous error message */
+  $(".error").remove();
 
-  // /*CHECK band_id FIELD*/
-  // /*To avoid the field band_id is empty*/
-  // if($("#band_id").val()===""||$("#band_id").val()==="Enter band ID"){
-  //     $("#band_id").focus().after("<span class='error'>Enter band ID</span>");
-  //     return false;
-  //     /*to test the regular expression*/
-  // }else if(!band_id_re.test($("#band_id").val())){
-  //     $("#band_id").focus().after("<span class='error'>Band ID must have one B follow by 10 digits</span>");
-  //     return false;
-  // }//end of else if
-  // /*END OF FUNCTION*/
-  //
-  //
-  // /*CHECK band_name FIELD*/
-  // /*To avoid the field band_name is empty*/
-  // if($("#band_name").val()===""||$("#band_name").val()==="Enter band name"){
-  //     $("#band_name").focus().after("<span class='error'>Enter band name</span>");
-  //     return false;
-  //     /*to test the regular expression*/
-  // }else if(!band_name_re.test($("#band_name").val())){
-  //     $("#band_name").focus().after("<span class='error'>Band name must not have more than 50 characters</span>");
-  //     return false;
-  // }//end of else if
-  // /*END OF FUNCTION*/
-  //
-  //
-  // /*CHECK description FIELD*/
-  // /*To avoid the field description is empty*/
-  // if($("#description").val()===""||$("#description").val()==="Enter a description"){
-  //     $("#description").focus().after("<span class='error'>Enter a description</span>");
-  //     return false;
-  //     /*to test the regular expression*/
-  // }else if(!description_re.test($("#description").val())){
-  //   $("#description").focus().after("<span class='error'>Description must not have more than 500 characters</span>");
-  //     return false;
-  // }//end of else if
-  // /*END OF FUNCTION*/
-  //
-  //
-  // /*CHECK RADIOBUTTONS*/
-  // /*Function to check if at least one radio button is selected*/
-  // var check_radio=function(){
-  //
-  //     var radiobuttons=document.getElementsByName('type_event');
-  //     var selected=false;
-  //     for(var i=0; i<radiobuttons.length;i++){
-  //         if(radiobuttons[i].checked){
-  //             selected=true;
-  //             break;
-  //         }
-  //     }
-  //     return selected;
-  // };//end check_radio function;
-  //
-  // /* If statement to show the error message */
-  // if(!check_radio()){
-  //     $("#presentation").focus().after("<span class='error'>You must select one option at least</span>");
-  //     return false;
-  // }
-  // /*END OF FUNCTION*/
-  //
-  //
-  //
-  // /*CHECK n_participants FIELD*/
-  // /*To avoid the field n_participants is empty*/
-  // if($("#n_participants").val()===""||$("#n_participants").val()==="Enter number of particpants"){
-  //     $("#n_participants").focus().after("<span class='error'>Enter number of particpants</span>");
-  //     return false;
-  //     /*to test the regular expression*/
-  // }else if(!n_participants_re.test($("#n_participants").val())){
-  //     $("#n_participants").focus().after("<span class='error'>Number of participants must be between 1 and 999</span>");
-  //     return false;
-  // }//end of else if
-  // /*END OF FUNCTION*/
-  //
-  //
-  //
-  // /*CHECK date_event FIELD*/
-  // /*To avoid the field date-evetn is empty*/
-  // /*if($("#date_event").val()===""||$("#date_event").val()==="Enter date of event"){
-  //     $("#date_event").focus().after("<span class='error'>Enter date of event</span>");
-  //     return false;
-  //     /*to test the regular expression*/
-  // /*}else if(!date_event_re.test($("#date_event").val())){
-  //     $("#date_event").focus().after("<span class='error'>Date of event must have dd/mm/yyyy format</span>");
-  //     return false;
-  // }//end of else if*/
-  //
-  //
-  // /*CHECK CHECKBOX*/
-  // /*Function to check if at least one checkbox is selected*/
-  // var check_check=function(){
-  //
-  //     var checkboxes=document.getElementsByName('type_access[]');
-  //     var selected=false;
-  //     for(var i=0; i<checkboxes.length;i++){
-  //         if(checkboxes[i].checked){
-  //             selected=true;
-  //             break;
-  //         }
-  //     }
-  //     return selected;
-  // };//end check_radio function;
-  //
-  // /* If statement to show the error message */
-  // if(!check_check()){
-  //     $("#ticket").focus().after("<span class='error'>You must select one option at least</span>");
-  //     return false;
-  // }
-  // /*END OF FUNCTION*/
+  /*CHECK event_id FIELD*/
+  /*To avoid the field event_id is empty*/
+  if($("#event_id").val()===""||$("#event_id").val()==="Enter event ID"){
+      $("#event_id").focus().after("<span class='error'>Enter event ID</span>");
+      return false;
+      /*to test the regular expression*/
+  }else if(!event_id_re.test($("#event_id").val())){
+      $("#event_id").focus().after("<span class='error'>Event ID must have one E follow by 10 digits</span>");
+      return false;
+  }//end of else if
+  /*END OF FUNCTION*/
+
+  /*CHECK band_id FIELD*/
+  /*To avoid the field band_id is empty*/
+  if($("#band_id").val()===""||$("#band_id").val()==="Enter band ID"){
+      $("#band_id").focus().after("<span class='error'>Enter band ID</span>");
+      return false;
+      /*to test the regular expression*/
+  }else if(!band_id_re.test($("#band_id").val())){
+      $("#band_id").focus().after("<span class='error'>Band ID must have one B follow by 10 digits</span>");
+      return false;
+  }//end of else if
+  /*END OF FUNCTION*/
+
+
+  /*CHECK band_name FIELD*/
+  /*To avoid the field band_name is empty*/
+  if($("#band_name").val()===""||$("#band_name").val()==="Enter band name"){
+      $("#band_name").focus().after("<span class='error'>Enter band name</span>");
+      return false;
+      /*to test the regular expression*/
+  }else if(!band_name_re.test($("#band_name").val())){
+      $("#band_name").focus().after("<span class='error'>Band name must not have more than 50 characters</span>");
+      return false;
+  }//end of else if
+  /*END OF FUNCTION*/
+
+
+  /*CHECK description FIELD*/
+  /*To avoid the field description is empty*/
+  if($("#description").val()===""||$("#description").val()==="Enter a description"){
+      $("#description").focus().after("<span class='error'>Enter a description</span>");
+      return false;
+      /*to test the regular expression*/
+  }else if(!description_re.test($("#description").val())){
+    $("#description").focus().after("<span class='error'>Description must not have more than 500 characters</span>");
+      return false;
+  }//end of else if
+  /*END OF FUNCTION*/
+
+
+  /*CHECK RADIOBUTTONS*/
+  /*Function to check if at least one radio button is selected*/
+  var check_radio=function(){
+
+      var radiobuttons=document.getElementsByName('type_event');
+      var selected=false;
+      for(var i=0; i<radiobuttons.length;i++){
+          if(radiobuttons[i].checked){
+              selected=true;
+              break;
+          }
+      }
+      return selected;
+  };//end check_radio function;
+
+  /* If statement to show the error message */
+  if(!check_radio()){
+      $("#presentation").focus().after("<span class='error'>You must select one option at least</span>");
+      return false;
+  }
+  /*END OF FUNCTION*/
 
 
 
-  //
-  // /*CHECK OPTION LIST OPENNING*/
-  // /*Function to check if an option of a list has been selected*/
-  // function check_list(list){
-  //     var index=document.getElementById(list).selectedIndex;
-  //     var result=true;
-  //     if(index===null||index===0){
-  //       result=false;
-  //     }
-  //     return result;
-  // }
-  //
-  // /*To check doors openning list*/
-  // if(!check_list("openning")){
-  //     $("#openning").focus().after("<span class='error'>You must select one option at least</span>");
-  //     return false;
-  // }
-  //
-  //  /*To Start of event list*/
-  // if(!check_list("start")){
-  //     $("#start").focus().after("<span class='error'>You must select one option at least</span>");
-  //     return false;
-  // }
-  //
-  // /*To End of event list*/
-  // if(!check_list("end")){
-  //     $("#end").focus().after("<span class='error'>You must select one option at least</span>");
-  //     return false;
-  // }
-  //
-  // /*END OF FUNCTION*/
+  /*CHECK n_participants FIELD*/
+  /*To avoid the field n_participants is empty*/
+  if($("#n_participants").val()===""||$("#n_participants").val()==="Enter number of particpants"){
+      $("#n_participants").focus().after("<span class='error'>Enter number of particpants</span>");
+      return false;
+      /*to test the regular expression*/
+  }else if(!n_participants_re.test($("#n_participants").val())){
+      $("#n_participants").focus().after("<span class='error'>Number of participants must be between 1 and 999</span>");
+      return false;
+  }//end of else if
+  /*END OF FUNCTION*/
 
 
-/*****************************    END OF VALIDATE FUNCTION    ******************/
 
-//console.log("Antes de que se envien los datos al servidor");
+  /*CHECK date_event FIELD*/
+  /*To avoid the field date-evetn is empty*/
+  /*if($("#date_event").val()===""||$("#date_event").val()==="Enter date of event"){
+      $("#date_event").focus().after("<span class='error'>Enter date of event</span>");
+      return false;
+      /*to test the regular expression*/
+  /*}else if(!date_event_re.test($("#date_event").val())){
+      $("#date_event").focus().after("<span class='error'>Date of event must have dd/mm/yyyy format</span>");
+      return false;
+  }//end of else if*/
 
 
+  /*CHECK CHECKBOX*/
+  /*Function to check if at least one checkbox is selected*/
+  var check_check=function(){
+
+      var checkboxes=document.getElementsByName('type_access[]');
+      var selected=false;
+      for(var i=0; i<checkboxes.length;i++){
+          if(checkboxes[i].checked){
+              selected=true;
+              break;
+          }
+      }
+      return selected;
+  };//end check_radio function;
+
+  /* If statement to show the error message */
+  if(!check_check()){
+      $("#ticket").focus().after("<span class='error'>You must select one option at least</span>");
+      return false;
+  }
+  /*END OF FUNCTION*/
+
+
+
+
+  /*CHECK OPTION LIST OPENNING*/
+  /*Function to check if an option of a list has been selected*/
+  function check_list(list){
+      var index=document.getElementById(list).selectedIndex;
+      var result=true;
+      if(index===null||index===0){
+        result=false;
+      }
+      return result;
+  }
+
+  /*To check doors openning list*/
+  if(!check_list("openning")){
+      $("#openning").focus().after("<span class='error'>You must select one option at least</span>");
+      return false;
+  }
+
+   /*To Start of event list*/
+  if(!check_list("start")){
+      $("#start").focus().after("<span class='error'>You must select one option at least</span>");
+      return false;
+  }
+
+  /*To End of event list*/
+  if(!check_list("end")){
+      $("#end").focus().after("<span class='error'>You must select one option at least</span>");
+      return false;
+  }
+
+  /*END OF FUNCTION*/
 
 
 
