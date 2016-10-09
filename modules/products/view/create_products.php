@@ -20,7 +20,8 @@
 						  	<td width="76%">
 									<input name="event_id" placeholder="Event ID" type="text" id="event_id" value="" >
 									<div id="e_event_id"></div>
-						  	</td>
+								</td>
+
 						</tr>
 
 						<tr>
@@ -68,6 +69,7 @@
 						  <td width="24%">Number of Participants</td>
 						  <td width="76%">
 								<input name="n_participants" placeholder="Number of Participants" type="text" id="n_participants" value="">
+								<div id="e_n_participants"><div>
 						  	</td>
 						</tr>
 
@@ -75,6 +77,7 @@
 						  <td width="24%">Date of event</td>
 						  <td width="76%">
 								<input name="date_event" placeholder="Date of event" type="text" id="date_event" readonly value="">
+								<div id="e_date_event"><div>
 					  	</td>
 						</tr>
 
@@ -85,6 +88,7 @@
 							<td><input type="checkbox" name="type_access[]" id="type_access" class="messageCheckbox" value="Ticket" onchange="enable_date_ticket()"><text id="ticket">  Ticket</text><br>
 									<input type="checkbox" name="type_access[]" id="type_access" class="messageCheckbox" value="Invitation"><text id="invitation">  Invitation</text><br>
 									<input type="checkbox" name="type_access[]" id="type_access" class="messageCheckbox" value="Free admission" onchange="disable_date_ticket()"><text id="free">  Free admission</text><br>
+									<div id="e_date_event"><div>
 							</td>
 						</tr>
 
@@ -94,6 +98,7 @@
 						  <td width="24%">Date of ticket sales</td>
 						  <td width="76%">
 								<input name="date_ticket" placeholder="Date of ticket sales" type="text" id="date_ticket" readonly value="">
+								<div id="e_date_ticket"><div>
 							</td>
 						</tr>
 
@@ -101,97 +106,104 @@
 
 						<tr>
 						  <td width="24%">Doors openning </td>
-						  <td width="76%"><select name="openning" id="openning">
-						  		<option value="">--:--</option>
-								<option value="00:00">00:00</option>
-								<option value="01:00">01:00</option>
-								<option value="02:00">02:00</option>
-								<option value="03:00">03:00</option>
-								<option value="04:00">04:00</option>
-								<option value="05:00">05:00</option>
-								<option value="06:00">06:00</option>
-								<option value="07:00">07:00</option>
-								<option value="08:00">08:00</option>
-								<option value="09:00">09:00</option>
-								<option value="10:00">10:00</option>
-								<option value="11:00">11:00</option>
-								<option value="12:00">12:00</option>
-								<option value="13:00">13:00</option>
-								<option value="14:00">14:00</option>
-								<option value="15:00">15:00</option>
-								<option value="16:00">16:00</option>
-								<option value="17:00">17:00</option>
-								<option value="18:00">18:00</option>
-								<option value="19:00">19:00</option>
-								<option value="20:00">20:00</option>
-								<option value="21:00">21:00</option>
-								<option value="22:00">22:00</option>
-								<option value="23:00">23:00</option>
+						  <td width="76%">
+								<select name="openning" id="openning">
+							  	<option value="">--:--</option>
+									<option value="00:00">00:00</option>
+									<option value="01:00">01:00</option>
+									<option value="02:00">02:00</option>
+									<option value="03:00">03:00</option>
+									<option value="04:00">04:00</option>
+									<option value="05:00">05:00</option>
+									<option value="06:00">06:00</option>
+									<option value="07:00">07:00</option>
+									<option value="08:00">08:00</option>
+									<option value="09:00">09:00</option>
+									<option value="10:00">10:00</option>
+									<option value="11:00">11:00</option>
+									<option value="12:00">12:00</option>
+									<option value="13:00">13:00</option>
+									<option value="14:00">14:00</option>
+									<option value="15:00">15:00</option>
+									<option value="16:00">16:00</option>
+									<option value="17:00">17:00</option>
+									<option value="18:00">18:00</option>
+									<option value="19:00">19:00</option>
+									<option value="20:00">20:00</option>
+									<option value="21:00">21:00</option>
+									<option value="22:00">22:00</option>
+									<option value="23:00">23:00</option>
 							  </select>
+								<div id="openning"><div>
 							</td>
 						</tr>
 
 						<tr>
 						  <td width="24%">Start of event </td>
-						  <td width="76%"><select name="start" id="start">
-						  		<option value="">--:--</option>
-								<option value="00:00">00:00</option>
-								<option value="01:00">01:00</option>
-								<option value="02:00">02:00</option>
-								<option value="03:00">03:00</option>
-								<option value="04:00">04:00</option>
-								<option value="05:00">05:00</option>
-								<option value="06:00">06:00</option>
-								<option value="07:00">07:00</option>
-								<option value="08:00">08:00</option>
-								<option value="09:00">09:00</option>
-								<option value="10:00">10:00</option>
-								<option value="11:00">11:00</option>
-								<option value="12:00">12:00</option>
-								<option value="13:00">13:00</option>
-								<option value="14:00">14:00</option>
-								<option value="15:00">15:00</option>
-								<option value="16:00">16:00</option>
-								<option value="17:00">17:00</option>
-								<option value="18:00">18:00</option>
-								<option value="19:00">19:00</option>
-								<option value="20:00">20:00</option>
-								<option value="21:00">21:00</option>
-								<option value="22:00">22:00</option>
-								<option value="23:00">23:00</option>
+						  <td width="76%">
+								<select name="start" id="start">
+							  	<option value="">--:--</option>
+									<option value="00:00">00:00</option>
+									<option value="01:00">01:00</option>
+									<option value="02:00">02:00</option>
+									<option value="03:00">03:00</option>
+									<option value="04:00">04:00</option>
+									<option value="05:00">05:00</option>
+									<option value="06:00">06:00</option>
+									<option value="07:00">07:00</option>
+									<option value="08:00">08:00</option>
+									<option value="09:00">09:00</option>
+									<option value="10:00">10:00</option>
+									<option value="11:00">11:00</option>
+									<option value="12:00">12:00</option>
+									<option value="13:00">13:00</option>
+									<option value="14:00">14:00</option>
+									<option value="15:00">15:00</option>
+									<option value="16:00">16:00</option>
+									<option value="17:00">17:00</option>
+									<option value="18:00">18:00</option>
+									<option value="19:00">19:00</option>
+									<option value="20:00">20:00</option>
+									<option value="21:00">21:00</option>
+									<option value="22:00">22:00</option>
+									<option value="23:00">23:00</option>
 							  </select>
+								<div id="start"><div>
+
 							</td>
 						</tr>
 
 						<tr>
 						  <td width="24%">End of event </td>
-						  <td width="76%"><select name="end" id="end">
-						  		<option value="">--:--</option>
-								<option value="00:00">00:00</option>
-								<option value="01:00">01:00</option>
-								<option value="02:00">02:00</option>
-								<option value="03:00">03:00</option>
-								<option value="04:00">04:00</option>
-								<option value="05:00">05:00</option>
-								<option value="06:00">06:00</option>
-								<option value="07:00">07:00</option>
-								<option value="08:00">08:00</option>
-								<option value="09:00">09:00</option>
-								<option value="10:00">10:00</option>
-								<option value="11:00">11:00</option>
-								<option value="12:00">12:00</option>
-								<option value="13:00">13:00</option>
-								<option value="14:00">14:00</option>
-								<option value="15:00">15:00</option>
-								<option value="16:00">16:00</option>
-								<option value="17:00">17:00</option>
-								<option value="18:00">18:00</option>
-								<option value="19:00">19:00</option>
-								<option value="20:00">20:00</option>
-								<option value="21:00">21:00</option>
-								<option value="22:00">22:00</option>
-								<option value="23:00">23:00</option>
+						  <td width="76%">
+								<select name="end" id="end">
+							  	<option value="">--:--</option>
+									<option value="00:00">00:00</option>
+									<option value="01:00">01:00</option>
+									<option value="02:00">02:00</option>
+									<option value="03:00">03:00</option>
+									<option value="04:00">04:00</option>
+									<option value="05:00">05:00</option>
+									<option value="06:00">06:00</option>
+									<option value="07:00">07:00</option>
+									<option value="08:00">08:00</option>
+									<option value="09:00">09:00</option>
+									<option value="10:00">10:00</option>
+									<option value="11:00">11:00</option>
+									<option value="12:00">12:00</option>
+									<option value="13:00">13:00</option>
+									<option value="14:00">14:00</option>
+									<option value="15:00">15:00</option>
+									<option value="16:00">16:00</option>
+									<option value="17:00">17:00</option>
+									<option value="18:00">18:00</option>
+									<option value="19:00">19:00</option>
+									<option value="20:00">20:00</option>
+									<option value="21:00">21:00</option>
+									<option value="22:00">22:00</option>
+									<option value="23:00">23:00</option>
 							  </select>
+								<div id="e_end"><div>
 							</td>
 						</tr>
 						<tr><td><br></td></tr>
@@ -212,6 +224,8 @@
 							<td>
 							<section id="dropzone" class="dropzone"></section>
 							</td>
+						</tr>
+
 						<tr>
 						  <td><button type="button" id="submit_products" name="submit_products" value="Save">Save</button></td>
 						  <td>&nbsp;</td>

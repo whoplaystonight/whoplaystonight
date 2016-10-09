@@ -267,7 +267,7 @@ $("#dropzone").dropzone({
             data: "filename=" + name,
             success: function (data) {
               //console.log("estic dins del delete");
-              console.log(data);
+
                 $("#progress").hide();
                 $('.msg').text('').removeClass('msg_ok');
                 $('.msg').text('').removeClass('msg_error');
@@ -370,7 +370,7 @@ function validate_user(){
          break;
          }
   }
-  console.log(type_event);
+
   var n_participants=document.getElementById('n_participants').value;
   var date_event=document.getElementById('date_event').value;
   var type_access=[];
@@ -562,9 +562,14 @@ function validate_user(){
 
 //console.log("Antes de que se envien los datos al servidor");
 
-//////////////////////////////////////////////////////////////////////////////////
-                            /*   BEFORE SEND THE DATA TO THE SERVER  */
-//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+                  /*   BEFORE SEND THE DATA TO THE SERVER  */
+////////////////////////////////////////////////////////////////////////////////
 
   if(result){
     /*To create a JavaScript array that contains the event data*/
@@ -578,7 +583,7 @@ function validate_user(){
             {register_event_json:event_data_JSON},
     function(response){
 
-    console.log(response);
+      console.log(response);
       if(response.success){
         window.location.href=response.redirect;
       }
@@ -586,8 +591,9 @@ function validate_user(){
 
     }, "json").fail(function (xhr){
               // console.log("Estoy en el fail");
-              // console.log(xhr.responseJSON.error.event_id);
+              console.log(xhr.responseJSON.error_avatar);
               if(xhr.responseJSON.error.event_id){
+                //$("#e_event_id").html("<span class='error1'>" + xhr.responseJSON.error.event_id + "<span>");
                  $("#event_id").focus().after("<span class='error1'>" + xhr.responseJSON.error.event_id + "<span>");
                }
 
@@ -633,6 +639,10 @@ function validate_user(){
 
               if(xhr.responseJSON.error.end){
                   $("#end").focus().after("<span class='error1'>" + xhr.responseJSON.error.end + "<span>");
+              }
+
+              if(xhr.responseJSON.error_avatar){
+                $("#dropzone").focus().after("<span class='error1'>" + xhr.responseJSON.error_avatar + "<span>");
               }
 
 

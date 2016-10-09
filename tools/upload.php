@@ -4,7 +4,7 @@
 // exit;
 
 function upload_files(){
-  echo json_encode("I'm in upload_files");
+  //echo json_encode("I'm in upload_files");
   //exit;
 
   $error="";
@@ -110,6 +110,7 @@ function upload_files(){
         }
     }else{
         return $return=array('resultado'=>false,'error'=>$error,'datos'=>"");
+
     }
 
 }////////////***********************end of upload files*************************/////////////////////////

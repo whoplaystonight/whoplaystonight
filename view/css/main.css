@@ -57,6 +57,7 @@
     right: -155px;
     text-transform: uppercase;
     min-width: 121px;
+    
 }
 .msg_ok{
     background: #589D05;
@@ -91,7 +92,7 @@ input[type="file"] {
 	  margin-bottom: 20px;
 	  line-height: normal;
 	  padding: 8px 10px; }
-    
+
 /*************************
 *******Typography******
 **************************/

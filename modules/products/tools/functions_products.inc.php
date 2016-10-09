@@ -1,6 +1,8 @@
 <?php
 
 function validate_product($paramether) {
+  // echo json_encode($paramether);
+  // exit;
 
     $error =array();
     $valid = true;
@@ -44,6 +46,8 @@ function validate_product($paramether) {
     $result_1['openning']=$paramether['openning'];
     $result_1['start']=$paramether['start'];
     $result_1['end']=$paramether['end'];
+    // echo json_encode($result_1);
+    // exit;
 
 
 
