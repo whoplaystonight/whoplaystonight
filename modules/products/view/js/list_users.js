@@ -84,7 +84,7 @@ $(document).ready(function () {
 
 
 function print_user(data){
-  console.log(data.event.type_access);
+  //console.log(data.event.type_access);
 
   var content=document.getElementById("content");
   var div_event=document.createElement("div");

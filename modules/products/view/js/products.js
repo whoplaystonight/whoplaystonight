@@ -263,7 +263,7 @@ $(document).ready(function(){
               $(this).fill_or_clean();
 
             }else{
-              
+
               $("#event_id").val(response.event.event_id);
               $("#band_id").val(response.event.band_id);
               $("#band_name").val(response.event.band_name);
@@ -617,6 +617,17 @@ function validate_user(){
       return false;
   }
 
+  if($("#start").val()<$("#openning").val()){
+    $("#start").focus().after("<span class='error'>Start time cannot be less than the time of opening doors</span>");
+    return false;
+
+  }
+
+  if($("#end").val()<=$("#start").val()){
+    $("#end").focus().after("<span class='error'>Ending time must be greater than the start time</span>");
+    return false;
+  }
+
   /*END OF FUNCTION*/
 
 
@@ -638,7 +649,7 @@ function validate_user(){
             {register_event_json:event_data_JSON},
     function(response){
 
-      console.log(response);
+      //console.log(response);
       if(response.success){
         window.location.href=response.redirect;
       }
@@ -646,7 +657,7 @@ function validate_user(){
 
     }, "json").fail(function (xhr){
               // console.log("Estoy en el fail");
-              console.log(xhr.responseJSON.error_avatar);
+              //console.log(xhr.responseJSON.error_avatar);
               if(xhr.responseJSON.error.event_id){
                 //$("#e_event_id").html("<span class='error1'>" + xhr.responseJSON.error.event_id + "<span>");
                  $("#event_id").focus().after("<span class='error1'>" + xhr.responseJSON.error.event_id + "<span>");
