@@ -143,8 +143,18 @@ function validate_product($paramether) {
             $valid=false;
         }
 
+        if($result_1['start']<$result_1['openning']){
+            $error['start']="Start time cannot be less than the time of opening doors";
+            $valid=false;
+        }
+
         if($result_1['end']==null){
             $error['end']="You must select one option at least";
+            $valid=false;
+        }
+
+        if($result_1['end']<=$result_1['start']){
+            $error['start']="Ending time must be greater than the start time";
             $valid=false;
         }
 
