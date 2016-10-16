@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-include ($_SERVER['DOCUMENT_ROOT']."/Exercise_3/modules/products/tools/functions_products.inc.php");
+include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/modules/products/tools/functions_products.inc.php");
 include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/tools/upload.php");
+include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/tools/common.inc.php");
 
 
 
@@ -72,7 +73,21 @@ function register_event(){
       // echo json_encode($arrArgument);
       // exit;
 
-      $message="Event has been successfully created";
+
+      /**********To insert into DB*******************/
+
+      $arrValue=false;
+      $path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
+      $arrValue= loadModel($path_model, "event_model", "create_event", $arrArgument);
+      // echo json_encode($arrValue);
+      // exit;
+      if($arrValue)
+          $message="Event has been successfully created.";
+      else
+          $message="The event registration cannot be done. Please, try it again later.";
+
+      /********* End of insert-db code**************/
+
 
       /*To redirect to other page the data of $arrArgument and $message*/
       $_SESSION['event']=$arrArgument;
@@ -124,7 +139,7 @@ function register_event(){
 
 
 ////////////////////////////////////////////////////////////////////////////////
-                          /*LOAD USER STATEMENT*/
+                          /*LOAD EVENT STATEMENT*/
 ////////////////////////////////////////////////////////////////////////////////
 
 if (isset($_GET["load"])&& $_GET["load"]==true){

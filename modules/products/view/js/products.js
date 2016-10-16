@@ -649,15 +649,34 @@ function validate_user(){
             {register_event_json:event_data_JSON},
     function(response){
 
-      //console.log(response);
+      console.log(response);
       if(response.success){
         window.location.href=response.redirect;
       }
 
 
-    }, "json").fail(function (xhr){
+    }, "json").fail(function (xhr,textStatus,errorThrown){
               // console.log("Estoy en el fail");
               //console.log(xhr.responseJSON.error_avatar);
+              if (xhr.status === 0) {
+                  alert('Not connect: Verify Network.');
+              } else if (xhr.status == 404) {
+                  alert('Requested page not found [404]');
+              } else if (xhr.status == 500) {
+                  alert('Internal Server Error [500].');
+              } else if (textStatus === 'parsererror') {
+                  alert('Requested JSON parse failed.');
+              } else if (textStatus === 'timeout') {
+                  alert('Time out error.');
+              } else if (textStatus === 'abort') {
+                  alert('Ajax request aborted.');
+              } else {
+                  alert('Uncaught Error: ' + xhr.responseText);
+              }
+
+              if (xhr.responseJSON == 'undefined' && xhr.responseJSON === null )
+                xhr.responseJSON = JSON.parse(xhr.responseText);
+
               if(xhr.responseJSON.error.event_id){
                 //$("#e_event_id").html("<span class='error1'>" + xhr.responseJSON.error.event_id + "<span>");
                  $("#event_id").focus().after("<span class='error1'>" + xhr.responseJSON.error.event_id + "<span>");
