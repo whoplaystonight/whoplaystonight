@@ -110,6 +110,18 @@ function print_user(data){
   description.innerHTML="Description:";
   description.innerHTML+=data.event.description;
 
+  var country=document.createElement("div");
+  country.innerHTML="Country:";
+  country.innerHTML+=data.event.country;
+
+  var province=document.createElement("div");
+  province.innerHTML="Province:";
+  province.innerHTML+=data.event.province;
+
+  var town=document.createElement("div");
+  town.innerHTML="Town:";
+  town.innerHTML+=data.event.town;
+
   var type_event=document.createElement("div");
   type_event.innerHTML="Type of event:";
   type_event.innerHTML+=data.event.type_event;
@@ -155,6 +167,9 @@ function print_user(data){
   paragraph.appendChild(band_id);
   paragraph.appendChild(band_name);
   paragraph.appendChild(description);
+  paragraph.appendChild(country);
+  paragraph.appendChild(province);
+  paragraph.appendChild(town);
   paragraph.appendChild(type_event);
   paragraph.appendChild(n_participants);
   paragraph.appendChild(date_event);

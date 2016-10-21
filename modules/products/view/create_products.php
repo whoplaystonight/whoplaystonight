@@ -53,6 +53,36 @@
 						<tr><td><br></td></tr>
 
 						<tr>
+							<td width="24%">Country </td>
+							<td width="76%">
+								<select name="country" id="country"></select>
+								<div id="d_country"><div>
+							</td>
+						</tr>
+
+						<tr><td><br></td></tr>
+
+						<tr>
+							<td width="24%">Province</td>
+							<td width="76%">
+								<select name="province" id="province"></select>
+								<div id="d_province"><div>
+							</td>
+						</tr>
+
+						<tr><td><br></td></tr>
+
+						<tr>
+							<td width="24%">Town</td>
+							<td width="76%">
+								<select name="town" id="town"></select>
+								<div id="d_town"><div>
+							</td>
+						</tr>
+
+						<tr><td><br></td></tr>
+
+						<tr>
 						  	<td width="24%">Type of event </td>
 						  	<td width="76%">
 									<input type="radio" name="type_event" id="type_event" value="presentation"><text id="presentation">  Presentation Ceremony</text><br>

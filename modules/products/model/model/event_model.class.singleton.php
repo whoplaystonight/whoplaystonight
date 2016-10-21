@@ -35,5 +35,16 @@
 
    }//end of create_event function
 
+   public function obtain_countries($url){
+     return $this->bll->obtain_countries_BLL($url);
+   }//end of obtain_countries
+
+   public function obtain_provinces(){
+     return $this->bll->obtain_provinces_BLL();
+   }//end of obtain_provinces
+
+   public function obtain_towns($arrArgument){
+     return $this->bll->obtain_towns_BLL($arrArgument);
+   }//end of obtain_towns
 
 }//end of event_model class

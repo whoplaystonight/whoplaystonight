@@ -40,4 +40,17 @@
     }//end of create_event_BLL
 
 
+    public function obtain_countries_BLL($url){
+      return $this->dao->obtain_countries_DAO($url);
+    }//end of obtain_countries_BLL
+
+    public function obtain_provinces_BLL(){
+      return $this->dao->obtain_provinces_DAO();
+    }//end of obtain_provinces_BLL
+
+    public function obtain_towns_BLL($arrArgument){
+      return $this->dao->obtain_towns_DAO($arrArgument);
+    }//end of obtain_towns_BLL
+
+
   }//end of event_bll class

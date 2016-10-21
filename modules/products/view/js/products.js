@@ -193,6 +193,54 @@ jQuery.fn.fill_or_clean=function(){
 /***********************    END OF ENABLE-DISABLE DATEPICKER FUNCTIONS    ******************/
 
 
+
+//////////////////////////////////////////////////////////////////////////////////
+                /*   VALIDATE COUNTRY, PROVINCE , TOWN FUNCTIONS  */
+//////////////////////////////////////////////////////////////////////////////////
+
+function validate_country(country) {
+    if (country === null) {
+        //return 'default_pais';
+        return false;
+    }else if (country.length === 0) {
+        //return 'default_pais';
+        return false;
+    }else if (country === 'Select a country') {
+        //return 'default_pais';
+        return false;
+    }else{
+      return true;
+    }
+}
+
+
+function validate_province(province) {
+    if (province === null) {
+        return 'default_provincia';
+    }else if (province.length === 0) {
+        return 'default_provincia';
+    }else if (province === 'Select a province') {
+        //return 'default_provincia';
+        return false;
+    }else{
+        return true;
+    }
+
+}
+
+function validate_town(town) {
+    if (town === null) {
+        return 'default_poblacion';
+    }else if (town.length === 0) {
+        return 'default_poblacion';
+    }else if (town === 'Select a town') {
+        //return 'default_poblacion';
+        return false;
+    }else{
+        return true;
+    }
+}
+
 /* To fix Uncaugh Error: Dropzone already attached*/
 Dropzone.autoDiscover=false;
 
@@ -243,6 +291,9 @@ $(document).ready(function(){
               $("#band_id").val('');
               $("#band_name").val('');
               $("#description").val('');
+              $("#country").val('');
+              $("#province").val('');
+              $("#town").val('');
               var type_event_d=document.getElementsByName('type_event');
               for(var i=0; i<type_event_d.length;i++){
                 type_event_d[i].checked=false;
@@ -268,6 +319,9 @@ $(document).ready(function(){
               $("#band_id").val(response.event.band_id);
               $("#band_name").val(response.event.band_name);
               $("#description").val(response.event.description);
+              $("#country").val(response.event.country);
+              $("#province").val(reponse.event.province);
+              $("#town").val(response.event.town);
               var type_event_checked=response.event.type_event;
               var type_event=document.getElementsByName('type_event');
               for(var j=0; j<type_event.length; j++){
@@ -357,6 +411,43 @@ $("#dropzone").dropzone({
     }//End of removedfile function
 });//End of Dropzone
 
+load_countries_v1();
+$("#province").empty();
+$("#province").append('<option value="" selected="selected">Select a province</option>');
+$("#province").prop('disabled',true);
+$("#town").empty();
+$("#town").append('<option value="" selected="selected">Select a town</option>');
+$("#town").prop('disabled', true);
+
+$("#country").change(function (){
+  var country=$(this).val();
+  var province=$("#province");
+  var town=$("#town");
+
+  if(country !== 'ES'){
+    province.prop('disabled',true);
+    town.prop('disabled',true);
+    $("#province").empty();
+    $("#town").empty();
+  }else{
+    province.prop('disabled',false);
+    town.prop('disabled',false);
+    load_provinces_v1();
+  }
+});//End of country change
+
+
+$("#province").change(function(){
+
+    var prov=$(this).val();
+    if(prov>0){
+      load_towns_v1(prov);
+    }else{
+      $("#town").prop('disabled',false);
+    }//End of province change function
+
+});//End of province.change
+
 
 ////////////////////////////////////////////////////////////////////////////////
                             /*   FADEOUT FUNCTIONS   */
@@ -424,6 +515,9 @@ function validate_user(){
   var band_id=document.getElementById('band_id').value;
   var band_name=document.getElementById('band_name').value;
   var description=document.getElementById('description').value;
+  var country=document.getElementById('country').value;
+  var province=document.getElementById('province').value;
+  var town=document.getElementById('town').value;
   var type_event;
   var type_event_v=document.getElementsByName('type_event');
   for(var z=0; z<type_event_v.length;z++){
@@ -512,6 +606,27 @@ function validate_user(){
   }//end of else if
   /*END OF FUNCTION*/
 
+
+  /*CHECK country FIELD*/
+  /*To avoid the field country is empty*/
+  if(!validate_country(country)){
+    country.focus().after("<span class='error'>Please select a country</span>");
+    return false;
+  }
+
+  /*CHECK province FIELD*/
+  /*To avoid the field province is empty*/
+  if(!validate_province(province)){
+    province.focus().after("<span class='error'>Please select a province</span>");
+    return false;
+  }
+
+  /*CHECK town FIELD*/
+  /*To avoid the field province is empty*/
+  if(!validate_town(town)){
+    town.focus().after("<span class='error'>Please select a town</span>");
+    return false;
+  }
 
   /*CHECK RADIOBUTTONS*/
   /*Function to check if at least one radio button is selected*/
@@ -638,8 +753,33 @@ function validate_user(){
 ////////////////////////////////////////////////////////////////////////////////
 
   if(result){
+
+    // if(country===null){
+    //     country='default_country';
+    // }else if(country.length===0){
+    //     country='default_country';
+    // }else if(country==='Select a country'){
+    //     return 'default_country';
+    // }
+
+    if(province===null){
+        province='default_province';
+    }else if(province.length===0){
+        province='default_province';
+    }else if(province==='Select a province'){
+        return 'default_province';
+    }
+
+    if(town===null){
+        town='default_town';
+    }else if(town.length===0){
+        town='default_town';
+    }else if(town==='Select a town'){
+        return 'default_town';
+    }
+
     /*To create a JavaScript array that contains the event data*/
-    var data={"event_id":event_id, "band_id":band_id, "band_name":band_name, "description":description, "type_event":type_event, "n_participants":n_participants,
+    var data={"event_id":event_id, "band_id":band_id, "band_name":band_name, "description":description, "country":country, "province":province, "town":town, "type_event":type_event, "n_participants":n_participants,
               "date_event":date_event, "type_access":type_access, "date_ticket":date_ticket, "openning":openning, "start":start, "end":end};
 
     /*To convert the JavaScript array in a JSON string*/
@@ -649,7 +789,7 @@ function validate_user(){
             {register_event_json:event_data_JSON},
     function(response){
 
-      console.log(response);
+      //console.log(response);
       if(response.success){
         window.location.href=response.redirect;
       }
@@ -694,6 +834,19 @@ function validate_user(){
                   $("#description").focus().after("<span class='error1'>" + xhr.responseJSON.error.description + "<span>");
               }
 
+              if(xhr.responseJSON.error.country){
+                 $("#country").focus().after("<span class='error1'>" + xhr.responseJSON.error.country + "<span>");
+              }
+
+              if(xhr.responseJSON.error.province){
+                 $("#province").focus().after("<span class='error1'>" + xhr.responseJSON.error.province + "<span>");
+              }
+
+              if(xhr.responseJSON.error.town){
+                 $("#town").focus().after("<span class='error1'>" + xhr.responseJSON.error.town + "<span>");
+              }
+
+
               if(xhr.responseJSON.error.type_event){
                   $("#type_event").focus().after("<span class='error1'>" + xhr.responseJSON.error.type_event + "<span>");
               }
@@ -730,9 +883,6 @@ function validate_user(){
                 $("#dropzone").focus().after("<span class='error1'>" + xhr.responseJSON.error_avatar + "<span>");
               }
 
-
-
-
             });//end of .fail
 
   }//End of if result
@@ -740,3 +890,123 @@ function validate_user(){
 }//end of validate_user
 
 });//end of ready function
+
+
+function load_countries_v2(cad){
+  $.getJSON(cad, function(data){
+    $("#country").empty();
+    $("#country").append('<option value="" selected="selected">Select a country</option>');
+
+    $.each(data, function(i, valor){
+      $("#country").append("<option value='"+ valor.sISOCode + "'>" + valor.sName +"</option>");
+    });//End of each data
+  })//end of getJson
+  .fail(function() {
+    alert("error load_countries");
+  });
+}//End of load_countries_v2
+
+
+function load_countries_v1(){
+  $.get("modules/products/controller/controller_products.class.php?load_country=true",
+      function(response){
+        //console.log(response);
+        if(response==='error'){
+          load_countries_v2("resources/ListOfCountryNamesByName.json");
+        }else{
+          load_countries_v2("modules/products/controller/controller_products.class.php?load_country=true");
+        }
+      })//End $.get
+      .fail(function(response){
+          load_countries_v2("resources/ListOfCountryNamesByName.json");
+      });//End of fail
+}//end of load_countries_v1
+
+
+function load_provinces_v2(){
+  $.get("resources/ListOfCountryNamesByName.xml", function(xml){
+    $("#province").empty();
+    $("#province").append('<option value"" selected="selected">Select a province</option>');
+
+    $(xml).find("provincia").each(function () {
+      var id=$(this).attr('id');
+      var name=$(this).find('nombre').text();
+      $("#province").append("<option value='" + id + "'>" + name + "</option>");
+    });//End of $(xml)
+
+  })
+  .fail(function() {
+    alert("error load_provinces");
+  });//End of $.get
+
+}//End of load_provinces_v2
+
+function load_provinces_v1(){
+
+  $.get("modules/products/controller/controller_products.class.php?load_provinces=true",
+          function(response){
+            //console.log(response);
+            $("#province").empty();
+            $("#province").append('<option value="" selected="selected">Select a province</option>');
+
+            var json=JSON.parse(response);
+            var provinces=json.provinces;
+            //console.log(provinces);
+            if(provinces==='error'){
+
+              load_provinces_v2();
+
+            }else{
+
+              for(var i=0;i<provinces.length; i++){
+                $("#province").append("<option value='" + provinces[i].id + "'>" + provinces[i].nombre + "</option>");
+              }//enf of for
+            }//end of else
+
+          })//End of get
+          .fail(function(response) {
+            load_provinces_v2();
+
+          });
+}//end of load_provinces_v1
+
+function load_towns_v2(prov) {
+  $.get("resources/ListOfCountryNamesByName.xml", function(xml){
+    $("#town").empty();
+    $("#town").append('<option value"" selected="selected">Select a town</option>');
+
+    $(xml).find('provincia[id=' + prov + ']').each(function(){
+      $(this).find('localidad').each(function(){
+        $("#town").append("<option value='" + $(this).text() + "'>" +$(this).text() + "</option>");
+      });
+    });
+  })//End of $.get
+  .fail(function(){
+    alert("error load_towns");
+  });
+}//End of load_towns_v2
+
+
+function load_towns_v1(prov){
+
+  var data={idPoblac:prov};
+  $.post("modules/products/controller/controller_products.class.php",data, function(response){
+    //console.log(response);
+    var json=JSON.parse(response);
+    var towns=json.towns;
+    //console.log(towns);
+    $("#town").empty();
+    $("#town").append('option value="" selected="selected">Select a town</option>');
+
+    if(towns==='error'){
+      load_towns_v2(prov);
+    }else{
+      for (var i=0; i<towns.length;i++){
+        $("#town").append("<option value='" + towns[i].poblacion + "'>" + towns[i].poblacion + "</option>");
+
+      }//end of for
+    }//end of else
+  }).fail(function(){
+        load_towns_v2(prov);
+  });//End of $.post
+}//End of load_towns_v1

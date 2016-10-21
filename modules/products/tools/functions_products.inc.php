@@ -38,7 +38,9 @@ function validate_product($paramether) {
     $result_1=filter_var_array($paramether,$filter);
 
     //return json_encode($result_1);
-
+    $result_1['country']=$paramether['country'];
+    $result_1['province']=$paramether['province'];
+    $result_1['town']=$paramether['town'];
     $result_1['type_event']=$paramether['type_event'];
     $result_1['date_event']=$paramether['date_event'];
     $result_1['type_access']=$paramether['type_access'];
@@ -79,6 +81,24 @@ function validate_product($paramether) {
 
             $error['description']='Description must have between 20 and 500 characters';
             $valid=false;
+
+        }
+
+        if($result_1['country']==null || $result_1['country']=='Select a country'){
+          $error['country']='Please select a country';
+          $valid=false;
+
+        }
+
+        if($result_1['province']==null || $result_1['province']=='Select a province'){
+          $error['province']='Please select a province';
+          $valid=false;
+
+        }
+
+        if($result_1['town']==null || $result_1['town']=='Select a town'){
+          $error['town']='Please select a town';
+          $valid=false;
 
         }
 

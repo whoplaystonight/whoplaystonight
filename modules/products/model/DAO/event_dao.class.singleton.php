@@ -29,6 +29,9 @@ class event_dao{
     $band_id=$arrArgument['band_id'];
     $band_name=$arrArgument['band_name'];
     $description=$arrArgument['description'];
+    $country=$arrArgument['country'];
+    $province=$arrArgument['province'];
+    $town=$arrArgument['town'];
     $type_event=$arrArgument['type_event'];
     $n_participants=$arrArgument['n_participants'];
     $date_event=$arrArgument['date_event'];
@@ -42,12 +45,63 @@ class event_dao{
     // echo json_encode($arrArgument);
     // exit;
 
-    $sql="INSERT INTO event ( event_id,band_id, band_name, description,type_event,n_participants,date_event,type_access,date_ticket, openning,start, end,poster)
-          VALUES('$event_id','$band_id','$band_name','$description','$type_event','$n_participants','$date_event','$type_access_string','$date_ticket','$openning','$start','$end','$avatar')";
+    $sql="INSERT INTO event ( event_id,band_id, band_name, description, country, province, town,type_event,n_participants,date_event,type_access,date_ticket, openning,start, end,poster)
+          VALUES('$event_id','$band_id','$band_name','$description','$country','$province','$town','$type_event','$n_participants','$date_event','$type_access_string','$date_ticket','$openning','$start','$end','$avatar')";
 
     return $db->execute($sql);
 
-  }
+  }//end of create_event_DAO
+
+
+  public function obtain_countries_DAO($url){
+    $ch=curl_init();
+    $timeout=10;
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT,$timeout);
+    $file_contents=curl_exec($ch);
+    curl_close($ch);
+
+    return ($file_contents) ? $file_contents:FALSE;
+  }//end of obtain_countries_DAO
+
+
+ public function obtain_provinces_DAO(){
+   $json=array();
+   $tmp=array();
+  //  echo json_encode("Estic al provinces_DAO");
+  //  exit;
+   $provinces=simplexml_load_file($_SERVER['DOCUMENT_ROOT'].'/Exercise_3/resources/provinciasypoblaciones.xml');
+   $result=$provinces->xpath("/lista/provincia/nombre | /lista/provincia/@id");
+   for($i=0;$i<count($result);$i+=2){
+     $e=$i+1;
+     $province=$result[$e];
+     $tmp=array(
+        'id'=>(string)$result[$i], 'nombre' =>(string) $province
+     );//End of array
+     array_push($json,$tmp);
+   }//End of for
+   return $json;
+ }//end of obtain_provinces_DAO
+
+
+ public function obtain_towns_DAO($arrArgument){
+   $json=array();
+   $tmp=array();
+
+   $filter=(string)$arrArgument;
+   $xml=simplexml_load_file($_SERVER['DOCUMENT_ROOT'].'/Exercise_3/resources/provinciasypoblaciones.xml');
+   $result=$xml->xpath("/lista/provincia[@id='$filter']/localidades");
+
+   for($i=0;$i<count($result[0]);$i++){
+
+     $tmp=array(
+        'poblacion'=>(string)$result[0]->localidad[$i]
+     );//End of array
+     array_push($json,$tmp);
+   }//End of for
+   return $json;
+ }//end of obtain_provinces_DAO
 
 
 }//end of event_dao class

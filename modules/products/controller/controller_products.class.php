@@ -60,6 +60,9 @@ function register_event(){
       		'band_id'=>$result['data']['band_id'],
       		'band_name'=>$result['data']['band_name'],
       		'description'=>$result['data']['description'],
+          'country'=>$result['data']['country'],
+          'province'=>$result['data']['province'],
+          'town'=>$result['data']['town'],
       		'type_event'=>$result['data']['type_event'],
       		'n_participants'=>$result['data']['n_participants'],
       	  'date_event'=>$result['data']['date_event'],
@@ -188,5 +191,81 @@ if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
     echo json_encode($jsondata);
     exit;
   }//end of else
-
 }//end of load data
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+                          /*LOAD country SELECT*/
+////////////////////////////////////////////////////////////////////////////////
+
+  if((isset($_GET["load_country"])) && ($_GET["load_country"]==true)){
+
+    $json=array();
+    $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
+
+    $path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
+    $json=loadModel($path_model, "event_model","obtain_countries",$url);
+
+    if($json){
+      echo $json;
+      exit;
+    }else{
+      $json="error";
+      echo $json;
+      exit;
+    }//end of if else
+
+  }//end of load_country
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+                          /*LOAD provinces SELECT*/
+////////////////////////////////////////////////////////////////////////////////
+
+  if((isset($_GET["load_provinces"])) && ($_GET["load_provinces"]==true)){
+    //  echo json_encode("Estic al load_provinces");
+    //  exit;
+    $jsondata=array();
+    $json=array();
+
+    $path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
+    $json=loadModel($path_model, "event_model","obtain_provinces");
+
+    if($json){
+      $jsondata["provinces"]=$json;
+      echo json_encode($jsondata);
+      exit;
+    }else{
+      $jsondata["provinces"]="error";
+      echo json_encode($jsondata);
+      exit;
+    }//end of if else
+
+  }//end of load_provinces
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+                          /*LOAD provinces SELECT*/
+////////////////////////////////////////////////////////////////////////////////
+
+  if(isset($_POST['idPoblac'])){
+    $jsondata=array();
+    $json=array();
+
+    $path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
+    $json=loadModel($path_model, "event_model","obtain_towns",$_POST['idPoblac']);
+
+    if($json){
+      $jsondata["towns"]=$json;
+      echo json_encode($jsondata);
+      exit;
+    }else{
+      $jsondata["towns"]="error";
+      echo json_encode($jsondata);
+      exit;
+    }//end of if else
+
+  }//end of load_provinces

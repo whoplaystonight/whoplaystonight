@@ -21,7 +21,7 @@
           return $obj->$function($arrArgument);
       }
     }else{
-      die($model_name. 'Model not found under model folder');
+      die($model_name . 'Model not found under model folder');
     }
 
   }//End of loadModel function
