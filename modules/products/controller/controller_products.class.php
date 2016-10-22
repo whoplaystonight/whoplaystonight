@@ -4,7 +4,9 @@ session_start();
 include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/modules/products/tools/functions_products.inc.php");
 include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/tools/upload.php");
 include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/tools/common.inc.php");
-
+$path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
+// $path= $_SERVER['DOCUMENT_ROOT'].'/Execise_3/'
+// define(SITE_ROOT,$path);
 
 
 
@@ -204,7 +206,7 @@ if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
     $json=array();
     $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
 
-    $path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
+    //$path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
     $json=loadModel($path_model, "event_model","obtain_countries",$url);
 
     if($json){
@@ -230,7 +232,7 @@ if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
     $jsondata=array();
     $json=array();
 
-    $path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
+    //$path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
     $json=loadModel($path_model, "event_model","obtain_provinces");
 
     if($json){
@@ -255,7 +257,7 @@ if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
     $jsondata=array();
     $json=array();
 
-    $path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
+    //$path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
     $json=loadModel($path_model, "event_model","obtain_towns",$_POST['idPoblac']);
 
     if($json){
@@ -269,3 +271,37 @@ if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
     }//end of if else
 
   }//end of load_provinces
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+                          /*LIST PRODUCTS CONTROLL*/
+////////////////////////////////////////////////////////////////////////////////
+
+
+if ($_GET["idProducts"]) {
+  $id=$_GET["idProduct"];
+  $arrValue=loadModel($path_model,"events_model","details_events", $id);
+
+  if($arrValue[0]){
+    loadView('modules/products/view/','details_events.php'.$arrValue[0]);
+  }else{
+    $message="NOT FOUND PRODUCT";
+    loadView('view/inc/', '404.php',$message);
+  }//end if-else list one event
+
+}else{
+  $arrValue=loadModel($path_model,"events_model","list_events";
+
+  if($arrValue){
+
+    loadView('modules/products/view/','list_events.php'.$arrValue);
+
+  }else{
+
+    $message="THERE ARE NOT ANY PRODUCTS";
+    loadView('view/inc/', '404.php', $message);
+
+  }//end if-else list all events
+
+}//end if-else List Products
