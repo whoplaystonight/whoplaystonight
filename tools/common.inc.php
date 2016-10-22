@@ -25,3 +25,23 @@
     }
 
   }//End of loadModel function
+
+
+  function loadView($path_view, $model,$data=''){
+    $view_path=$path_view . $model;
+    $arrData='';
+
+    if(file_exists($view_path)){
+      if(isset($data)){
+        $arrData=$data;
+        include_once($view_path);
+      }else{
+        $message="NO TEMPLATE FOUND";
+        $arrData=$message;
+        require_once'view/inc/404.php';
+        die();
+      }
+    }
+
+
+  }//end of loadView function
