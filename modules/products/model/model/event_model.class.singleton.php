@@ -47,4 +47,12 @@
      return $this->bll->obtain_towns_BLL($arrArgument);
    }//end of obtain_towns
 
+   public function list_events(){
+     return $this->bll->list_events_BLL();
+   }//end of list_events
+
+   public function details_event(){
+     return $this->bll-details_event_BLL();
+   }//end of detail_events
+
 }//end of event_model class

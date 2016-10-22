@@ -23,36 +23,6 @@ class event_dao{
   }//End of getInstance
 
 
-  public function create_event_DAO($db, $arrArgument){
-
-    $event_id=$arrArgument['event_id'];
-    $band_id=$arrArgument['band_id'];
-    $band_name=$arrArgument['band_name'];
-    $description=$arrArgument['description'];
-    $country=$arrArgument['country'];
-    $province=$arrArgument['province'];
-    $town=$arrArgument['town'];
-    $type_event=$arrArgument['type_event'];
-    $n_participants=$arrArgument['n_participants'];
-    $date_event=$arrArgument['date_event'];
-    $type_access=$arrArgument['type_access'];
-    $type_access_string=implode(",", $type_access);
-    $date_ticket=$arrArgument['date_ticket'];
-    $openning=$arrArgument['openning'];
-    $start=$arrArgument['start'];
-    $end=$arrArgument['end'];
-    $avatar=$arrArgument['avatar'];
-    // echo json_encode($arrArgument);
-    // exit;
-
-    $sql="INSERT INTO event ( event_id,band_id, band_name, description, country, province, town,type_event,n_participants,date_event,type_access,date_ticket, openning,start, end,poster)
-          VALUES('$event_id','$band_id','$band_name','$description','$country','$province','$town','$type_event','$n_participants','$date_event','$type_access_string','$date_ticket','$openning','$start','$end','$avatar')";
-
-    return $db->execute($sql);
-
-  }//end of create_event_DAO
-
-
   public function obtain_countries_DAO($url){
     $ch=curl_init();
     $timeout=10;
@@ -103,5 +73,48 @@ class event_dao{
    return $json;
  }//end of obtain_provinces_DAO
 
+
+ public function create_event_DAO($db, $arrArgument){
+
+   $event_id=$arrArgument['event_id'];
+   $band_id=$arrArgument['band_id'];
+   $band_name=$arrArgument['band_name'];
+   $description=$arrArgument['description'];
+   $country=$arrArgument['country'];
+   $province=$arrArgument['province'];
+   $town=$arrArgument['town'];
+   $type_event=$arrArgument['type_event'];
+   $n_participants=$arrArgument['n_participants'];
+   $date_event=$arrArgument['date_event'];
+   $type_access=$arrArgument['type_access'];
+   $type_access_string=implode(",", $type_access);
+   $date_ticket=$arrArgument['date_ticket'];
+   $openning=$arrArgument['openning'];
+   $start=$arrArgument['start'];
+   $end=$arrArgument['end'];
+   $avatar=$arrArgument['avatar'];
+   // echo json_encode($arrArgument);
+   // exit;
+
+   $sql="INSERT INTO event ( event_id,band_id, band_name, description, country, province, town,type_event,n_participants,date_event,type_access,date_ticket, openning,start, end,poster)
+         VALUES('$event_id','$band_id','$band_name','$description','$country','$province','$town','$type_event','$n_participants','$date_event','$type_access_string','$date_ticket','$openning','$start','$end','$avatar')";
+
+   return $db->execute($sql);
+
+ }//end of create_event_DAO
+
+
+ function list_events_DAO($db){
+   $sql="SELECT * FROM events";
+   $stmt =$db->execute($sql);
+   return $db->listing($stmt);
+ }//end of list_events_DAO
+
+ function details_event_DAO($db,$id){
+   $sql="SELECT * FROM events WHERE id=".$id;
+   $stmt=$db->execute($sql);
+   return $db->listing($stmt);
+
+ }
 
 }//end of event_dao class

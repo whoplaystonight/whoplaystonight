@@ -11,8 +11,8 @@
       $modelClass= $model_name;
 
       if (!method_exists($modelClass, $function)){
-
-          die($function .'function not found in Model'. $model_name);
+          loadView('view/inc','404.php',"Method not found under model folder");
+          //die($function .'function not found in Model'. $model_name);
 
       }
       $obj= $modelClass::getInstance();
@@ -21,7 +21,8 @@
           return $obj->$function($arrArgument);
       }
     }else{
-      die($model_name . 'Model not found under model folder');
+      loadView('view/inc','404.php',"Model not found under model folder");
+      //die($model_name . 'Model not found under model folder');
     }
 
   }//End of loadModel function

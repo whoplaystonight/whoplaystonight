@@ -281,17 +281,17 @@ if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
 
 if ($_GET["idProducts"]) {
   $id=$_GET["idProduct"];
-  $arrValue=loadModel($path_model,"events_model","details_events", $id);
+  $arrValue=loadModel($path_model,"event_model","details_event", $id);
 
   if($arrValue[0]){
-    loadView('modules/products/view/','details_events.php'.$arrValue[0]);
+    loadView('modules/products/view/','details_event.php'.$arrValue[0]);
   }else{
     $message="NOT FOUND PRODUCT";
     loadView('view/inc/', '404.php',$message);
   }//end if-else list one event
 
 }else{
-  $arrValue=loadModel($path_model,"events_model","list_events";
+  $arrValue=loadModel($path_model,"event_model","list_events";
 
   if($arrValue){
 

@@ -52,5 +52,12 @@
       return $this->dao->obtain_towns_DAO($arrArgument);
     }//end of obtain_towns_BLL
 
+    public function list_events_BLL(){
+      return $this->dao->list_events_DAO($this->db);
+    }//end of list_events_BLL function
 
+    public function details_event_BLL(){
+      return $this->dao->details_event_DAO($this->db,$id);
+    }//end of details_event_BLL function
+    
   }//end of event_bll class
