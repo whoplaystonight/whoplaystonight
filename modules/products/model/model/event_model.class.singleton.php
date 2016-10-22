@@ -51,8 +51,8 @@
      return $this->bll->list_events_BLL();
    }//end of list_events
 
-   public function details_event(){
-     return $this->bll-details_event_BLL();
+   public function details_event($id){
+     return $this->bll->details_event_BLL($id);
    }//end of detail_events
 
 }//end of event_model class

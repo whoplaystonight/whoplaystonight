@@ -1,5 +1,6 @@
 <?php
 	session_start();
+
 	$_SESSION['result_avatar']=array();
 	require_once("view/inc/header.html");
 	require_once("view/inc/menu.php");

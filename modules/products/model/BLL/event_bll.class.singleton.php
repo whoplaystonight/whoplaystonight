@@ -56,8 +56,8 @@
       return $this->dao->list_events_DAO($this->db);
     }//end of list_events_BLL function
 
-    public function details_event_BLL(){
+    public function details_event_BLL($id){
       return $this->dao->details_event_DAO($this->db,$id);
     }//end of details_event_BLL function
-    
+
   }//end of event_bll class

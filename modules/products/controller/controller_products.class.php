@@ -5,9 +5,10 @@ include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/modules/products/tools/functions_
 include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/tools/upload.php");
 include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/tools/common.inc.php");
 $path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
+$path_view_p=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/view/';
+$path_view=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/view/inc/';
 // $path= $_SERVER['DOCUMENT_ROOT'].'/Execise_3/'
 // define(SITE_ROOT,$path);
-
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -279,28 +280,30 @@ if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
 ////////////////////////////////////////////////////////////////////////////////
 
 
-if ($_GET["idProducts"]) {
+if ($_GET["idProduct"]) {
   $id=$_GET["idProduct"];
+
   $arrValue=loadModel($path_model,"event_model","details_event", $id);
 
   if($arrValue[0]){
-    loadView('modules/products/view/','details_event.php'.$arrValue[0]);
+    loadView($path_view_p,'details_events.php',$arrValue[0]);
   }else{
     $message="NOT FOUND PRODUCT";
-    loadView('view/inc/', '404.php',$message);
+    loadView($path_view, '404.php',$message);
   }//end if-else list one event
 
 }else{
-  $arrValue=loadModel($path_model,"event_model","list_events";
+
+  $arrValue=loadModel($path_model,"event_model","list_events");
 
   if($arrValue){
 
-    loadView('modules/products/view/','list_events.php'.$arrValue);
+    loadView($path_view_p,'list_events.php',$arrValue);
 
   }else{
 
     $message="THERE ARE NOT ANY PRODUCTS";
-    loadView('view/inc/', '404.php', $message);
+    loadView($path_view, '404.php', $message);
 
   }//end if-else list all events
 

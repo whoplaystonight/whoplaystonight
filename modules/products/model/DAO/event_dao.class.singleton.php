@@ -105,13 +105,13 @@ class event_dao{
 
 
  function list_events_DAO($db){
-   $sql="SELECT * FROM events";
+   $sql="SELECT * FROM event";
    $stmt =$db->execute($sql);
    return $db->listing($stmt);
  }//end of list_events_DAO
 
  function details_event_DAO($db,$id){
-   $sql="SELECT * FROM events WHERE id=".$id;
+   $sql="SELECT * FROM event WHERE event_id='".$id."'";
    $stmt=$db->execute($sql);
    return $db->listing($stmt);
 

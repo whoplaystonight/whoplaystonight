@@ -73,7 +73,7 @@
         array_push($this->array, $row);
       }
       return $this->array;
-    }//return $this->array;
+    }//end of lidting function
 
 
   }//end of class

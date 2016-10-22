@@ -5,6 +5,7 @@
     $model=$model_path . $model_name . '.class.singleton.php';
     // echo json_encode($model);
     // exit;
+    
     if(file_exists($model)){
 
       include_once($model);
