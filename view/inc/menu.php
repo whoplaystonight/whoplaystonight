@@ -14,7 +14,7 @@
                     <li><a href="index.php?module=main">HOME</a></li>
                     <li><a href="index.php?module=services">SERVICES</a></li>
 					          <li><a href="index.php?module=products&view=create_products">EVENTS</a></li>
-                    <li><a href="index.php?module=products">LIST EVENT</a><li>
+                    <li><a href="index.php?module=events_front_end&view=list_products">LIST EVENT</a><li>
 					          <li><a href="index.php?module=portfolio">PORTFOLIO</a></li>
                     <li><a href="index.php?module=pricing">PRICING</a></li>
                     <li><a href="index.php?module=contact">CONTACT</a></li>
