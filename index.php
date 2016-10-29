@@ -5,14 +5,14 @@
 	require_once("view/inc/header.html");
 	require_once("view/inc/menu.php");
 	include 'tools/tools.inc.php';
-
-if(PRODUCTION){
-	ini_set('display_errors',1);
-	ini_set('error_reporting',E_ERROR | E_WARNING | E_NOTICE);
-}else{
-	ini_set('display_errors',0);
-	ini_set('error_reporting',0);
-}
+// 
+// if(PRODUCTION){
+// 	ini_set('display_errors',1);
+// 	ini_set('error_reporting',E_ERROR | E_WARNING | E_NOTICE);
+// }else{
+// 	ini_set('display_errors',0);
+// 	ini_set('error_reporting',0);
+// }
 
 	if (!isset($_GET['module'])) {
 		require_once("modules/main/controller/controller_main.class.php");
