@@ -1,11 +1,8 @@
 <?php
 
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/Exercise_3/';
-  define('SITE_ROOT', $path);
-  define('MODEL_PATH',SITE_ROOT.'model/');
 
+  require (SITE_ROOT."modules/events_front_end/model/DAO/events_fe_DAO.class.singleton.php");
   require (MODEL_PATH."Db.class.singleton.php");
-  require (SITE_ROOT."modules/products/model/DAO/event_dao.class.singleton.php");
 
   class events_fe_BLL{
 
@@ -17,8 +14,8 @@
 
     private function __construct(){
 
-      // $this->dao=events_fe_DAO::getInstance();
-      // $this->db=Db::getInstance();
+      $this->dao=events_fe_DAO::getInstance();
+      $this->db=Db::getInstance();
 
     }//end of constructor
 
@@ -45,8 +42,7 @@
     }//end of page_products
 
     public function total_events_BLL(){
-      return "hola";
-      //return $this->dao->total_events_DAO($this->db);
+      return $this->dao->total_events_DAO($this->db);
     }//end of total products
 
 

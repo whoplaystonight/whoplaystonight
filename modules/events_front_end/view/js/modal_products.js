@@ -7,13 +7,13 @@ $("document").ready(function(){
 
     $.get("modules/events_front_end/controller/controller_fe.class.php?idProducts=" + id, function(data,status){
       var json=JSON.parse(data);
-      var product=json.product;
+      var product=json.event;
 
-      $("#poster").html('<img src="' + product.poster +'" height="75" width="75">');
-      $("#band_name").html(product.band_name);
-      $("#type_event").html(product.type_event);
-      $("#description").html(product.description);
-      $("#date_event").html(product.date_event);
+      $("#poster").html('<img src="' + event.poster +'" height="75" width="75">');
+      $("#band_name").html(event.band_name);
+      $("#type_event").html(event.type_event);
+      $("#description").html(event.description);
+      $("#date_event").html(event.date_event);
 
       $("#details_prod").show();
 
