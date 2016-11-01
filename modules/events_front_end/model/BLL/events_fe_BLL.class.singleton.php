@@ -1,8 +1,9 @@
 <?php
 
-
-  require (SITE_ROOT."modules/events_front_end/model/DAO/events_fe_DAO.class.singleton.php");
   require (MODEL_PATH."Db.class.singleton.php");
+  require (SITE_ROOT."modules/events_front_end/model/DAO/events_fe_DAO.class.singleton.php");
+
+
 
   class events_fe_BLL{
 

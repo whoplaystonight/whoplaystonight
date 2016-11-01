@@ -1,0 +1,21 @@
+ERROR: [8] Undefined variable: arrValues
+Notice on line 126 in file /var/www/html/Exercise_3/modules/events_front_end/controller/controller_fe.class.php
+|31.10.2016 05:29:05| User: |events_front_end|response200
+ERROR: [8] Array to string conversion
+Notice on line 24 in file /var/www/html/Exercise_3/tools/tools.inc.php
+|31.10.2016 05:29:16| User: |events_front_end|response200
+ERROR: [8] Array to string conversion
+Notice on line 26 in file /var/www/html/Exercise_3/tools/tools.inc.php
+|31.10.2016 05:29:16| User: |events_front_end|response200
+ERROR -503 BD|01.11.2016 12:23:05| User: ||response200
+ERROR -503 BD|01.11.2016 12:24:13| User: ||response200
+ERROR -503 BD|01.11.2016 12:24:15| User: ||response200
+ERROR -503 BD|01.11.2016 12:27:48| User: ||response200
+ERROR -503 BD|01.11.2016 12:44:56| User: ||response200
+ERROR -503 BD|01.11.2016 12:47:22| User: ||response200
+ERROR: [8] Array to string conversion
+Notice on line 24 in file /var/www/html/Exercise_3/tools/tools.inc.php
+|01.11.2016 12:55:18| User: |events_front_end|response200
+ERROR: [8] Array to string conversion
+Notice on line 26 in file /var/www/html/Exercise_3/tools/tools.inc.php
+|01.11.2016 12:55:18| User: |events_front_end|response200

@@ -39,8 +39,8 @@ function paint_template_products($arrData){
   print("<br>");
   if(isset($arrData)&& !empty($arrData)){
     foreach($arrData as $event){
-      print("<div class='prod' id='". $event['id']."'>");
-      print("img class='prodImg' src='". $event['poster']."' alt='event'>");
+      print("<div class='prod' id='". $event['event_id'] . "'>");
+      print("<img class='prodImg' src='". $event['poster']."' alt='event'>");
       print("<p>" . $event['band_name']."</p>");
       print("<p id='p2'>". $event['type_event']);
       print("<p id='p3'>". $event['date_event']);

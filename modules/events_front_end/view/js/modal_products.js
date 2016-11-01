@@ -4,10 +4,11 @@ $("document").ready(function(){
 
   $('.prod').click(function(){
     var id=this.getAttribute('id');
-
-    $.get("modules/events_front_end/controller/controller_fe.class.php?idProducts=" + id, function(data,status){
+    //console.log(id);
+     $.get("modules/events_front_end/controller/controller_fe.class.php?idProduct=" + id, function(data,status){
       var json=JSON.parse(data);
-      var product=json.event;
+      var event=json.product;
+      //console.log(product);
 
       $("#poster").html('<img src="' + event.poster +'" height="75" width="75">');
       $("#band_name").html(event.band_name);

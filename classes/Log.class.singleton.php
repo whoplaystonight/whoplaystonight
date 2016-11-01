@@ -1,11 +1,12 @@
-<? php
+<?php
 
 class Log{
+
   private $path;
   static $_instance;
 
   public function __construct(){
-    $this-> path = GENERAL_LOG_DIR;
+    $this->path = GENERAL_LOG_DIR;
   }
 
   public static function getInstance(){
@@ -18,7 +19,7 @@ class Log{
   $file=fopen($this->path, 'a')*/
   public function add_log_general($text, $controller, $function){
     $file=fopen($this->path, 'a');
-    fwrite($file. date('d/m/y h:i:s A')."|".$text."|".$controller."|" $function ."\n");
+    fwrite($file, date('d/m/y h:i:s A')."|".$text."|".$controller."|". $function ."\n");
     fclose($file);
   }//end of add_log_general
 

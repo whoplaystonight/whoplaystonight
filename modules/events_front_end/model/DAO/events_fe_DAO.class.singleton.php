@@ -38,8 +38,7 @@ class events_fe_DAO{
  function page_events_DAO($db,$arrArgument){
    $position=$arrArgument['position'];
    $item_per_page=$arrArgument['item_per_page'];
-   $sql="SELECT * FROM events ORDER BY id ASC LIMIT ".$position.",".$item_per_page;
-
+   $sql="SELECT * FROM event ORDER BY event_id ASC LIMIT " . $position . "," . $item_per_page;
    $stmt = $db -> execute($sql);
    return $db-> listing($stmt);
  }//end page_events_DAO

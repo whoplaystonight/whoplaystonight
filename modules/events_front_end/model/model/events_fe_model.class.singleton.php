@@ -31,7 +31,7 @@ class events_fe_model {
    }//end of detail_events
 
    public function page_events($arrArgument){
-     return $this->bll->page_events_BLL($arrArgument);
+    return $this->bll->page_events_BLL($arrArgument);
    }//end of page_products
 
    public function total_events(){

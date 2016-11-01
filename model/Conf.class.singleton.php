@@ -1,8 +1,8 @@
 <?php
 
-$path=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/';
-define('SITE_ROOT',$path);
-define('MODEL_PATH',SITE_ROOT.'model/');
+// $path=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/';
+// define('SITE_ROOT',$path);
+// define('MODEL_PATH',SITE_ROOT.'model/');
 
 class Conf{
 

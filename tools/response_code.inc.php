@@ -131,7 +131,7 @@ function ErrorHandler($errno,$errstr,$errfile,$errline){
       $error="Unknown Error";
       break;
   }//end of switch
-  $msg="ERROR: [$errno] $errstr\r\n" . "$error on line $errlin in file $errfile\r\n";
+  $msg="ERROR: [$errno] $errstr\r\n" . "$error on line $errline in file $errfile\r\n";
 
   $log=Log::getInstance();
   $log->add_log_general($msg, $SESSION['module'], "response" . http_response_code());

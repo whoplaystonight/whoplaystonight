@@ -205,10 +205,25 @@ if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
   if((isset($_GET["load_country"])) && ($_GET["load_country"]==true)){
 
     $json=array();
+
     $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
 
-    //$path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
     $json=loadModel($path_model, "event_model","obtain_countries",$url);
+
+    // if((!$json) && stristr($json,'error')){
+    //   $json="error";
+    //   echo $json;
+    //   exit;
+    // }else{
+    //   echo $json;
+    //   exit;
+    // }
+
+    if(stristr($json,'error')){
+      $json="error";
+      echo $json;
+      exit;
+    }
 
     if($json){
       echo $json;
