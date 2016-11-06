@@ -38,13 +38,32 @@
       return $this->dao->details_event_DAO($this->db,$id);
     }//end of details_event_BLL function
 
+    //list_limit_products
     public function page_events_BLL($arrArgument){
       return $this->dao->page_events_DAO($this->db,$arrArgument);
     }//end of page_products
 
+    //count_products
     public function total_events_BLL(){
       return $this->dao->total_events_DAO($this->db);
     }//end of total products
+
+    public function select_column_events_BLL($arrArgument){
+      return $this->dao->select_column_events_DAO($this->db,$arrArgument);
+
+    }
+
+    public function select_like_events_BLL($arrArgument){
+      return $this->dao->select_like_events_DAO($this->db,$arrArgument);
+    }
+
+    public function count_like_events_BLL($arrArgument){
+      return $this->dao->count_like_events_DAO($this->db,$arrArgument);
+    }
+
+    public function select_like_limit_events_BLL($arrArgument){
+      return $this->dao->select_like_limit_events_DAO($this->db,$arrArgument);
+    }
 
 
 

@@ -40,10 +40,19 @@
         $arrData=$data;
         include_once($view_path);
       }else{
+
+        $result=filter_num_int($path_view);
+        if($result['resultado']){
+          $path_view=$result['datos'];
+        }else{
+          $path_view=http_response_code();
+        }
+
         $log=Log::getInstance();
-        $log->add_log_general("error loadView general", $_GET['module'],"response".http_response_code());
-        $log->add_log_user("error loadView general","",$_GET['module'],"response".http_response_code());
-        $result=response_code(http_response_code());
+        $log->add_log_general("error loadView general", $_GET['module'],"response".$path_view);
+        $log->add_log_user("error loadView general","",$_GET['module'],"response".$path_view);
+
+        $result=response_code($path_view);
         $arrData=$result;
         require_once $_SERVER['DOCUMENT_ROOT'].'/Exercise_3/view/inc/templates_error/'."error".'php';
 

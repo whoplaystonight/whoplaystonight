@@ -1,5 +1,14 @@
 <script type="text/javascript" src="modules/events_front_end/view/js/jquery.bootpag.min.js"></script>
 <script type="text/javascript" src="modules/events_front_end/view/js/list_products.js" ></script>
+<link rel="stylesheet" type="text/css" href="modules/events_front_end/view/css/main.css">
+
+<br><br>
+<center>
+  <form name="search_event" id="search_event" class="search_event">
+    <input type="text" value="" placeholder="Search event..." class="input_search" id="keyword" list="datalist"/>
+    <input name="Submit" id="Submit" class="button_search" type="button">
+  </form>
+</center>
 
 <div id="results"></div>
 
@@ -10,7 +19,7 @@
 <!-- modal window details_product -->
 <section id="product">
 
-    <div id="details_prod" hidden>
+    <!--<div id="details_prod" hidden>-->
 
         <!--<ol class="breadcrumb">
             <li><a href="index.php?module=products">Products</a></li>
@@ -18,13 +27,14 @@
         </ol>
         <br>
         <br>-->
+        <center>
         <div id="details">
             <div id="poster" class="prodImg"></div>
 
             <div id="container">
 
                 <h4> <strong><div id="band_name"></div></strong> </h4>
-                <br />
+                <br>
                 <p>
                 <div id="type_event"></div>
                 </p>
@@ -36,6 +46,7 @@
             </div>
 
         </div>
+      </center>
 
-    </div>
+    <!--</div>-->
 </section>

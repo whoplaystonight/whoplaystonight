@@ -51,3 +51,20 @@ function paint_template_products($arrData){
   print ("</div>");
   print("</section>");
 }//end of paint_template_products function
+
+function paint_template_search($message){
+  $log=Log::getInstance();
+  $log->add_log_general("error paint_template_search","events_front_end", "response".http_response_code());
+  $log->add_log_user("error paint_template_search","events_front_end", "response".http_response_code());
+
+    print ("<section> \n");
+    print ("<div class='container'> \n");
+    print ("<div class='row text-center pad-row'> \n");
+
+    print ("<h2>" . $message . "</h2> \n");
+    print ("<br><br><br><br> \n");
+
+    print ("</div> \n");
+    print ("</div> \n");
+    print ("</section> \n");
+}

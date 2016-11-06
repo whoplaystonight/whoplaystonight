@@ -2,7 +2,7 @@
 	session_start();
 	$_SESSION['module']="";
 	$_SESSION['result_avatar']=array();
-	require_once("view/inc/header.html");
+	require_once("view/inc/header.php");
 	require_once("view/inc/menu.php");
 	require_once("paths.php");
 	include 'tools/tools.inc.php';

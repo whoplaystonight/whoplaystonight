@@ -8,7 +8,16 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Free Multipurpose Template : RUMA</title>
+    <title><?php
+            if(!isset($_GET['module'])){
+              echo "Home";
+            }else{
+              echo $_GET['module'];
+            }
+          ?>
+    </title>
+
+
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="view/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLE CSS -->

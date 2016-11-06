@@ -35,14 +35,15 @@ class events_fe_DAO{
 
  }//end of details_event_DAO
 
+  //list_limit_products
  function page_events_DAO($db,$arrArgument){
-   $position=$arrArgument['position'];
-   $item_per_page=$arrArgument['item_per_page'];
-   $sql="SELECT * FROM event ORDER BY event_id ASC LIMIT " . $position . "," . $item_per_page;
+
+   $sql="SELECT * FROM event ORDER BY event_id ASC LIMIT " . $arrArgument['position'] . "," . $arrArgument['limit'];
    $stmt = $db -> execute($sql);
    return $db-> listing($stmt);
  }//end page_events_DAO
 
+ //count_products
  function total_events_DAO($db){
    $sql="SELECT COUNT(*) as total FROM event";
    $stmt=$db->execute($sql);
@@ -50,6 +51,31 @@ class events_fe_DAO{
   //return "hola";
  }
 
+  public function select_column_events_DAO($db,$arrArgument){
+    $sql="SELECT  " . $arrArgument . " FROM event ORDER BY " . $arrArgument;
+    $stmt=$db->execute($sql);
+    return $db->listing($stmt);
+  }
 
+  public function select_like_events_DAO($db,$arrArgument){
+    $sql="SELECT DISTINCT * FROM event WHERE " . $arrArgument['column'] . " like '%" .$arrArgument['like']. "%'";
+    $stmt=$db->execute($sql);
+    return $db->listing($stmt);
+  }
+
+  public function count_like_events_DAO($db,$arrArgument){
+
+    $sql="SELECT COUNT(*) as total FROM event WHERE " . $arrArgument['column'] . " like '%" .$arrArgument['like']. "%'";
+    $stmt=$db->execute($sql);
+    return $db->listing($stmt);
+
+    }
+
+  public function select_like_limit_events_DAO($db,$arrArgument){
+    $sql="SELECT DISTINCT * FROM event WHERE " .  $arrArgument['column'] . " like '%" .$arrArgument['like']. "%' ORDER BY event_id ASC LIMIT " . $arrArgument['position'] . "," . $arrArgument['limit'];
+    $stmt=$db->execute($sql);
+    return $db->listing($stmt);
+
+  }
 
 }//end of event_dao class

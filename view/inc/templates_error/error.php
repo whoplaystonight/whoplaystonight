@@ -1,6 +1,6 @@
 <div id='page'>
   <br><br>
-  <div id='header' class='status4xx'>
+  <div id='header' class='status4xx'><!--Aqui deberia ir el siguiente codigo: class="status<?php /*echo $arrData['code']*/?>"-->
     <?php
       if(isset($arrData)&& !empty($arrData)){
         ?>

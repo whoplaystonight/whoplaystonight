@@ -8,3 +8,11 @@ function filter_num_int($num){
   return $return=array('resultado'=> true, 'error'=>"", 'datos' => $num);
 
 }//End of filter_num_int
+
+function filter_string($cad){
+  $result =filter_var($cad, FILTER_VALIDATE_REGEXP, array('options'=>array('regexp'=>'/^[a-zA-Z0-9 .,]*$/')));
+  if(!$result){
+    return $return=array('resultado'=>false, 'error'=>"Invalid value input",'datos'=>"");
+  }
+  return $return=array('resultado'=>true, 'error'=>"", 'datos'=>$cad);
+}//End of filter_string
