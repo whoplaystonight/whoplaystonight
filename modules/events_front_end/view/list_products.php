@@ -42,6 +42,8 @@
                 <div id="description"></div>
                 </p>
                 <h2> <strong><div id="date_event"></div></strong> </h5>
+                <button type="button" id="back">Back</button>
+
 
             </div>
 

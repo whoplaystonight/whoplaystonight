@@ -9,10 +9,10 @@ $("document").ready(function(){
       var json=JSON.parse(data);
       var event=json.product;
       //console.log(product);
-      $('#result').html('');
+      $('#results').html('');
       $('.pagination').html('');
 
-      $("#poster").html('<img src="' + event.poster +'" height="75" width="75">');
+      $("#poster").html('<img src="' + event.poster +'" height="300px" width="300px">');
       $("#band_name").html(event.band_name);
       $("#type_event").html(event.type_event);
       $("#description").html(event.description);

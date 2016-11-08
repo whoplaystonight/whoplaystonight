@@ -195,6 +195,10 @@ $(document).ready(function(){
 
   });
 
+  $('#back').click(function(){
+    search();
+  });
+
   $.get("modules/events_front_end/controller/controller_fe.class.php?autocomplete=true", function(data,status){
 
     var json=JSON.parse(data);
