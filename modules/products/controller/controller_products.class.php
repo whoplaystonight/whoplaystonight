@@ -140,6 +140,7 @@ function register_event(){
       echo json_encode(array("res"=>false));
     }
 
+
   }//End of if delete
 
 
@@ -295,31 +296,31 @@ if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
 ////////////////////////////////////////////////////////////////////////////////
 
 
-if ($_GET["idProduct"]) {
-  $id=$_GET["idProduct"];
-
-  $arrValue=loadModel($path_model,"event_model","details_event", $id);
-
-  if($arrValue[0]){
-    loadView($path_view_p,'details_events.php',$arrValue[0]);
-  }else{
-    $message="NOT FOUND PRODUCT";
-    loadView($path_view, '404.php',$message);
-  }//end if-else list one event
-
-}else{
-
-  $arrValue=loadModel($path_model,"event_model","list_events");
-
-  if($arrValue){
-
-    loadView($path_view_p,'list_events.php',$arrValue);
-
-  }else{
-
-    $message="THERE ARE NOT ANY PRODUCTS";
-    loadView($path_view, '404.php', $message);
-
-  }//end if-else list all events
-
-}//end if-else List Products
+// if ($_GET["idProduct"]) {
+//   $id=$_GET["idProduct"];
+//
+//   $arrValue=loadModel($path_model,"event_model","details_event", $id);
+//
+//   if($arrValue[0]){
+//     loadView($path_view_p,'details_events.php',$arrValue[0]);
+//   }else{
+//     $message="NOT FOUND PRODUCT";
+//     loadView($path_view, '404.php',$message);
+//   }//end if-else list one event
+//
+// }else{
+//
+//   $arrValue=loadModel($path_model,"event_model","list_events");
+//
+//   if($arrValue){
+//
+//     loadView($path_view_p,'list_events.php',$arrValue);
+//
+//   }else{
+//
+//     $message="THERE ARE NOT ANY PRODUCTS";
+//     loadView($path_view, '404.php', $message);
+//
+//   }//end if-else list all events
+//
+// }//end if-else List Products
