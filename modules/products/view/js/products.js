@@ -351,7 +351,7 @@ $(document).ready(function(){
 $("#dropzone").dropzone({
     url: "modules/products/controller/controller_products.class.php?upload=true",
     addRemoveLinks: true,
-    maxFileSize: 1000,
+    maxFileSize: 200,
     dictResponseError: "Ha ocurrido un error en el server",
     acceptedFiles: 'image/*,.jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.rar,application/pdf,.psd',
      init: function () {
@@ -382,7 +382,7 @@ $("#dropzone").dropzone({
             url: "modules/products/controller/controller_products.class.php?delete=true",
             data: "filename=" + name,
             success: function (data) {
-              //console.log("estic dins del delete");
+              console.log(data);
 
                 $("#progress").hide();
                 $('.msg').text('').removeClass('msg_ok');
@@ -549,7 +549,7 @@ function validate_user(){
   var event_id_re=/^[E]{1}[0-9]{10}$/;
   var band_id_re=/^[B]{1}[0-9]{10}$/;
   var band_name_re=/^(.){1,50}$/;
-  var description_re=/^(.){1,500}$/;
+  var description_re=/^(.){20,500}$/;
   var n_participants_re=/^[1-9]{1,3}$/;
   var date_event_re=/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/;
 
@@ -601,7 +601,7 @@ function validate_user(){
       return false;
       /*to test the regular expression*/
   }else if(!description_re.test($("#description").val())){
-    $("#description").focus().after("<span class='error'>Description must not have more than 500 characters</span>");
+    $("#description").focus().after("<span class='error'>Description must have between 20 and 500 characters</span>");
       return false;
   }//end of else if
   /*END OF FUNCTION*/
@@ -610,21 +610,21 @@ function validate_user(){
   /*CHECK country FIELD*/
   /*To avoid the field country is empty*/
   if(!validate_country(country)){
-    country.focus().after("<span class='error'>Please select a country</span>");
+    $("#country").focus().after("<span class='error'>Please select a country</span>");
     return false;
   }
 
   /*CHECK province FIELD*/
   /*To avoid the field province is empty*/
   if(!validate_province(province)){
-    province.focus().after("<span class='error'>Please select a province</span>");
+    $("#province").focus().after("<span class='error'>Please select a province</span>");
     return false;
   }
 
   /*CHECK town FIELD*/
   /*To avoid the field province is empty*/
   if(!validate_town(town)){
-    town.focus().after("<span class='error'>Please select a town</span>");
+    $("#town").focus().after("<span class='error'>Please select a town</span>");
     return false;
   }
 
@@ -811,7 +811,7 @@ function validate_user(){
               } else if (textStatus === 'abort') {
                   alert('Ajax request aborted.');
               } else {
-                  alert('Uncaught Error: ' + xhr.responseText);
+                  /*alert('Uncaught Error: ' + xhr.responseText);*/
               }
 
               if (xhr.responseJSON == 'undefined' && xhr.responseJSON === null )

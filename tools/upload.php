@@ -116,9 +116,9 @@ function upload_files(){
 }////////////***********************end of upload files*************************/////////////////////////
 
 function remove_files(){
-  //echo json_encode("I'm in remove_files");
-  //exit;
+
   $name=$_POST["filename"];
+
   if(file_exists($_SERVER['DOCUMENT_ROOT'].'/Exercise_3/media/'.$_SESSION['nombreFichero'])){
     unlink($_SERVER['DOCUMENT_ROOT'].'/Exercise_3/media/'.$_SESSION['nombreFichero']);
     return true;
