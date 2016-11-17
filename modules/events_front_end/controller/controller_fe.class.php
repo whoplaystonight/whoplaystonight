@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/Exercise_3/paths.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/whoplaystonight/paths.php");
 include LOG_CLASS;
 include SITE_ROOT . 'tools/common.inc.php';
 include SITE_ROOT . 'tools/filters.inc.php';

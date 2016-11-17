@@ -54,7 +54,7 @@
 
         $result=response_code($path_view);
         $arrData=$result;
-        require_once $_SERVER['DOCUMENT_ROOT'].'/Exercise_3/view/inc/templates_error/'."error".'php';
+        require_once $_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/view/inc/templates_error/'."error".'php';
 
         // $message="NO TEMPLATE FOUND";
         // $arrData=$message;

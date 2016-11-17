@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/modules/products/tools/functions_products.inc.php");
-include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/tools/upload.php");
-include($_SERVER['DOCUMENT_ROOT']."/Exercise_3/tools/common.inc.php");
-$path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
-$path_view_p=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/view/';
-$path_view=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/view/inc/';
+include($_SERVER['DOCUMENT_ROOT']."/whoplaystonight/modules/products/tools/functions_products.inc.php");
+include($_SERVER['DOCUMENT_ROOT']."/whoplaystonight/tools/upload.php");
+include($_SERVER['DOCUMENT_ROOT']."/whoplaystonight/tools/common.inc.php");
+$path_model=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/products/model/model/';
+$path_view_p=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/products/view/';
+$path_view=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/view/inc/';
 // $path= $_SERVER['DOCUMENT_ROOT'].'/Execise_3/'
 // define(SITE_ROOT,$path);
 
@@ -83,7 +83,7 @@ function register_event(){
       /**********To insert into DB*******************/
 
       $arrValue=false;
-      $path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
+      $path_model=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/products/model/model/';
       $arrValue= loadModel($path_model, "event_model", "create_event", $arrArgument);
       // echo json_encode($arrValue);
       // exit;
@@ -249,7 +249,7 @@ if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
     $jsondata=array();
     $json=array();
 
-    //$path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
+    //$path_model=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/products/model/model/';
     $json=loadModel($path_model, "event_model","obtain_provinces");
 
     if($json){
@@ -274,7 +274,7 @@ if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
     $jsondata=array();
     $json=array();
 
-    //$path_model=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/modules/products/model/model/';
+    //$path_model=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/products/model/model/';
     $json=loadModel($path_model, "event_model","obtain_towns",$_POST['idPoblac']);
 
     if($json){

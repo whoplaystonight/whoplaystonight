@@ -41,7 +41,7 @@ class event_dao{
    $tmp=array();
   //  echo json_encode("Estic al provinces_DAO");
   //  exit;
-   $provinces=simplexml_load_file($_SERVER['DOCUMENT_ROOT'].'/Exercise_3/resources/provinciasypoblaciones.xml');
+   $provinces=simplexml_load_file($_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/resources/provinciasypoblaciones.xml');
    $result=$provinces->xpath("/lista/provincia/nombre | /lista/provincia/@id");
    for($i=0;$i<count($result);$i+=2){
      $e=$i+1;
@@ -60,7 +60,7 @@ class event_dao{
    $tmp=array();
 
    $filter=(string)$arrArgument;
-   $xml=simplexml_load_file($_SERVER['DOCUMENT_ROOT'].'/Exercise_3/resources/provinciasypoblaciones.xml');
+   $xml=simplexml_load_file($_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/resources/provinciasypoblaciones.xml');
    $result=$xml->xpath("/lista/provincia[@id='$filter']/localidades");
 
    for($i=0;$i<count($result[0]);$i++){
