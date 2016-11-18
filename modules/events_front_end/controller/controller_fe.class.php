@@ -20,7 +20,7 @@ if((isset($_GET["autocomplete"]))&& ($_GET["autocomplete"]==="true")){
 
   try{
 
-    $band_name=loadModel(EVENT_MODEL_PATH , "events_fe_model" , "select_column_events","band_name");
+    $band_name=loadModel(EVENTS_MODEL_MODEL , "events_fe_model" , "select_column_events","band_name");
 
   }catch (Exception $e){
 
@@ -66,7 +66,7 @@ if(isset($_GET["band_name"])){
       "column"=> "band_name",
       "like"=>$criteria
     );
-    $event=loadModel(EVENT_MODEL_PATH,"events_fe_model","select_like_events",$arrArgument);
+    $event=loadModel(EVENT_MODEL_MODEL,"events_fe_model","select_like_events",$arrArgument);
     // echo json_encode($event);
     // exit;
 
@@ -116,7 +116,7 @@ if(isset($_GET["count_event"])){
       "like"=>$criteria
     );
 
-    $total_rows=loadModel(EVENT_MODEL_PATH,"events_fe_model","count_like_events",$arrArgument);
+    $total_rows=loadModel(EVENT_MODEL_MODEL,"events_fe_model","count_like_events",$arrArgument);
     // echo json_encode($total_rows[0]["total"]);
     // exit;
   }catch(Exception $e){
@@ -176,7 +176,7 @@ if((isset($_GET["num_pages"])) && ($_GET["num_pages"]==="true")){
            "like"=>$criteria
          );
 
-         $arrValue=loadModel(EVENT_MODEL_PATH, "events_fe_model","count_like_events",$arrArgument);
+         $arrValue=loadModel(EVENT_MODEL_MODEL, "events_fe_model","count_like_events",$arrArgument);
           //  echo json_encode($arrValue);
           //  exit;
 
@@ -234,7 +234,7 @@ if(isset($_GET["idProduct"])){
   try{
 
       //$arrValue=false;
-      $arrValue=loadModel(EVENT_MODEL_PATH,"events_fe_model","details_event",$id);
+      $arrValue=loadModel(EVENT_MODEL_MODEL,"events_fe_model","details_event",$id);
 
     }catch(Exception $e){
 
@@ -308,7 +308,7 @@ if(isset($_GET["idProduct"])){
       'position'=> $position,
       'limit'=> $limit
     );
-    $arrValue=loadModel(EVENT_MODEL_PATH, "events_fe_model","select_like_limit_events", $arrArgument);
+    $arrValue=loadModel(EVENT_MODEL_MODEL, "events_fe_model","select_like_limit_events", $arrArgument);
     // debugECHO($arrValue);
     // exit;
 

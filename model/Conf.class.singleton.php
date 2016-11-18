@@ -1,8 +1,5 @@
 <?php
 
-// $path=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/';
-// define('SITE_ROOT',$path);
-// define('MODEL_PATH',SITE_ROOT.'model/');
 
 class Conf{
 
