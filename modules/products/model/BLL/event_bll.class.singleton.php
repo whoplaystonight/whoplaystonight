@@ -1,11 +1,11 @@
 <?php
 
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/whoplaystonight/';
-  define('SITE_ROOT', $path);
-  define('MODEL_PATH',SITE_ROOT.'model/');
-
-  require (MODEL_PATH."Db.class.singleton.php");
-  require (SITE_ROOT."modules/products/model/DAO/event_dao.class.singleton.php");
+  // $path = $_SERVER['DOCUMENT_ROOT'] . '/whoplaystonight/';
+  // define('SITE_ROOT', $path);
+  // define('MODEL_PATH',SITE_ROOT.'model/');
+  //
+  // require (MODEL_PATH."Db.class.singleton.php");
+  // require (SITE_ROOT."modules/products/model/DAO/event_dao.class.singleton.php");
 
   class event_bll{
 

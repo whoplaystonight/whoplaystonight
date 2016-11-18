@@ -12,20 +12,20 @@
 
 
       if (!method_exists($modelClass, $function)){
-          //loadView('view/inc','404.php',"Method not found under model folder");
-          //die($function .'function not found in Model'. $model_name);
           throw new Exception();
-
       }
       $obj= $modelClass::getInstance();
 
       if (isset($arrArgument)){
+
           return $obj->$function($arrArgument);
+
       }
+
     }else{
-      //loadView('view/inc','404.php',"Model not found under model folder");
-      //die($model_name . 'Model not found under model folder');
+
       throw new Exception();
+
     }
 
   }//End of loadModel function
@@ -42,6 +42,7 @@
       }else{
 
         $result=filter_num_int($path_view);
+
         if($result['resultado']){
           $path_view=$result['datos'];
         }else{
@@ -54,14 +55,10 @@
 
         $result=response_code($path_view);
         $arrData=$result;
-        require_once $_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/view/inc/templates_error/'."error".'php';
+        require_once VIEW_PATH_INC_ERROR . $result['code'].'.php';
+        die();
+      }//end if else $data
 
-        // $message="NO TEMPLATE FOUND";
-        // $arrData=$message;
-        // require_once'view/inc/404.php';
-        // die();
-      }
-    }
-
+    }//enf if file exists
 
   }//end of loadView function
