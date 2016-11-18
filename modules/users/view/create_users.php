@@ -1,15 +1,16 @@
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.js"></script> -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css">
-<script type="text/javascript" src="modules/products/view/js/products.js" ></script> -->
+<script type="text/javascript" src="modules/users/view/js/users.js" ></script>
+<link href='modules/users/view/css/form.css' rel='stylesheet' type='text/css' />
 
-<form  id="form_user" name="form_user"> <!-- quitar post, queda nombre e id -->
+<form  id="form_user" name="form_user">
 
     <h1>SIGN UP!</h1>
 
     <fieldset>
         <legend><span class="number">1</span>Your basic info</legend>
-        <label for="username">Name:</label>
+        <label for="username">Username:</label>
         <input type="text" id="username" placeholder="username" class="form-control" name="username" value="">
         <div id="e_username"></div>
 
@@ -17,7 +18,7 @@
         <input type="text" id="email" class="form-control" placeholder="email" name="email" value=""></input>
         <div id="e_email"></div>
 
-        <label for="email">Password:</label>
+        <label for="password">Password:</label>
         <input type="text" id="password" class="form-control" placeholder="password" name="password" value=""></input>
         <div id="e_email"></div>
     </fieldset>
