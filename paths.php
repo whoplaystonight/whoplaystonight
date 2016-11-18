@@ -1,5 +1,5 @@
 <?php
-$root = $_SERVER['DOCUMENT_ROOT'].'/Exercise_3/';
+$root = $_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/';
 define('SITE_ROOT',$root);
 define('LOG_CLASS', SITE_ROOT.'classes/Log.class.singleton.php');
 define('USER_LOG_DIR', SITE_ROOT.'log/products/Site_Products_errors.log');

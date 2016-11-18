@@ -1,6 +1,6 @@
 <?php
 
-  $path=$_SERVER['DOCUMENT_ROOT'].'/Exercise_3/';
+  $path=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/';
   define('SITE_ROOT', $path);
   require(SITE_ROOT. "modules/products/model/BLL/event_bll.class.singleton.php");
 
