@@ -19,7 +19,7 @@
         <div id="e_email"></div>
 
         <label for="password">Password:</label>
-        <input type="text" id="password" class="form-control" placeholder="password" name="password" value=""></input>
+        <input type="password" id="password" class="form-control" placeholder="password" name="password" value=""></input>
         <div id="e_email"></div>
     </fieldset>
 

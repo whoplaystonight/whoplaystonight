@@ -10,6 +10,15 @@ $(document).ready(function() {
 
     $(this).fill_or_clean();
 
+    //Valida users
+    $("#submit_user").click(function() {
+        validate_user();
+    });
+
+    //Security control. If you go back the data is removed.
+    remove_data_ifback();
+
+
 });
 
 jQuery.fn.fill_or_clean = function() {
@@ -72,5 +81,224 @@ jQuery.fn.fill_or_clean = function() {
 
     });
     return this;
-
 };
+
+function validate_user() {
+    console.log("validate user");
+    var result = true;
+
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var birthday = document.getElementById("birthday").value;
+    var user_interests = document.getElementsByClassName("messageCheckbox");
+    var interests = [];
+    var j = 0;
+    for (var i = 0; i < user_interests.length; i++) {
+        if (user_interests[i].checked) {
+            interests[j] = user_interests[i].value;
+            j++;
+        }
+    }
+
+    var pais = document.getElementById("pais").value;
+    var provincia = document.getElementById("provincia").value;
+    var poblacion = document.getElementById("poblacion").value;
+    // var v_pais = validate_pais(pais);
+    // var v_provincia = validate_provincia(provincia);
+    // var v_poblacion = validate_poblacion(poblacion);
+    // console.log(username + email + password + birthday + interests + pais + provincia + poblacion);
+    var email_reg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+    var date_reg = /(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/]((175[7-9])|(17[6-9][0-9])|(1[8-9][0-9][0-9])|([2-9][0-9][0-9][0-9]))/i;
+    var address_reg = /^[a-z0-9- -.]+$/i;
+    var pass_reg = /^[0-9a-zA-Z]{6,32}$/;
+    var string_reg = /^[A-Za-z]{2,30}$/;
+    var longstring_reg = /^[A-Za-z]{2,300}$/;
+    var usr_reg = /^[0-9a-zA-Z]{2,20}$/;
+    var number_reg = /^\d+$/;
+
+    $(".error").remove();
+    if ($("#username").val() === "" || $("#username").val() == "Introduce username") {
+        $("#username").focus().after("<span class='error'>Introduce username</span>");
+        result = false;
+        return false;
+    } else if (!string_reg.test($("#username").val())) {
+        $("#username").focus().after("<span class='error'>Name must be 2 to 30 letters</span>");
+        result = false;
+        return false;
+    }
+
+    if ($("#email").val() === "") {
+        $("#email").focus().after("<span class='error'>Introduce your email</span>");
+        result = false;
+        return false;
+    } else if (!email_reg.test($("#email").val())) {
+        $("#email").focus().after("<span class='error'>Your eamil must be valid</span>");
+        result = false;
+        return false;
+    }
+
+    if ($("#password").val() === "" || $("#password").val() == "Set up your password") {
+        $("#password").focus().after("<span class='error'>Introduce your password</span>");
+        result = false;
+        return false;
+    } else if (!pass_reg.test($("#password").val())) {
+        $("#password").focus().after("<span class='error'>Your password must have between 6 and 32 chars</span>");
+        result = false;
+        return false;
+    }
+
+    if ($("#birthday").val() === "" || $("#birthday").val() == "Introduce your birthday") {
+        $("#birthday").focus().after("<span class='error'>Introduce your birthday</span>");
+        result = false;
+        return false;
+    } else if (!date_reg.test($("#birthday").val())) {
+        $("#birthday").focus().after("<span class='error'>Your birthday is incorrect</span>");
+        result = false;
+        return false;
+    }
+
+
+    if ($("#pais").val() === "" || $("#pais").val() == "Selecciona un Pais") {
+        $("#pais").focus().after("<span class='error'>Introduce pais</span>");
+        result = false;
+        return false;
+    }
+    if ($("#provincia").val() === "" || $("#provincia").val() == "Selecciona una Provincia") {
+        if ($("#pais").val() == "ES"){
+            $("#provincia").focus().after("<span class='error'>Introduce provincia</span>");
+            result = false;
+            return false;
+        } else {
+            $("#provincia").val("default_provincia");
+        }
+    }
+    if ($("#poblacion").val() === "" || $("#poblacion").val() == "Selecciona una Poblacion") {
+        if ($("#pais").val() == "ES"){
+            $("#poblacion").focus().after("<span class='error'>Introduce poblacion</span>");
+            result = false;
+            return false;
+        } else {
+            $("#poblacion").val("default_poblacion");
+        }
+    }
+    
+    // // Si ha ido todo bien, se envian los datos al servidor
+    // if (result) {
+    //     var data = {
+    //         "product_name": product_name,
+    //         "product_description": product_description,
+    //         "product_price": product_price,
+    //         "product_id": product_id,
+    //         "enter_date": enter_date,
+    //         "obsolescence_date": obsolescence_date,
+    //         "product_category": product_category,
+    //         "availability": availability,
+    //         "country": pais,
+    //         "province": provincia,
+    //         "town": poblacion
+    //     };
+    //
+    //     var data_products_JSON = JSON.stringify(data);
+    //
+    //     $.post('modules/products/controller/controller_products.class.php', {
+    //         alta_products_json: data_products_JSON
+    //     },
+    //     function(response) {
+    //         console.log(typeof(response));
+    //         //var responseObj = JSON.parse(response); //I convert the string to a object!
+    //         console.log(response);
+    //         console.log(response.success);
+    //         if (response.success) {
+    //             window.location.href = response.redirect;
+    //         }
+    //
+    //     }, "json").fail(function(xhr) {
+    //         //console.log(xhr.responseJSON);
+    //
+    //         if (xhr.responseJSON.error.product_name)
+    //         $("#product_name").focus().after("<span  class='error1'>" + xhr.responseJSON.error.product_name + "</span>");
+    //
+    //         if (xhr.responseJSON.error.product_description)
+    //         $("#product_description").focus().after("<span  class='error1'>" + xhr.responseJSON.error.product_description + "</span>");
+    //
+    //         if (xhr.responseJSON.error.product_price)
+    //         $("#product_price").focus().after("<span  class='error1'>" + xhr.responseJSON.error.product_price + "</span>");
+    //
+    //         if (xhr.responseJSON.error.product_id)
+    //         $("#product_id").focus().after("<span  class='error1'>" + xhr.responseJSON.error.product_id + "</span>");
+    //
+    //         if (xhr.responseJSON.error.enter_date)
+    //         $("#enter_date").focus().after("<span  class='error1'>" + xhr.responseJSON.error.enter_date + "</span>");
+    //
+    //         if (xhr.responseJSON.error.obsolescence_date)
+    //         $("#obsolescence_date").focus().after("<span  class='error1'>" + xhr.responseJSON.error.obsolescence_date + "</span>");
+    //
+    //         if (xhr.responseJSON.error.product_category)
+    //         $("#product_category").focus().after("<span  class='error1'>" + xhr.responseJSON.error.product_category + "</span>");
+    //
+    //         if (xhr.responseJSON.error.availability)
+    //         $("#availability").focus().after("<span  class='error1'>" + xhr.responseJSON.error.availability + "</span>");
+    //
+    //         if (xhr.responseJSON.error_avatar)
+    //         $("#dropzone").focus().after("<span  class='error1'>" + xhr.responseJSON.error_avatar + "</span>");
+    //
+    //         if (xhr.responseJSON.success1) {
+    //             if (xhr.responseJSON.img_avatar !== "/nacho_framework2DAW/media/default-avatar.png") {
+    //                 //$("#progress").show();
+    //                 //$("#bar").width('100%');
+    //                 //$("#percent").html('100%');
+    //                 //$('.msg').text('').removeClass('msg_error');
+    //                 //$('.msg').text('Success Upload image!!').addClass('msg_ok').animate({ 'right' : '300px' }, 300);
+    //             }
+    //         } else {
+    //             $("#progress").hide();
+    //             $('.msg').text('').removeClass('msg_ok');
+    //             $('.msg').text('Error Upload image!!').addClass('msg_error').animate({
+    //                 'right': '300px'
+    //             }, 300);
+    //         }
+    //     });
+    // }
+}
+
+function remove_data_ifback() {
+    console.log("remove_dat_ifback");
+    // $.get("modules/products/controller/controller_products.class.php?load_data=true",
+    // function(response) {
+    //     //alert(response.user);
+    //     console.log(response);
+    //     if (response.product === "") {
+    //         $("#product_name").val('');
+    //         $("#product_description").val('');
+    //         $("#product_price").val('');
+    //         $("#product_id").val('');
+    //         $("#enter_date").val('');
+    //         $("#obsolescence_date").val('');
+    //         $("#product_category").val('Select product');
+    //         var inputElements = document.getElementsByClassName('availability');
+    //         for (var i = 0; i < inputElements.length; i++) {
+    //             if (inputElements[i].checked) {
+    //                 inputElements[i].checked = false;
+    //             }
+    //         }
+    //         //siempre que creemos un plugin debemos llamarlo, sino no funcionará
+    //         $(this).fill_or_clean();
+    //     } else {
+    //         $("#product_name").val(response.product.product_name);
+    //         $("#product_description").val(response.product.product_description);
+    //         $("#product_price").val(response.product.product_price);
+    //         $("#product_id").val(response.product.product_id);
+    //         $("#enter_date").val(response.product.enter_date);
+    //         $("#obsolescence_date").val(response.product.obsolescence_date);
+    //
+    //         var inputElements = document.getElementsByClassName('messageCheckbox');
+    //         for (var i = 0; i < interests.length; i++) {
+    //             for (var j = 0; j < inputElements.length; j++) {
+    //                 if (interests[i] === inputElements[j])
+    //                 inputElements[j].checked = true;
+    //             }
+    //         }
+    //     }
+    // }, "json");
+}
