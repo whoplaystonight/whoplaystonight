@@ -17,7 +17,7 @@
                     <li><a href="index.php?module=events_front_end&view=list_products">LIST EVENT</a><li>
 					          <li><a href="index.php?module=portfolio">PORTFOLIO</a></li>
                     <li><a href="index.php?module=pricing">PRICING</a></li>
-                    <li><a href="index.php?module=contact">CONTACT</a></li>
+                    <li><a href="index.php?module=contact&view=contact">CONTACT</a></li>
                 </ul>
             </div>
 

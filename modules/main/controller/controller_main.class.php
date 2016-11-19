@@ -1,5 +1,5 @@
        <section id="home" class="text-center">
-         
+
                 <div id="carousel-example" class="carousel slide" data-ride="carousel">
 
                     <div class="carousel-inner">
@@ -30,7 +30,7 @@
                         <li data-target="#carousel-example" data-slide-to="2"></li>
                     </ol>
                 </div>
-           
+
        </section>
     <!--/.SLIDESHOW END-->
 
@@ -39,7 +39,7 @@
             <div class="container">
            <div class="row text-center" >
             <div class="col-md-12">
-             
+
                  <div class="row text-center pad-row  ">
 <div class="col-md-4 col-sm-4 ">
                         <img class="img-circle" src="view/img/team1.png" alt="" />
@@ -61,7 +61,7 @@
                     </div>
                      <div class="col-md-4 col-sm-4" >
                          <div class="alert alert-success">
-                           <div class="skill-name">CLIENT SATISFACTION 100%</div> 
+                           <div class="skill-name">CLIENT SATISFACTION 100%</div>
                             <div class="progress progress-striped active progress-adjust">
   <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
     <span class="sr-only">100% Complete</span>
@@ -69,7 +69,7 @@
 </div>
                         </div>
                          <div class="alert alert-danger">
-                           <div class="skill-name">PERFORMANCE DELIVERED 100%</div> 
+                           <div class="skill-name">PERFORMANCE DELIVERED 100%</div>
                             <div class="progress progress-striped active progress-adjust">
   <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
     <span class="sr-only">100% Complete</span>
@@ -77,7 +77,7 @@
 </div>
                         </div>
                          <div class="alert alert-info">
-                           <div class="skill-name">DELIVERY DONE 100%</div> 
+                           <div class="skill-name">DELIVERY DONE 100%</div>
                             <div class="progress progress-striped active progress-adjust">
   <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
     <span class="sr-only">100% Complete</span>
@@ -85,11 +85,11 @@
 </div>
                         </div>
                      </div>
-                      
+
                  </div>
-                
+
             </div>
-               
+
                </div>
         </div>
         </section>
@@ -102,9 +102,9 @@
                       <h1>  Download Deatils Now For Latest Offers</h1>
                  </div>
                  <div class="col-md-4 col-sm-4" style="padding-top: 15px;">
-                     <a href="#" class=" btn btn-primary btn-lg">GRAB IT HERE NOW</a> 
+                     <a href="#" class=" btn btn-primary btn-lg">GRAB IT HERE NOW</a>
                  </div>
-                          
+
                </div>
                </div>
       </section>
@@ -120,7 +120,7 @@
                          Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>
-                       <a href="#" class="btn btn-primary" >Read Details</a>    
+                       <a href="#" class="btn btn-primary" >Read Details</a>
                 </div>
              <div class="col-md-4  col-sm-4">
                  <i class="fa fa-flask  fa-5x"></i>
@@ -140,9 +140,9 @@
                          Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>
-                       <a href="#" class="btn btn-primary" >Read Details</a>    
+                       <a href="#" class="btn btn-primary" >Read Details</a>
                 </div>
-                    
+
             </div>
                  </div>
          </section>
