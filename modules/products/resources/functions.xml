@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <functions>
     <function>
-        <name>list_products</name>
-        <uri>list_products</uri>
+        <name>events_form</name>
+        <uri>events_form</uri>
     </function>
     <function>
-        <name>autocomplete_products</name>
-        <uri>autocomplete_products</uri>
+        <name>results_view</name>
+        <uri>results_view</uri>
     </function>
     <function>
-        <name>nom_products</name>
-        <uri>nom_products</uri>
+        <name>upload_avatar</name>
+        <uri>upload_avatar</uri>
     </function>
     <function>
-        <name>count_products</name>
-        <uri>count_products</uri>
+        <name>register_event</name>
+        <uri>register_event</uri>
     </function>
     <function>
-        <name>num_pages_products</name>
-        <uri>num_pages_products</uri>
+        <name>delete_events</name>
+        <uri>delete_events</uri>
     </function>
     <function>
-        <name>view_error_true</name>
-        <uri>view_error_true</uri>
+        <name>load_event</name>
+        <uri>load_event</uri>
     </function>
     <function>
-        <name>view_error_false</name>
-        <uri>view_error_false</uri>
+        <name>load_data_event</name>
+        <uri>load_data_event</uri>
     </function>
     <function>
-        <name>idProduct</name>
-        <uri>idProduct</uri>
+        <name>load_country</name>
+        <uri>load_country</uri>
     </function>
     <function>
-        <name>obtain_products</name>
-        <uri>obtain_products</uri>
+        <name>load_provinces</name>
+        <uri>load_provinces</uri>
+    </function>
+    <function>
+        <name>load_towns</name>
+        <uri>load_towns</uri>
     </function>
 </functions>
