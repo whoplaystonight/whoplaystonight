@@ -1,0 +1,2 @@
+<br><br>
+<h1>Thanks for signing up</h1>

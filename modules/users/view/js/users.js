@@ -122,6 +122,8 @@ $(document).ready(function() {
         }
     });
 
+
+
     // 3 combobox
     load_countries_v1();
     $("#provincia").empty();

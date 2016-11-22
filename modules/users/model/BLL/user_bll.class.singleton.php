@@ -14,7 +14,7 @@ class user_bll {
     static $_instance;
 
     private function __construct() {
-        $this->dao = productDAO::getInstance();
+        $this->dao = userDAO::getInstance();
         $this->db = Db::getInstance();
     }
 
@@ -24,16 +24,16 @@ class user_bll {
         return self::$_instance;
     }
 
-    public function create_product_BLL($arrArgument) {
-        return $this->dao->create_product_DAO($this->db, $arrArgument);
+    public function create_user_BLL($arrArgument) {
+        return $this->dao->create_user_DAO($this->db, $arrArgument);
     }
 
-    public function list_products_BLL(){
-        return $this->dao->list_products_DAO($this->db);
+    public function list_users_BLL(){
+        return $this->dao->list_users_DAO($this->db);
     }
 
-    public function details_products_BLL($id) {
-        return $this->dao->details_products_DAO($this->db,$id);
+    public function details_users_BLL($id) {
+        return $this->dao->details_users_DAO($this->db,$id);
     }
 
     public function obtain_countries_BLL($url) {

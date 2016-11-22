@@ -10,7 +10,7 @@ class user_model {
     static $_instance;
 
     private function __construct() {
-        $this->bll = product_bll::getInstance();
+        $this->bll = user_bll::getInstance();
     }
 
     public static function getInstance() {
@@ -19,16 +19,16 @@ class user_model {
         return self::$_instance;
     }
 
-    public function create_product($arrArgument) {
-        return $this->bll->create_product_BLL($arrArgument);
+    public function create_user($arrArgument) {
+        return $this->bll->create_user_BLL($arrArgument);
     }
 
-    public function list_products(){
-        return $this->bll->list_products_BLL();
+    public function list_users(){
+        return $this->bll->list_users_BLL();
     }
 
-    public function details_products($id) {
-        return $this->bll->details_products_BLL($id);
+    public function details_users($id) {
+        return $this->bll->details_users_BLL($id);
     }
 
     public function obtain_countries($url) {
