@@ -1,6 +1,6 @@
-<script type="text/javascript" src="modules/events_front_end/view/js/jquery.bootpag.min.js"></script>
-<script type="text/javascript" src="modules/events_front_end/view/js/list_products.js" ></script>
-<link rel="stylesheet" type="text/css" href="modules/events_front_end/view/css/main.css">
+<script type="text/javascript" src="<?php echo EVENTS_VIEW_JS ?>jquery.bootpag.min.js"></script>
+<script type="text/javascript" src="<?php echo EVENTS_VIEW_JS ?>list_products.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo EVENTS_VIEW_CSS ?>main.css">
 
 <br><br>
 <center>

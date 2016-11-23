@@ -19,6 +19,7 @@
       if (isset($arrArgument)){
 
           return $obj->$function($arrArgument);
+          // return call_user_func(array($obj, $function),$arrArgument);
 
       }
 
@@ -32,13 +33,18 @@
 
 
   function loadView($path_view='', $file_view='',$data=''){
+
     $view_path=$path_view . $file_view;
+    //debugECHO($view_path);
     $arrData='';
 
     if(file_exists($view_path)){
+
       if(isset($data)){
         $arrData=$data;
-        include_once($view_path);
+      }
+      include_once($view_path);
+
       }else{
 
         $result=filter_num_int($path_view);
@@ -49,16 +55,14 @@
           $path_view=http_response_code();
         }
 
-        $log=Log::getInstance();
+        $log=log::getInstance();
         $log->add_log_general("error loadView general", $_GET['module'],"response".$path_view);
         $log->add_log_user("error loadView general","",$_GET['module'],"response".$path_view);
 
         $result=response_code($path_view);
         $arrData=$result;
-        require_once VIEW_PATH_INC_ERROR . $result['code'].'.php';
-        die();
+        require_once VIEW_PATH_INC_ERROR . 'error.php';
+        //die();
       }//end if else $data
-
-    }//enf if file exists
 
   }//end of loadView function

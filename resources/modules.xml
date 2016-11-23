@@ -12,4 +12,9 @@
         <name>products</name>
         <uri>products</uri>
     </module>
+    <module>
+        <name>services</name>
+        <uri>services</uri>
+    </module>
+
 </modules>

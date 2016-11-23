@@ -1,49 +1,36 @@
 <?php
-// session_start();
-//
-// include($_SERVER['DOCUMENT_ROOT']."/whoplaystonight/modules/products/tools/functions_products.inc.php");
-// include($_SERVER['DOCUMENT_ROOT']."/whoplaystonight/tools/upload.php");
-// include($_SERVER['DOCUMENT_ROOT']."/whoplaystonight/tools/common.inc.php");
-// $path_model=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/products/model/model/';
-// $path_view_p=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/products/view/';
-// $path_view=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/view/inc/';
-// $path= $_SERVER['DOCUMENT_ROOT'].'/Execise_3/'
-// define(SITE_ROOT,$path);
 
+class controller_products{
 
-
-
-class controller_products(){
-
-  //////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////
                                   /*CONSTRUCTOR*/
-  //////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////
 
   public function __construct(){
     include(PRODUCTS_TOOLS. "functions_products.inc.php");
     include(TOOLS . "upload.php");
     include(TOOLS . "common.inc.php");
     include(LOG_CLASS);
-    include(TOOLS . "filters.inc.php");
-    include(TOOLS . "tools.inc.php");
-    include(TOOLS . "response_code.inc.php");
-
     $_SESSION['module']="products";
   }
 
-  //////////////////////////////////////////////////////////////////////////////
+
+  // public function test(){
+  //   echo json_encode("I'm in test");
+  //   exit;
+  // }
+  ////////////////////////////////////////////////////////////////////////////
                           /* CREATE EVENTS FUNCION  */
-  //////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////
 
   /*To invoke and show the create events form*/
 
   public function events_form(){
-
+    //debugECHO("HOLA");
     require_once(VIEW_PATH_INC . "header.php");
     require_once(VIEW_PATH_INC . "menu.php");
 
-    echo '<br><br><br><br><br><br><br><br>';
-    loadView('modules/products/view','create_products.php');
+    loadView('modules/products/view/','create_products.php');
 
     require_once(VIEW_PATH_INC . "footer.html");
 
@@ -61,7 +48,7 @@ class controller_products(){
     require_once(VIEW_PATH_INC . "menu.php");
 
     echo '<br><br><br><br><br><br><br><br>';
-    loadView('modules/products/view','results_products.php');
+    loadView('modules/products/view/','results_products.php');
 
     require_once(VIEW_PATH_INC . "footer.html");
 
@@ -145,7 +132,7 @@ class controller_products(){
               /*To redirect to other page the data of $arrArgument and $message*/
               $_SESSION['event']=$arrArgument;
               $_SESSION['message']=$message;
-              $callback="index.php?module=products&function=results_products";
+              $callback="index.php?module=products&function=results_view";
 
               $jsondata["success"]=true;
               $jsondata["redirect"]=$callback;
@@ -218,18 +205,6 @@ class controller_products(){
 
   }//end of load_event_function
 
-////////////////////////////////////////////////////////////////////////////////
-                          /*CLOSE SESSION FUNCTION*/
-////////////////////////////////////////////////////////////////////////////////
-
-function close_session(){
-  unset($_SESSION['event']);
-  unset($_SESSION['message']);
-  $_SESSION=array();
-  session_destroy();
-
-}//end of close_session
-
 
 
   //////////////////////////////////////////////////////////////////////////////
@@ -257,8 +232,10 @@ function close_session(){
                             /*LOAD country SELECT*/
   //////////////////////////////////////////////////////////////////////////////
 
-  public function load_country(){
+  public function load_country_events(){
 
+    echo json_encode("Estic al load coutry");
+    exit;
     if((isset($_GET["load_country"])) && ($_GET["load_country"]==true)){
 
       $json=array();
@@ -268,10 +245,12 @@ function close_session(){
       set_error_handler('ErrorHandler');
       try{
         $json=loadModel(PRODUCTS_MODEL_MODEL, "event_model","obtain_countries",$url);
+
       }catch (Exception $e){
         $json=array();
       }
       restore_error_handler();
+
 
       if(stristr($json,'error')){
         $json="error";
@@ -289,15 +268,22 @@ function close_session(){
       }//end of if else
 
     }//end of load_country
+}
 
-  }//end load country function
+
+
+// public function prova(){
+//   echo json_encode("ESTIC AL TEST");
+//   exit;
+// }
+
 
 
   //////////////////////////////////////////////////////////////////////////////
                             /*LOAD provinces SELECT*/
   //////////////////////////////////////////////////////////////////////////////
 
-  public function load_provinces(){
+  public function load_provinces_events(){
 
     if((isset($_GET["load_provinces"])) && ($_GET["load_provinces"]==true)){
       //  echo json_encode("Estic al load_provinces");
@@ -309,7 +295,7 @@ function close_session(){
       try{
         $json=loadModel(PRODUCTS_MODEL_MODEL, "event_model","obtain_provinces");
       }catch (Exception $e){
-        Sjson =array();
+        $json =array();
       }
       restore_error_handler();
 
@@ -342,7 +328,6 @@ function close_session(){
 
       set_error_handler('ErrorHandler');
       try{
-      //$path_model=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/products/model/model/';
       $json=loadModel(PRODUCTS_MODEL_MODEL, "event_model","obtain_towns",$_POST['idPoblac']);
       }catch (Exception $e){
       $json=array();

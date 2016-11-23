@@ -99,9 +99,9 @@ function showErrorPage($code = 0, $message ="", $http="", $num_http=0){
       loadView($num_http);
       break;
     case 2:
-      $log =Log::getInstance();
-      $log->add_log_general($message,"","responde". http_response_code());
-      $log->add_log_user($message,"","","response".http_response_code());
+      $log =log::getInstance();
+      $log->add_log_general($message,$_SESSION['module'],"response". http_response_code());
+      $log->add_log_user($message,"",$_SESSION['module'],"response".http_response_code());
 
       $jsondata['error']=$message;
       //header($http, true, $num_http);
@@ -112,6 +112,13 @@ function showErrorPage($code = 0, $message ="", $http="", $num_http=0){
       paint_template_search($message);
       exit;
       break;
+    case 4:
+      require_once(VIEW_PATH_INC."header.php");
+      require_once(VIEW_PATH_INC."menu.php");
+      loadView($num_http);
+      require_once(VIEW_PATH_INC."footer.html");
+      break;
+
   }//end of switch
 }//end of showErrorPage function
 
@@ -137,7 +144,7 @@ function ErrorHandler($errno,$errstr,$errfile,$errline){
   }//end of switch
   $msg="ERROR: [$errno] $errstr\r\n" . "$error on line $errline in file $errfile\r\n";
 
-  $log=Log::getInstance();
+  $log=log::getInstance();
   $log->add_log_general($msg, $_SESSION['module'], "response" . http_response_code());
   $log->add_log_user($msg, "",$_SESSION['module'],"response" . http_response_code());
 }

@@ -1,7 +1,10 @@
 <?php
 
   require_once("paths.php");
-  require'autoload.php';
+  require 'autoload.php';
+  include(TOOLS . "filters.inc.php");
+  include(TOOLS . "tools.inc.php");
+  include(TOOLS . "response_code.inc.php");
 
   if(PRODUCTION){
   	ini_set('display_errors',1);
@@ -17,19 +20,25 @@
 
     function handlerRouter() {
 
+
 	    if (!empty($_GET['module'])) {
 			     $URI_module = $_GET['module'];
+           //debugECHO($URI_module);
   		} else {
   			   $URI_module = 'main';
   		}
 
+
+
   		if (!empty($_GET['function'])) {
   			   $URI_function = $_GET['function'];
+           //debugECHO($URI_function);
   		} else {
   			   $URI_function = 'begin';
   		}
 
   	  handlerModule($URI_module, $URI_function);
+
 
   	}//end of handlerRouter function
 
@@ -45,26 +54,33 @@
           $exit=true;
 
           $path=MODULES_PATH . $URI_module."/controller/controller_". $URI_module. ".class.php";
-          if(file_exists($path)){
-            require_once($path);
+          //debugECHO($path);
 
-            $controllerCLass="controller_". $URI_module;
+          if(file_exists($path)){
+            //debugECHO("Estic al if");
+            require($path);
+            //debugECHO("despres del require_once");
+            $controllerClass="controller_". $URI_module;
+
+
             $obj = new $controllerClass;
 
-          }else{
 
-            showErrorPage(1,"",'HTTP/1.0 400 Bad Request', 400);
+          }else{
+            debugECHO("Estic al else");
+            showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
 
           }
+
           handlerfunction(((String)$module->name), $obj, $URI_function);
           break;
         }
 
       }//end foreach
 
-      if(!exist){
+      if(!$exist){
 
-        showErrorPage(1,"",'HTTP/1.0 400 Bad Request', 400);
+        showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
 
       }//End of if exist
 
@@ -72,7 +88,8 @@
 
 
     function handlerFunction($module, $obj, $URI_function){
-      $functions = simplexml_load_file(MODULES_PATH . $module . "/resource/functions.xml");
+
+      $functions = simplexml_load_file(MODULES_PATH . $module . "/resources/functions.xml");
       $exist=false;
 
       foreach($functions->function as $function){
@@ -83,10 +100,9 @@
         }//enf if
       }//End foreach
       if(!$exist){
-        showErrorPage(1,"",'HTTP/1.0 400 Bad Request', 400);
+        showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
       }else{
-
-        call_user_func(array($obj, $event));
+        call_user_func(array($obj,$event));
       }
     }
 

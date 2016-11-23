@@ -1,3 +1,5 @@
+
+
 function validate_search(search_value){
   if(search_value.length>0){
     var regexp =/^[a-zA-Z0-9 .,]*$/;
@@ -6,19 +8,23 @@ function validate_search(search_value){
   return false;
 }//end of validate_search function
 
+
+
 function refresh(){
   $('.pagination').html='';
   $('.pagination').val='';
 }//end of validate_search function
 
+
+
 function search(keyword){
 
-  var urlbase="modules/events_front_end/controller/controller_fe.class.php";
+  var urlbase="index.php?module=events_front_end&function=";
 
   if(!keyword){
-    url=urlbase + "?num_pages=true";
+    url=urlbase + "number_pages_events&num_pages=true";
   }else{
-    url=urlbase + "?num_pages=true&keyword=" + keyword;
+    url=urlbase + "number_pages_events&num_pages=true&keyword=" + keyword;
   }
 
   $.get(url,function(data,status){
@@ -27,12 +33,13 @@ function search(keyword){
     var pages=json.pages;
     //console.log(pages);
     if(!keyword){
-      url=urlbase;
+      url=urlbase + "obtain_events";
     }else{
-      url=urlbase + "?keyword=" + keyword;
+      url=urlbase + "obtain_events&keyword=" + keyword;
     }
 
     $("#results").load(url);
+
     if(pages !==0){
       refresh();
       $(".pagination").bootpag({
@@ -44,21 +51,21 @@ function search(keyword){
       }).on("page",function(e,num){
         e.preventDefault();
         if(!keyword){
-          $("#results").load("modules/events_front_end/controller/controller_fe.class.php",{'page_num':num});
+          $("#results").load(url,{'page_num':num});
         }else{
-          $("#results").load("modules/events_front_end/controller/controller_fe.class.php",{'page_num':num, 'keyword':keyword});
+          $("#results").load(url,{'page_num':num, 'keyword':keyword});
           reset();
         }
       });//end on
     }else{
-      $("#results").load("modules/events_front_end/controller/controller_fe.class.php?view_error=false");
+      $("#results").load("index.php?module=events_front_end&function=view_error_false&view_error=false");
       $('.pagination').html('');
       reset();
     }//Endif pages!==0
     reset();
 
   }).fail(function(xhr){
-    $("#results").load("modules/events_front_end/controller/controller_fe.class.php?view_error=true");
+    $("#results").load("index.php?module=events_front_end&function=view_error_true&view_error=true");
     $('.pagination').html('');
     reset();
   });
@@ -67,7 +74,7 @@ function search(keyword){
 
 function search_event(keyword){
 
-  $.get("modules/events_front_end/controller/controller_fe.class.php?band_name=" + keyword, function(data,status){
+  $.get("index.php?module=events_front_end&function=band_names&band_name=" + keyword, function(data,status){
     var json=JSON.parse(data);
     var event_=json.event_autocomplete;
     //console.log(data);
@@ -87,7 +94,7 @@ function search_event(keyword){
 
   }).fail(function(xhr){
 
-    $("#results").load("modules/events_front_end/controller/controller_fe.class.php?view_error=false");
+    $("#results").load("index.php?module=events_front_end&function=view_error_false&view_error=false");
     $('.pagination').html('');
     reset();
 
@@ -98,14 +105,14 @@ function search_event(keyword){
 
 function count_event(keyword){
 
-  $.get("modules/events_front_end/controller/controller_fe.class.php?count_event=" + keyword, function(data,status){
+  $.get("index.php?module=events_front_end&function=count_events&count_event=" + keyword, function(data,status){
     var json=JSON.parse(data);
     var num_events=json.num_events;
     alert("num_events:" + num_events);
     //console.log(num_events);
     if(num_events===0){
 
-      $("#results").load("modules/events_front_end/controller/controller_fe.class.php?view_error=false");
+      $("#results").load("index.php?module=events_front_end&function=view_error_false&view_error=false");
       $('.pagination').html('');
       reset();
     }
@@ -119,7 +126,7 @@ function count_event(keyword){
       search(keyword);
     }
   }).fail(function(){
-    $("#results").load("modules/events_front_end/controller/controller_fe.class.php?view_error=true");
+    $("#results").load("index.php?module=events_front_end&function=view_error_true&view_error=true");
     $('.pagination').html('');
     reset();
   });
@@ -199,7 +206,7 @@ $(document).ready(function(){
     search();
   });
 
-  $.get("modules/events_front_end/controller/controller_fe.class.php?autocomplete=true", function(data,status){
+  $.get("index.php?module=events_front_end&function=autocomplete_events&autocomplete=true", function(data,status){
 
     var json=JSON.parse(data);
     var name_events=json.band_name;
@@ -218,7 +225,7 @@ $(document).ready(function(){
       }
     });
   }).fail(function(xhr){
-    $("#results").load("modules/events_front_end/controller/controller_fe.class.php?view_error=false");
+    $("#results").load("index.php?module=events_front_end&function=view_error_false&view_error=false");
     $('.pagination').html('');
     reset();
   });//End of $.get autocomplete

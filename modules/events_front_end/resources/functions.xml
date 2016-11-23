@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    <function>
+        <name>list_events</name>
+        <uri>list_events</uri>
+    </function>
+    <function>
+        <name>autocomplete_events</name>
+        <uri>autocomplete_events</uri>
+    </function>
+    <function>
+        <name>band_name</name>
+        <uri>band_name</uri>
+    </function>
+    <function>
+        <name>count_event</name>
+        <uri>count_event</uri>
+    </function>
+    <function>
+        <name>num_pages</name>
+        <uri>num_pages</uri>
+    </function>
+    <function>
+        <name>view_error_true</name>
+        <uri>view_error_true</uri>
+    </function>
+    <function>
+        <name>view_error_false</name>
+        <uri>view_error_false</uri>
+    </function>
+    <function>
+        <name>idProduct</name>
+        <uri>idProduct</uri>
+    </function>
+    <function>
+        <name>show_events</name>
+        <uri>show_events</uri>
+    </function>
+</functions>

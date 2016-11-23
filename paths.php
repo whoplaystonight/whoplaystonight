@@ -7,9 +7,9 @@ define('SITE_PATH', 'https://'.$_SERVER['HTTP_HOST'].'/whoplaystonight/');
 //CSS
 define('CSS_PATH',SITE_PATH. 'view/css/');
 //LOG
-define('LOG_CLASS', SITE_ROOT.'classes/Log.class.singleton.php');
-define('USER_LOG_DIR', SITE_ROOT.'log/products/Site_Products_errors.log');
-define('GENERAL_LOG_DIR',SITE_ROOT.'log/general/Site_General_errors.log');
+define('LOG_CLASS', SITE_ROOT.'classes/log.class.singleton.php');
+define('USER_LOG_DIR', SITE_ROOT.'log/products/site_Products_errors.log');
+define('GENERAL_LOG_DIR',SITE_ROOT.'log/general/site_General_errors.log');
 //PRODUCTION
 define('PRODUCTION',true);
 //MODEL
@@ -32,11 +32,11 @@ define('EVENTS_MODEL_BLL', SITE_ROOT.'modules/events_front_end/model/BLL/');
 define('EVENTS_MODEL_DAO', SITE_ROOT.'modules/events_front_end/model/DAO/');
 define('EVENTS_MODEL_MODEL',SITE_ROOT.'modules/events_front_end/model/model/');
 define('EVENTS_TOOLS',SITE_ROOT.'modules/events_front_end/tools/');
-define('EVENTS_VIEW_JS'.SITE_ROOT.'modules/events_front_end/view/js/');
+define('EVENTS_VIEW_JS', SITE_ROOT.'modules/events_front_end/view/js/');
 define('EVENTS_VIEW_CSS',SITE_ROOT.'modules/events_front_end/view/css/');
 
 //model products
 define('PRODUCTS_TOOLS',SITE_ROOT.'modules/products/tools/');
 define('PRODUCTS_VIEW_JS',SITE_ROOT.'modules/products/view/js/');
 define('PRODUCTS_MODEL_MODEL', SITE_ROOT.'modules/products/model/model/');
-//define('PRODUCTS_VIEW_CSS',SITE_PATH.'modules/products/view/css/');
+define('PRODUCTS_VIEW_CSS', SITE_PATH.'modules/products/view/css/');

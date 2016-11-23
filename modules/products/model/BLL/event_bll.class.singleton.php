@@ -11,7 +11,7 @@
     private function __construct(){
 
       $this->dao=event_dao::getInstance();
-      $this->db=Db::getInstance();
+      $this->db=db::getInstance();
 
     }//end of constructor
 

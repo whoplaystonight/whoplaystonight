@@ -1,6 +1,5 @@
 <?php
 
-
   class event_model{
 
     private $bll;
@@ -33,7 +32,7 @@
    }//end of create_event function
 
    public function obtain_countries($url){
-     return $this->bll->obtain_countries_BLL($url);
+      return $this->bll->obtain_countries_BLL($url);
    }//end of obtain_countries
 
    public function obtain_provinces(){

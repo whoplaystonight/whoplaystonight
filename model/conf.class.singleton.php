@@ -1,7 +1,7 @@
 <?php
 
 
-class Conf{
+class conf{
 
   private $_user;
   private $_pass;
