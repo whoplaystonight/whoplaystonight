@@ -21,7 +21,7 @@ function enviar_email($arr) {
     break;*/
 
     case 'contact':
-    $subject = 'Tu Petici&oacute;n a Rural_Shop ha sido enviada<br>';
+    $subject = 'Tu Petici&oacute;n a Who_Plays_Tonight ha sido enviada<br>';
     $ruta = '<a href=' . 'http://localhost/whoplaystonight'. '>aqu&iacute;</a>';
     $body = 'Para visitar nuestra web, pulsa ' . $ruta;
     break;
@@ -40,14 +40,13 @@ function enviar_email($arr) {
   $html .= "<h4>". $subject ."</h4>";
   $html .= $body;
   $html .= "<br><br>";
-  $html .= "<p>Sent by RURAL_SHOP</p>";
+  $html .= "<p>Sent by Who_Plays_Tonight</p>";
   $html .= "</body>";
   $html .= "</html>";
 
   set_error_handler('ErrorHandler');
   try{
     $mail = email::getInstance();
-    echo json_encode($mail);exit;
     $mail->name = $arr['inputName'];
     if ($arr['type'] === 'admin')
     $mail->address = 'whoplaystonight@gmail.com';
@@ -69,5 +68,6 @@ $return = 0;
 }
 */
 $return = $mail->enviar();
+
 return $return;
 }

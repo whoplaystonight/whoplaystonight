@@ -1,77 +1,78 @@
 function paint(dataString) {
-    $("#resultMessage").html(dataString).fadeIn("slow");
+  $("#resultMessage").html(dataString).fadeIn("slow");
 
-    setTimeout(function() {
-        $("#resultMessage").fadeOut("slow")
-    }, 5000);
+  setTimeout(function() {
+    $("#resultMessage").fadeOut("slow")
+  }, 5000);
 
-    //reset the form
-    $('#contact_form')[0].reset();
+  //reset the form
+  $('#contact_form')[0].reset();
 
-    // hide ajax loader icon
-    $('.ajaxLoader').fadeOut("fast");
+  // hide ajax loader icon
+  $('.ajaxLoader').fadeOut("fast");
 
-    // Enable button after processing
-    $('#submitBtn').attr('disabled', false);
+  // Enable button after processing
+  $('#submitBtn').attr('disabled', false);
 
-    /*if (dataString == "<div class='alert alert-success'>Your message has been sent </div>"){
-        alert(dataString);
-    }else{
-        alert(dataString);
-    }*/
+  /*if (dataString == "<div class='alert alert-success'>Your message has been sent </div>"){
+  alert(dataString);
+}else{
+alert(dataString);
+}*/
 }
 
 $(document).ready(function(){
-    // disable submit button in case of disabled javascript browsers
-    $(function(){
-        $('#submitBtn').attr('disabled', false);
-    });
+  // disable submit button in case of disabled javascript browsers
+  $(function(){
+    $('#submitBtn').attr('disabled', false);
+  });
 
-	$("#contact_form").validate({
-				rules:{
-					inputName:{
-                        required: true
-					},
-					inputEmail:{
-                        required: true,
-                        email: true
-					},
-                    inputMessage:{
-                        required: true
-                    }
-				},
-        highlight: function(element) {
-            $(element).closest('.control-group').removeClass('success').addClass('error');},
-        success: function(element) {
-            $(element).closest('.control-group').removeClass('error').addClass('success');
-            $(element).closest('.control-group').find('label').remove();
-        },
-        errorClass: "help-inline"
-	});
+  $("#contact_form").validate({
+    rules:{
+      inputName:{
+        required: true
+      },
+      inputEmail:{
+        required: true,
+        email: true
+      },
+      inputMessage:{
+        required: true
+      }
+    },
+    highlight: function(element) {
+      $(element).closest('.control-group').removeClass('success').addClass('error');},
+      success: function(element) {
+        $(element).closest('.control-group').removeClass('error').addClass('success');
+        $(element).closest('.control-group').find('label').remove();
+      },
+      errorClass: "help-inline"
+    });
 
     $("#contact_form").submit(function(){
-        if ($("#contact_form").valid()){
+      console.log("submit");
+      if ($("#contact_form").valid()){
+        console.log("valid");
+        // Disable button while processing
+        $('#submitBtn').attr('disabled', true);
 
-            // Disable button while processing
-            $('#submitBtn').attr('disabled', true);
+        // show ajax loader icon
+        $('.ajaxLoader').fadeIn("fast");
 
-            // show ajax loader icon
-            $('.ajaxLoader').fadeIn("fast");
-
-            var dataString = $("#contact_form").serialize();
-            $.ajax({
-                type: "POST",
-                //url: "index.php?module=contact&function=process_contact",
-                url: "modules/contact/controller/controller_contact.class.php",
-                data: dataString,
-                success: function(dataString) {
-                    paint(dataString);
-                }
-            })
-            .fail(function() {
-                paint("<div class='alert alert-error'>Server error. Try later...</div>");
-            });
-        }
-        return false;
+        var dataString = $("#contact_form").serialize();
+        $.ajax({
+          type: "POST",
+          //url: "index.php?module=contact&function=process_contact",
+          url: "modules/contact/controller/controller_contact.class.php",
+          data: dataString,
+          success: function(dataString) {
+            paint(dataString);
+          }
+        })
+        .fail(function() {
+          paint("<div class='alert alert-error'>Server error. Try later...</div>");
+        });
+      }
+      return false;
     });
-});
+  });

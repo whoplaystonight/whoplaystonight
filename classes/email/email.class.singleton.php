@@ -1,9 +1,7 @@
 <?php
-  require_once($_SERVER['DOCUMENT_ROOT']."/whoplaystonight/paths.php");
-  include SITE_ROOT . 'libs/PHPMailer_v5.1/class.phpmailer.php';
-  include SITE_ROOT . 'libs/PHPMailer_v5.1/class.smtp.php';
+require($_SERVER['DOCUMENT_ROOT'] . '/whoplaystonight/libs/PHPMailer_v5.1/class.phpmailer.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/whoplaystonight/libs/PHPMailer_v5.1/class.smtp.php');
 class email {
-echo json_encode("pepe");exit;
   private $body;
   private $address;
   private $subject;
@@ -17,7 +15,6 @@ echo json_encode("pepe");exit;
       $this->mail->IsSMTP();
 
       $cnfg = parse_ini_file("email.ini");
-
       $this->mail->SMTPAuth = $cnfg['auth'];
       $this->mail->SMTPSecure = $cnfg['secure'];
       $this->mail->Host = $cnfg['host'];
@@ -26,7 +23,7 @@ echo json_encode("pepe");exit;
       $this->mail->Password = $cnfg['pass'];
       $this->mail->AddReplyTo($cnfg['email'], $cnfg['defaultsubject']);
       $this->mail->SetFrom($cnfg['email'], $cnfg['defaultsubject']);
-      $this->mail->addAttachment(IMG_RURAL_SHOP);
+      //$this->mail->addAttachment(IMG_RURAL_SHOP);
 
       $this->subject="Who_Plays_Tonight";
 
@@ -70,7 +67,6 @@ echo json_encode("pepe");exit;
 
       $result = $this->send_mailgun($this->address);
       return $result;
-
     } catch (phpmailerException $e) {
       $log = log::getInstance();
       $log->add_log_general("error enviar email.class.singleton.php", $_GET['module'], "response ".http_response_code());
@@ -97,7 +93,7 @@ echo json_encode("pepe");exit;
     $message['h:Reply-To'] = "whoplaystonight@gmail.com";
     $message['subject'] = "Hello, this is a test";
     $message['html'] = 'Hello ' . $email . ',</br></br> This is a test';
-
+    
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $config['api_url']);
     curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
