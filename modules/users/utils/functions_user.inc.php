@@ -1,86 +1,56 @@
 <?php
 
-function validate_product($value) {
+function validate_user($value) {
     //return json_encode("Hola mundo");
     $error = array();
     $valido = true;
     $filter = array(
-        'product_name' => array(
+        'username' => array(
             'filter' => FILTER_VALIDATE_REGEXP,
             'options' => array('regexp' => '/^[A-Za-z]{2,30}$/')
         ),
-        'product_description' => array(
+        'email' => array(
             'filter' => FILTER_VALIDATE_REGEXP,
-            'options' => array('regexp' => '/^[A-Za-z]{2,200}$/')
+            'options' => array('regexp' => '/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/')
         ),
-        'product_price' => array(
+        'password' => array(
+            'filter' => FILTER_VALIDATE_REGEXP,
+            'options' => array('regexp' => '/^[0-9a-zA-Z]{6,32}$/')
+        ),
+        'birthday' => array(
             'filter' => FILTER_VALIDATE_REGEXP,
             'options' => array('regexp' => '/^[a-z0-9- -.]/')
-        ),
-        'product_id' => array(
-            'filter' => FILTER_VALIDATE_REGEXP,
-            'options' => array('regexp' => '/^[a-z0-9- -.]/')
-        ),
-        'enter_date' => array(
-            'filter' => FILTER_VALIDATE_REGEXP,
-            'options' => array('regexp' => '/^(0[1-9]|[12][0-9]|3[01])[- \/.](0[1-9]|1[012])[- \/.](19|20)\d\d$/')
-        ),
-        'obsolescence_date' => array(
-            'filter' => FILTER_VALIDATE_REGEXP,
-            'options' => array('regexp' => '/^(0[1-9]|[12][0-9]|3[01])[- \/.](0[1-9]|1[012])[- \/.](19|20)\d\d$/')
         ),
     );
-
 
     $result = filter_var_array($value, $filter);
 
     //no filter
-    $result['product_category'] = $value['product_category'];
-    $result['availability'] = $value['availability'];
+    $result['interests'] = $value['interests'];
     $result['country'] = $value['country'];
     $result['province'] = $value['province'];
     $result['town'] = $value['town'];
 
     //obsolescence date can't be before enter date
-    $dates = validate_dates($result['enter_date'], $result['obsolescence_date']);
-    if (!$dates) {
-        $error['obsolescence_date'] = "Obsolescence date can't be before enter date";
+    // $dates = validate_dates($result['enter_date'], $result['obsolescence_date']);
+    // if (!$dates) {
+        // $error['obsolescence_date'] = "Obsolescence date can't be before enter date";
+        // $valido = false;
+    // }
+
+    if (!$result['username']) {
+        $error['username'] = 'Username must be 2 to 30 letters';
         $valido = false;
     }
 
-    if (!$result['product_name']) {
-        $error['name'] = 'Name must be 2 to 30 letters';
-        $valido = false;
-    }
-    if (count($result['availability']) == 0) {
-        console_log("dentro");
-        $error['availability'] = "Select 1 or more.";
-        $valido = false;
-    }
-
-    if (!$result['enter_date']) {
-        if ($_POST['enter_date'] == "") {
-            $error['enter_date'] = "enter date can't be empty";
+    if (!$result['birthday']) {
+        if ($_POST['birthday'] == "") {
+            $error['birthday'] = "birthday can't be empty";
             $valido = false;
         } else {
-            $error['enter_date'] = 'format date error (dd/mm/yyyy)';
+            $error['birthday'] = 'format date error (dd/mm/yyyy)';
             $valido = false;
         }
-    }
-
-    if (!$result['obsolescence_date']) {
-        if ($_POST['obsolescence_date'] == "") {
-            $error['obsolescence_date'] = "obsolescence date can't empty";
-            $valido = false;
-        } else {
-            $error['obsolescence_date'] = 'format date error (dd/mm/yyyy)';
-            $valido = false;
-        }
-    }
-
-    if ($_POST['product_category'] === 'Select product') {
-        $error['product_category'] = "You haven't select a product.";
-        $valido = false;
     }
 
     return $return = array('resultado' => $valido, 'error' => $error, 'datos' => $result);

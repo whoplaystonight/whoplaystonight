@@ -38,11 +38,14 @@ class userDAO {
         $province = $arrArgument['province'];
         $town = $arrArgument['town'];
 
-        $sql = "INSERT INTO users (product_name, product_description, product_price, product_id, enter_date, obsolescence_date, product_category, Web, Warehouse, Physical_store, avatar, country, province, town) VALUES ('". $product_name
-        ."', '". $product_description ."', '". $product_price ."', '". $product_id ."' , '". $enter_date ."', '". $obsolescence_date
-        ."', '". $product_category ."', '". $web ."','". $warehouse ."', '". $physical_store ."' ,'". $avatar ."', '". $country ."', '". $province ."', '". $town ."')";
+        $sql = "INSERT INTO users (username, email, password, birthday, rock, jazz, blues, avatar, country, province, town)
+        VALUES ('" . $username . "','" . $email ."','" . $password . "','" . $birthday . "', '" . $rock . "', '" . $jazz . "', '" . $blues . "', '" .
+         $avatar . "','" . $country . "','" . $province . "','" . $town . "')";
+        // $sql = "INSERT INTO users (product_name, product_description, product_price, product_id, enter_date, obsolescence_date, product_category, Web, Warehouse, Physical_store, avatar, country, province, town) VALUES ('". $product_name
+        // ."', '". $product_description ."', '". $product_price ."', '". $product_id ."' , '". $enter_date ."', '". $obsolescence_date
+        // ."', '". $product_category ."', '". $web ."','". $warehouse ."', '". $physical_store ."' ,'". $avatar ."', '". $country ."', '". $province ."', '". $town ."')";
 
-        return $db->ejecutar($sql);
+        return $db->execute($sql);
     }
 
     public function obtain_countries_DAO($url) {

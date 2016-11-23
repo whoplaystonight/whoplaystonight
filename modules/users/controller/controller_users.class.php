@@ -42,7 +42,7 @@ function alta_users() {
         ///////////// Insert into BD /////////////
         $arrValue = false;
         $path_model = $_SERVER['DOCUMENT_ROOT'] . '/whoplaystonight/modules/users/model/model/';
-        $arrValue = loadModel($path_model, "users_model", "create_user", $arrArgument);
+        $arrValue = loadModel($path_model, "user_model", "create_user", $arrArgument);
 
         if ($arrValue)
             $mensaje = "User has been successfully registered";
@@ -53,7 +53,7 @@ function alta_users() {
         $_SESSION['user'] = $arrArgument;
         $_SESSION['msje'] = $mensaje;
 
-        $callback = "index.php?module=users&view=results_users";
+        $callback = "index.php?module=users&view=result_users";
 
         $jsondata["success"] = true;
         $jsondata["redirect"] = $callback;
