@@ -51,17 +51,17 @@
       foreach($modules->module as $module){
 
         if(($URI_module===(String)$module->uri)){
-          $exit=true;
+          $exist=true;
 
           $path=MODULES_PATH . $URI_module."/controller/controller_". $URI_module. ".class.php";
-          //debugECHO($path);
+          // debugECHO($path);
 
           if(file_exists($path)){
             //debugECHO("Estic al if");
-            require($path);
-            //debugECHO("despres del require_once");
-            $controllerClass="controller_". $URI_module;
 
+            require($path);
+            $controllerClass="controller_". $URI_module;
+            //debugECHO($controllerClass);
 
             $obj = new $controllerClass;
 
@@ -98,7 +98,9 @@
           $event=(String)$function->name;
           break;
         }//enf if
+
       }//End foreach
+
       if(!$exist){
         showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
       }else{

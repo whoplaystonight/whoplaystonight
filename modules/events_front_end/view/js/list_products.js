@@ -1,4 +1,4 @@
-
+//console.log("Estic al list_products");
 
 function validate_search(search_value){
   if(search_value.length>0){
@@ -18,17 +18,20 @@ function refresh(){
 
 
 function search(keyword){
-
+  //console.log("estic al search keyword");
   var urlbase="index.php?module=events_front_end&function=";
 
   if(!keyword){
     url=urlbase + "number_pages_events&num_pages=true";
+    //console.log(url);
+
   }else{
     url=urlbase + "number_pages_events&num_pages=true&keyword=" + keyword;
+    //console.log(url);
   }
 
   $.get(url,function(data,status){
-
+    //console.log(data);
     var json=JSON.parse(data);
     var pages=json.pages;
     //console.log(pages);
@@ -164,8 +167,8 @@ function setCookie(cname, cvalue, exdays){
 
 }//end of setCookie
 
-$(document).ready(function(){
-
+ $(document).ready(function(){
+//
   if(getCookie("search")){
     var keyword=getCookie("search");
     count_event(keyword);
@@ -177,6 +180,10 @@ $(document).ready(function(){
 
   $("#search_event").submit(function (e) {
     var keyword=document.getElementById('keyword').value;
+    if(!keyword){
+      $("#results").load("index.php?module=events_front_end&function=view_error_false&view_error=false");
+
+    }else{
     var v_keyword=validate_search(keyword);
     if(v_keyword){
       setCookie("search", keyword,1);
@@ -185,12 +192,15 @@ $(document).ready(function(){
     location.reload(true);
 
     e.preventDefault();
-
+   }
   });//end of search_event submit
 
 
-  $('#Submit').click(function () {
+  $('#Submit').click(function (e) {
     var keyword=document.getElementById('keyword').value;
+    if(!keyword){
+      $("#results").load("index.php?module=events_front_end&function=view_error_false&view_error=false");
+    }else{
     var v_keyword=validate_search(keyword);
     if(v_keyword){
       setCookie("search", keyword,1);
@@ -199,7 +209,7 @@ $(document).ready(function(){
     location.reload(true);
 
     e.preventDefault();
-
+   }
   });
 
   $('#back').click(function(){
@@ -230,4 +240,4 @@ $(document).ready(function(){
     reset();
   });//End of $.get autocomplete
 
-});//end of document.ready
+ });//end of document.ready

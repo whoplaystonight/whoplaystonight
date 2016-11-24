@@ -1,6 +1,6 @@
 <?php
 
-class controller_fe {
+class controller_events_front_end{
 
   //////////////////////////////////////////////////////////////////////////////
   //                              CONSTRUCTOR                                 //
@@ -10,14 +10,14 @@ class controller_fe {
 
     include(EVENTS_TOOLS. "tools_fe.inc.php");
     include LOG_CLASS;
-    include (TOOLS . "filters.inc.php");
-    include (TOOLS . "tools.inc.php");
-    include (TOOLS . "response_code.inc.php");
+    // include (TOOLS . "filters.inc.php");
+    // include (TOOLS . "tools.inc.php");
+    // include (TOOLS . "response_code.inc.php");
     include (TOOLS . "common.inc.php");
 
     $_SESSION['module']="events_front_end";
 
-  }
+  }//end of constructor
 
   //////////////////////////////////////////////////////////////////////////////
   //                         LIST EVENTS VIEW FUNCTION                        //
@@ -32,7 +32,7 @@ class controller_fe {
 
     require_once(VIEW_PATH_INC . "footer.html");
 
-  }
+  }//end of list_events
 
 
   //////////////////////////////////////////////////////////////////////////////
@@ -96,7 +96,7 @@ class controller_fe {
             "column"=> "band_name",
             "like"=>$criteria
           );
-          $event=loadModel(EVENT_MODEL_MODEL,"events_fe_model","select_like_events",$arrArgument);
+          $event=loadModel(EVENTS_MODEL_MODEL,"events_fe_model","select_like_events",$arrArgument);
           // echo json_encode($event);
           // exit;
 
@@ -121,7 +121,7 @@ class controller_fe {
 
       }//end of filter events by band name function
 
-  }//end of band_name function
+  }//end of band_names function
 
   ////////////////////////////////////////////////////////////////////////////////
   //                To count the number of filtered events                      //
@@ -151,7 +151,7 @@ class controller_fe {
             "like"=>$criteria
           );
 
-          $total_rows=loadModel(EVENT_MODEL_MODEL,"events_fe_model","count_like_events",$arrArgument);
+          $total_rows=loadModel(EVENTS_MODEL_MODEL,"events_fe_model","count_like_events",$arrArgument);
           // echo json_encode($total_rows[0]["total"]);
           // exit;
         }catch(Exception $e){
@@ -178,8 +178,6 @@ class controller_fe {
   }//end of count_event function
 
 
-
-
   //////////////////////////////////////////////////////////////////////////////
   //                To calculate the number of pages                          //
   //////////////////////////////////////////////////////////////////////////////
@@ -187,10 +185,12 @@ class controller_fe {
   public function number_pages_events(){
 
 
+
       if((isset($_GET["num_pages"])) && ($_GET["num_pages"]==="true")){
 
 
         if(isset($_GET["keyword"])){
+
           $result=filter_string($_GET["keyword"]);
           if($result['resultado']){
 
@@ -202,8 +202,11 @@ class controller_fe {
 
           }
 
-        }
+        }else{
 
+          $criteria='';
+
+        }
         $item_per_page=3;
 
 
@@ -215,7 +218,7 @@ class controller_fe {
                  "like"=>$criteria
                );
 
-               $arrValue=loadModel(EVENT_MODEL_MODEL, "events_fe_model","count_like_events",$arrArgument);
+               $arrValue=loadModel(EVENTS_MODEL_MODEL, "events_fe_model","count_like_events",$arrArgument);
                 //  echo json_encode($arrValue);
                 //  exit;
 
@@ -238,13 +241,13 @@ class controller_fe {
             echo json_encode($jsondata);
             exit;
 
-         }else{
+          }else{
 
            showErrorPage(2,"ERROR -404 NO DATA", 'HTTP/1.0 404 Not Found', 404);
 
-         }//end of get_total_rows
+          }//end of get_total_rows
 
-      }//end GET num_pages
+        }//end GET num_pages
 
   }//end num_pages function
 
@@ -288,7 +291,7 @@ class controller_fe {
         try{
 
             //$arrValue=false;
-            $arrValue=loadModel(EVENT_MODEL_MODEL,"events_fe_model","details_event",$id);
+            $arrValue=loadModel(EVENTS_MODEL_MODEL,"events_fe_model","details_event",$id);
 
           }catch(Exception $e){
 
@@ -371,7 +374,7 @@ class controller_fe {
             'position'=> $position,
             'limit'=> $limit
           );
-          $arrValue=loadModel(EVENT_MODEL_MODEL, "events_fe_model","select_like_limit_events", $arrArgument);
+          $arrValue=loadModel(EVENTS_MODEL_MODEL, "events_fe_model","select_like_limit_events", $arrArgument);
           // debugECHO($arrValue);
           // exit;
 
@@ -389,6 +392,6 @@ class controller_fe {
           showErrorPage(0, "ERROR -404 NO PRODUCTS");
         }
 
-      }//enf of if idproduct
-  }//end of show_events function
+  }//end of obtain_events function
+
 }//end of class

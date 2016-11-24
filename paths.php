@@ -27,7 +27,7 @@ define('MEDIA_PATH',SITE_ROOT.'media/');
 define('TOOLS',SITE_ROOT.'tools/');
 
 //module events_front_end
-define('EVENTS_MODEL', SITE_ROOT.'modules/events_front_end/model/');
+define('EVENTS_MODEL',SITE_ROOT.'modules/events_front_end/model/');
 define('EVENTS_MODEL_BLL', SITE_ROOT.'modules/events_front_end/model/BLL/');
 define('EVENTS_MODEL_DAO', SITE_ROOT.'modules/events_front_end/model/DAO/');
 define('EVENTS_MODEL_MODEL',SITE_ROOT.'modules/events_front_end/model/model/');

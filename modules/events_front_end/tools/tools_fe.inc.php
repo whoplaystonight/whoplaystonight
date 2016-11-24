@@ -55,7 +55,7 @@ function paint_template_products($arrData){
 function paint_template_search($message){
   $log=log::getInstance();
   $log->add_log_general("error paint_template_search","events_front_end", "response".http_response_code());
-  $log->add_log_user("error paint_template_search","events_front_end", "response".http_response_code());
+  $log->add_log_user("error paint_template_search","","events_front_end", "response".http_response_code());
 
     print ("<section> \n");
     print ("<div class='container'> \n");

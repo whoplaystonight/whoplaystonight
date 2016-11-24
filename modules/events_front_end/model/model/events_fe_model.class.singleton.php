@@ -48,7 +48,7 @@ class events_fe_model {
   }
 
    public function count_like_events($arrArgument){
-    return $this->bll->count_like_events_BLL($arrArgument);
+     return $this->bll->count_like_events_BLL($arrArgument);
 
    }
 
