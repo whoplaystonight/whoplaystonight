@@ -5,7 +5,7 @@ $("document").ready(function(){
   $('.prod').click(function(){
     var id=this.getAttribute('id');
     //console.log(id);
-     $.get("modules/events_front_end/controller/controller_fe.class.php?idProduct=" + id, function(data,status){
+     $.get("index.php?module=events_front_end&function=idProducts&idProduct=" + id, function(data,status){
       var json=JSON.parse(data);
       var event=json.product;
       //console.log(product);
@@ -48,7 +48,7 @@ $("document").ready(function(){
       // if(xhr.status === 404){
       //   $("#results").load("modules/events_front_end/controller/controller_fe.class.php?view_error=false");
       // }else{
-        $("#results").load("modules/events_front_end/controller/controller_fe.class.php?view_error=true");
+        $("#results").load("index.php?module=events_front_end&function=view_error_false&view_error=false");
       // }
 
     });//end of get.fail

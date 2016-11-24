@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css">
 <!--Script to JavasCript Controller-->
 <script type="text/javascript" src="modules/products/view/js/products.js"></script>
+<!--<link rel="stylesheet" href="modules/products/view/css/events.css">-->
 
 <section id="product_page_sc" name="product_page_sc">
 

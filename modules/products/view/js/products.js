@@ -1,3 +1,12 @@
+// function test(){
+//   $.post("index.php?module=products&function=prova",
+//       function(response){
+//         console.log(response);
+//       })//End $.get
+//       .fail(console.log("I'm in fail"));//End of fail
+// }
+//
+// test();
 
 
 /*This is a pluggin to show a text by default in each input field.
@@ -284,7 +293,7 @@ $(document).ready(function(){
 
 
 
-    $.get("modules/products/controller/controller_products.class.php?load_data=true",
+    $.get("index.php?module=products&function=load_data_event&load_data=true",
           function(response){
             if(response.event===""){
               $("#event_id").val('');
@@ -320,7 +329,7 @@ $(document).ready(function(){
               $("#band_name").val(response.event.band_name);
               $("#description").val(response.event.description);
               $("#country").val(response.event.country);
-              $("#province").val(reponse.event.province);
+              $("#province").val(response.event.province);
               $("#town").val(response.event.town);
               var type_event_checked=response.event.type_event;
               var type_event=document.getElementsByName('type_event');
@@ -349,7 +358,7 @@ $(document).ready(function(){
 
     /*Dropzone function */
 $("#dropzone").dropzone({
-    url: "modules/products/controller/controller_products.class.php?upload=true",
+    url: "index.php?module=products&function=upload_avatar&upload=true",
     addRemoveLinks: true,
     maxFileSize: 200,
     dictResponseError: "Ha ocurrido un error en el server",
@@ -359,7 +368,7 @@ $("#dropzone").dropzone({
           this.on("success", function (file, response) {
             //console.log("estic dins del upload");
             //console.log(response);
-            //alert(response);
+            alert(response);
             $("#progress").show();
             $("#bar").width('100%');
             $("#percent").html('100%');
@@ -379,10 +388,10 @@ $("#dropzone").dropzone({
         var name = file.name;
         $.ajax({
             type: "POST",
-            url: "modules/products/controller/controller_products.class.php?delete=true",
+            url: "index.php?module=products&function=delete_events&delete=true",
             data: "filename=" + name,
             success: function (data) {
-              console.log(data);
+            //console.log(data);
 
                 $("#progress").hide();
                 $('.msg').text('').removeClass('msg_ok');
@@ -785,18 +794,18 @@ function validate_user(){
     /*To convert the JavaScript array in a JSON string*/
     var event_data_JSON=JSON.stringify(data);
 
-    $.post('modules/products/controller/controller_products.class.php',
+    $.post('index.php?module=products&function=register_event',
             {register_event_json:event_data_JSON},
     function(response){
 
-      //console.log(response);
+      console.log(response);
       if(response.success){
         window.location.href=response.redirect;
       }
 
 
     }, "json").fail(function (xhr,textStatus,errorThrown){
-              // console.log("Estoy en el fail");
+              console.log("Estoy en el fail");
               //console.log(xhr.responseJSON.error_avatar);
               if (xhr.status === 0) {
                   alert('Not connect: Verify Network.');
@@ -893,6 +902,7 @@ function validate_user(){
 
 
 function load_countries_v2(cad){
+
   $.getJSON(cad, function(data){
     $("#country").empty();
     $("#country").append('<option value="" selected="selected">Select a country</option>');
@@ -908,20 +918,20 @@ function load_countries_v2(cad){
 
 
 function load_countries_v1(){
-  $.get("modules/products/controller/controller_products.class.php?load_country=true",
+
+  $.get("index.php?module=products&function=load_country_events&load_country=true",
       function(response){
         //console.log(response);
-        if(response==='error'){
+        if(response.match(/error/)){
           load_countries_v2("resources/ListOfCountryNamesByName.json");
         }else{
-          load_countries_v2("modules/products/controller/controller_products.class.php?load_country=true");
+          load_countries_v2("index.php?module=products&function=load_country_events&load_country=true");
         }
       })//End $.get
       .fail(function(response){
           load_countries_v2("resources/ListOfCountryNamesByName.json");
       });//End of fail
 }//end of load_countries_v1
-
 
 function load_provinces_v2(){
   $.get("resources/ListOfCountryNamesByName.xml", function(xml){
@@ -943,7 +953,7 @@ function load_provinces_v2(){
 
 function load_provinces_v1(){
 
-  $.get("modules/products/controller/controller_products.class.php?load_provinces=true",
+  $.get("index.php?module=products&function=load_provinces_events&load_provinces=true",
           function(response){
             //console.log(response);
             $("#province").empty();
@@ -990,7 +1000,7 @@ function load_towns_v2(prov) {
 function load_towns_v1(prov){
 
   var data={idPoblac:prov};
-  $.post("modules/products/controller/controller_products.class.php",data, function(response){
+  $.post("index.php?module=products&function=load_towns",data, function(response){
     //console.log(response);
     var json=JSON.parse(response);
     var towns=json.towns;

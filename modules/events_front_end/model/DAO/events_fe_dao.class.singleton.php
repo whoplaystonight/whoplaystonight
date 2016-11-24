@@ -1,6 +1,6 @@
 <?php
 
-class events_fe_DAO{
+class events_fe_dao{
 
 
   static $_instance;

@@ -1,11 +1,7 @@
 <?php
 
-  require (MODEL_PATH."Db.class.singleton.php");
-  require (SITE_ROOT."modules/events_front_end/model/DAO/events_fe_DAO.class.singleton.php");
 
-
-
-  class events_fe_BLL{
+  class events_fe_bll{
 
 
     private $dao;
@@ -15,8 +11,8 @@
 
     private function __construct(){
 
-      $this->dao=events_fe_DAO::getInstance();
-      $this->db=Db::getInstance();
+      $this->dao=events_fe_dao::getInstance();
+      $this->db=db::getInstance();
 
     }//end of constructor
 

@@ -1,14 +1,12 @@
 <?php
 
-require(SITE_ROOT."modules/events_front_end/model/BLL/events_fe_BLL.class.singleton.php");
-
 class events_fe_model {
   private $bll;
   static $_instance;
 
   private function __construct(){
 
-    $this->bll = events_fe_BLL::getInstance();
+    $this->bll = events_fe_bll::getInstance();
 
   }//end of constructor
 
@@ -50,7 +48,7 @@ class events_fe_model {
   }
 
    public function count_like_events($arrArgument){
-    return $this->bll->count_like_events_BLL($arrArgument);
+     return $this->bll->count_like_events_BLL($arrArgument);
 
    }
 
