@@ -1,6 +1,4 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '/whoplaystonight/libs/PHPMailer_v5.1/class.phpmailer.php');
-require($_SERVER['DOCUMENT_ROOT'] . '/whoplaystonight/libs/PHPMailer_v5.1/class.smtp.php');
 class email {
   private $body;
   private $address;
@@ -23,7 +21,6 @@ class email {
       $this->mail->Password = $cnfg['pass'];
       $this->mail->AddReplyTo($cnfg['email'], $cnfg['defaultsubject']);
       $this->mail->SetFrom($cnfg['email'], $cnfg['defaultsubject']);
-      //$this->mail->addAttachment(IMG_RURAL_SHOP);
 
       $this->subject="Who_Plays_Tonight";
 
@@ -65,7 +62,7 @@ class email {
       $this->mail->AddAddress($this->address, $this->name);
       $this->mail->IsHTML(true);
 
-      $result = $this->send_mailgun($this->address);
+      $result = $this->send_mailgun($this->address, $this->subject, $this->body);
       return $result;
     } catch (phpmailerException $e) {
       $log = log::getInstance();
@@ -82,7 +79,7 @@ class email {
     }
   }
 
-  public function send_mailgun($email){
+  public function send_mailgun($email,$subject,$body){
     $config = array();
     $config['api_key'] = "key-caefb7f7173a9ec6db6c4812b857a9e3"; //API Key
     $config['api_url'] = "https://api.mailgun.net/v3/sandboxe652dced2eb646ac9325737926df1dee.mailgun.org/messages"; //API Base URL
@@ -91,9 +88,9 @@ class email {
     $message['from'] = "whoplaystonight@gmail.com";
     $message['to'] = $email;
     $message['h:Reply-To'] = "whoplaystonight@gmail.com";
-    $message['subject'] = "Hello, this is a test";
-    $message['html'] = 'Hello ' . $email . ',</br></br> This is a test';
-    
+    $message['subject'] = $subject;
+    $message['html'] = 'Hello ' . $email . ',</br></br>' . $body;
+
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $config['api_url']);
     curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);

@@ -42,7 +42,7 @@
  * to an SMTP server.
  * original author: Chris Ryan
  */
- 
+
 //class SMTP {
 class smtp {
   /**

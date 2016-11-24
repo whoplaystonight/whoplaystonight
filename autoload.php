@@ -31,6 +31,14 @@
     }elseif(file_exists('modules/products/model/DAO/'.$className.'.class.singleton.php')){
       set_include_path('modules/products/model/DAO/');
       spl_autoload($className);
-    }
+
+    }elseif( file_exists('classes/email/'.$className.'.class.singleton.php' )){
+			set_include_path('classes/email/');
+			spl_autoload($className);
+
+		}elseif( file_exists('libs/PHPMailer_v5.1/class.'.$className.'.php' ) ){
+			set_include_path('libs/PHPMailer_v5.1/' );
+			spl_autoload('class.'.$className);
+		}
 
   }//end loadClasses

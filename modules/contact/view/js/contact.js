@@ -14,11 +14,6 @@ function paint(dataString) {
   // Enable button after processing
   $('#submitBtn').attr('disabled', false);
 
-  /*if (dataString == "<div class='alert alert-success'>Your message has been sent </div>"){
-  alert(dataString);
-}else{
-alert(dataString);
-}*/
 }
 
 $(document).ready(function(){
@@ -50,9 +45,7 @@ $(document).ready(function(){
     });
 
     $("#contact_form").submit(function(){
-      console.log("submit");
       if ($("#contact_form").valid()){
-        console.log("valid");
         // Disable button while processing
         $('#submitBtn').attr('disabled', true);
 
@@ -62,8 +55,7 @@ $(document).ready(function(){
         var dataString = $("#contact_form").serialize();
         $.ajax({
           type: "POST",
-          //url: "index.php?module=contact&function=process_contact",
-          url: "modules/contact/controller/controller_contact.class.php",
+          url: "index.php?module=contact&function=process_contact",
           data: dataString,
           success: function(dataString) {
             paint(dataString);
