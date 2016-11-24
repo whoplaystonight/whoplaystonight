@@ -1,5 +1,5 @@
 <?php
-  class Db{
+  class db{
 
     private $host;
     private $port;
@@ -22,8 +22,8 @@
 
     private function setConnection(){
 
-      require_once 'Conf.class.singleton.php';
-      $conf=Conf::getInstance();
+      require_once 'conf.class.singleton.php';
+      $conf=conf::getInstance();
       $this->host=$conf->_host;
       $this->port=$conf->_port;
       $this->db=$conf->_db;

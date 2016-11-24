@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+    <module>
+        <name>main</name>
+        <uri>main</uri>
+    </module>
+    <module>
+        <name>events_front_end</name>
+        <uri>events_front_end</uri>
+    </module>
+    <module>
+        <name>products</name>
+        <uri>products</uri>
+    </module>
+    <module>
+        <name>services</name>
+        <uri>services</uri>
+    </module>
+    <module>
+        <name>contact</name>
+        <uri>contact</uri>
+    </module>
+</modules>

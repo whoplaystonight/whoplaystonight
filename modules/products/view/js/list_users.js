@@ -7,7 +7,7 @@ function load_users_ajax(){
 
   $.ajax({
     type:'GET',
-    url:"modules/products/controller/controller_products.class.php?load=true",
+    url:"index.php?module=products&function=load_event&load=true",
     async:false
 
   }).success(function(data){
@@ -32,7 +32,7 @@ function load_users_ajax(){
 
 function load_users_get_v1(){
 
-  $.get("modules/products/controller/controller_products.class.php?load=true", function (data, status){
+  $.get("index.php?module=products&function=load_event&load=true", function (data, status){
 
     var json=JSON.parse(data);
     print_user(json);
@@ -49,7 +49,7 @@ function load_users_get_v1(){
 
 function load_users_get_v2(){
 
-  var jqxhr=$.get("modules/products/controller/controller_products.class.php?load=true", function (data){
+  var jqxhr=$.get("index.php?module=products&function=load_event&load=true", function (data){
     var json=JSON.parse(data);
 
     print_user(json);

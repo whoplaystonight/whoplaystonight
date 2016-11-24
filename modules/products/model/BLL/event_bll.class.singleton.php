@@ -1,12 +1,5 @@
 <?php
 
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/whoplaystonight/';
-  define('SITE_ROOT', $path);
-  define('MODEL_PATH',SITE_ROOT.'model/');
-
-  require (MODEL_PATH."Db.class.singleton.php");
-  require (SITE_ROOT."modules/products/model/DAO/event_dao.class.singleton.php");
-
   class event_bll{
 
 
@@ -18,7 +11,7 @@
     private function __construct(){
 
       $this->dao=event_dao::getInstance();
-      $this->db=Db::getInstance();
+      $this->db=db::getInstance();
 
     }//end of constructor
 

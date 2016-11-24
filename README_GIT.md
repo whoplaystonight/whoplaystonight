@@ -22,7 +22,7 @@ trabajo correcto con GIT, el sistema de control de versiones empleado.
     sus avances. En principio es una rama local, que habrá que subirla al repositorio
     remoto con:
 
-                      git push origin Sergio
+                      git push -u origin Sergio
 
     Ahora que ya tenemos la rama en local y remoto, cada cambio que realicemos en local
     lo reflejaremos en remoto con los commits y push correspondientes.
