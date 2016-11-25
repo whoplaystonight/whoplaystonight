@@ -1,5 +1,4 @@
 <?php
-//include($_SERVER['DOCUMENT_ROOT']."/whoplaystonight/classes/email/email.class.singleton.php");
 function enviar_email($arr) {
   $html = '';
   $subject = '';
