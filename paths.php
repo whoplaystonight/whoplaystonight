@@ -47,3 +47,5 @@ define('CONTACT_CSS_PATH', SITE_PATH . 'modules/contact/view/css/');
 define('CONTACT_LIB_PATH', SITE_PATH . 'modules/contact/view/lib/');
 define('CONTACT_IMG_PATH', SITE_PATH . 'modules/contact/view/img/');
 define('CONTACT_VIEW_PATH', 'modules/contact/view/');
+
+define('LOCATE_VIEW_PATH', 'modules/locate/view/');

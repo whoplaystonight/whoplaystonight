@@ -18,6 +18,7 @@
 					          <li><a href="index.php?module=portfolio">PORTFOLIO</a></li>
                     <li><a href="index.php?module=pricing">PRICING</a></li>
                     <li><a href="index.php?module=contact&function=contact">CONTACT</a></li>
+                    <li><a href="index.php?module=locate&function=locate">LOCATE</a></li>
                 </ul>
             </div>
 

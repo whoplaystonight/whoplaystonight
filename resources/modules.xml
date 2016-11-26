@@ -20,4 +20,8 @@
         <name>contact</name>
         <uri>contact</uri>
     </module>
+    <module>
+        <name>locate</name>
+        <uri>locate</uri>
+    </module>
 </modules>
