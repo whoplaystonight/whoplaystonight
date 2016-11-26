@@ -48,4 +48,9 @@ define('CONTACT_LIB_PATH', SITE_PATH . 'modules/contact/view/lib/');
 define('CONTACT_IMG_PATH', SITE_PATH . 'modules/contact/view/img/');
 define('CONTACT_VIEW_PATH', 'modules/contact/view/');
 
+//model locate
 define('LOCATE_VIEW_PATH', 'modules/locate/view/');
+define('LOCATE_MODEL',SITE_ROOT.'modules/locate/model/');
+define('LOCATE_MODEL_BLL', SITE_ROOT.'modules/locate/model/bll/');
+define('LOCATE_MODEL_DAO', SITE_ROOT.'modules/locate/model/dao/');
+define('LOCATE_MODEL_MODEL',SITE_ROOT.'modules/locate/model/model/');

@@ -32,5 +32,5 @@
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   	<!--<link rel="stylesheet" href="/resources/demos/style.css">-->
     <link href="view/css/main.css" rel="stylesheet" />
-
+    <script type="text/javascript" src="view/js/cookies.js"></script>
 </head>

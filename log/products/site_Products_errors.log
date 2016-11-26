@@ -1,0 +1,52 @@
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 04:00:14| User: |locate|response200
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 04:01:29| User: |locate|response200
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 04:05:09| User: |locate|response200
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 04:05:31| User: |locate|response200
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 04:05:53| User: |locate|response200
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 04:12:18| User: |locate|response200
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 04:12:29| User: |locate|response200
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 04:13:18| User: |locate|response200
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 03:49:52| User: |locate|response200
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 03:50:21| User: |locate|response200
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 03:52:42| User: |locate|response200
+error loadView general|26.11.2016 04:22:09| User: |products|response400
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 04:22:55| User: |locate|response200
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 05:35:43| User: |locate|response200
+ERROR: [8] Use of undefined constant MODEL_OFERTAS - assumed 'MODEL_OFERTAS'
+Notice on line 20 in file /var/www/html/whoplaystonight/modules/locate/controller/controller_locate.class.php
+|26.11.2016 05:35:52| User: |locate|response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|26.11.2016 05:47:08| User: |locate|response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|26.11.2016 05:48:56| User: |locate|response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|26.11.2016 05:55:53| User: |locate|response200
