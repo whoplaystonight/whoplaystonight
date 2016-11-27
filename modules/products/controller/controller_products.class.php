@@ -234,9 +234,10 @@ class controller_products{
 
   public function load_country_events(){
 
-    echo json_encode("Estic al load coutry");
-    exit;
-    if((isset($_GET["load_country"])) && ($_GET["load_country"]==true)){
+
+    if((isset($_POST["load_country"])) && ($_POST["load_country"]==true)){
+      //  echo json_encode("Estic al load_country_events");
+      //  exit;
 
       $json=array();
 
@@ -285,8 +286,8 @@ class controller_products{
 
   public function load_provinces_events(){
 
-    if((isset($_GET["load_provinces"])) && ($_GET["load_provinces"]==true)){
-      //  echo json_encode("Estic al load_provinces");
+    if((isset($_POST["load_provinces"])) && ($_POST["load_provinces"]==true)){
+      //  echo json_encode("Estic al load_provinces_events");
       //  exit;
       $jsondata=array();
       $json=array();

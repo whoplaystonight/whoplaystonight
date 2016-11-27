@@ -29,12 +29,12 @@
         <uri>load_data_event</uri>
     </function>
     <function>
-        <name>load_country</name>
-        <uri>load_country</uri>
+        <name>load_country_events</name>
+        <uri>load_country_events</uri>
     </function>
     <function>
-        <name>load_provinces</name>
-        <uri>load_provinces</uri>
+        <name>load_provinces_events</name>
+        <uri>load_provinces_events</uri>
     </function>
     <function>
         <name>load_towns</name>

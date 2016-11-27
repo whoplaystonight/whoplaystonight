@@ -798,7 +798,7 @@ function validate_user(){
             {register_event_json:event_data_JSON},
     function(response){
 
-      console.log(response);
+      //console.log(response);
       if(response.success){
         window.location.href=response.redirect;
       }
@@ -902,7 +902,7 @@ function validate_user(){
 
 
 function load_countries_v2(cad){
-
+//console.log(cad);
   $.getJSON(cad, function(data){
     $("#country").empty();
     $("#country").append('<option value="" selected="selected">Select a country</option>');
@@ -912,29 +912,34 @@ function load_countries_v2(cad){
     });//End of each data
   })//end of getJson
   .fail(function() {
+    //console.log("estic al fail");
     alert("error load_countries");
   });
 }//End of load_countries_v2
 
 
 function load_countries_v1(){
-
-  $.get("index.php?module=products&function=load_country_events&load_country=true",
+  //console.log("Estic al load countries");
+  //$.get("index.php?module=products&function=load_country_events&load_country=true"
+  $.post("../../products/load_country_events/",{'load_country':true},
       function(response){
         //console.log(response);
         if(response.match(/error/)){
-          load_countries_v2("resources/ListOfCountryNamesByName.json");
+          //console.log("match_error");
+          load_countries_v2("../../resources/ListOfCountryNamesByName.json");
         }else{
-          load_countries_v2("index.php?module=products&function=load_country_events&load_country=true");
+          //console.log("else");
+          load_countries_v2("../../products/load_country_events/",{'load_country':true});
         }
       })//End $.get
       .fail(function(response){
-          load_countries_v2("resources/ListOfCountryNamesByName.json");
+          //console.log("Estic al fail");
+          load_countries_v2("../../resources/ListOfCountryNamesByName.json");
       });//End of fail
 }//end of load_countries_v1
 
 function load_provinces_v2(){
-  $.get("resources/ListOfCountryNamesByName.xml", function(xml){
+  $.post("../../resources/ListOfCountryNamesByName.xml", function(xml){
     $("#province").empty();
     $("#province").append('<option value"" selected="selected">Select a province</option>');
 
@@ -952,8 +957,9 @@ function load_provinces_v2(){
 }//End of load_provinces_v2
 
 function load_provinces_v1(){
-
-  $.get("index.php?module=products&function=load_provinces_events&load_provinces=true",
+  //console.log("Estic al load_provinces_V1");
+  //$.get("index.php?module=products&function=load_provinces_events&load_provinces=true"
+  $.post("../../products/load_provinces_events/",{'load_provinces':true},
           function(response){
             //console.log(response);
             $("#province").empty();
@@ -981,7 +987,7 @@ function load_provinces_v1(){
 }//end of load_provinces_v1
 
 function load_towns_v2(prov) {
-  $.get("resources/ListOfCountryNamesByName.xml", function(xml){
+  $.get("../../resources/ListOfCountryNamesByName.xml", function(xml){
     $("#town").empty();
     $("#town").append('<option value"" selected="selected">Select a town</option>');
 
@@ -998,9 +1004,9 @@ function load_towns_v2(prov) {
 
 
 function load_towns_v1(prov){
-
+  //"index.php?module=products&function=load_towns"
   var data={idPoblac:prov};
-  $.post("index.php?module=products&function=load_towns",data, function(response){
+  $.post('../../products/load_towns/',data, function(response){
     //console.log(response);
     var json=JSON.parse(response);
     var towns=json.towns;

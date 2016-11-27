@@ -60,10 +60,10 @@
           $exist=true;
 
           $path=MODULES_PATH . $URI_module."/controller/controller_". $URI_module. ".class.php";
-          // debugECHO($path);
+          //debugECHO($path);
 
           if(file_exists($path)){
-            // debugECHO("Estic al if");
+          //debugECHO("Estic al if");
 
             require($path);
             $controllerClass="controller_". $URI_module;
@@ -73,7 +73,7 @@
 
 
           }else{
-            debugECHO("Estic al else");
+            //debugECHO("Estic al else");
             showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
 
           }
@@ -85,7 +85,7 @@
       }//end foreach
 
       if(!$exist){
-
+        // debugECHO("Estic al !exist");
         showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
 
       }//End of if exist
@@ -94,7 +94,7 @@
 
 
     function handlerFunction($module, $obj, $URI_function){
-
+      //debugECHO("handlerFunction");
       $functions = simplexml_load_file(MODULES_PATH . $module . "/resources/functions.xml");
       $exist=false;
 
@@ -102,15 +102,17 @@
         if(($URI_function === (String)$function->uri)){
           $exist=true;
           $event=(String)$function->name;
+          //debugECHO("JAMON");
           break;
         }//enf if
 
       }//End foreach
 
       if(!$exist){
-        // debugECHO("entra al exists false");
+        //debugECHO("entra al exists false");
         showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
       }else{
+        //debugECHO($event);
         call_user_func(array($obj,$event));
       }
     }
