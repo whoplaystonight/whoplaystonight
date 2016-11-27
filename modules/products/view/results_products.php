@@ -8,7 +8,7 @@
 
 		<section>
 			<div id="content"></div>
-			<script type="text/javascript" src="modules/products/view/js/list_users.js" ></script>
+			<script type="text/javascript" src="<?php echo PRODUCTS_VIEW_JS ?>list_users.js" ></script>
 		</section>
 
 </section>

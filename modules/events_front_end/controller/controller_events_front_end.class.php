@@ -13,7 +13,7 @@ class controller_events_front_end{
     // include (TOOLS . "filters.inc.php");
     // include (TOOLS . "tools.inc.php");
     // include (TOOLS . "response_code.inc.php");
-    include (TOOLS . "common.inc.php");
+    //include (TOOLS . "common.inc.php");
 
     $_SESSION['module']="events_front_end";
 
@@ -30,7 +30,7 @@ class controller_events_front_end{
 
     loadView('modules/events_front_end/view/' , 'list_products.php');
 
-    require_once(VIEW_PATH_INC . "footer.html");
+    require_once(VIEW_PATH_INC . "footer.php");
 
   }//end of list_events
 

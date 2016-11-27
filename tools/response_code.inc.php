@@ -113,10 +113,10 @@ function showErrorPage($code = 0, $message ="", $http="", $num_http=0){
       exit;
       break;
     case 4:
-      //require_once(VIEW_PATH_INC."header.php");
+      require_once(VIEW_PATH_INC."header.php");
       require_once(VIEW_PATH_INC."menu.php");
       loadView($num_http);
-      //require_once(VIEW_PATH_INC."footer.html");
+      require_once(VIEW_PATH_INC."footer.php");
       break;
 
   }//end of switch

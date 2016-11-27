@@ -41,6 +41,7 @@
 
     if(file_exists($view_path)){
 
+
       if(isset($data)){
         $arrData=$data;
       }
@@ -52,8 +53,10 @@
 
         if($result['resultado']){
           $path_view=$result['datos'];
+          //debugECHO("PAN");
         }else{
           $path_view=http_response_code();
+          //debugECHO("JAMON");
         }
 
         $log=log::getInstance();

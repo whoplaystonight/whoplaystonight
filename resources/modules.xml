@@ -16,5 +16,13 @@
         <name>services</name>
         <uri>services</uri>
     </module>
+    <module>
+        <name>portfolio</name>
+        <uri>portfolio</uri>
+    </module>
+    <module>
+        <name>pricing</name>
+        <uri>pricing</uri>
+    </module>
 
 </modules>

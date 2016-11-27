@@ -2,9 +2,10 @@
 
   require_once("paths.php");
   require 'autoload.php';
+  include(TOOLS . "common.inc.php");
   include(TOOLS . "filters.inc.php");
-  include(TOOLS . "tools.inc.php");
   include(TOOLS . "response_code.inc.php");
+  include(TOOLS . "tools.inc.php");
 
   if(PRODUCTION){
   	ini_set('display_errors',1);
@@ -35,9 +36,13 @@
            //debugECHO($URI_function);
   		} else {
   			   $URI_function = 'begin';
+           //debugECHO($URI_function);
+
   		}
 
   	  handlerModule($URI_module, $URI_function);
+
+
 
 
   	}//end of handlerRouter function
@@ -45,6 +50,7 @@
 
 
     function handlerModule($URI_module, $URI_function){
+
       $modules=simplexml_load_file('resources/modules.xml');
       $exist=false;
 
@@ -57,7 +63,7 @@
           // debugECHO($path);
 
           if(file_exists($path)){
-            //debugECHO("Estic al if");
+            // debugECHO("Estic al if");
 
             require($path);
             $controllerClass="controller_". $URI_module;
@@ -102,6 +108,7 @@
       }//End foreach
 
       if(!$exist){
+        // debugECHO("entra al exists false");
         showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
       }else{
         call_user_func(array($obj,$event));

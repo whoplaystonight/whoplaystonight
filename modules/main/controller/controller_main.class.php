@@ -2,7 +2,7 @@
   class controller_main{
 
     public function __construct(){
-      include(TOOLS . "common.inc.php");
+      //include(TOOLS . "common.inc.php");
     }
 
     public function begin(){
@@ -11,6 +11,6 @@
 
       loadView('modules/main/view/' , 'main.php');
 
-      require_once(VIEW_PATH_INC . "footer.html");
+      require_once(VIEW_PATH_INC . "footer.php");
     }
   }

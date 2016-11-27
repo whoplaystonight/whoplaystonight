@@ -8,6 +8,15 @@
 
   function loadClasses($className){
 
+    // $pieces=explode("_",$className);
+    // $module_name=$pieces[0];
+    // $model_name="";
+    //
+    // if(isset($pieces[1])){
+    //   $model_name=$pieces[1];
+    //   $model_name=strtoupper($model_name);
+    // }
+
     if(file_exists('classes/'.$className.'.class.singleton.php')){
       set_include_path('classes/');
       spl_autoload($className);
@@ -32,5 +41,9 @@
       set_include_path('modules/products/model/DAO/');
       spl_autoload($className);
     }
+    // elseif(file_exists('modules/'.$module_name.'/model/'.$model_name.'/'.$className.'.class.singleton.php')){
+    //   set_include_path('modules/'.$module_name.'/model/'.$model_name.'/');
+    //   spl_autoload($className);
+    // }
 
   }//end loadClasses

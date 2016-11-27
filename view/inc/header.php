@@ -19,11 +19,11 @@
 
 
     <!-- BOOTSTRAP CORE STYLE CSS -->
-    <link href="view/css/bootstrap.css" rel="stylesheet" />
+    <link href="<?php echo CSS_PATH ?>bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLE CSS -->
-    <link href="view/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="<?php echo CSS_PATH ?>font-awesome.min.css" rel="stylesheet" />
     <!-- CUSTOM STYLE CSS -->
-    <link href="view/css/style.css" rel="stylesheet" />
+    <link href="<?php echo CSS_PATH ?>style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
 
@@ -31,6 +31,7 @@
   	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   	<!--<link rel="stylesheet" href="/resources/demos/style.css">-->
-    <link href="view/css/main.css" rel="stylesheet" />
+    <!--<link href="view/css/main.css" rel="stylesheet" />-->
+    <link href="<?php echo CSS_PATH ?>main.css" rel="stylesheet">
 
 </head>

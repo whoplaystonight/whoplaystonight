@@ -1,5 +1,5 @@
 <section  class="note-sec" >
-         
+
                <div class="container">
            <div class="row text-center pad-row" >
             <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 ">
@@ -13,25 +13,25 @@
                             </p>
                 </div>
                </div>
-            </div>   
-           
+            </div>
+
        </section>
     <!--/.NOTE END-->
      <section id="clients"  >
-        
-                
+
+
             <div class="container">
            <div class="row text-center pad-bottom" >
             <div class="col-md-12">
-                <img src="view/img/clients.png" alt="" class="img-responsive" />
+                <img src="<?php echo IMG_PATH ?>clients.png" alt="" class="img-responsive" />
             </div>
-               
+
                </div>
         </div>
         </section>
      <!--/.CLIENTS END-->
     <section id="footer-sec" >
-             
+
             <div class="container">
            <div class="row  pad-bottom" >
             <div class="col-md-4">
@@ -46,10 +46,10 @@
                <div class="col-md-4">
                     <h4> <strong>SOCIAL LINKS</strong> </h4>
                    <p>
-                     <a href="#"><i class="fa fa-facebook-square fa-3x"  ></i></a>  
-                        <a href="#"><i class="fa fa-twitter-square fa-3x"  ></i></a>  
-                        <a href="#"><i class="fa fa-linkedin-square fa-3x"  ></i></a>  
-                       <a href="#"><i class="fa fa-google-plus-square fa-3x"  ></i></a>  
+                     <a href="#"><i class="fa fa-facebook-square fa-3x"  ></i></a>
+                        <a href="#"><i class="fa fa-twitter-square fa-3x"  ></i></a>
+                        <a href="#"><i class="fa fa-linkedin-square fa-3x"  ></i></a>
+                       <a href="#"><i class="fa fa-google-plus-square fa-3x"  ></i></a>
                    </p>
                 </div>
                <div class="col-md-4">
@@ -63,14 +63,15 @@
                 </div>
                </div>
             </div>
-    </section>         
+    </section>
     <!--/.FOOTER END-->
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
     <!-- CORE JQUERY  -->
     <!--<script src="view/plugins/jquery-1.10.2.js"></script>-->
     <!-- BOOTSTRAP SCRIPTS  -->
-    <script src="view/plugins/bootstrap.js"></script>
+    <script src="<?php echo VIEW_PLUGINS ?>bootstrap.js"></script>
   <!-- CUSTOM SCRIPTS  -->
-    <script src="view/js/custom.js"></script>
+    <script src="<?php echo VIEW_JS ?>custom.js"></script>
+
 </body>
 </html>

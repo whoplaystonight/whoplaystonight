@@ -9,7 +9,7 @@ class controller_products{
   public function __construct(){
     include(PRODUCTS_TOOLS. "functions_products.inc.php");
     include(TOOLS . "upload.php");
-    include(TOOLS . "common.inc.php");
+    //include(TOOLS . "common.inc.php");
     include(LOG_CLASS);
     $_SESSION['module']="products";
   }
@@ -32,7 +32,7 @@ class controller_products{
 
     loadView('modules/products/view/','create_products.php');
 
-    require_once(VIEW_PATH_INC . "footer.html");
+    require_once(VIEW_PATH_INC . "footer.php");
 
   }
 
@@ -50,7 +50,7 @@ class controller_products{
     echo '<br><br><br><br><br><br><br><br>';
     loadView('modules/products/view/','results_products.php');
 
-    require_once(VIEW_PATH_INC . "footer.html");
+    require_once(VIEW_PATH_INC . "footer.php");
 
   }
 
