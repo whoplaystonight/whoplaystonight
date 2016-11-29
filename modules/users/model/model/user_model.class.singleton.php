@@ -1,7 +1,5 @@
 <?php
 
-$path = $_SERVER['DOCUMENT_ROOT'] . '/whoplaystonight/';
-define('SITE_ROOT', $path);
 require(SITE_ROOT . "modules/users/model/BLL/user_bll.class.singleton.php");
 
 class user_model {

@@ -339,7 +339,10 @@ function validate_user() {
 
         var data_users_JSON = JSON.stringify(data);
 
-        $.post('modules/users/controller/controller_users.class.php', {
+        // $.post('modules/users/controller/controller_users.class.php', {
+        //     alta_users_json: data_users_JSON
+        // },
+        $.post('index.php?module=users&function=alta_users&alta_users=true',{
             alta_users_json: data_users_JSON
         },
         function(response) {
@@ -429,12 +432,13 @@ function remove_data_ifback() {
 }
 
 function load_countries_v1() {
-    $.get( "modules/users/controller/controller_users.class.php?load_pais=true",
+    $.get( "index.php?module=users&function=load_pais&load_pais=true",
         function( response ) {
+            // console.log(response);
             if(response === 'error'){
                 load_countries_v2("resources/ListOfCountryNamesByName.json");
             }else{
-                load_countries_v2("modules/users/controller/controller_users.class.php?load_pais=true");
+                load_countries_v2("index.php?module=users&function=load_pais&load_pais=true");
             }
     })
     .fail(function(response) {
@@ -457,11 +461,11 @@ function load_countries_v2(cad) {
 }
 
 function load_provincias_v1() { //provinciasypoblaciones.xml - xpath
-    $.get( "modules/users/controller/controller_users.class.php?load_provincias=true",
+    $.get( "index.php?module=users&function=load_provincias&load_provincias=true",
     function( response ) {
+        // console.log(response);
         $("#provincia").empty();
         $("#provincia").append('<option value="" selected="selected">Selecciona una Provincia</option>');
-        // console.log(response);
         //alert(response);
         var json = JSON.parse(response);
         var provincias=json.provincias;
@@ -501,7 +505,7 @@ function load_provincias_v2() {
 
 function load_poblaciones_v1(prov) { //provinciasypoblaciones.xml - xpath
     var datos = { idPoblac : prov  };
-    $.post("modules/users/controller/controller_users.class.php", datos, function(response) {
+    $.post("index.php?module=users&function=load_poblaciones&load_poblaciones=true", datos, function(response) {
         // console.log(response);
         var json = JSON.parse(response);
         var poblaciones=json.poblaciones;

@@ -52,7 +52,7 @@ class userDAO {
         $ch = curl_init();
         curl_setopt ($ch, CURLOPT_URL, $url);
         curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT/*, $timeout*/, 3000);
         $file_contents = curl_exec($ch);
         curl_close($ch);
         return ($file_contents) ? $file_contents : FALSE;
@@ -62,7 +62,7 @@ class userDAO {
         $json = array();
         $tmp = array();
 
-        $provincias = simplexml_load_file("../../../resources/provinciasypoblaciones.xml");
+        $provincias = simplexml_load_file(PROVINCIASYPOBLACIONES);
         $result = $provincias->xpath("/lista/provincia/nombre | /lista/provincia/@id");
         for ($i=0; $i<count($result); $i+=2) {
             $e=$i+1;
@@ -81,7 +81,8 @@ class userDAO {
         $tmp = array();
 
         $filter = (string)$arrArgument;
-        $xml = simplexml_load_file('../../../resources/provinciasypoblaciones.xml');
+        $xml = simplexml_load_file(PROVINCIASYPOBLACIONES);
+        // echo json_encode("towns");exit;
         $result = $xml->xpath("/lista/provincia[@id='$filter']/localidades");
 
         for ($i=0; $i<count($result[0]); $i++) {

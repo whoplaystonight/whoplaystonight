@@ -40,3 +40,10 @@ define('PRODUCTS_TOOLS',SITE_ROOT.'modules/products/tools/');
 define('PRODUCTS_VIEW_JS',SITE_ROOT.'modules/products/view/js/');
 define('PRODUCTS_MODEL_MODEL', SITE_ROOT.'modules/products/model/model/');
 define('PRODUCTS_VIEW_CSS', SITE_PATH.'modules/products/view/css/');
+
+//module users
+define('PROVINCIASYPOBLACIONES', SITE_ROOT . 'resources/provinciasypoblaciones.xml');
+// define('USERS_TOOLS',SITE_ROOT.'modules/users/tools/');
+// define('USERS_VIEW_JS',SITE_ROOT.'modules/users/view/js/');
+// define('USERS_MODEL_MODEL', SITE_ROOT.'modules/users/model/model/');
+// define('USERS_VIEW_CSS', SITE_PATH.'modules/users/view/css/');
