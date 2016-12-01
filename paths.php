@@ -3,7 +3,7 @@
 $root = $_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/';
 define('SITE_ROOT',$root);
 //SITE_PATH
-define('SITE_PATH', 'https://'.$_SERVER['HTTP_HOST'].'/whoplaystonight/');
+define('SITE_PATH', 'http://'.$_SERVER['HTTP_HOST'].'/whoplaystonight/');
 //CSS
 define('CSS_PATH',SITE_PATH. 'view/css/');
 //LOG
@@ -54,3 +54,6 @@ define('LOCATE_MODEL',SITE_ROOT.'modules/locate/model/');
 define('LOCATE_MODEL_BLL', SITE_ROOT.'modules/locate/model/bll/');
 define('LOCATE_MODEL_DAO', SITE_ROOT.'modules/locate/model/dao/');
 define('LOCATE_MODEL_MODEL',SITE_ROOT.'modules/locate/model/model/');
+
+//amigables
+define('URL_AMIGABLES', TRUE);

@@ -11,13 +11,30 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php?module=main">HOME</a></li>
+                    <li class="
+                        <?php if(isset($_GET['module']) === 'main')
+                            echo 'active';
+                        else
+                            echo 'deactivate';
+                        ?>"
+                        >
+                        <a href="<?php amigable('?module=main'); ?>">HOME</a>
+                    </li>
                     <li><a href="index.php?module=services&function=begin">SERVICES</a></li>
-					          <li><a href="index.php?module=products&function=events_form">EVENTS</a></li>
+                    <li><a href="index.php?module=products&function=events_form">EVENTS</a></li>
                     <li><a href="index.php?module=events_front_end&function=list_events">LIST EVENT</a><li>
-					          <li><a href="index.php?module=portfolio">PORTFOLIO</a></li>
+                    <li><a href="index.php?module=portfolio">PORTFOLIO</a></li>
                     <li><a href="index.php?module=pricing">PRICING</a></li>
-                    <li><a href="index.php?module=contact&function=contact">CONTACT</a></li>
+                    <li class="
+                        <?php if(isset($_GET['module']) === 'contact')
+                            echo 'active';
+                        else
+                            echo 'deactivate';
+                        ?>"
+                        >
+                        <a href="<?php amigable('?module=contact&function=contact'); ?>">CONTACT</a>
+                    </li>
+                    <!--<li><a href="index.php?module=contact&function=contact">CONTACT</a></li>-->
                     <li><a href="index.php?module=locate&function=locate">LOCATE</a></li>
                 </ul>
             </div>
@@ -26,10 +43,10 @@
     </div>
     <br>
     <section id="title" class="emerald">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h1><?php
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1><?php
                     if (!isset($_GET['module'])) {
                         echo "Home";
                     } else if (isset($_GET['module']) && !isset($_GET['view'])) {
@@ -38,12 +55,12 @@
                         echo "<a href='index.php?module=" . $_GET['module'] . "&view=".$_GET['view']."'>" . $_GET['module'] . "</a>";
                     }
                     ?></h1>
-                <strong>WEB TEST</strong>
+                    <strong>WEB TEST</strong>
 
 
+                </div>
+                <h2 class="BackHome"><a href="index.php">Back Home</a></h2>
             </div>
-             <h2 class="BackHome"><a href="index.php">Back Home</a></h2>
         </div>
-    </div>
-  </section>
-   <!--/.NAVBAR END-->
+    </section>
+    <!--/.NAVBAR END-->

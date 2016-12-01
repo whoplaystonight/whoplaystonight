@@ -1,6 +1,6 @@
 $(document).ready(start);
 function start() {
-    $.post(("index.php?module=locate&function=maploader"), {value: {send: true}},
+    $.post(("?module=ofertas&function=maploader"), {value: {send: true}},
     function (response) {
         console.log(response);
         if (response.success) {
