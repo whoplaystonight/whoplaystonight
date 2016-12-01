@@ -1,3 +1,0 @@
-ERROR: [8] Undefined variable: fields
-Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
-|01.12.2016 02:54:48| User: |locate|response200

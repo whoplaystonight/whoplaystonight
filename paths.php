@@ -17,6 +17,8 @@ define('MODEL_PATH',SITE_ROOT.'model/');
 //VIEW
 define('VIEW_PATH_INC',SITE_ROOT.'view/inc/');
 define('VIEW_PATH_INC_ERROR',SITE_ROOT.'view/inc/templates_error/');
+define('VIEW_PATH_JS',SITE_ROOT.'view/js/');
+
 //MODULES_PATH
 define('MODULES_PATH', SITE_ROOT.'modules/');
 //RESOURCES
