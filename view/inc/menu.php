@@ -35,7 +35,16 @@
                         <a href="<?php amigable('?module=contact&function=contact'); ?>">CONTACT</a>
                     </li>
                     <!--<li><a href="index.php?module=contact&function=contact">CONTACT</a></li>-->
-                    <li><a href="index.php?module=locate&function=locate">LOCATE</a></li>
+                    <li class="
+                        <?php if(isset($_GET['module']) === 'locate')
+                            echo 'active';
+                        else
+                            echo 'deactivate';
+                        ?>"
+                        >
+                        <a href="<?php amigable('?module=locate&function=locate'); ?>">LOCATE</a>
+                    </li>
+                    <!--<li><a href="index.php?module=locate&function=locate">LOCATE</a></li>-->
                 </ul>
             </div>
 

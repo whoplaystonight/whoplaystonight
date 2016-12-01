@@ -1,7 +1,7 @@
 <!-- <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhxaDfVV53FiAvq_HxOzdYIrGqszV_VM4" async defer></script>
-<script src="/whoplaystonight/modules/locate/view/js/geolocator.js"></script>
-<link rel="stylesheet" href="/whoplaystonight/modules/locate/view/css/locate.css" media="screen" title="no title">
+<script src="<?php echo LOCATE_JS_PATH; ?>geolocator.js"></script>
+<link rel="stylesheet" href="<?php echo LOCATE_CSS_PATH; ?>locate.css" media="screen" title="no title">
 <section id="main" class="wrapper">
     <div class="container">
 

@@ -54,6 +54,8 @@ define('LOCATE_MODEL',SITE_ROOT.'modules/locate/model/');
 define('LOCATE_MODEL_BLL', SITE_ROOT.'modules/locate/model/bll/');
 define('LOCATE_MODEL_DAO', SITE_ROOT.'modules/locate/model/dao/');
 define('LOCATE_MODEL_MODEL',SITE_ROOT.'modules/locate/model/model/');
+define('LOCATE_JS_PATH', SITE_PATH . 'modules/locate/view/js/');
+define('LOCATE_CSS_PATH', SITE_PATH . 'modules/locate/view/css/');
 
 //amigables
 define('URL_AMIGABLES', TRUE);
