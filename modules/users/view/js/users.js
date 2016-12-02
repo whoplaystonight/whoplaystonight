@@ -224,7 +224,6 @@ jQuery.fn.fill_or_clean = function() {
 };
 
 function validate_user() {
-    console.log("validate user");
     var result = true;
 
     var username = document.getElementById("username").value;
@@ -244,9 +243,6 @@ function validate_user() {
     var pais = document.getElementById("pais").value;
     var provincia = document.getElementById("provincia").value;
     var poblacion = document.getElementById("poblacion").value;
-    // var v_pais = validate_pais(pais);
-    // var v_provincia = validate_provincia(provincia);
-    // var v_poblacion = validate_poblacion(poblacion);
     // console.log(username + email + password + birthday + interests + pais + provincia + poblacion);
     var email_reg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
     var date_reg = /(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/]((175[7-9])|(17[6-9][0-9])|(1[8-9][0-9][0-9])|([2-9][0-9][0-9][0-9]))/i;
@@ -349,8 +345,10 @@ function validate_user() {
             console.log(typeof(response));
             //var responseObj = JSON.parse(response); //I convert the string to a object!
             console.log(response);
-            console.log(response.success);
+            // console.log(response.success);
             if (response.success) {
+                alert("Thanks for signing up!");
+                remove_data();
                 // window.location.href = response.redirect;
             }
 
@@ -429,6 +427,15 @@ function remove_data_ifback() {
             }
         }
     }, "json");
+}
+
+function remove_data() {
+    $("#username").val('');
+    $("#email").val('');
+    $("#password").val('');
+    $("#birthday").val('');
+    $("#dropzone").val('');
+    $(this).fill_or_clean();
 }
 
 function load_countries_v1() {

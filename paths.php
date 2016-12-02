@@ -44,7 +44,7 @@ define('PRODUCTS_VIEW_CSS', SITE_PATH.'modules/products/view/css/');
 //module users
 define('PROVINCIASYPOBLACIONES', SITE_ROOT . 'resources/provinciasypoblaciones.xml');
 define('USERS_UTILS_FUNCTIONS', SITE_ROOT . 'modules/users/utils/functions_user.inc.php');
+define('USERS_MODEL_MODEL', SITE_ROOT.'modules/users/model/model/');
 // define('USERS_TOOLS',SITE_ROOT.'modules/users/tools/');
 // define('USERS_VIEW_JS',SITE_ROOT.'modules/users/view/js/');
-// define('USERS_MODEL_MODEL', SITE_ROOT.'modules/users/model/model/');
 // define('USERS_VIEW_CSS', SITE_PATH.'modules/users/view/css/');

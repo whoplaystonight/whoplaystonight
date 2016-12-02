@@ -50,7 +50,7 @@ class controller_users {
 
             ///////////// Insert into BD /////////////
             $arrValue = false;
-            $path_model = $_SERVER['DOCUMENT_ROOT'] . '/whoplaystonight/modules/users/model/model/';
+            $path_model = USERS_MODEL_MODEL;
             $arrValue = loadModel($path_model, "user_model", "create_user", $arrArgument);
 
             if ($arrValue)
@@ -62,8 +62,8 @@ class controller_users {
             $_SESSION['user'] = $arrArgument;
             $_SESSION['msje'] = $mensaje;
 
-            $callback = "index.php?module=users&view=result_users";
-
+            // $callback = "index.php?module=users&function=result_users";
+            $callback = "index.php?module=main";
             $jsondata["success"] = true;
             $jsondata["redirect"] = $callback;
             // echo json_encode("asdf" . $jsondata);

@@ -8,9 +8,6 @@
         <name>alta_users</name>
         <uri>alta_users</uri>
     </function>
-
-
-
     <function>
         <name>load_pais</name>
         <uri>load_pais</uri>
