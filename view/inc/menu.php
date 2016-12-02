@@ -18,7 +18,7 @@
 					          <li><a href="index.php?module=portfolio">PORTFOLIO</a></li>
                     <li><a href="index.php?module=pricing">PRICING</a></li>
                     <li><a href="index.php?module=users&function=sign_up">SIGN UP</a></li>
-                    <li><a href="index.php?module=contact">CONTACT</a></li>
+                    <li><a href="index.php?module=contact&function=contact">CONTACT</a></li>
                 </ul>
             </div>
 

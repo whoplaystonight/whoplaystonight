@@ -45,6 +45,10 @@ define('PRODUCTS_VIEW_CSS', SITE_PATH.'modules/products/view/css/');
 define('PROVINCIASYPOBLACIONES', SITE_ROOT . 'resources/provinciasypoblaciones.xml');
 define('USERS_UTILS_FUNCTIONS', SITE_ROOT . 'modules/users/utils/functions_user.inc.php');
 define('USERS_MODEL_MODEL', SITE_ROOT.'modules/users/model/model/');
-// define('USERS_TOOLS',SITE_ROOT.'modules/users/tools/');
-// define('USERS_VIEW_JS',SITE_ROOT.'modules/users/view/js/');
-// define('USERS_VIEW_CSS', SITE_PATH.'modules/users/view/css/');
+
+//model contact
+define('CONTACT_JS_PATH', SITE_PATH . 'modules/contact/view/js/');
+define('CONTACT_CSS_PATH', SITE_PATH . 'modules/contact/view/css/');
+define('CONTACT_LIB_PATH', SITE_PATH . 'modules/contact/view/lib/');
+define('CONTACT_IMG_PATH', SITE_PATH . 'modules/contact/view/img/');
+define('CONTACT_VIEW_PATH', 'modules/contact/view/');

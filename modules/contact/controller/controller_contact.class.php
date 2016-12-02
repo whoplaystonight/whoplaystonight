@@ -1,20 +1,63 @@
-<section id="home" class="head-main-img">
-         
-               <div class="container">
-           <div class="row text-center pad-row" >
-            <div class="col-md-12">
-              <h1>  OUR CONTACT DETAILS  </h1>
-                </div>
-               </div>
-            </div>   
-           
-       </section>
-    <!--/.HEADING END-->
+<?php
+class controller_contact {
 
-<section  id="contact-sec">
-       <iframe class="cnt" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2999841.293321206!2d-75.80920404999999!3d42.75594204999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew+York!5e0!3m2!1sen!2s!4v1395313088825" ></iframe>
-  <div class="add">
- <i>Address: </i>234/JK , The Wondre Land,  Newyork Street Junction, JUST USA -10909094
-   </div>
-    <hr />
-     </section>
+  public function __construct() {
+    include(EVENTS_TOOLS. "tools_fe.inc.php");
+    include LOG_CLASS;
+    include (TOOLS . "common.inc.php");
+    include (TOOLS . "mail.inc.php");
+
+    $_SESSION['module'] = "contact";
+  }
+
+  public function contact() {
+    require_once(VIEW_PATH_INC."header.php");
+    require_once(VIEW_PATH_INC."menu.php");
+
+    loadView(CONTACT_VIEW_PATH, 'contact.php');
+
+    require_once(VIEW_PATH_INC."footer.html");
+  }
+
+  public function process_contact() {
+    if($_POST['token'] === "contact_form"){
+      //////////////// Envio del correo al usuario
+      $arrArgument = array(
+        'type' => 'contact',
+        'token' => '',
+        'inputName' => $_POST['inputName'],
+        'inputEmail' => $_POST['inputEmail'],
+        'inputSubject' => $_POST['inputSubject'],
+        'inputMessage' => $_POST['inputMessage']
+      );
+      set_error_handler('ErrorHandler');
+      try{
+        echo "<div class='alert alert-success'>".enviar_email($arrArgument)." </div>";
+      } catch (Exception $e) {
+        echo "<div class='alert alert-error'>Server error. Try later...</div>";
+      }
+      restore_error_handler();
+
+      //////////////// Envio del correo al admin de la ap web
+      $arrArgument = array(
+        'type' => 'admin',
+        'token' => '',
+        'inputName' => $_POST['inputName'],
+        'inputEmail' => $_POST['inputEmail'],
+        'inputSubject' => $_POST['inputSubject'],
+        'inputMessage' => $_POST['inputMessage']
+      );
+      set_error_handler('ErrorHandler');
+      try{
+        sleep(5);
+        echo "<div class='alert alert-success'>".enviar_email($arrArgument)." </div>";
+      } catch (Exception $e) {
+        echo "<div class='alert alert-error'>Server error. Try later...</div>";
+      }
+      restore_error_handler();
+
+    }else{
+      echo "<div class='alert alert-error'>Server error. Try later...</div>";
+    }
+  }
+}
