@@ -18,14 +18,15 @@ class userDAO {
         $email = $arrArgument['email'];
         $password = $arrArgument['password'];
         $birthday = $arrArgument['birthday'];
-
-        $avatar = $_SESSION["nombre_fichero"];
+        $interests = $arrArgument['interests'];
+        $avatar = "";
+        // $avatar = $_SESSION["nombre_fichero"];
 
         $rock = 0;
         $jazz = 0;
         $blues = 0;
 
-        foreach ($availability as $indice) {
+        foreach ($interests as $indice) {
             if ($indice === 'rock')
                 $rock = 1;
             if ($indice === 'jazz')
@@ -41,9 +42,6 @@ class userDAO {
         $sql = "INSERT INTO users (username, email, password, birthday, rock, jazz, blues, avatar, country, province, town)
         VALUES ('" . $username . "','" . $email ."','" . $password . "','" . $birthday . "', '" . $rock . "', '" . $jazz . "', '" . $blues . "', '" .
          $avatar . "','" . $country . "','" . $province . "','" . $town . "')";
-        // $sql = "INSERT INTO users (product_name, product_description, product_price, product_id, enter_date, obsolescence_date, product_category, Web, Warehouse, Physical_store, avatar, country, province, town) VALUES ('". $product_name
-        // ."', '". $product_description ."', '". $product_price ."', '". $product_id ."' , '". $enter_date ."', '". $obsolescence_date
-        // ."', '". $product_category ."', '". $web ."','". $warehouse ."', '". $physical_store ."' ,'". $avatar ."', '". $country ."', '". $province ."', '". $town ."')";
 
         return $db->execute($sql);
     }

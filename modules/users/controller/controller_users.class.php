@@ -1,7 +1,7 @@
 <?php
 class controller_users {
     public function __construct(){
-        include ($_SERVER['DOCUMENT_ROOT'] . "/whoplaystonight/modules/users/utils/functions_user.inc.php");
+        include (USERS_UTILS_FUNCTIONS);
         include(TOOLS . "upload.php");
         include(TOOLS . "common.inc.php");
     }
@@ -28,7 +28,7 @@ class controller_users {
         $jsondata = array();
         $usersJSON = json_decode($_POST["alta_users_json"], true);
         $result = validate_user($usersJSON);
-        
+
         if (empty($_SESSION['result_avatar'])) {
             $_SESSION['result_avatar'] = array('resultado' => true, 'error' => "", 'datos' => 'media/default-avatar.png');
         }

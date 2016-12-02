@@ -351,11 +351,11 @@ function validate_user() {
             console.log(response);
             console.log(response.success);
             if (response.success) {
-                window.location.href = response.redirect;
+                // window.location.href = response.redirect;
             }
 
         }, "json").fail(function(xhr) {
-            //console.log(xhr.responseJSON);
+            console.log(xhr);
 
             if (xhr.responseJSON.error.username)
             $("#username").focus().after("<span  class='error1'>" + xhr.responseJSON.error.username + "</span>");
