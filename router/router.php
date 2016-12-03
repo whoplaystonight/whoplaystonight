@@ -17,7 +17,6 @@
 
   	session_start();
   	$_SESSION['module']="";
-    $_SESSION['result_avatar']=array();
 
     function handlerRouter() {
 
@@ -94,7 +93,7 @@
 
 
     function handlerFunction($module, $obj, $URI_function){
-      //debugECHO("handlerFunction");
+      //debugECHO($URI_function);
       $functions = simplexml_load_file(MODULES_PATH . $module . "/resources/functions.xml");
       $exist=false;
 
@@ -102,14 +101,14 @@
         if(($URI_function === (String)$function->uri)){
           $exist=true;
           $event=(String)$function->name;
-          //debugECHO("JAMON");
+          //debugECHO($event);
           break;
         }//enf if
 
       }//End foreach
 
       if(!$exist){
-        //debugECHO("entra al exists false");
+        // debugECHO("entra al exists false");
         showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
       }else{
         //debugECHO($event);

@@ -40,6 +40,8 @@
     $arrData='';
 
     if(file_exists($view_path)){
+      // debugECHO("Estic al file exists");
+      // debugECHO($view_path);
 
 
       if(isset($data)){

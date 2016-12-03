@@ -49,7 +49,6 @@ class controller_products{
 
     echo '<br><br><br><br><br><br><br><br>';
     loadView('modules/products/view/','results_products.php');
-
     require_once(VIEW_PATH_INC . "footer.php");
 
   }
@@ -59,10 +58,15 @@ class controller_products{
   //////////////////////////////////////////////////////////////////////////////
 
   public function upload_avatar(){
-
-    if((isset($_GET["upload"]))&& ($_GET["upload"]==true)){
+    // echo json_encode($_POST["upload"]);
+    // exit;
+    if((isset($_POST["upload"])) && ($_POST["upload"]==true)){
+      // echo json_encode("Estic al if del upload_avatar");
+      // exit;
       $result_avatar = upload_files();
       $_SESSION['result_avatar']=$result_avatar;
+      //This is to debub on dropzone console.log()
+      //echo debugPHP($_SESSION['result_avatar']);
     }
   }//enf of upload avatar function
 
@@ -71,11 +75,14 @@ class controller_products{
   //////////////////////////////////////////////////////////////////////////////
 
   public function register_event(){
+
     if((isset($_POST['register_event_json']))){
+      // echo json_encode("estic al register event");
+      // exit;
 
     	$jsondata=array();
     	$eventJSON=json_decode($_POST["register_event_json"],true);
-      // echo json_encode($eventJSON);
+      // echo json_encode("estic al register event");
       // exit;
       $result = validate_product($eventJSON);
 
@@ -84,6 +91,8 @@ class controller_products{
       }
 
       $result_avatar=$_SESSION['result_avatar'];
+      // echo json_encode($_SESSION['result_avatar']);
+      // exit;
 
       /*CHECK $result*/
       if(($result['result'])&&($result_avatar['resultado'])){
@@ -106,10 +115,10 @@ class controller_products{
               'avatar'=>$result_avatar['datos']
           );//End of arrArgument array
 
-          $_SESSION['result_avatar']=array();
-
           // echo json_encode($arrArgument);
           // exit;
+
+          $_SESSION['result_avatar']=array();
 
           /**********To insert into DB*******************/
 
@@ -119,6 +128,9 @@ class controller_products{
           try{
             $arrValue= loadModel(PRODUCTS_MODEL_MODEL, "event_model", "create_event", $arrArgument);
             /********* End of insert-db code**************/
+            // echo json_encode($arrValue);
+            // exit;
+            
           }catch (Exception $e){
             $arrValue=false;
           }
@@ -126,16 +138,26 @@ class controller_products{
           // exit;
 
           restore_error_handler();
+          // echo json_encode("HOLA");
+          // exit;
+
+
 
           if($arrValue){
+            // echo json_encode("HOLA");
+            // exit;
               $message="Event has been successfully created.";
               /*To redirect to other page the data of $arrArgument and $message*/
               $_SESSION['event']=$arrArgument;
               $_SESSION['message']=$message;
-              $callback="index.php?module=products&function=results_view";
-
+              $callback="../../products/results_view";//"index.php?module=products&function=results_view"
+              // echo json_encode($callback);
+              // exit;
               $jsondata["success"]=true;
               $jsondata["redirect"]=$callback;
+
+              // $jsondata["success"]=true;
+              // $jsondata["redirect"]=$callback;
               echo json_encode($jsondata);
               exit;
 
@@ -145,7 +167,7 @@ class controller_products{
               showErrorPage(1,"",'HTTP/1.0 503 Service Unavailable', 503);
           }
 
-       }else{
+         }else{
 
           $jsondata["success"]=false;
           $jsondata["error"]=$result['error'];
@@ -153,11 +175,11 @@ class controller_products{
           // echo json_encode($jsondata["error_avatar"]);
           // exit;
 
-          header('HTTP/1.0 499 Bad error');
+          header('HTTP/1.0 400 Bad error',true,404);
           echo json_encode($jsondata);
 
       }//End of if-else result
-    }//end of if isset register_event_json
+     }//end of if isset register_event_json
   }//end of register_event function
 
   //////////////////////////////////////////////////////////////////////////////
@@ -165,7 +187,7 @@ class controller_products{
   //////////////////////////////////////////////////////////////////////////////
 
   public function delete_events(){
-    if(isset($_GET["delete"])&& ($_GET["delete"]==true)){
+    if(isset($_POST["delete"])&& ($_POST["delete"]==true)){
       $_SESSION['result_avatar']=array();
       $result=remove_files();
       if($result===true){
@@ -181,8 +203,11 @@ class controller_products{
   //////////////////////////////////////////////////////////////////////////////
 
   public function load_event(){
+    //debugECHO("HOLA");
 
-    if (isset($_GET["load"])&& $_GET["load"]==true){
+    if (isset($_POST["load"])&& $_POST["load"]==true){
+      // echo json_encode("Estic al load event");
+      // exit;
       $jsondata=array();
 
       if (isset($_SESSION['event'])){
@@ -212,7 +237,7 @@ class controller_products{
   //////////////////////////////////////////////////////////////////////////////
 
   public function load_data_event(){
-    if ((isset($_GET["load_data"]))&& ($_GET["load_data"]==true)){
+    if ((isset($_POST["load_data"]))&& ($_POST["load_data"]==true)){
       $jsondata=array();
 
       if (isset($_SESSION['event'])){

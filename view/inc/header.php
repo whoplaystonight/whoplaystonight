@@ -31,7 +31,7 @@
   	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   	<!--<link rel="stylesheet" href="/resources/demos/style.css">-->
-    <!--<link href="view/css/main.css" rel="stylesheet" />-->
+    <!-- <link href="view/css/main.css" rel="stylesheet" /> -->
     <link href="<?php echo CSS_PATH ?>main.css" rel="stylesheet">
 
 </head>

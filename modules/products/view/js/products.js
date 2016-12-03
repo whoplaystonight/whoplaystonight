@@ -291,10 +291,10 @@ $(document).ready(function(){
 ////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-    $.get("index.php?module=products&function=load_data_event&load_data=true",
+    //$.get("index.php?module=products&function=load_data_event&load_data=true",
+    $.post("../../products/load_data_event/",{'load_data':true},
           function(response){
+            //console.log(response);
             if(response.event===""){
               $("#event_id").val('');
               $("#band_id").val('');
@@ -358,17 +358,17 @@ $(document).ready(function(){
 
     /*Dropzone function */
 $("#dropzone").dropzone({
-    url: "index.php?module=products&function=upload_avatar&upload=true",
+    url: "../../products/upload_avatar/",//"index.php?module=products&function=upload_avatar&upload=true",
+    params:{'upload':true},
     addRemoveLinks: true,
     maxFileSize: 200,
     dictResponseError: "Ha ocurrido un error en el server",
     acceptedFiles: 'image/*,.jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.rar,application/pdf,.psd',
      init: function () {
+       //sconsole.log("estic dins del upload");
 
           this.on("success", function (file, response) {
-            //console.log("estic dins del upload");
             //console.log(response);
-            alert(response);
             $("#progress").show();
             $("#bar").width('100%');
             $("#percent").html('100%');
@@ -388,8 +388,8 @@ $("#dropzone").dropzone({
         var name = file.name;
         $.ajax({
             type: "POST",
-            url: "index.php?module=products&function=delete_events&delete=true",
-            data: "filename=" + name,
+            url:"../../products/delete_events/",//"index.php?module=products&function=delete_events&delete=true"
+            data: {"filename":name,"delete":true},
             success: function (data) {
             //console.log(data);
 
@@ -794,7 +794,7 @@ function validate_user(){
     /*To convert the JavaScript array in a JSON string*/
     var event_data_JSON=JSON.stringify(data);
 
-    $.post('index.php?module=products&function=register_event',
+    $.post("../../products/register_event",//'index.php?module=products&function=register_event'
             {register_event_json:event_data_JSON},
     function(response){
 
@@ -803,9 +803,11 @@ function validate_user(){
         window.location.href=response.redirect;
       }
 
-
     }, "json").fail(function (xhr,textStatus,errorThrown){
-              console.log("Estoy en el fail");
+              // console.log("Estoy en el fail");
+              // console.log(xhr.status);
+              // console.log(textStatus);
+              //console.log(errorThrown);
               //console.log(xhr.responseJSON.error_avatar);
               if (xhr.status === 0) {
                   alert('Not connect: Verify Network.');
@@ -820,7 +822,7 @@ function validate_user(){
               } else if (textStatus === 'abort') {
                   alert('Ajax request aborted.');
               } else {
-                  /*alert('Uncaught Error: ' + xhr.responseText);*/
+                  alert('Uncaught Error: ' + xhr.responseText);
               }
 
               if (xhr.responseJSON == 'undefined' && xhr.responseJSON === null )

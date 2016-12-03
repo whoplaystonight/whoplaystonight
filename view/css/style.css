@@ -6,15 +6,14 @@
 
     100% To use For Personal And Commercial Use.
     IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
-   
+
     ========================================================  */
 
 /* =============================================================
    GENERAL STYLES
  ============================================================ */
 body {
-    font-family: 'Open Sans', sans-serif;
-   
+    font-family: 'Open Sans', sans-serif;   
 }
 .pad-top {
     padding-top:60px;
@@ -194,7 +193,7 @@ border-radius: 0px;
   background: #fff;
   padding: 10px;
   border:1px solid #E8EAEE;
-  
+
 }
 .portfolio-item img {
   width: 100%;
@@ -263,5 +262,3 @@ border: 1px solid #e1e1e1;
         text-transform:uppercase;
         color:#fff;
     }
-
-   
