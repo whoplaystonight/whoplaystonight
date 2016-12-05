@@ -1,8 +1,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css">
-<script type="text/javascript" src="modules/users/view/js/users.js" ></script>
-<link href='modules/users/view/css/form.css' rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="<?php echo USERS_JS_PATH;?>users.js" ></script>
+<link href='<?php echo USERS_VIEW_CSS;?>form.css' rel='stylesheet' type='text/css' />
 
 <form  id="form_user" name="form_user">
 

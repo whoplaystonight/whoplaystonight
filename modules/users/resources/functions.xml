@@ -9,12 +9,12 @@
         <uri>alta_users</uri>
     </function>
     <function>
-        <name>load_pais</name>
-        <uri>load_pais</uri>
+        <name>load_pais_users</name>
+        <uri>load_pais_users</uri>
     </function>
     <function>
-        <name>load_provincias</name>
-        <uri>load_provincias</uri>
+        <name>load_provincias_users</name>
+        <uri>load_provincias_users</uri>
     </function>
     <function>
         <name>load_poblaciones</name>

@@ -130,8 +130,8 @@ class controller_users {
     // }
 
     //////////// load_pais //////////////
-    public function load_pais(){
-        if(  (isset($_GET["load_pais"])) && ($_GET["load_pais"] == true)  ){
+    public function load_pais_users(){
+        if((isset($_POST["load_pais"])) && ($_POST["load_pais"] == true)){
             $json = array();
 
             // $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
@@ -151,8 +151,9 @@ class controller_users {
     }
 
     //////////// load_provincias //////////////
-    public function load_provincias(){
-        if(  (isset($_GET["load_provincias"])) && ($_GET["load_provincias"] == true)  ){
+    public function load_provincias_users(){
+        if((isset($_POST["load_provincias"])) && ($_POST["load_provincias"] == true)){
+            // echo json_encode("pizzapizza");exit;
             $jsondata = array();
             $json = array();
 

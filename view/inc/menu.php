@@ -1,4 +1,4 @@
-<body >
+<body>
     <div class="navbar navbar-inverse navbar-fixed-top" >
         <div class="container">
             <div class="navbar-header">
@@ -11,7 +11,6 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- <li><a href="index.php?module=main">HOME</a></li> -->
                     <li class="
                         <?php if(isset($_GET['module']) === 'main')
                             echo 'active';
@@ -26,7 +25,16 @@
                     <li><a href="index.php?module=events_front_end&function=list_events">LIST EVENT</a><li>
 					          <li><a href="index.php?module=portfolio">PORTFOLIO</a></li>
                     <li><a href="index.php?module=pricing">PRICING</a></li>
-                    <li><a href="index.php?module=users&function=sign_up">SIGN UP</a></li>
+                    <!-- <li><a href="index.php?module=users&function=sign_up">SIGN UP</a></li> -->
+                    <li class="
+                        <?php if(isset($_GET['module']) === 'users')
+                            echo 'active';
+                        else
+                            echo 'deactivate';
+                        ?>"
+                        >
+                        <a href="<?php amigable('?module=users&function=sign_up'); ?>">SIGN UP</a>
+                    </li>
                     <li><a href="index.php?module=contact&function=contact">CONTACT</a></li>
                 </ul>
             </div>

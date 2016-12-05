@@ -338,9 +338,10 @@ function validate_user() {
         // $.post('modules/users/controller/controller_users.class.php', {
         //     alta_users_json: data_users_JSON
         // },
-        $.post('index.php?module=users&function=alta_users&alta_users=true',{
-            alta_users_json: data_users_JSON
-        },
+        // $.post('index.php?module=users&function=alta_users&alta_users=true',{
+        //     alta_users_json: data_users_JSON
+        // },
+        $.post('../../users/alta_users/', { alta_users_json: data_users_JSON},
         function(response) {
             console.log(typeof(response));
             //var responseObj = JSON.parse(response); //I convert the string to a object!
@@ -439,17 +440,18 @@ function remove_data() {
 }
 
 function load_countries_v1() {
-    $.get( "index.php?module=users&function=load_pais&load_pais=true",
+    // $.get( "index.php?module=users&function=load_pais&load_pais=true",
+    $.post( "../../users/load_pais/", { load_pais:true },
         function( response ) {
             // console.log(response);
-            if(response === 'error'){
-                load_countries_v2("resources/ListOfCountryNamesByName.json");
+            if(response.match(/error/)){
+                load_countries_v2("../../resources/ListOfCountryNamesByName.json");
             }else{
-                load_countries_v2("index.php?module=users&function=load_pais&load_pais=true");
+                load_countries_v2("../../users/load_pais/", { load_pais:true });
             }
     })
     .fail(function(response) {
-        load_countries_v2("resources/ListOfCountryNamesByName.json");
+        load_countries_v2("../../resources/ListOfCountryNamesByName.json");
     });
 }
 
@@ -468,12 +470,13 @@ function load_countries_v2(cad) {
 }
 
 function load_provincias_v1() { //provinciasypoblaciones.xml - xpath
-    $.get( "index.php?module=users&function=load_provincias&load_provincias=true",
+    // $.get( "index.php?module=users&function=load_provincias&load_provincias=true",
+    $.post( "../../users/load_provincias_users/", { load_provincias:true },
     function( response ) {
         // console.log(response);
         $("#provincia").empty();
         $("#provincia").append('<option value="" selected="selected">Selecciona una Provincia</option>');
-        //alert(response);
+
         var json = JSON.parse(response);
         var provincias=json.provincias;
         //alert(provincias);
@@ -512,7 +515,8 @@ function load_provincias_v2() {
 
 function load_poblaciones_v1(prov) { //provinciasypoblaciones.xml - xpath
     var datos = { idPoblac : prov  };
-    $.post("index.php?module=users&function=load_poblaciones&load_poblaciones=true", datos, function(response) {
+    // $.post("index.php?module=users&function=load_poblaciones&load_poblaciones=true", datos, function(response) {
+    $.post("../../users/load_poblaciones/", datos, function(response) {
         // console.log(response);
         var json = JSON.parse(response);
         var poblaciones=json.poblaciones;

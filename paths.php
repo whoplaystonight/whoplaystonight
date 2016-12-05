@@ -36,7 +36,7 @@ define('EVENTS_TOOLS',SITE_ROOT.'modules/events_front_end/tools/');
 define('EVENTS_VIEW_JS', SITE_ROOT.'modules/events_front_end/view/js/');
 define('EVENTS_VIEW_CSS',SITE_ROOT.'modules/events_front_end/view/css/');
 
-//model products
+//module products
 define('PRODUCTS_TOOLS',SITE_ROOT.'modules/products/tools/');
 define('PRODUCTS_VIEW_JS',SITE_ROOT.'modules/products/view/js/');
 define('PRODUCTS_MODEL_MODEL', SITE_ROOT.'modules/products/model/model/');
@@ -46,8 +46,10 @@ define('PRODUCTS_VIEW_CSS', SITE_PATH.'modules/products/view/css/');
 define('PROVINCIASYPOBLACIONES', SITE_ROOT . 'resources/provinciasypoblaciones.xml');
 define('USERS_UTILS_FUNCTIONS', SITE_ROOT . 'modules/users/utils/functions_user.inc.php');
 define('USERS_MODEL_MODEL', SITE_ROOT.'modules/users/model/model/');
+define('USERS_JS_PATH', SITE_PATH . 'modules/users/view/js/');
+define('USERS_VIEW_CSS', SITE_PATH . 'modules/users/view/css/');
 
-//model contact
+//module contact
 define('CONTACT_JS_PATH', SITE_PATH . 'modules/contact/view/js/');
 define('CONTACT_CSS_PATH', SITE_PATH . 'modules/contact/view/css/');
 define('CONTACT_LIB_PATH', SITE_PATH . 'modules/contact/view/lib/');
