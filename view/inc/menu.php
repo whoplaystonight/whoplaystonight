@@ -11,7 +11,16 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php?module=main">HOME</a></li>
+                    <!-- <li><a href="index.php?module=main">HOME</a></li> -->
+                    <li class="
+                        <?php if(isset($_GET['module']) === 'main')
+                            echo 'active';
+                        else
+                            echo 'deactivate';
+                        ?>"
+                        >
+                        <a href="<?php amigable('?module=main'); ?>">HOME</a>
+                    </li>
                     <li><a href="index.php?module=services&function=begin">SERVICES</a></li>
 					          <li><a href="index.php?module=products&function=events_form">EVENTS</a></li>
                     <li><a href="index.php?module=events_front_end&function=list_events">LIST EVENT</a><li>

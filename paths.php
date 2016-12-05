@@ -3,7 +3,7 @@
 $root = $_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/';
 define('SITE_ROOT',$root);
 //SITE_PATH
-define('SITE_PATH', 'https://'.$_SERVER['HTTP_HOST'].'/whoplaystonight/');
+define('SITE_PATH', 'http://'.$_SERVER['HTTP_HOST'].'/whoplaystonight/');
 //CSS
 define('CSS_PATH',SITE_PATH. 'view/css/');
 //LOG
@@ -17,6 +17,7 @@ define('MODEL_PATH',SITE_ROOT.'model/');
 //VIEW
 define('VIEW_PATH_INC',SITE_ROOT.'view/inc/');
 define('VIEW_PATH_INC_ERROR',SITE_ROOT.'view/inc/templates_error/');
+define('VIEW_IMG',SITE_PATH.'view/img/');
 //MODULES_PATH
 define('MODULES_PATH', SITE_ROOT.'modules/');
 //RESOURCES
@@ -52,3 +53,6 @@ define('CONTACT_CSS_PATH', SITE_PATH . 'modules/contact/view/css/');
 define('CONTACT_LIB_PATH', SITE_PATH . 'modules/contact/view/lib/');
 define('CONTACT_IMG_PATH', SITE_PATH . 'modules/contact/view/img/');
 define('CONTACT_VIEW_PATH', 'modules/contact/view/');
+
+//amigables
+define('URL_AMIGABLES', TRUE);
