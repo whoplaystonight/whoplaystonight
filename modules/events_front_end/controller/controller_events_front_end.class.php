@@ -42,7 +42,7 @@ class controller_events_front_end{
   public function autocomplete_events(){
 
       if((isset($_POST["autocomplete"]))&& ($_POST["autocomplete"]==="true")){
-        // echo json_encode("estic al autocomplete evetns");
+        // echo json_encode("estic al autocomplete events");
         // exit;
 
         set_error_handler('ErrorHandler');
@@ -135,7 +135,7 @@ class controller_events_front_end{
 
       if(isset($_POST["count_event"])){
 
-        $result=filter_string($_GET["count_event"]);
+        $result=filter_string($_POST["count_event"]);
         if($result['resultado']){
 
           $criteria=$result['datos'];

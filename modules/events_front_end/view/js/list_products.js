@@ -18,6 +18,7 @@ function refresh(){
 
 
 function search(keyword){
+  //console.log(keyword);
   //console.log("estic al search keyword");
   // var urlbase="index.php?module=events_front_end&function=";
   var urlbase="../../events_front_end/";
@@ -32,7 +33,7 @@ function search(keyword){
   // url=urlbase + "number_pages_events&num_pages=true&keyword=" + keyword;
   url=urlbase + "number_pages_events/,";
   option={'num_pages':true,'keyword':keyword};
-  // console.log(url);
+  console.log(url);
   }
 
   // $.post(url,function(data,status){
@@ -43,11 +44,11 @@ function search(keyword){
     //console.log(pages);
     if(!keyword){
       url=urlbase + "obtain_events";
-      console.log(url);
+      //console.log(url);
     }else{
       url=urlbase + "obtain_events";
       option={'keyword':keyword};
-      console.log(url,option);
+      //console.log(url,option);
     }
 
     $("#results").load(url,option);
@@ -94,7 +95,7 @@ function search_event(keyword){
     $('.pagination').html('');
 
 
-    poster.innerHTML='<img src="../' + event_[0].poster + '" class="img-product">';
+    poster.innerHTML='<img src="../../' + event_[0].poster + '" class="img-product">';
 
     band_name.innerHTML=event_[0].band_name;
 
@@ -118,6 +119,7 @@ function search_event(keyword){
 function count_event(keyword){
   // $.get("index.php?module=events_front_end&function=count_events&count_event=" + keyword, function(data,status){
   $.post("../../events_front_end/count_events",{'count_event':keyword}, function(data,status){
+    //console.log(data);
     var json=JSON.parse(data);
     var num_events=json.num_events;
     alert("num_events:" + num_events);
@@ -177,7 +179,7 @@ function setCookie(cname, cvalue, exdays){
 }//end of setCookie
 
  $(document).ready(function(){
-//
+
   if(getCookie("search")){
     var keyword=getCookie("search");
     count_event(keyword);
@@ -188,13 +190,20 @@ function setCookie(cname, cvalue, exdays){
   }//end of getCookie search
 
   $("#search_event").submit(function (e) {
+    //console.log("Estic al submit");
+
     var keyword=document.getElementById('keyword').value;
+
+    //console.log(keyword);
+
     if(!keyword){
       $("#results").load("../../events_front_end/view_error_false/",{'view_error':false});
-
     }else{
+
     var v_keyword=validate_search(keyword);
+
     if(v_keyword){
+
       setCookie("search", keyword,1);
     }
     alert("getCookie(search):" + getCookie("search"));
@@ -224,21 +233,31 @@ function setCookie(cname, cvalue, exdays){
   $('#back').click(function(){
     search();
   });
-  // $.get("index.php?module=events_front_end&function=autocomplete_events&autocomplete=true", function(data,status){
+
   $.post("../../events_front_end/autocomplete_events/",{'autocomplete':true},function(data,status){
-    //console.log(data);
+    console.log(data);
     var json=JSON.parse(data);
     var name_events=json.band_name;
-    //console.log(name_events);
+
+    //AQUI ENTRA
+    console.log(name_events);
+
     var suggestions =new Array();
+
+
     for (var i =0; i<name_events.length; i++){
       suggestions.push(name_events[i].band_name);
     }//end of for
-    //console.log(suggestions);
+
+    //AQUI ENTRA
+    console.log(suggestions);
+
     $("#keyword").autocomplete({
-      source:suggestions,
-      minLength:1,
-      select:function(event, ui){
+      source: suggestions,
+      minLength: 1,
+      select: function(event, ui){
+        //AQUI NO ENTRA
+        console.log("Estic al select");
         var keyword =ui.item.label;
         count_event(keyword);
       }
@@ -247,6 +266,6 @@ function setCookie(cname, cvalue, exdays){
     $("#results").load("../../events_front_end/view_error_false/",{'view_error':false});
     $('.pagination').html('');
     reset();
-  });//End of $.get autocomplete
+  });//End of $.post autocomplete
 
  });//end of document.ready

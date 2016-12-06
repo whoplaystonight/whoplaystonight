@@ -130,7 +130,7 @@ class controller_products{
             /********* End of insert-db code**************/
             // echo json_encode($arrValue);
             // exit;
-            
+
           }catch (Exception $e){
             $arrValue=false;
           }
