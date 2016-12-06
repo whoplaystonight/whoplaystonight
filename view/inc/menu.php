@@ -10,6 +10,7 @@
                 <a class="navbar-brand" href="#">WHO PLAYS TONIGHT?</a>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
+
                     <li class="
                         <?php if(isset($_GET['module']) === 'main')
                                  echo'active';
@@ -76,7 +77,9 @@
                       <a href="<?php amigable('?module=pricing'); ?>">PRICING</a>
                     </li>
 
-                    <li><a href="index.php?module=contact">CONTACT</a></li>
+                    <li><a href="index.php?module=users&function=sign_up">SIGN UP</a></li>
+                    <li><a href="index.php?module=contact&function=contact">CONTACT</a></li>
+
                 </ul>
             </div>
 

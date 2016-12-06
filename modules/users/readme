@@ -1,0 +1,9 @@
+This module uses mysql.
+model/users.sql has to be executed in order to create it.
+This module also uses 'php curl' and 'php xml', you have to install it.
+In case you have ubuntu 16:
+    apt-get install php-curl
+    apt-get install php7.0-xml
+
+-----------------------------------------------------------
+Nacho

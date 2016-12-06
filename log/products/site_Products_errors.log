@@ -1,142 +1,74 @@
-error loadView general|04.12.2016 12:23:41| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:23:41| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:00| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:00| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:03| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:03| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:15| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:15| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:16| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:16| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:18| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:18| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:20| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:20| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:20| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:20| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:21| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:21| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:21| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:21| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:21| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:21| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:22| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:22| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:22| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:22| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:22| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:22| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:22| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:22| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:23| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:23| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:23| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:23| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:23| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:23| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:24| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:24| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:24| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:24| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:24| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:24| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:25| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:25| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:25| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:25| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:25| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:25| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:28| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:28| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:29| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:29| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:29| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:29| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:30:59| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:30:59| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:35:11| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:35:11| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:38:27| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:38:27| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:41:56| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:41:56| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:46:21| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:46:21| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:47:48| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:47:48| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 12:54:40| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 12:54:40| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 01:57:06| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 01:57:06| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 01:57:53| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 01:57:53| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 01:58:15| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 01:58:15| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:05| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:05| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:18| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:18| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:20| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:20| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:21| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:21| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:22| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:22| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:23| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:23| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:24| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:24| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:24| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:24| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:25| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:25| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:26| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:26| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:26| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:26| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:27| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:27| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:32:43| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:32:43| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:33:23| User: |events_front_end/list_events/modules/events_front_end/view|response400
-error loadView general|04.12.2016 04:33:23| User: |events_front_end/list_events|response400
-error loadView general|04.12.2016 04:43:38| User: |events_front_end|response400
-error loadView general|04.12.2016 04:44:33| User: |media|response400
-error loadView general|04.12.2016 04:44:33| User: |media|response400
-error loadView general|04.12.2016 04:44:41| User: |Exercise_3|response400
-error loadView general|04.12.2016 04:45:04| User: |Exercise_3|response400
-error loadView general|04.12.2016 04:45:08| User: |Exercise_3|response400
-error loadView general|04.12.2016 05:00:32| User: |events_front_end|response400
-error loadView general|04.12.2016 05:00:43| User: |events_front_end|response400
-error loadView general|04.12.2016 05:11:44| User: |events_front_end|response400
-error paint_template_search|04.12.2016 05:20:30| User: |events_front_end|response200
-error paint_template_search|04.12.2016 05:20:33| User: |events_front_end|response200
-error paint_template_search|04.12.2016 05:20:34| User: |events_front_end|response200
-error loadView general|04.12.2016 05:20:41| User: |main|response400
-error paint_template_search|04.12.2016 05:20:49| User: |events_front_end|response200
-error paint_template_search|04.12.2016 05:20:51| User: |events_front_end|response200
-error paint_template_search|04.12.2016 05:20:53| User: |events_front_end|response200
-error loadView general|04.12.2016 05:59:09| User: |events_front_end|response400
-error loadView general|04.12.2016 06:01:27| User: |events_front_end|response400
-error paint_template_search|05.12.2016 01:11:17| User: |events_front_end|response200
-error loadView general|05.12.2016 01:42:09| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:09| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:09| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:09| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:09| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:09| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:09| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:09| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:09| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:10| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:10| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:10| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:10| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:10| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:10| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:10| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:10| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:10| User: |portfolio/view/img/portfolio|response400
-error loadView general|05.12.2016 01:42:12| User: |pricing|response400
-error loadView general|05.12.2016 09:33:05| User: |events_front_end/list_events/view|response400
-error loadView general|05.12.2016 09:47:29| User: |events_front_end/list_events/view|response400
+error loadView general|06.12.2016 02:53:03| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/services/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/products/events_form/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/events_front_end/list_events/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/portfolio/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/pricing/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight|response400
+error loadView general|06.12.2016 02:53:04| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/services/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/products/events_form/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/events_front_end/list_events/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/portfolio/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/pricing/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/view|response400
+error loadView general|06.12.2016 02:53:07| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/services/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/products/events_form/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/events_front_end/list_events/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/portfolio/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/pricing/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight|response400
+error loadView general|06.12.2016 02:53:08| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/services/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/products/events_form/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/events_front_end/list_events/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/portfolio/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/pricing/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/view|response400
+error loadView general|06.12.2016 02:55:03| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight|response400
+error loadView general|06.12.2016 02:55:03| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/view|response400
+error loadView general|06.12.2016 02:55:07| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight|response400
+error loadView general|06.12.2016 02:55:07| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/view|response400
+error loadView general|06.12.2016 02:55:10| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight|response400
+error loadView general|06.12.2016 02:55:10| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/view|response400
+error loadView general|06.12.2016 02:55:12| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight|response400
+error loadView general|06.12.2016 02:55:12| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/view|response400
+error loadView general|06.12.2016 02:55:14| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight|response400
+error loadView general|06.12.2016 02:55:14| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/view|response400
+error loadView general|06.12.2016 02:55:15| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight|response400
+error loadView general|06.12.2016 02:55:15| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/view|response400
+error loadView general|06.12.2016 02:55:16| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight|response400
+error loadView general|06.12.2016 02:55:16| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/view|response400
+error loadView general|06.12.2016 02:55:17| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight|response400
+error loadView general|06.12.2016 02:55:17| User: |<br /><b>Notice</b>:  Use of undefined constant URL_AMIGABLES - assumed 'URL_AMIGABLES' in <b>/var/www/html/whoplaystonight/tools/tools.inc.php</b> on line <b>49</b><br />http:/localhost/whoplaystonight/main/view|response400
+error loadView general|06.12.2016 03:04:46| User: |main/view|response400
+error loadView general|06.12.2016 03:04:48| User: |main/view|response400
+error loadView general|06.12.2016 03:04:50| User: |services/view|response400
+error loadView general|06.12.2016 03:04:54| User: |products/events_form/view|response400
+error loadView general|06.12.2016 03:06:01| User: |main/view|response400
+error loadView general|06.12.2016 03:06:02| User: |services/view|response400
+error loadView general|06.12.2016 03:06:04| User: |products/events_form/view|response400
+error loadView general|06.12.2016 03:08:06| User: |products|response503
+error loadView general|06.12.2016 03:08:47| User: |events_front_end/list_events/view|response400
+error loadView general|06.12.2016 03:08:47| User: |media|response400
+error loadView general|06.12.2016 03:09:14| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:09:14| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:09:14| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:09:14| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:09:14| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:09:14| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:09:14| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:09:14| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:09:14| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:09:14| User: |portfolio/view|response400
+error loadView general|06.12.2016 03:09:16| User: |pricing/view|response400
+error loadView general|06.12.2016 03:09:18| User: |pricing|response400
+error loadView general|06.12.2016 03:09:18| User: |pricing/view|response400
+error loadView general|06.12.2016 03:09:54| User: |pricing|response400
+error loadView general|06.12.2016 03:09:54| User: |pricing/view|response400
+error loadView general|06.12.2016 03:12:07| User: |pricing|response400
+error loadView general|06.12.2016 03:12:07| User: |pricing/view|response400
+error loadView general|06.12.2016 03:16:38| User: |events_front_end/list_events/view|response400
+error loadView general|06.12.2016 03:16:38| User: |media|response400
+error loadView general|06.12.2016 03:23:56| User: |pricing|response400
+error loadView general|06.12.2016 03:23:57| User: |pricing/view|response400
+error loadView general|06.12.2016 03:24:01| User: |events_front_end/list_events/view|response400
+error loadView general|06.12.2016 03:24:02| User: |media|response400
+error loadView general|06.12.2016 03:24:09| User: |media|response400
+error loadView general|06.12.2016 03:24:14| User: |media|response400
+error loadView general|06.12.2016 03:24:42| User: |media|response400
+error loadView general|06.12.2016 03:33:07| User: |events_front_end/list_events/view|response400
+error loadView general|06.12.2016 03:34:44| User: |products/events_form/view|response400
+error loadView general|06.12.2016 03:35:41| User: |products/view|response400
+error loadView general|06.12.2016 03:35:51| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:35:51| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:35:51| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:35:51| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:35:51| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:35:51| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:35:51| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:35:51| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:35:51| User: |portfolio/view/img/portfolio|response400
+error loadView general|06.12.2016 03:35:51| User: |portfolio/view|response400
+error loadView general|06.12.2016 03:35:52| User: |pricing/view|response400
+error loadView general|06.12.2016 03:35:53| User: |pricing|response400
+error loadView general|06.12.2016 03:35:53| User: |pricing/view|response400
+error loadView general|06.12.2016 03:35:55| User: |pricing|response400
+error loadView general|06.12.2016 03:35:56| User: |pricing/view|response400

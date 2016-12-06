@@ -17,6 +17,7 @@
         <uri>services</uri>
     </module>
     <module>
+
         <name>portfolio</name>
         <uri>portfolio</uri>
     </module>
@@ -24,5 +25,12 @@
         <name>pricing</name>
         <uri>pricing</uri>
     </module>
-
+    <module>
+        <name>users</name>
+        <uri>users</uri>
+    </module>
+    <module>
+        <name>contact</name>
+        <uri>contact</uri>
+    </module>
 </modules>

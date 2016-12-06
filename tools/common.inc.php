@@ -34,7 +34,7 @@
 
 
   function loadView($path_view='', $file_view='',$data=''){
-
+    
     $view_path=$path_view . $file_view;
     //debugECHO($view_path);
     $arrData='';
