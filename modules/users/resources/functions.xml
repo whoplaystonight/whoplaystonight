@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    <function>
+        <name>sign_up</name>
+        <uri>sign_up</uri>
+    </function>
+    <function>
+        <name>alta_users</name>
+        <uri>alta_users</uri>
+    </function>
+    <function>
+        <name>load_pais</name>
+        <uri>load_pais</uri>
+    </function>
+    <function>
+        <name>load_provincias</name>
+        <uri>load_provincias</uri>
+    </function>
+    <function>
+        <name>load_poblaciones</name>
+        <uri>load_poblaciones</uri>
+    </function>
+</functions>

@@ -24,4 +24,8 @@
         <name>locate</name>
         <uri>locate</uri>
     </module>
+    <module>
+        <name>users</name>
+        <uri>users</uri>
+    </module>
 </modules>

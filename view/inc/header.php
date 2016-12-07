@@ -33,4 +33,6 @@
   	<!--<link rel="stylesheet" href="/resources/demos/style.css">-->
     <link href="view/css/main.css" rel="stylesheet" />
     <script type="text/javascript" src="<?php echo SITE_PATH . '/' ?>view/js/cookies.js"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="view/img/favicon.png" />
 </head>

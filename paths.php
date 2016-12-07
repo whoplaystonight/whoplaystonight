@@ -43,6 +43,11 @@ define('PRODUCTS_VIEW_JS',SITE_ROOT.'modules/products/view/js/');
 define('PRODUCTS_MODEL_MODEL', SITE_ROOT.'modules/products/model/model/');
 define('PRODUCTS_VIEW_CSS', SITE_PATH.'modules/products/view/css/');
 
+//module users
+define('PROVINCIASYPOBLACIONES', SITE_ROOT . 'resources/provinciasypoblaciones.xml');
+define('USERS_UTILS_FUNCTIONS', SITE_ROOT . 'modules/users/utils/functions_user.inc.php');
+define('USERS_MODEL_MODEL', SITE_ROOT.'modules/users/model/model/');
+
 //model contact
 define('CONTACT_JS_PATH', SITE_PATH . 'modules/contact/view/js/');
 define('CONTACT_CSS_PATH', SITE_PATH . 'modules/contact/view/css/');
