@@ -69,14 +69,21 @@ trabajo correcto con GIT, el sistema de control de versiones empleado.
 
                               git pull
 
-      Con esto habremos añadido los últimos cambios del master remoto al master local
+      Si con el git pull se nos informa de conflictos, habrá que resolverlos
+      entrando en los ficheros afectados y borrando el codigo que no deseemos
+      mantener. El codigo añadido por nosotros se encontrara entre <<<<<HEAD y
+      =====. Entre ====== y >>>>>>>> tendremos el codigo descargado de remoto.
+      Borraremos el que proceda y Una vez borrado, haremos git add . para añadir los
+      archivo modificados y el commmit correspondiente.
+
+      Con esto habremos fusionado los últimos cambios del master remoto al master local
       Ahora ejecutaremos de nuevo:
 
 
                               git push -u origin master
 
       Y habremos subido los ultimos cambios de nuestro master local (que ya
-      contiene los cambios de nuestra rama propia local) al maser remoto.
+      contiene los cambios de nuestra rama propia local) al master remoto.
 
 
       PASO 4: FUNDIR RAMA MASTER CON RAMA LOCAL

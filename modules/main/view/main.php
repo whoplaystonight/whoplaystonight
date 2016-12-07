@@ -5,19 +5,19 @@
              <div class="carousel-inner">
                  <div class="item active">
 
-                     <img src="view/img/1.jpg" alt="" />
+                     <img src="<?php echo IMG_PATH ?>1.jpg" alt="" />
                      <div class="carousel-caption" >
                          <h4 class="back-light">Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.</h4>
                      </div>
                  </div>
                  <div class="item">
-                     <img src="view/img/2.jpg" alt="" />
+                     <img src="<?php echo IMG_PATH ?>2.jpg" alt="" />
                      <div class="carousel-caption ">
                          <h4 class="back-light">Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.</h4>
                      </div>
                  </div>
                  <div class="item">
-                     <img src="view/img/3.jpg" alt="" />
+                     <img src="<?php echo IMG_PATH ?>3.jpg" alt="" />
                      <div class="carousel-caption ">
                          <h4 class="back-light">Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.</h4>
                      </div>
@@ -42,7 +42,7 @@
 
           <div class="row text-center pad-row  ">
 <div class="col-md-4 col-sm-4 ">
-                 <img class="img-circle" src="view/img/team1.png" alt="" />
+                 <img class="img-circle" src="<?php echo IMG_PATH ?>team1.png" alt="" />
                     <h3><strong>Jhon Deo Alex</strong> </h3>
                 <p>
                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -51,7 +51,7 @@
                      <a href="#" class="btn btn-primary" >Read Details</a>
              </div>
               <div class="col-md-4 col-sm-4 ">
-                 <img class="img-circle" src="view/img/team2.jpg" alt="" />
+                 <img class="img-circle" src="<?php echo IMG_PATH ?>team2.jpg" alt="" />
                     <h3><strong>Jhon Deo Alex</strong> </h3>
                 <p>
                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.

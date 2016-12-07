@@ -1,11 +1,8 @@
 <?php
 
-// echo json_encode("pepito");
-// exit;
-
 function upload_files(){
-  //echo json_encode("I'm in upload_files");
-  //exit;
+  // echo json_encode("I'm in upload_files");
+  // exit;
 
   $error="";
   $copiarFichero=false;
@@ -79,15 +76,15 @@ function upload_files(){
         */
 
         ////////////////////////////////////////////////////////////////////////////
-    $upfile = $_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/media/'.$_FILES['file']['name'];
+    $upfile = MEDIA_PATH.$_FILES['file']['name'];
     if (is_uploaded_file($_FILES['file']['tmp_name'])){
         if (is_file($_FILES['file']['tmp_name'])) {
             $idUnico = rand();
             $nombreFichero = $idUnico."-".$_FILES['file']['name'];
-            $_SESSION['nombreFichero']=$nombreFichero;
+            //$_SESSION['nombreFichero']=$nombreFichero;
             $copiarFichero = true;
             // I use absolute route to move_uploaded_file because this happens when i run ajax
-            $upfile = $_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/media/'.$nombreFichero;
+            $upfile = MEDIA_PATH.$nombreFichero;
         }else{
                 $error .=   "Invalid File...";
         }
@@ -101,11 +98,11 @@ function upload_files(){
                 return $return=array('resultado'=>false,'error'=>$error,'datos'=>"");
             }
             //We need edit $upfile because now i don't need absolute route.
-            $upfile ='/whoplaystonight/media/'.$nombreFichero;
+            $upfile ='media/'.$nombreFichero;
             return $return=array('resultado'=>true , 'error'=>$error,'datos'=>$upfile);
         }
         if($_FILES['file']['error'] !== 0) { //Assignarem a l'us default-avatar
-            $upfile = '/whoplaystonight/media/default-avatar.png';
+            $upfile = 'media/default-avatar.png';
             return $return=array('resultado'=>true,'error'=>$error,'datos'=>$upfile);
         }
     }else{
@@ -119,8 +116,8 @@ function remove_files(){
 
   $name=$_POST["filename"];
 
-  if(file_exists($_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/media/'.$_SESSION['nombreFichero'])){
-    unlink($_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/media/'.$_SESSION['nombreFichero']);
+  if(file_exists(MEDIA_PATH.$name)){
+    unlink(MEDIA_PATH.$name);
     return true;
   }else{
     return false;

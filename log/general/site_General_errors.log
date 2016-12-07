@@ -1,0 +1,21 @@
+07/12/16 08:58:29 PM|error loadView general|contact/contact/view|response400
+07/12/16 08:59:24 PM|error loadView general|contact/contact/view|response400
+07/12/16 09:00:21 PM|ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|locate|response200
+07/12/16 09:00:26 PM|error loadView general|locate/locate/view|response400
+07/12/16 09:01:14 PM|ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|locate|response200
+07/12/16 09:01:14 PM|error loadView general|locate/locate/view|response400
+07/12/16 09:02:25 PM|error loadView general|main/view|response400
+07/12/16 09:02:27 PM|error loadView general|main|response400
+07/12/16 09:02:27 PM|error loadView general|main/view|response400
+07/12/16 09:03:50 PM|error loadView general|main|response400
+07/12/16 09:03:51 PM|error loadView general|main/view|response400
+07/12/16 09:03:52 PM|error loadView general|services/begin/view|response400
+07/12/16 09:03:59 PM|error loadView general|main/view|response400
+07/12/16 09:04:01 PM|error loadView general|services/begin/view|response400
+07/12/16 09:04:20 PM|error loadView general|services/begin/view|response400
+07/12/16 09:04:21 PM|error loadView general|services/view|response400
+07/12/16 09:04:23 PM|error loadView general|services/view|response400

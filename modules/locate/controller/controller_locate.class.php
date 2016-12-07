@@ -2,7 +2,6 @@
 class controller_locate {
     function __construct() {
         include LOG_CLASS;
-        include (TOOLS . "common.inc.php");
 
         $_SESSION['module'] = "locate";
     }
@@ -12,7 +11,7 @@ class controller_locate {
         require_once(VIEW_PATH_INC."menu.php");
         //loadView(LOCATE_VIEW_PATH, 'locate.php');
         loadView('modules/locate/view/' , 'locate.php');
-        require_once(VIEW_PATH_INC."footer.html");
+        require_once(VIEW_PATH_INC."footer.php");
     }
 
     function maploader() {

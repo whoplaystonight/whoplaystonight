@@ -1,16 +1,22 @@
-<!-- <script type="text/javascript" src="<?php /*echo EVENTS_VIEW_JS ?>jquery.bootpag.min.js"></script>
+<script type="text/javascript" src="<?php echo EVENTS_VIEW_JS ?>jquery.bootpag.min.js"></script>
 <script type="text/javascript" src="<?php echo EVENTS_VIEW_JS ?>list_products.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo EVENTS_VIEW_CSS*/ ?>main.css"> -->
+<link rel="stylesheet" type="text/css" href="<?php echo EVENTS_VIEW_CSS ?>main.css">
 
-<script type="text/javascript" src="modules/events_front_end/view/js/jquery.bootpag.min.js"></script>
-<script type="text/javascript" src="modules/events_front_end/view/js/list_products.js"></script>
-<link rel="stylesheet" type="text/css" href="modules/events_front_end/view/css/main.css">
 
+
+    <input type="text" id="test"/>
 <br><br>
 <center>
   <form name="search_event" id="search_event" class="search_event">
     <input type="text" value="" placeholder="Search event..." class="input_search" id="keyword" list="datalist"/>
+    <!-- <input type="text" value="" placeholder="Test" id="test" list="datalist"/>
+    <script>
+        $( "#test" ).autocomplete({
+          source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ]
+      });
+    </script> -->
     <input name="Submit" id="Submit" class="button_search" type="button">
+
   </form>
 </center>
 

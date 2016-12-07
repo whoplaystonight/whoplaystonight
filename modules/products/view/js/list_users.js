@@ -1,30 +1,28 @@
 ////////////////////////////////////////////////////////////////////////////////
                             /*  LOAD_USERS_AJAX  */
 ////////////////////////////////////////////////////////////////////////////////
+//console.log("Estic al list_users");
 
+function load_users_ajax() {
 
-function load_users_ajax(){
+    $.ajax({
+        type: 'GET',
+        url: "index.php?module=products&function=load_event&load=true",
+        // type: "POST",
+        // url: "../../products/load_event/",
+        // param:{'load':true},
+        //dataType: 'json',
+        async: false
+    }).success(function (data) {
 
-  $.ajax({
-    type:'GET',
-    url:"index.php?module=products&function=load_event&load=true",
-    async:false
+        var json = JSON.parse(data);
 
-  }).success(function(data){
+        pintar_user(json);
 
-
-    var json=JSON.parse(data);
-
-    print_user(json);
-
-  }).fail(function(xhr){
-
-    alert(xhr.responseText);
-
-  });
-}//end of load_users_ajax
-
-
+    }).fail(function (xhr) {
+        alert(xhr.responseText);
+    });
+}
 
 ////////////////////////////////////////////////////////////////////////////////
                             /*  LOAD_USERS_GET_V1  */
@@ -48,14 +46,21 @@ function load_users_get_v1(){
 ////////////////////////////////////////////////////////////////////////////////
 
 function load_users_get_v2(){
+  //console.log("Estic al load_users_get_v2");
+  // var jqxhr=$.get("index.php?module=products&function=load_event&load=true", function (data){
+  var jqxhr=$.post("../products/load_event/",{'load':true}, function (data){
 
-  var jqxhr=$.get("index.php?module=products&function=load_event&load=true", function (data){
+    //console.log(data);
+
     var json=JSON.parse(data);
 
     print_user(json);
+
   }).done(function(){
 
   }).fail(function () {
+
+  }).always(function(){
 
   });
 
@@ -64,7 +69,7 @@ function load_users_get_v2(){
   });
 
 
-}//End of loas_users_get_v2
+}//End of load_users_get_v2
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -73,7 +78,7 @@ function load_users_get_v2(){
 
 $(document).ready(function () {
 
-  load_users_ajax();
+  load_users_get_v2();
 
 });
 
@@ -157,8 +162,10 @@ function print_user(data){
   end.innerHTML+=data.event.end;
 
   var cad=data.event.avatar;
+  //console.log(cad);
   var img=document.createElement("div");
-  var html ='<img src="' + cad + '" height="75" width"75">';
+  var html ='<img src="../' + cad + '" height="75" width"75">';
+  //console.log(html);
   img.innerHTML=html;
 
   div_event.appendChild(paragraph);

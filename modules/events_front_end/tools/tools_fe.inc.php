@@ -26,7 +26,7 @@ function paint_template_error($message){
 }//end of paint_template_error function
 
 function paint_template_products($arrData){
-  print("<script type='text/javascript' src='modules/events_front_end/view/js/modal_products.js'></script>");
+  print("<script type='text/javascript' src='".EVENTS_VIEW_JS."modal_products.js'></script>");
   print("<section>");
   print("<div class='container'>");
   print("<div id='list_events' class='row text-center pad-row'>");
@@ -40,7 +40,7 @@ function paint_template_products($arrData){
   if(isset($arrData)&& !empty($arrData)){
     foreach($arrData as $event){
       print("<div class='prod' id='". $event['event_id'] . "'>");
-      print("<img class='prodImg' src='". $event['poster']."' alt='event'>");
+      print("<img class='prodImg' src='" . SITE_PATH . $event['poster']."' alt='event'>");
       print("<p>" . $event['band_name']."</p>");
       print("<p id='p2'>". $event['type_event']);
       print("<p id='p3'>". $event['date_event']);
