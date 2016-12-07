@@ -38,7 +38,7 @@ function loadView($path_view='', $file_view='',$data=''){
     $view_path=$path_view . $file_view;
     //debugECHO($view_path);
     $arrData='';
-    
+
     if(file_exists($view_path)){
         // debugECHO("Estic al file exists");
         // debugECHO($view_path);
@@ -70,5 +70,4 @@ function loadView($path_view='', $file_view='',$data=''){
         require_once VIEW_PATH_INC_ERROR . 'error.php';
         //die();
     }//end if else $data
-
 }//end of loadView function

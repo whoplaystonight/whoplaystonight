@@ -42,7 +42,6 @@
                                  echo'active';
                               else
                                  echo 'deactivate';
-
                         ?>"
                     >
                         <a href="<?php amigable('?module=events_front_end&function=list_events');?>">LIST EVENT</a>
@@ -61,7 +60,6 @@
                                  echo'active';
                               else
                                  echo 'deactivate';
-
                         ?>"
                     >
                       <a href="<?php amigable('?module=pricing'); ?>">PRICING</a>
@@ -109,15 +107,12 @@
                       echo "Home";
                   }else{
                     switch($_GET['module']){
-
                       case 'services':
                         echo '<a href="<?php amigable(\'?module=services\'); ?>">SERVICES</a>';
                         break;
-
                       case 'products':
                         echo '<a href="<?php amigable(\'?module=products&function=events_form\'); ?>">EVENTS</a>';
                         break;
-
                       default:
                         echo '<a href="<?php amigable(\'?module=main\'); ?>">HOME</a>';
                         break;

@@ -3,6 +3,10 @@ class controller_users {
     public function __construct(){
         include (USERS_UTILS_FUNCTIONS);
         include(TOOLS . "upload.php");
+<<<<<<< HEAD
+=======
+        include(TOOLS . "common.inc.php");
+>>>>>>> 1f6a8dbb926913ed066242e3fea71b7e465986b2
     }
 
     public function sign_up(){
@@ -10,7 +14,11 @@ class controller_users {
         require_once(VIEW_PATH_INC . "menu.php");
         loadView('modules/users/view/','create_users.php');
 
+<<<<<<< HEAD
         require_once(VIEW_PATH_INC . "footer.php");
+=======
+        require_once(VIEW_PATH_INC . "footer.html");
+>>>>>>> 1f6a8dbb926913ed066242e3fea71b7e465986b2
     }
 
     // if ((isset($_GET["upload"])) && ($_GET["upload"] == true)) {
