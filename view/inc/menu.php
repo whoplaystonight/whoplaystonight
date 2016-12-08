@@ -89,6 +89,7 @@
 
         </div>
     </div>
+    </div>
     <br>
     <section id="title" class="emerald">
 
