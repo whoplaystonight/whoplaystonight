@@ -86,41 +86,40 @@ function response_code($code = NULL) {
     }
     return $return = array('code' => $code, 'text' => $text);
 
-}//End of response_code function
+}
 
 function showErrorPage($code = 0, $message ="", $http="", $num_http=0){
     switch ($code){
         case 0:
-        paint_template_error($message);
-        die();
-        break;
+            paint_template_error($message);
+            die();
+            break;
         case 1:
-        //header($http, true, $num_http);
-        loadView($num_http);
-        break;
+            //header($http, true, $num_http);
+            loadView($num_http);
+            break;
         case 2:
-        $log =log::getInstance();
-        $log->add_log_general($message,$_SESSION['module'],"response". http_response_code());
-        $log->add_log_user($message,"",$_SESSION['module'],"response".http_response_code());
+            $log =log::getInstance();
+            $log->add_log_general($message,$_SESSION['module'],"response". http_response_code());
+            $log->add_log_user($message,"",$_SESSION['module'],"response".http_response_code());
 
-        $jsondata['error']=$message;
-        //header($http, true, $num_http);
-        echo json_encode($jsondata);
-        exit;
-        break;
+            $jsondata['error']=$message;
+            //header($http, true, $num_http);
+            echo json_encode($jsondata);
+            exit;
+            break;
         case 3:
-        paint_template_search($message);
-        exit;
-        break;
+            paint_template_search($message);
+            exit;
+            break;
         case 4:
-        //require_once(VIEW_PATH_INC."header.php");
-        //   require_once(VIEW_PATH_INC."menu.php");
-        loadView($num_http);
-        //require_once(VIEW_PATH_INC."footer.html");
-        break;
-
-    }//end of switch
-}//end of showErrorPage function
+            require_once(VIEW_PATH_INC."header.php");
+            require_once(VIEW_PATH_INC."menu.php");
+            loadView($num_http);
+            require_once(VIEW_PATH_INC."footer.php");
+            break;
+    }
+}
 
 
 function ErrorHandler($errno,$errstr,$errfile,$errline){
@@ -141,7 +140,7 @@ function ErrorHandler($errno,$errstr,$errfile,$errline){
         default:
         $error="Unknown Error";
         break;
-    }//end of switch
+    }
     $msg="ERROR: [$errno] $errstr\r\n" . "$error on line $errline in file $errfile\r\n";
 
     $log=log::getInstance();

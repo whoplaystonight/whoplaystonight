@@ -291,10 +291,10 @@ $(document).ready(function(){
 ////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-    $.get("index.php?module=products&function=load_data_event&load_data=true",
+    //$.get("index.php?module=products&function=load_data_event&load_data=true",
+    $.post("../../products/load_data_event/",{'load_data':true},
           function(response){
+            //console.log(response);
             if(response.event===""){
               $("#event_id").val('');
               $("#band_id").val('');
@@ -358,17 +358,17 @@ $(document).ready(function(){
 
     /*Dropzone function */
 $("#dropzone").dropzone({
-    url: "index.php?module=products&function=upload_avatar&upload=true",
+    url: "../../products/upload_avatar/",//"index.php?module=products&function=upload_avatar&upload=true",
+    params:{'upload':true},
     addRemoveLinks: true,
     maxFileSize: 200,
     dictResponseError: "Ha ocurrido un error en el server",
     acceptedFiles: 'image/*,.jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.rar,application/pdf,.psd',
      init: function () {
+       //sconsole.log("estic dins del upload");
 
           this.on("success", function (file, response) {
-            //console.log("estic dins del upload");
             //console.log(response);
-            alert(response);
             $("#progress").show();
             $("#bar").width('100%');
             $("#percent").html('100%');
@@ -388,8 +388,8 @@ $("#dropzone").dropzone({
         var name = file.name;
         $.ajax({
             type: "POST",
-            url: "index.php?module=products&function=delete_events&delete=true",
-            data: "filename=" + name,
+            url:"../../products/delete_events/",//"index.php?module=products&function=delete_events&delete=true"
+            data: {"filename":name,"delete":true},
             success: function (data) {
             //console.log(data);
 
@@ -794,18 +794,20 @@ function validate_user(){
     /*To convert the JavaScript array in a JSON string*/
     var event_data_JSON=JSON.stringify(data);
 
-    $.post('index.php?module=products&function=register_event',
+    $.post("../../products/register_event",//'index.php?module=products&function=register_event'
             {register_event_json:event_data_JSON},
     function(response){
 
-      console.log(response);
+      //console.log(response);
       if(response.success){
         window.location.href=response.redirect;
       }
 
-
     }, "json").fail(function (xhr,textStatus,errorThrown){
-              console.log("Estoy en el fail");
+              // console.log("Estoy en el fail");
+              // console.log(xhr.status);
+              // console.log(textStatus);
+              //console.log(errorThrown);
               //console.log(xhr.responseJSON.error_avatar);
               if (xhr.status === 0) {
                   alert('Not connect: Verify Network.');
@@ -820,7 +822,7 @@ function validate_user(){
               } else if (textStatus === 'abort') {
                   alert('Ajax request aborted.');
               } else {
-                  /*alert('Uncaught Error: ' + xhr.responseText);*/
+                  alert('Uncaught Error: ' + xhr.responseText);
               }
 
               if (xhr.responseJSON == 'undefined' && xhr.responseJSON === null )
@@ -902,7 +904,7 @@ function validate_user(){
 
 
 function load_countries_v2(cad){
-
+//console.log(cad);
   $.getJSON(cad, function(data){
     $("#country").empty();
     $("#country").append('<option value="" selected="selected">Select a country</option>');
@@ -912,29 +914,34 @@ function load_countries_v2(cad){
     });//End of each data
   })//end of getJson
   .fail(function() {
+    //console.log("estic al fail");
     alert("error load_countries");
   });
 }//End of load_countries_v2
 
 
 function load_countries_v1(){
-
-  $.get("index.php?module=products&function=load_country_events&load_country=true",
+  //console.log("Estic al load countries");
+  //$.get("index.php?module=products&function=load_country_events&load_country=true"
+  $.post("../../products/load_country_events/",{'load_country':true},
       function(response){
         //console.log(response);
         if(response.match(/error/)){
-          load_countries_v2("resources/ListOfCountryNamesByName.json");
+          //console.log("match_error");
+          load_countries_v2("../../resources/ListOfCountryNamesByName.json");
         }else{
-          load_countries_v2("index.php?module=products&function=load_country_events&load_country=true");
+          //console.log("else");
+          load_countries_v2("../../products/load_country_events/",{'load_country':true});
         }
       })//End $.get
       .fail(function(response){
-          load_countries_v2("resources/ListOfCountryNamesByName.json");
+          //console.log("Estic al fail");
+          load_countries_v2("../../resources/ListOfCountryNamesByName.json");
       });//End of fail
 }//end of load_countries_v1
 
 function load_provinces_v2(){
-  $.get("resources/ListOfCountryNamesByName.xml", function(xml){
+  $.post("../../resources/ListOfCountryNamesByName.xml", function(xml){
     $("#province").empty();
     $("#province").append('<option value"" selected="selected">Select a province</option>');
 
@@ -952,8 +959,9 @@ function load_provinces_v2(){
 }//End of load_provinces_v2
 
 function load_provinces_v1(){
-
-  $.get("index.php?module=products&function=load_provinces_events&load_provinces=true",
+  //console.log("Estic al load_provinces_V1");
+  //$.get("index.php?module=products&function=load_provinces_events&load_provinces=true"
+  $.post("../../products/load_provinces_events/",{'load_provinces':true},
           function(response){
             //console.log(response);
             $("#province").empty();
@@ -981,7 +989,7 @@ function load_provinces_v1(){
 }//end of load_provinces_v1
 
 function load_towns_v2(prov) {
-  $.get("resources/ListOfCountryNamesByName.xml", function(xml){
+  $.get("../../resources/ListOfCountryNamesByName.xml", function(xml){
     $("#town").empty();
     $("#town").append('<option value"" selected="selected">Select a town</option>');
 
@@ -998,9 +1006,9 @@ function load_towns_v2(prov) {
 
 
 function load_towns_v1(prov){
-
+  //"index.php?module=products&function=load_towns"
   var data={idPoblac:prov};
-  $.post("index.php?module=products&function=load_towns",data, function(response){
+  $.post('../../products/load_towns/',data, function(response){
     //console.log(response);
     var json=JSON.parse(response);
     var towns=json.towns;

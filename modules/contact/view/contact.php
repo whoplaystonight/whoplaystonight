@@ -1,10 +1,10 @@
-<script src="modules/contact/view/lib/bootstrap-button.js"></script>
-<script src="modules/contact/view/lib/jquery.validate.min.js"></script>
-<script src="modules/contact/view/lib/jquery.validate.extended.js"></script>
-<script src="modules/contact/view/js/contact.js"></script>
+<script src="<?php echo CONTACT_LIB_PATH; ?>bootstrap-button.js"></script>
+<script src="<?php echo CONTACT_LIB_PATH; ?>jquery.validate.min.js"></script>
+<script src="<?php echo CONTACT_LIB_PATH; ?>jquery.validate.extended.js"></script>
+<script src="<?php echo CONTACT_JS_PATH; ?>contact.js"></script>
 
-<link href="modules/contact/view/css/bootstrap.min.css" rel="stylesheet">
-<link href="modules/contact/view/css/custom.css" rel="stylesheet">
+<link href="<?php echo CONTACT_CSS_PATH; ?>bootstrap.min.css" rel="stylesheet">
+<link href="<?php echo CONTACT_CSS_PATH; ?>custom.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
 
 
@@ -43,7 +43,7 @@
 
         <input class="btn btn-primary" type="submit" name="submit" id="submitBtn" disabled="disabled" value="send" />
 
-        <img src="modules/contact/view/img/ajax-loader.gif" alt="ajax loader icon" class="ajaxLoader" /><br/><br/>
+        <img src="<?php echo CONTACT_IMG_PATH; ?>ajax-loader.gif" alt="ajax loader icon" class="ajaxLoader" /><br/><br/>
         <div id="resultMessage" style="display: none;"></div>
     </form>
 </div> <!-- /container -->

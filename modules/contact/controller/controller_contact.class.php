@@ -2,9 +2,8 @@
 class controller_contact {
 
   public function __construct() {
-    include(EVENTS_TOOLS. "tools_fe.inc.php");
     include LOG_CLASS;
-    include (TOOLS . "common.inc.php");
+    /*include (TOOLS . "common.inc.php");*/
     include (TOOLS . "mail.inc.php");
 
     $_SESSION['module'] = "contact";
@@ -16,7 +15,7 @@ class controller_contact {
 
     loadView(CONTACT_VIEW_PATH, 'contact.php');
 
-    require_once(VIEW_PATH_INC."footer.html");
+    require_once(VIEW_PATH_INC."footer.php");
   }
 
   public function process_contact() {

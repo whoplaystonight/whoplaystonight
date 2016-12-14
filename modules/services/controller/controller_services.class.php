@@ -2,7 +2,7 @@
   class controller_services{
 
     public function __construct(){
-      include(TOOLS . "common.inc.php");
+      //include(TOOLS . "common.inc.php");
     }
 
     public function begin(){
@@ -11,6 +11,6 @@
 
       loadView('modules/services/view/' , 'services.php');
 
-      require_once(VIEW_PATH_INC . "footer.html");
+      require_once(VIEW_PATH_INC . "footer.php");
     }
   }

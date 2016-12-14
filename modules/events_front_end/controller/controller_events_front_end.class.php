@@ -13,7 +13,7 @@ class controller_events_front_end{
     // include (TOOLS . "filters.inc.php");
     // include (TOOLS . "tools.inc.php");
     // include (TOOLS . "response_code.inc.php");
-    include (TOOLS . "common.inc.php");
+    //include (TOOLS . "common.inc.php");
 
     $_SESSION['module']="events_front_end";
 
@@ -30,7 +30,7 @@ class controller_events_front_end{
 
     loadView('modules/events_front_end/view/' , 'list_products.php');
 
-    require_once(VIEW_PATH_INC . "footer.html");
+    require_once(VIEW_PATH_INC . "footer.php");
 
   }//end of list_events
 
@@ -41,7 +41,10 @@ class controller_events_front_end{
 
   public function autocomplete_events(){
 
-      if((isset($_GET["autocomplete"]))&& ($_GET["autocomplete"]==="true")){
+      if((isset($_POST["autocomplete"]))&& ($_POST["autocomplete"]==="true")){
+        // echo json_encode("estic al autocomplete events");
+        // exit;
+
         set_error_handler('ErrorHandler');
 
         try{
@@ -77,9 +80,9 @@ class controller_events_front_end{
 
   public function band_names(){
 
-      if(isset($_GET["band_name"])){
+      if(isset($_POST["band_name"])){
 
-        $result=filter_string($_GET["band_name"]);
+        $result=filter_string($_POST["band_name"]);
 
         if($result['resultado']){
 
@@ -130,9 +133,9 @@ class controller_events_front_end{
   public function count_events(){
 
 
-      if(isset($_GET["count_event"])){
+      if(isset($_POST["count_event"])){
 
-        $result=filter_string($_GET["count_event"]);
+        $result=filter_string($_POST["count_event"]);
         if($result['resultado']){
 
           $criteria=$result['datos'];
@@ -186,12 +189,14 @@ class controller_events_front_end{
 
 
 
-      if((isset($_GET["num_pages"])) && ($_GET["num_pages"]==="true")){
+      if((isset($_POST["num_pages"])) && ($_POST["num_pages"]==="true")){
+        // echo json_encode("Estic al number_pages_events");
+        // exit;
 
 
-        if(isset($_GET["keyword"])){
+        if(isset($_POST["keyword"])){
 
-          $result=filter_string($_GET["keyword"]);
+          $result=filter_string($_POST["keyword"]);
           if($result['resultado']){
 
             $criteria=$result['datos'];
@@ -253,13 +258,13 @@ class controller_events_front_end{
 
 
   public function view_error_true(){
-    if((isset($_GET["view_error"]))&& ($_GET["view_error"]==="true")){
+    if((isset($_POST["view_error"]))&& ($_POST["view_error"]==="true")){
       showErrorPage(0,"ERROR - 503 BD Unavailable");
     }
   }
 
   public function view_error_false(){
-    if((isset($_GET["view_error"]))&& ($_GET["view_error"]==="false")){
+    if((isset($_POST["view_error"]))&& ($_POST["view_error"]==="false")){
       showErrorPage(3,"RESULTS NOT FOUND");
     }
   }
@@ -270,9 +275,9 @@ class controller_events_front_end{
 
   public function idProducts(){
 
-      if(isset($_GET["idProduct"])){
+      if(isset($_POST["idProduct"])){
         $arrValue=null;
-        $id=$_GET['idProduct'];
+        $id=$_POST['idProduct'];
 
 
         // $result=filter_num_int($_GET['idProduct']);

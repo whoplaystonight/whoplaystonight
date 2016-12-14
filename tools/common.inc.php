@@ -1,6 +1,6 @@
 <?php
 
-  function loadModel($model_path, $model_name, $function, $arrArgument=''){
+function loadModel($model_path, $model_name, $function, $arrArgument=''){
 
     $model=$model_path . $model_name . '.class.singleton.php';
     // echo json_encode($model);
@@ -8,52 +8,57 @@
 
     if(file_exists($model)){
 
-      include_once($model);
-      $modelClass= $model_name;
+        include_once($model);
+        $modelClass= $model_name;
 
 
-      if (!method_exists($modelClass, $function)){
-          throw new Exception();
-      }
-      $obj= $modelClass::getInstance();
+        if (!method_exists($modelClass, $function)){
+            throw new Exception();
+        }
+        $obj= $modelClass::getInstance();
 
-      if (isset($arrArgument)){
+        if (isset($arrArgument)){
 
-          return $obj->$function($arrArgument);
-          // return call_user_func(array($obj, $function),$arrArgument);
+            return $obj->$function($arrArgument);
+            // return call_user_func(array($obj, $function),$arrArgument);
 
-      }
+        }
 
     }else{
 
-      throw new Exception();
+        throw new Exception();
 
     }
 
-  }//End of loadModel function
+}//End of loadModel function
 
 
-  function loadView($path_view='', $file_view='',$data=''){
-    
+function loadView($path_view='', $file_view='',$data=''){
+
     $view_path=$path_view . $file_view;
     //debugECHO($view_path);
     $arrData='';
 
     if(file_exists($view_path)){
+        // debugECHO("Estic al file exists");
+        // debugECHO($view_path);
 
-      if(isset($data)){
-        $arrData=$data;
-      }
-      include_once($view_path);
 
-      }else{
+        if(isset($data)){
+            $arrData=$data;
+        }
+        include_once($view_path);
+
+    }else{
 
         $result=filter_num_int($path_view);
 
         if($result['resultado']){
-          $path_view=$result['datos'];
+            $path_view=$result['datos'];
+            //debugECHO("PAN");
         }else{
-          $path_view=http_response_code();
+            $path_view=http_response_code();
+            //debugECHO("JAMON");
         }
 
         $log=log::getInstance();
@@ -64,6 +69,5 @@
         $arrData=$result;
         require_once VIEW_PATH_INC_ERROR . 'error.php';
         //die();
-      }//end if else $data
-
-  }//end of loadView function
+    }//end if else $data
+}//end of loadView function

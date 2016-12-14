@@ -2,7 +2,7 @@
     <div class="container">
         <div id="details_prod" class="row text-center pad-row">
             <ol class="breadcrumb">
-                <li><a href="index.php?module=products">Products</a></li>
+                <li><a href="<?php amigable('?module=products&function=events_form');?>">Products</a></li>
                 <li class="active">Details Product</li>
             </ol>
             <br>

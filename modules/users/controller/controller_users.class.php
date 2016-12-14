@@ -3,14 +3,12 @@ class controller_users {
     public function __construct(){
         include (USERS_UTILS_FUNCTIONS);
         include(TOOLS . "upload.php");
-        include(TOOLS . "common.inc.php");
     }
 
     public function sign_up(){
         require_once(VIEW_PATH_INC . "header.php");
         require_once(VIEW_PATH_INC . "menu.php");
         loadView('modules/users/view/','create_users.php');
-
         require_once(VIEW_PATH_INC . "footer.html");
     }
 
