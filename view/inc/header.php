@@ -17,7 +17,18 @@
           ?>
     </title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="view/img/favicon.png" />
 
+    <!--JS-->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="<?php echo VIEW_JS ?>main.js"></script>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="<?php echo CSS_PATH ?>main.css" rel="stylesheet">
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="<?php echo CSS_PATH ?>bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLE CSS -->
@@ -27,12 +38,11 @@
     <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <link href="<?php echo CSS_PATH ?>main.css" rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="view/img/favicon.png" />
+
+
+
+
+
 
 </head>

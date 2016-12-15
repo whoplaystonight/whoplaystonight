@@ -14,7 +14,10 @@ define('VIEW_PATH_INC',SITE_ROOT.'view/inc/');
 define('VIEW_PATH_INC_ERROR',SITE_ROOT.'view/inc/templates_error/');
 define('VIEW_PLUGINS', SITE_PATH.'view/plugins/');
 
-
+//CLASSES
+define('CLASSES', SITE_ROOT . 'classes/');
+//LIBS
+define('LIBS',SITE_ROOT .'libs/');
 //LOG
 define('LOG_CLASS', SITE_ROOT.'classes/log.class.singleton.php');
 define('USER_LOG_DIR', SITE_ROOT.'log/products/site_Products_errors.log');
@@ -33,7 +36,8 @@ define('MODULES_PATH', SITE_ROOT.'modules/');
 define('RESOURCES',SITE_ROOT.'resources/');
 
 //MEDIA
-define('MEDIA_PATH',SITE_ROOT.'media/');
+define('MEDIA_ROOT', SITE_ROOT .'media/');
+define('MEDIA_PATH',SITE_PATH.'media/');
 
 //TOOLS
 define('TOOLS',SITE_ROOT.'tools/');

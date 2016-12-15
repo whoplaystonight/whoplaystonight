@@ -187,7 +187,7 @@ class controller_products{
   //////////////////////////////////////////////////////////////////////////////
 
   public function delete_events(){
-    if(isset($_POST["delete"])&& ($_POST["delete"]==true)){
+    if(isset($_GET["aux"])&& ($_GET["aux"]==true)){
       $_SESSION['result_avatar']=array();
       $result=remove_files();
       if($result===true){
@@ -237,7 +237,8 @@ class controller_products{
   //////////////////////////////////////////////////////////////////////////////
 
   public function load_data_event(){
-    if ((isset($_POST["load_data"]))&& ($_POST["load_data"]==true)){
+
+    if ((isset($_GET["aux"]))&& ($_GET["aux"]=="load_data")){
       $jsondata=array();
 
       if (isset($_SESSION['event'])){
@@ -259,10 +260,9 @@ class controller_products{
 
   public function load_country_events(){
 
-
-    if((isset($_POST["load_country"])) && ($_POST["load_country"]==true)){
-      //  echo json_encode("Estic al load_country_events");
-      //  exit;
+      if((isset($_GET["aux"])) && ($_GET["aux"]=="load_country")){
+        //  echo json_encode("Estic al load_country_events");
+        //  exit;
 
       $json=array();
 
@@ -310,10 +310,10 @@ class controller_products{
   //////////////////////////////////////////////////////////////////////////////
 
   public function load_provinces_events(){
-
-    if((isset($_POST["load_provinces"])) && ($_POST["load_provinces"]==true)){
-      //  echo json_encode("Estic al load_provinces_events");
-      //  exit;
+    //if((isset($_POST["load_provinces"])) && ($_POST["load_provinces"]==true)){
+    if((isset($_GET["aux"])) && ($_GET["aux"]=="load_provinces")){
+      // echo json_encode("Estic al load_provinces_events");
+      // exit;
       $jsondata=array();
       $json=array();
 

@@ -8,6 +8,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">WHO PLAYS TONIGHT?</a>
+                <br><br><br>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
 
@@ -85,6 +86,7 @@
 
         </div>
     </div>
+  </div>
     <br>
     <section id="title" class="emerald">
     <div class="container">

@@ -6,6 +6,7 @@
   include(TOOLS . "filters.inc.php");
   include(TOOLS . "response_code.inc.php");
   include(TOOLS . "tools.inc.php");
+  include(TOOLS . "mail.inc.php");
 
   if(PRODUCTION){
   	ini_set('display_errors',1);
@@ -18,8 +19,8 @@
   	session_start();
   	$_SESSION['module']="";
 
-    function handlerRouter() {
 
+    function handlerRouter() {
 
 	    if (!empty($_GET['module'])) {
 			     $URI_module = $_GET['module'];
@@ -40,8 +41,6 @@
   		}
 
   	  handlerModule($URI_module, $URI_function);
-
-
 
 
   	}//end of handlerRouter function
@@ -67,9 +66,7 @@
             require($path);
             $controllerClass="controller_". $URI_module;
             //debugECHO($controllerClass);
-
             $obj = new $controllerClass;
-
 
           }else{
             //debugECHO("Estic al else");

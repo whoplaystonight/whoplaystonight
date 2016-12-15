@@ -47,8 +47,9 @@ function load_users_get_v1(){
 
 function load_users_get_v2(){
   //console.log("Estic al load_users_get_v2");
-  // var jqxhr=$.get("index.php?module=products&function=load_event&load=true", function (data){
-  var jqxhr=$.post("../products/load_event/",{'load':true}, function (data){
+  // var jqxhr=$.get("index.php?module=products&function=load_event&load=true", function (data)
+  //var jqxhr=$.post("../products/load_event/",{'load':true}, function (data){
+  var jqxhr=$.post(amigable("?module=products&function=load_event&aux=load"), function (data){
 
     //console.log(data);
 

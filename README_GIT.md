@@ -102,7 +102,7 @@ trabajo correcto con GIT, el sistema de control de versiones empleado.
 
       Subiendo a continuación los cambios a la rama propia remota:
 
-                            git push -u Sergio
+                            git push -u origexitin Sergio
 
 
       Siguiendoe estos 4 pasos conseguiremos tener sincronizadas las 4 ramas
