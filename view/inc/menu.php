@@ -28,8 +28,12 @@
                         <li class="<?php if(isset($_GET['module']) === 'pricing'){echo'active';} else {echo 'deactivate';}?>">
                             <a href="<?php amigable('?module=pricing'); ?>">PRICING</a>
                         </li>
-                        <li class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>">
+                        <!-- <li class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>">
                             <a href="<?php amigable('?module=users&function=sign_up'); ?>">SIGN UP</a>
+                        </li> -->
+                        <li id="LogProf">
+                            <a href="<?php echo USERS_VIEW_PATH . "modal.html"; ?>"
+                            class="button special" data-toggle="modal" id="Login" data-target="#LoginModal">Login</a>
                         </li>
                         <li class="<?php if(isset($_GET['module']) === 'contact') {echo 'active';} else {echo 'deactivate';}?>">
                             <a href="<?php amigable('?module=contact&function=contact'); ?>">CONTACT</a>
@@ -43,6 +47,13 @@
         </div>
     </div>
     <br>
+    <!-- Modal login -->
+    <div id="LoginModal" class="modal_login modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content"></div>
+        </div>
+    </div>
+
     <section id="title" class="emerald">
 
         <div class="container">
@@ -72,3 +83,4 @@
         </div>
     </section>
     <!-- MENU END-->
+<!DOCTYPE html>

@@ -17,13 +17,14 @@
           ?>
     </title>
 
-
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="<?php echo CSS_PATH ?>bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLE CSS -->
     <link href="<?php echo CSS_PATH ?>font-awesome.min.css" rel="stylesheet" />
     <!-- CUSTOM STYLE CSS -->
     <link href="<?php echo CSS_PATH ?>style.css" rel="stylesheet" />
+    <!-- CSS Users -->
+    <link rel="stylesheet" href="<?php echo USERS_VIEW_CSS ?>main.css" type="text/css"/>
     <!-- GOOGLE FONT -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
@@ -33,5 +34,8 @@
     <script type="text/javascript" src="<?php echo SITE_PATH . '/' ?>view/js/cookies.js"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo VIEW_IMG;?>favicon.png" />
-
+    <!-- Modal users -->
+    <script type="text/javascript" src="<?php echo USERS_JS_PATH ?>init.js"></script>
+    <script type="text/javascript" src="<?php echo VIEW_PATH_JS2 ?>main.js"></script>
+    <script type="text/javascript" src="<?php echo VIEW_PATH_JS2 ?>init.js"></script>
 </head>

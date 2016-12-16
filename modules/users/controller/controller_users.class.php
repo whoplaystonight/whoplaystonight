@@ -9,7 +9,7 @@ class controller_users {
         require_once(VIEW_PATH_INC . "header.php");
         require_once(VIEW_PATH_INC . "menu.php");
         loadView('modules/users/view/','create_users.php');
-        require_once(VIEW_PATH_INC . "footer.html");
+        require_once(VIEW_PATH_INC . "footer.php");
     }
 
     // if ((isset($_GET["upload"])) && ($_GET["upload"] == true)) {

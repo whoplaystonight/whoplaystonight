@@ -28,6 +28,8 @@ CREATE TABLE `users` (
   `country` varchar(50) NOT NULL,
   `province` varchar(50) NOT NULL,
   `town` varchar(50) NOT NULL,
+  `activado` tinyint(1) DEFAULT 0,
+  `token` varchar(100) NOT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
