@@ -28,9 +28,9 @@
                         <li class="<?php if(isset($_GET['module']) === 'pricing'){echo'active';} else {echo 'deactivate';}?>">
                             <a href="<?php amigable('?module=pricing'); ?>">PRICING</a>
                         </li>
-                        <!-- <li class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>">
+                        <li class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>">
                             <a href="<?php amigable('?module=users&function=sign_up'); ?>">SIGN UP</a>
-                        </li> -->
+                        </li>
                         <li id="LogProf">
                             <a href="<?php echo USERS_VIEW_PATH . "modal.html"; ?>"
                             class="button special" data-toggle="modal" id="Login" data-target="#LoginModal">Login</a>

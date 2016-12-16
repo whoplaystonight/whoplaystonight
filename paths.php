@@ -84,3 +84,6 @@ define('LOCATE_CSS_PATH', SITE_PATH . 'modules/locate/view/css/');
 
 //amigables
 define('URL_AMIGABLES', TRUE);
+
+//JS
+define('JS_PATH', SITE_PATH . '/view/js/');

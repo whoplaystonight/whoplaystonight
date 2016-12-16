@@ -20,4 +20,8 @@
         <name>load_poblaciones</name>
         <uri>load_poblaciones</uri>
     </function>
+    <function>
+        <name>social_signin</name>
+        <uri>social_signin</uri>
+    </function>
 </functions>

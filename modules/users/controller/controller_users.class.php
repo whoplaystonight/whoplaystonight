@@ -52,9 +52,9 @@ class controller_users {
             $arrValue = loadModel($path_model, "user_model", "create_user", $arrArgument);
 
             if ($arrValue)
-                $mensaje = "User has been successfully registered";
+            $mensaje = "User has been successfully registered";
             else
-                $mensaje = "Error in the register process. Try it later.";
+            $mensaje = "Error in the register process. Try it later.";
 
             //redirigir a otra pagina con los datos de $arrArgument y $mensaje
             $_SESSION['user'] = $arrArgument;
@@ -188,6 +188,63 @@ class controller_users {
                 echo json_encode($jsondata);
                 exit;
             }
+        }
+    }
+
+    //////////// Social signin ////////////
+    public function social_signin() {
+
+        $user = json_decode($_POST['user'], true);
+        set_error_handler('ErrorHandler');
+        try {
+            $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "count", array('column' => array('username'), 'like' => array($user['id'])));
+        } catch (Exception $e) {
+            $arrValue = false;
+        }
+
+        restore_error_handler();
+
+        if (!$arrValue[0]["total"]) {
+            if ($user['email'])
+            $avatar = 'https://graph.facebook.com/' . ($user['id']) . '/picture';
+            else
+            $avatar = get_gravatar($mail, $s = 400, $d = 'identicon', $r = 'g', $img = false, $atts = array());
+
+            $arrArgument = array(
+                'username' => $user['id'],
+                'name' => $user['name'],
+                'surname' => $user['surname'],
+                'email' => $user['email'],
+                'type' => 'client',
+                'avatar' => $avatar,
+                'activated' => "1"
+            );
+
+            set_error_handler('ErrorHandler');
+
+            try {
+                $value = loadModel(USERS_MODEL_MODEL, "user_model", "create_user", $arrArgument);
+            } catch (Exception $e) {
+                $value = false;
+            }
+            restore_error_handler();
+        } else{
+            $value = true;
+        }
+
+        if ($value) {
+            set_error_handler('ErrorHandler');
+            $arrArgument = array(
+                'column' => array("username"),
+                'like' => array($user['id']),
+                'field' => array('*')
+            );
+            //$user = loadModel(LOCATE_MODEL_MODEL, "locate_model", "select", $arrArgument);
+
+            restore_error_handler();
+            echo json_encode($user);
+        } else {
+            echo json_encode(array('error' => true, 'datos' => 503));
         }
     }
 }
