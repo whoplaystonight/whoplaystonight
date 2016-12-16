@@ -44,4 +44,11 @@ class user_bll {
         return $this->dao->obtain_towns_DAO($arrArgument);
     }
 
+    public function count_BLL($arrArgument) {
+        return $this->dao->count_DAO($this->db, $arrArgument);
+    }
+
+    public function select_BLL($arrArgument) {
+        return $this->dao->select_DAO($this->db, $arrArgument);
+    }
 }

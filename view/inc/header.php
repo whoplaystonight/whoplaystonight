@@ -17,7 +17,7 @@
           ?>
     </title>
 
-
+    <script type="text/javascript" src="<?php echo JS_PATH ?>main.js"></script>
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="<?php echo CSS_PATH ?>bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLE CSS -->
