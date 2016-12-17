@@ -20,24 +20,28 @@ function refresh(){
 function search(keyword){
   //console.log(keyword);
   //console.log("estic al search keyword");
-  // var urlbase="index.php?module=events_front_end&function=";
+  //var urlbase="index.php?module=events_front_end&function=";
   var urlbase="../../events_front_end/";
+  //var urlbase="?module=events_front_end&function=";
 
   if(!keyword){
-  // url=urlbase + "number_pages_events&num_pages=true";
+  //url=urlbase + "number_pages_events&num_pages=true";
   url=urlbase + "number_pages_events/,";
   option={'num_pages':true};
+  //url=urlbase + "number_pages_events&num_pages=true";
   //console.log(url);
 
   }else{
-  // url=urlbase + "number_pages_events&num_pages=true&keyword=" + keyword;
+  //url=urlbase + "number_pages_events&num_pages=true&keyword=" + keyword;
   url=urlbase + "number_pages_events/,";
   option={'num_pages':true,'keyword':keyword};
-  console.log(url);
-  }
+  //url=urlbase + "number_pages_events&num_pages=true&keyword=" + keyword;
 
-  // $.post(url,function(data,status){
-    $.post(url,option,function(data,status){
+  //console.log(url);
+  }
+  //var url="?module=events_front_end&function=number_pages_events&aux=num_pages";
+  $.post(url,option,function(data,status){
+  //$.post(amigable(url),function(data,status)
     //console.log(data);
     var json=JSON.parse(data);
     var pages=json.pages;
@@ -50,7 +54,7 @@ function search(keyword){
       option={'keyword':keyword};
       //console.log(url,option);
     }
-
+    // var url1="?module=events_front_end&function=obtain_events";
     $("#results").load(url,option);
 
     if(pages !==0){
@@ -235,12 +239,12 @@ function setCookie(cname, cvalue, exdays){
   });
 
   $.post("../../events_front_end/autocomplete_events/",{'autocomplete':true},function(data,status){
-    console.log(data);
+    //console.log(data);
     var json=JSON.parse(data);
     var name_events=json.band_name;
 
     //AQUI ENTRA
-    console.log(name_events);
+    //console.log(name_events);
 
     var suggestions =new Array();
 
@@ -250,7 +254,7 @@ function setCookie(cname, cvalue, exdays){
     }//end of for
 
     //AQUI ENTRA
-    console.log(suggestions);
+    //console.log(suggestions);
 
     $("#keyword").autocomplete({
       source: suggestions,

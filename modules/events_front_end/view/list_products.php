@@ -4,7 +4,7 @@
 
 
 
-    <input type="text" id="test"/>
+
 <br><br>
 <center>
   <form name="search_event" id="search_event" class="search_event">

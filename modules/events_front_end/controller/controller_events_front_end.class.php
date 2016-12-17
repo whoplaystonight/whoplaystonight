@@ -186,12 +186,14 @@ class controller_events_front_end{
   //////////////////////////////////////////////////////////////////////////////
 
   public function number_pages_events(){
+    // echo json_encode("Estic al number_pages_events");
+    // exit;
 
 
-
-      if((isset($_POST["num_pages"])) && ($_POST["num_pages"]==="true")){
+      //if((isset($_GET["aux"])) && ($_GET["aux"]==="true")){
         // echo json_encode("Estic al number_pages_events");
         // exit;
+      if((isset($_POST["num_pages"])) && ($_POST["num_pages"]==="true")){
 
 
         if(isset($_POST["keyword"])){
@@ -326,6 +328,7 @@ class controller_events_front_end{
   //////////////////////////////////////////////////////////////////////////////
 
   public function obtain_events(){
+
 
         $item_per_page=3;
 
