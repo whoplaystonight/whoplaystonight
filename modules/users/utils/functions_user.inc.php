@@ -69,3 +69,20 @@ function validate_dates($enter_date, $obsolescence_date) {
     }
     return false;
 }
+
+function get_gravatar($email, $s = 80, $d = 'wavatar', $r = 'g', $img = false, $atts = array()) {
+    $email = trim($email);
+    $email = strtolower($email);
+    $email_hash = md5($email);
+
+    $url = "https://www.gravatar.com/avatar/" . $email_hash;
+    $url .= md5(strtolower(trim($email)));
+    $url .= "?s=$s&d=$d&r=$r";
+    if ($img) {
+        $url = '<img src="' . $url . '"';
+        foreach ($atts as $key => $val)
+            $url .= ' ' . $key . '="' . $val . '"';
+        $url .= ' />';
+    }
+    return $url;
+}
