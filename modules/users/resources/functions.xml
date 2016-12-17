@@ -5,6 +5,10 @@
         <uri>sign_up</uri>
     </function>
     <function>
+        <name>login</name>
+        <uri>login</uri>
+    </function>
+    <function>
         <name>alta_users</name>
         <uri>alta_users</uri>
     </function>

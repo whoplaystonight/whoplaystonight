@@ -1,8 +1,8 @@
 $(document).ready(function () {
-    $("#twlogin").click(function () {
-        loginTw();
-    });
-
+    // $("#twlogin").click(function () {
+    //     loginTw();
+    // });
+    console.log("hi");
     $("#submitLog").click(function () {
         login();
     });
@@ -23,6 +23,7 @@ $(document).ready(function () {
 });
 
 function login() {
+    console.log("click")
     var user = $("#inputUser").val();
     var pass = $("#inputPass").val();
     var value = false;
@@ -38,11 +39,12 @@ function login() {
         } else
             value = true;
     }
-    
+
     var data = {"usuario": user, "pass": pass};
     var login_JSON = JSON.stringify(data);
     if (value){
-        $.post(amigable("?module=user&function=login"), {login_json: login_JSON},
+        console.log(amigable('?module=users&function=login'));
+        $.post(amigable("?module=users&function=login"), {login_json: login_JSON},
         function (response) {
             console.log(response);
             if (!response.error) {

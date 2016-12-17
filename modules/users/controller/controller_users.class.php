@@ -3,6 +3,7 @@ class controller_users {
     public function __construct(){
         include (USERS_UTILS_FUNCTIONS);
         include(TOOLS . "upload.php");
+        $_SESSION['module'] = "user";
     }
 
     public function sign_up(){
@@ -12,6 +13,85 @@ class controller_users {
         require_once(VIEW_PATH_INC . "footer.php");
     }
 
+    public function login() {
+        require_once(VIEW_PATH_INC . "header.php");
+        require_once(VIEW_PATH_INC . "menu.php");
+        loadView('modules/users/view/', 'modal.html');
+        require_once(VIEW_PATH_INC . "footer.php");
+        
+        $user = json_decode($_POST['login_json'], true);
+        $column = array(
+            'usuario'
+        );
+        $like = array(
+            $user['usuario']
+        );
+
+        $arrArgument = array(
+            'column' => $column,
+            'like' => $like,
+            'field' => array('password')
+        );
+
+        set_error_handler('ErrorHandler');
+        try {
+            //loadModel
+            $arrValue = loadModel(MODEL_USER, "user_model", "select", $arrArgument);
+            $arrValue = password_verify($user['pass'], $arrValue[0]['password']);
+        } catch (Exception $e) {
+            $arrValue = "error";
+        }
+        restore_error_handler();
+
+        if ($arrValue !== "error") {
+            if ($arrValue) { //OK
+                set_error_handler('ErrorHandler');
+                try {
+                    $arrArgument = array(
+                        'column' => array("usuario", "activado"),
+                        'like' => array($user['usuario'], "1")
+                    );
+                    $arrValue = loadModel(MODEL_USER, "user_model", "count", $arrArgument);
+
+                    if ($arrValue[0]["total"] == 1) {
+                        $arrArgument = array(
+                            'column' => array("usuario"),
+                            'like' => array($user['usuario']),
+                            'field' => array('*')
+                        );
+                        $user = loadModel(MODEL_USER, "user_model", "select", $arrArgument);
+                        echo json_encode($user);
+                        exit();
+                    } else {
+                        $value = array(
+                            "error" => true,
+                            "datos" => "El usuario no ha sido activado, revise su correo"
+                        );
+                        echo json_encode($value);
+                        exit();
+                    }
+                } catch (Exception $e) {
+                    $value = array(
+                        "error" => true,
+                        "datos" => 503
+                    );
+                    echo json_encode($value);
+                }
+            } else {
+                $value = array(
+                    "error" => true,
+                    "datos" => "El usuario y la contraseña no coinciden"
+                );
+                echo json_encode($value);
+            }
+        } else {
+            $value = array(
+                "error" => true,
+                "datos" => 503
+            );
+            echo json_encode($value);
+        }
+    }
     // if ((isset($_GET["upload"])) && ($_GET["upload"] == true)) {
     //     $result_avatar = upload_files();
     //     $_SESSION["result_avatar"] = $result_avatar;

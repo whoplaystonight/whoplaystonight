@@ -35,6 +35,9 @@
                             <a href="<?php echo USERS_VIEW_PATH . "modal.html"; ?>"
                             class="button special" data-toggle="modal" id="Login" data-target="#LoginModal">Login</a>
                         </li>
+                        <li class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>">
+                            <a href="<?php amigable('?module=users&function=login'); ?>">Login</a>
+                        </li>
                         <li class="<?php if(isset($_GET['module']) === 'contact') {echo 'active';} else {echo 'deactivate';}?>">
                             <a href="<?php amigable('?module=contact&function=contact'); ?>">CONTACT</a>
                         </li>
