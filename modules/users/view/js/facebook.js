@@ -41,15 +41,17 @@ function getUserInfo() {
     FB.api('/me', function (response) {
         FB.api('/me', {fields: 'id, first_name, last_name, email'},
         function (response) {
+            console.log(response)
+            console.log("nipa arriba")
             var data = {"id": response.id, "name": response.first_name, "surname": response.last_name, "email": response.email};
             var datos_social = JSON.stringify(data);
             //$.post(amigable('?module=contact&function=social_signin'), {user: datos_social},
             console.log(datos_social);
             $.post(('../../users/social_signin'), {user: datos_social},
             function (response) {
-                console.log(response);
                 console.log("--------------------------");
                 if (!response.error) {
+                    console.log(response)
                     Tools.createCookie("user", response[0]['username'] + "|" + response[0]['avatar'] + "|" + response[0]['type'] + "|" + response[0]['name'], 1);
                     window.location.href = amigable("?module=main/");
                 } else {
@@ -57,7 +59,7 @@ function getUserInfo() {
                     window.location.href = amigable("?module=main&fn=begin&param=503");
                 }
             }, "json").fail(function (xhr, textStatus, errorThrown) {
-                console.log(xhr.responseText);
+                console.log(xhr);
                 if (xhr.status === 0) {
                     alert('Not connect: Verify Network.');
                 } else if (xhr.status === 404) {

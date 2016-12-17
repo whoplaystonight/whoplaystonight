@@ -2,19 +2,18 @@ $(document).ready(start);
 function start() {
     $.post("../../locate/maploader", {value: {send: true}},
     function (response) {
-        console.log(response);
+        //console.log(response);
         if (response.success) {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(mostrarUbicacion);
                 cargarmap(response.ofertas);
                 cargarofertas(response.ofertas);
             } else {
-                alert("¡Error! Este navegador no soporta la Geolocalización.");
+                alert("¡Error! This browser doesn't support geolocation.");
             }
         } else {
             if (response.error == 503)
-            //window.location.href = amigable("?module=main&fn=begin&param=503");
-            alert("Error 503");
+            window.location.href = amigable("?module=main&function=begin&param=503");
         }
     }, "json").fail(function (xhr, textStatus, errorThrown) {
         console.log(xhr.responseText);
@@ -53,7 +52,7 @@ function refrescarUbicacion() {
 
 function cargarofertas(of) {
     for (var i = 0; i < of.length; i++) {
-        var content = '<div class="of" id="' + of[i].band_id + '"><div class="desc">' + of[i].band_name + '</div><div class="fecha"> Fecha: ' + of[i].date_event + '</div><div class="hora"> Hora: ' + of[i].start + ' - ' + of[i].end + '</div><div class="precio"> Event: ' + of[i].type_event + '</div></div>';
+        var content = '<div class="of" id="' + of[i].band_id + '"><div class="desc">' + of[i].band_name + '</div><div class="fecha"> Date: ' + of[i].date_event + '</div><div class="hora"> Event hour: ' + of[i].start + ' - ' + of[i].end + '</div><div class="precio"> Event type: ' + of[i].type_event + '</div></div>';
         $('.ofertas').append(content);
     }
 }
@@ -63,7 +62,7 @@ function marcar(map, oferta) {
     var marker = new google.maps.Marker({position: latlon, map: map, title: oferta.descripcion, animation: google.maps.Animation.DROP});
 
     var infowindow = new google.maps.InfoWindow({
-        content: '<h1 class="oferta_title">' + oferta.band_name + '</h1><p class="oferta_content">' + oferta.date_event + '</p><p class="oferta_content">Horario: ' + oferta.start + ' - ' + oferta.end + '</p>'
+        content: '<h1 class="oferta_title">' + oferta.band_name + '</h1><p class="oferta_content">' + oferta.date_event + '</p><p class="oferta_content">Event hour: ' + oferta.start + ' - ' + oferta.end + '</p>'
     });
     google.maps.event.addListener(marker, 'click', function () {
         infowindow.open(map, marker);

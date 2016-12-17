@@ -18,78 +18,79 @@ class controller_users {
         require_once(VIEW_PATH_INC . "menu.php");
         loadView('modules/users/view/', 'modal.html');
         require_once(VIEW_PATH_INC . "footer.php");
-        
-        $user = json_decode($_POST['login_json'], true);
-        $column = array(
-            'usuario'
-        );
-        $like = array(
-            $user['usuario']
-        );
+        if((isset($_POST['login_json']))){
+            $user = json_decode($_POST['login_json'], true);
+            $column = array(
+                'username'
+            );
+            $like = array(
+                $user['usuario']
+            );
 
-        $arrArgument = array(
-            'column' => $column,
-            'like' => $like,
-            'field' => array('password')
-        );
+            $arrArgument = array(
+                'column' => $column,
+                'like' => $like,
+                'field' => array('password')
+            );
+            set_error_handler('ErrorHandler');
+            try {
+                //loadModel
+                $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "select", $arrArgument);
+                echo json_encode($arrValue);exit;
+                $arrValue = password_verify($user['pass'], $arrValue[0]['password']);
+            } catch (Exception $e) {
+                $arrValue = "error";
+            }
+            restore_error_handler();
 
-        set_error_handler('ErrorHandler');
-        try {
-            //loadModel
-            $arrValue = loadModel(MODEL_USER, "user_model", "select", $arrArgument);
-            $arrValue = password_verify($user['pass'], $arrValue[0]['password']);
-        } catch (Exception $e) {
-            $arrValue = "error";
-        }
-        restore_error_handler();
-
-        if ($arrValue !== "error") {
-            if ($arrValue) { //OK
-                set_error_handler('ErrorHandler');
-                try {
-                    $arrArgument = array(
-                        'column' => array("usuario", "activado"),
-                        'like' => array($user['usuario'], "1")
-                    );
-                    $arrValue = loadModel(MODEL_USER, "user_model", "count", $arrArgument);
-
-                    if ($arrValue[0]["total"] == 1) {
+            if ($arrValue !== "error") {
+                if ($arrValue) { //OK
+                    set_error_handler('ErrorHandler');
+                    try {
                         $arrArgument = array(
-                            'column' => array("usuario"),
-                            'like' => array($user['usuario']),
-                            'field' => array('*')
+                            'column' => array("usuario", "activado"),
+                            'like' => array($user['usuario'], "1")
                         );
-                        $user = loadModel(MODEL_USER, "user_model", "select", $arrArgument);
-                        echo json_encode($user);
-                        exit();
-                    } else {
+                        $arrValue = loadModel(MODEL_USER, "user_model", "count", $arrArgument);
+
+                        if ($arrValue[0]["total"] == 1) {
+                            $arrArgument = array(
+                                'column' => array("usuario"),
+                                'like' => array($user['usuario']),
+                                'field' => array('*')
+                            );
+                            $user = loadModel(MODEL_USER, "user_model", "select", $arrArgument);
+                            echo json_encode($user);
+                            exit();
+                        } else {
+                            $value = array(
+                                "error" => true,
+                                "datos" => "El usuario no ha sido activado, revise su correo"
+                            );
+                            echo json_encode($value);
+                            exit();
+                        }
+                    } catch (Exception $e) {
                         $value = array(
                             "error" => true,
-                            "datos" => "El usuario no ha sido activado, revise su correo"
+                            "datos" => 503
                         );
                         echo json_encode($value);
-                        exit();
                     }
-                } catch (Exception $e) {
+                } else {
                     $value = array(
                         "error" => true,
-                        "datos" => 503
+                        "datos" => "El usuario y la contraseña no coinciden"
                     );
                     echo json_encode($value);
                 }
             } else {
                 $value = array(
                     "error" => true,
-                    "datos" => "El usuario y la contraseña no coinciden"
+                    "datos" => 503
                 );
                 echo json_encode($value);
             }
-        } else {
-            $value = array(
-                "error" => true,
-                "datos" => 503
-            );
-            echo json_encode($value);
         }
     }
     // if ((isset($_GET["upload"])) && ($_GET["upload"] == true)) {
@@ -132,9 +133,9 @@ class controller_users {
             $arrValue = loadModel($path_model, "user_model", "create_user", $arrArgument);
 
             if ($arrValue)
-            $mensaje = "User has been successfully registered";
+                $mensaje = "User has been successfully registered";
             else
-            $mensaje = "Error in the register process. Try it later.";
+                $mensaje = "Error in the register process. Try it later.";
 
             //redirigir a otra pagina con los datos de $arrArgument y $mensaje
             $_SESSION['user'] = $arrArgument;
@@ -319,7 +320,8 @@ class controller_users {
                 'like' => array($user['id']),
                 'field' => array('*')
             );
-            //$user = loadModel(LOCATE_MODEL_MODEL, "locate_model", "select", $arrArgument);
+
+            $user = loadModel(USERS_MODEL_MODEL, "user_model", "select", $arrArgument);
 
             restore_error_handler();
             echo json_encode($user);

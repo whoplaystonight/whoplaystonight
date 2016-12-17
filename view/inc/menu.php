@@ -28,7 +28,7 @@
                         <li class="<?php if(isset($_GET['module']) === 'pricing'){echo'active';} else {echo 'deactivate';}?>">
                             <a href="<?php amigable('?module=pricing'); ?>">PRICING</a>
                         </li>
-                        <li class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>">
+                        <li id="LogProf" class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>">
                             <a href="<?php amigable('?module=users&function=sign_up'); ?>">SIGN UP</a>
                         </li>
                         <li id="LogProf">

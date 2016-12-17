@@ -30,11 +30,11 @@ function login() {
 
     $(".error").remove();
     if (!user) {
-        $("#inputUser").focus().after("<span class='error'>Usuario vacío</span>");
+        $("#inputUser").focus().after("<span class='error'>Empty username</span>");
         value = false;
     } else {
         if (!pass) {
-            $("#inputPass").focus().after("<span class='error'>Contraseña vacía</span>");
+            $("#inputPass").focus().after("<span class='error'>Empty password</span>");
             value = false;
         } else
             value = true;

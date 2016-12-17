@@ -20,7 +20,8 @@ class userDAO {
         $password = $arrArgument['password'];
         $birthday = $arrArgument['birthday'];
         $interests = $arrArgument['interests'];
-        $avatar = $arrArgument['avatar'];
+        // $avatar = $arrArgument['avatar'];
+        $avatar = "";
         // $avatar = $_SESSION["nombre_fichero"];
 
         $rock = 0;
@@ -39,12 +40,16 @@ class userDAO {
         $country = $arrArgument['country'];
         $province = $arrArgument['province'];
         $town = $arrArgument['town'];
-        $type = $arrArgument['type'];
-        $activated = $arrArgument['activated'];
+        // $type = $arrArgument['type'];
+        $type = "";
+        // $activated = $arrArgument['activated'];
+        $activated = "";
+        $token = "";
 
-        $sql = "INSERT INTO users (username, email, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activated)
+        $sql = "INSERT INTO users (username, email, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activado, token)
         VALUES ('" . $username . "','" . $email ."','" . $password . "','" . $birthday . "', '" . $rock . "', '" . $jazz . "', '" . $blues . "', '" .
-         $avatar . "','" . $country . "','" . $province . "','" . $town . "','" . $type . "', '" . $activated . "')";
+         $avatar . "','" . $country . "','" . $province . "','" . $town . "','" . $type . "', '" . $activated . "', '" . $token ."')";
+        // echo json_encode($sql);exit;
         return $db->execute($sql);
     }
 
@@ -124,7 +129,7 @@ class userDAO {
         $i = count($arrArgument['column']);
         $k = count($arrArgument['field']);
         $sql1 = "SELECT ";
-        $sql2 = " FROM usuarios WHERE ";
+        $sql2 = " FROM users WHERE ";
 
         for ($j = 0; $j < $i; $j++) {
             if ($i > 1 && $j != 0)
@@ -140,7 +145,6 @@ class userDAO {
 
 
         $sql = $sql1 . $fields . $sql2 . $sql;
-
         $stmt = $db->execute($sql);
         return $db->listing($stmt);
     }

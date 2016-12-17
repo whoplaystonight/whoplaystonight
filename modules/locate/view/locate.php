@@ -9,8 +9,8 @@
     <div class="container">
 
         <header class="major">
-            <h2>Ofertas</h2>
-            <p>Aquí puedes ver las ofertas disponibles en tu zona</p>
+            <h2>Events</h2>
+            <p>Here you can view the location of the events.</p>
         </header>
 
         <div class="image fit">
