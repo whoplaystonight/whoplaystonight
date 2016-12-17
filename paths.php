@@ -62,6 +62,7 @@ define('USERS_UTILS_FUNCTIONS', SITE_ROOT . 'modules/users/utils/functions_user.
 define('USERS_MODEL_MODEL', SITE_ROOT.'modules/users/model/model/');
 define('USERS_JS_PATH', SITE_PATH . 'modules/users/view/js/');
 define('USERS_VIEW_CSS', SITE_PATH . 'modules/users/view/css/');
+define('USERS_JS_PATH', SITE_PATH . 'modules/users/view/js/');
 
 //module contact
 define('CONTACT_JS_PATH', SITE_PATH . 'modules/contact/view/js/');

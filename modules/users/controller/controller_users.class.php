@@ -239,7 +239,8 @@ class controller_users {
                 'like' => array($user['id']),
                 'field' => array('*')
             );
-            //$user = loadModel(LOCATE_MODEL_MODEL, "locate_model", "select", $arrArgument);
+
+            $user = loadModel(USERS_MODEL_MODEL, "user_model", "select", $arrArgument);
 
             restore_error_handler();
             echo json_encode($user);

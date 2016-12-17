@@ -978,3 +978,198 @@ Notice on line 40 in file /var/www/html/whoplaystonight/modules/users/model/DAO/
 ERROR: [8] Undefined index: town
 Notice on line 41 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
 |16.12.2016 12:47:01| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 01:02:54| User: |locate|response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 01:11:08| User: |locate|response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 01:13:40| User: |locate|response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 01:13:49| User: |locate|response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 01:13:54| User: |locate|response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 01:13:59| User: |locate|response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 01:15:04| User: |locate|response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 01:20:43| User: |locate|response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 01:27:19| User: |locate|response200
+error loadView general|17.12.2016 01:28:58| User: |media|response400
+error loadView general|17.12.2016 01:29:06| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:06| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:06| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:06| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:06| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:06| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:06| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:06| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:06| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:12| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:12| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:12| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:12| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:12| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:12| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:12| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:12| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:12| User: |portfolio/view/img/portfolio|response400
+error loadView general|17.12.2016 01:29:21| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 01:29:21| User: |users|response400
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 01:58:43| User: |locate|response200
+error loadView general|17.12.2016 01:58:54| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 01:58:54| User: |users|response400
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 02:01:31| User: |locate|response200
+error loadView general|17.12.2016 06:24:07| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:24:07| User: |users|response400
+error loadView general|17.12.2016 06:25:59| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:25:59| User: |users|response400
+error loadView general|17.12.2016 06:30:00| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:30:00| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 42 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:30:04| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:30:04| User: ||response200
+error loadView general|17.12.2016 06:31:10| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:31:10| User: |users|response400
+error loadView general|17.12.2016 06:31:38| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:31:38| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 42 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:32:34| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:32:34| User: ||response200
+ERROR: [8] Undefined variable: sql
+Notice on line 42 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:35:40| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:35:40| User: ||response200
+error loadView general|17.12.2016 06:36:46| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:36:46| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 42 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:36:54| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:36:54| User: ||response200
+error loadView general|17.12.2016 06:37:43| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:37:43| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 42 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:37:50| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:37:50| User: ||response200
+error loadView general|17.12.2016 06:38:38| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:38:38| User: |users|response400
+error loadView general|17.12.2016 06:38:40| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:38:40| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 42 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:38:44| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:38:44| User: ||response200
+ERROR: [8] Undefined variable: sql
+Notice on line 42 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:39:00| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:39:00| User: ||response200
+error loadView general|17.12.2016 06:39:49| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:39:49| User: |users|response400
+error loadView general|17.12.2016 06:43:17| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:43:17| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 133 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 06:43:22| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 139 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 06:43:22| User: ||response200
+error loadView general|17.12.2016 06:43:42| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:43:42| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 133 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 06:43:48| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 139 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 06:43:48| User: ||response200
+error loadView general|17.12.2016 06:44:11| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:44:11| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 133 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 06:44:16| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 139 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 06:44:16| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|17.12.2016 06:45:56| User: |locate|response200
+error loadView general|17.12.2016 06:46:04| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:46:04| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 133 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 06:48:07| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 139 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 06:48:07| User: ||response200
+error loadView general|17.12.2016 06:49:21| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 06:49:21| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 133 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 06:49:27| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 139 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 06:49:27| User: ||response200
+error loadView general|17.12.2016 07:07:04| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 07:07:04| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 133 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 07:07:10| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 139 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 07:07:10| User: ||response200
+error loadView general|17.12.2016 07:07:26| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 07:07:26| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 133 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 07:07:32| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 139 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 07:07:32| User: ||response200
+error loadView general|17.12.2016 07:09:41| User: |modules/locate/view|response400
+error loadView general|17.12.2016 07:09:42| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 07:09:42| User: |users|response400
+error loadView general|17.12.2016 07:09:46| User: |modules/locate/view|response400
+error loadView general|17.12.2016 07:09:46| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 07:09:46| User: |users|response400
+error loadView general|17.12.2016 07:12:40| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 07:12:40| User: |users|response400
+error loadView general|17.12.2016 07:13:53| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 07:13:53| User: |users|response400
+error loadView general|17.12.2016 07:14:01| User: |users/sign_up/modules/users|response400
+error loadView general|17.12.2016 07:14:01| User: |users|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 133 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 07:14:09| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 139 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|17.12.2016 07:14:09| User: ||response200

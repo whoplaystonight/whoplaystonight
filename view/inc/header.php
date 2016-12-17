@@ -33,5 +33,5 @@
     <script type="text/javascript" src="<?php echo SITE_PATH . '/' ?>view/js/cookies.js"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo VIEW_IMG;?>favicon.png" />
-
+    <script type="text/javascript" src="<?php echo USERS_JS_PATH ?>init.js"></script>
 </head>

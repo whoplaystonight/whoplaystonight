@@ -121,10 +121,11 @@ class userDAO {
     }
 
     public function select_DAO($db, $arrArgument) {
+
         $i = count($arrArgument['column']);
         $k = count($arrArgument['field']);
         $sql1 = "SELECT ";
-        $sql2 = " FROM usuarios WHERE ";
+        $sql2 = " FROM users WHERE ";
 
         for ($j = 0; $j < $i; $j++) {
             if ($i > 1 && $j != 0)
@@ -140,7 +141,7 @@ class userDAO {
 
 
         $sql = $sql1 . $fields . $sql2 . $sql;
-
+        
         $stmt = $db->execute($sql);
         return $db->listing($stmt);
     }
