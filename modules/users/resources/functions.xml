@@ -24,4 +24,12 @@
         <name>social_signin</name>
         <uri>social_signin</uri>
     </function>
+    <function>
+        <name>restore</name>
+        <uri>restore</uri>
+    </function>
+    <function>
+        <name>process_restore</name>
+        <uri>process_restore</uri>
+    </function>
 </functions>

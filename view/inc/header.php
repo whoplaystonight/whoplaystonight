@@ -24,6 +24,7 @@
     <link href="<?php echo CSS_PATH ?>font-awesome.min.css" rel="stylesheet" />
     <!-- CUSTOM STYLE CSS -->
     <link href="<?php echo CSS_PATH ?>style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?php echo USERS_VIEW_CSS ?>main.css" type="text/css"/>
     <!-- GOOGLE FONT -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>

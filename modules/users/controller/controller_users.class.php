@@ -3,6 +3,7 @@ class controller_users {
     public function __construct(){
         include (USERS_UTILS_FUNCTIONS);
         include(TOOLS . "upload.php");
+        include (TOOLS . "mail.inc.php");
     }
 
     public function sign_up(){
@@ -205,9 +206,11 @@ class controller_users {
         restore_error_handler();
 
         if (!$arrValue[0]["total"]) {
-            if ($user['email'])
-            $avatar = 'https://graph.facebook.com/' . ($user['id']) . '/picture';
-            else
+            if ($user['email']){
+            //$avatar = 'https://graph.facebook.com/' . ($user['id']) . '/picture';
+            $avatar = get_gravatar($mail, $s = 400, $d = 'identicon', $r = 'g', $img = false, $atts = array());
+            echo json_encode($avatar);exit;
+            }else
             $avatar = get_gravatar($mail, $s = 400, $d = 'identicon', $r = 'g', $img = false, $atts = array());
 
             $arrArgument = array(
@@ -246,6 +249,64 @@ class controller_users {
             echo json_encode($user);
         } else {
             echo json_encode(array('error' => true, 'datos' => 503));
+        }
+    }
+    ///////// restore ////
+    function restore() {
+        require_once(VIEW_PATH_INC . "header.php");
+        require_once(VIEW_PATH_INC . "menu.php");
+        loadView('modules/users/view/', 'restore.php');
+        require_once(VIEW_PATH_INC . "footer.php");
+    }
+
+    public function process_restore() {
+        $result = array();
+        if (isset($_POST['inputEmail'])) {
+            $result = validate_email($_POST['inputEmail']);
+            if ($result) {
+                $column = array(
+                    'email'
+                );
+                $like = array(
+                    $_POST['inputEmail']
+                );
+                $field = array(
+                    'token'
+                );
+
+                $token = "Cha" . md5(uniqid(rand(), true));
+                $new = array(
+                    $token
+                );
+
+                $arrArgument = array(
+                    'column' => $column,
+                    'like' => $like,
+                    'field' => $field,
+                    'new' => $new
+                );
+                $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "count", $arrArgument);
+
+                if ($arrValue[0]['total'] == 1) {
+                    $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "update", $arrArgument);
+
+                    if ($arrValue) {
+                        //////////////// Envio del correo al usuario
+                        $arrArgument = array(
+                            'token' => $token,
+                            'email' => $_POST['inputEmail']
+                        );
+                        if (sendtoken($arrArgument, "modificacion"))
+                            echo "Tu nueva contraseña ha sido enviada al email";
+                        else
+                            echo "Error en el servidor. Intentelo más tarde";
+                    }
+                } else {
+                    echo "El email introducido no existe ";
+                }
+            } else {
+                echo "El email no es válido";
+            }
         }
     }
 }

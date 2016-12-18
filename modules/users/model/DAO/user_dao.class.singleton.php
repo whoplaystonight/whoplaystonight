@@ -9,7 +9,7 @@ class userDAO {
 
     public static function getInstance() {
         if (!(self::$_instance instanceof self))
-            self::$_instance = new self();
+        self::$_instance = new self();
         return self::$_instance;
     }
 
@@ -29,11 +29,11 @@ class userDAO {
 
         foreach ($interests as $indice) {
             if ($indice === 'rock')
-                $rock = 1;
+            $rock = 1;
             if ($indice === 'jazz')
-                $jazz = 1;
+            $jazz = 1;
             if ($indice === 'blues')
-                $blues = 1;
+            $blues = 1;
         }
 
         $country = $arrArgument['country'];
@@ -44,7 +44,7 @@ class userDAO {
 
         $sql = "INSERT INTO users (username, email, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activated)
         VALUES ('" . $username . "','" . $email ."','" . $password . "','" . $birthday . "', '" . $rock . "', '" . $jazz . "', '" . $blues . "', '" .
-         $avatar . "','" . $country . "','" . $province . "','" . $town . "','" . $type . "', '" . $activated . "')";
+        $avatar . "','" . $country . "','" . $province . "','" . $town . "','" . $type . "', '" . $activated . "')";
         return $db->execute($sql);
     }
 
@@ -95,9 +95,9 @@ class userDAO {
     }
 
     public function list_users_DAO($db){
-          $sql = "SELECT * FROM users";
-          $stmt = $db->ejecutar($sql);
-          return $db->listar($stmt);
+        $sql = "SELECT * FROM users";
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
     }
 
     public function details_users_DAO($db,$id) {
@@ -113,9 +113,10 @@ class userDAO {
 
         for ($j = 0; $j < $i; $j++) {
             if ($i > 1 && $j != 0)
-                $sql.=" AND ";
+            $sql.=" AND ";
             $sql .= $arrArgument['column'][$j] . " like '" . $arrArgument['like'][$j] . "'";
         }
+
         $stmt = $db->execute($sql);
         return $db->listing($stmt);
     }
@@ -129,20 +130,42 @@ class userDAO {
 
         for ($j = 0; $j < $i; $j++) {
             if ($i > 1 && $j != 0)
-                $sql.=" AND ";
+            $sql.=" AND ";
             $sql .= $arrArgument['column'][$j] . " like '" . $arrArgument['like'][$j] . "'";
         }
 
         for ($l = 0; $l < $k; $l++) {
             if ($l > 1 && $k != 0)
-                $fields.=", ";
+            $fields.=", ";
             $fields .= $arrArgument['field'][$l];
         }
 
-
         $sql = $sql1 . $fields . $sql2 . $sql;
-        
+
         $stmt = $db->execute($sql);
         return $db->listing($stmt);
+    }
+
+    public function update_DAO($db, $arrArgument) {
+        $i = count($arrArgument['field']);
+        $k = count($arrArgument['column']);
+
+        $sql1 = "UPDATE users SET ";
+        $sql2 = "  WHERE ";
+
+        for ($j = 0; $j < $i; $j++) {
+            if ($i > 1 && $j != 0)
+            $change.=", ";
+            $change .= $arrArgument['field'][$j] . "='" . $arrArgument['new'][$j] . "'";
+        }
+        for ($l = 0; $l < $k; $l++) {
+            if ($k > 1 && $l != 0)
+            $sql.=" AND ";
+            $sql .= $arrArgument['column'][$l] . " like '" . $arrArgument['like'][$l] . "'";
+        }
+
+        $sql = $sql1 . $change . $sql2 . $sql;
+
+        return $db->execute($sql);
     }
 }

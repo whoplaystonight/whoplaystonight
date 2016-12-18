@@ -48,4 +48,8 @@ class user_model {
     public function select($arrArgument) {
         return $this->bll->select_BLL($arrArgument);
     }
+    
+    public function update($arrArgument) {
+        return $this->bll->update_BLL($arrArgument);
+    }
 }

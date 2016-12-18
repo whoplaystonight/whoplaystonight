@@ -56,10 +56,10 @@ function getUserInfo() {
                     window.location.href = amigable("?module=main/");
                 } else {
                     if (response.datos == 503)
-                    window.location.href = amigable("?module=main&fn=begin&param=503");
+                    window.location.href = amigable("?module=main&function=begin&aux=503");
                 }
             }, "json").fail(function (xhr, textStatus, errorThrown) {
-                console.log(xhr);
+                console.log(xhr.responseText);
                 if (xhr.status === 0) {
                     alert('Not connect: Verify Network.');
                 } else if (xhr.status === 404) {

@@ -14,7 +14,7 @@ function enviar_email($arr) {
     break;
 
     case 'modificacion':
-      $subject = 'Tu Nuevo Password en Rural_Shop<br>';
+      $subject = 'Tu Nuevo Password en Who_Plays_Tonight<br>';
       $ruta = '<a href="' . amigable("?module=login&function=activar&aux=F" . $arr['token'], true) . '">aqu&iacute;</a>';
       $body = 'Para recordar tu password pulsa ' . $ruta;
       break;

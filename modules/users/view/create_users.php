@@ -70,4 +70,7 @@
         </ul>
 
     </div>
+    <p>
+        <a href="https://localhost/whoplaystonight/users/restore" id="linkRest">¿Has olvidado tu contraseña?</a>
+    </p>
 </form>
