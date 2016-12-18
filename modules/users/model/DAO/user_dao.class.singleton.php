@@ -17,6 +17,7 @@ class userDAO {
 
         $username = $arrArgument['username'];
         $email = $arrArgument['email'];
+        $name = $arrArgument['name'];
         $password = $arrArgument['password'];
         $birthday = $arrArgument['birthday'];
         $interests = $arrArgument['interests'];
@@ -42,8 +43,8 @@ class userDAO {
         $type = $arrArgument['type'];
         $activated = $arrArgument['activated'];
 
-        $sql = "INSERT INTO users (username, email, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activated)
-        VALUES ('" . $username . "','" . $email ."','" . $password . "','" . $birthday . "', '" . $rock . "', '" . $jazz . "', '" . $blues . "', '" .
+        $sql = "INSERT INTO users (username, email, name, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activated)
+        VALUES ('" . $username . "','" . $email ."','" . $name ."','" . $password . "','" . $birthday . "', '" . $rock . "', '" . $jazz . "', '" . $blues . "', '" .
         $avatar . "','" . $country . "','" . $province . "','" . $town . "','" . $type . "', '" . $activated . "')";
         return $db->execute($sql);
     }

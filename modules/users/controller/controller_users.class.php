@@ -207,12 +207,10 @@ class controller_users {
 
         if (!$arrValue[0]["total"]) {
             if ($user['email']){
-            //$avatar = 'https://graph.facebook.com/' . ($user['id']) . '/picture';
-            $avatar = get_gravatar($mail, $s = 400, $d = 'identicon', $r = 'g', $img = false, $atts = array());
-            echo json_encode($avatar);exit;
-            }else
-            $avatar = get_gravatar($mail, $s = 400, $d = 'identicon', $r = 'g', $img = false, $atts = array());
-
+                $avatar = 'https://graph.facebook.com/' . ($user['id']) . '/picture';
+            }else{
+                $avatar = get_gravatar($mail, $s = 400, $d = 'identicon', $r = 'g', $img = false, $atts = array());
+            }
             $arrArgument = array(
                 'username' => $user['id'],
                 'name' => $user['name'],
@@ -222,7 +220,6 @@ class controller_users {
                 'avatar' => $avatar,
                 'activated' => "1"
             );
-
             set_error_handler('ErrorHandler');
 
             try {
