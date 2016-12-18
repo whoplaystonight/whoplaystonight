@@ -210,7 +210,8 @@ function setCookie(cname, cvalue, exdays){
     //console.log(keyword);
 
     if(!keyword){
-      $("#results").load("../../events_front_end/view_error_false/",{'view_error':false});
+      // $("#results").load("../../events_front_end/view_error_false/",{'view_error':false});
+      $("#results").load(amigable("?module=events_front_end&function=view_error_false&view_error=false"));
     }else{
 
     var v_keyword=validate_search(keyword);
@@ -230,7 +231,8 @@ function setCookie(cname, cvalue, exdays){
   $('#Submit').click(function (e) {
     var keyword=document.getElementById('keyword').value;
     if(!keyword){
-      $("#results").load("../../events_front_end/view_error_false/",{'view_error':false});
+      // $("#results").load("../../events_front_end/view_error_false/",{'view_error':false});
+      $("#results").load(amigable("?module=events_front_end&function=view_error_false&view_error=false"));
     }else{
     var v_keyword=validate_search(keyword);
     if(v_keyword){
@@ -247,8 +249,9 @@ function setCookie(cname, cvalue, exdays){
     search();
   });
 
-  $.post("../../events_front_end/autocomplete_events/",{'autocomplete':true},function(data,status){
-    //console.log(data);
+  // $.post("../../events_front_end/autocomplete_events/",{'autocomplete':true},function(data,status)
+  $.post(amigable("?module=events_front_end&function=autocomplete_events&aux=true"),function(data,status){
+    console.log(data);
     var json=JSON.parse(data);
     var name_events=json.band_name;
 
@@ -269,14 +272,13 @@ function setCookie(cname, cvalue, exdays){
       source: suggestions,
       minLength: 1,
       select: function(event, ui){
-        //AQUI NO ENTRA
-        //console.log("Estic al select");
         var keyword =ui.item.label;
         count_event(keyword);
       }
     });
   }).fail(function(xhr){
-    $("#results").load("../../events_front_end/view_error_false/",{'view_error':false});
+    //$("#results").load("../../events_front_end/view_error_false/",{'view_error':false});
+    $("#results").load(amigable("?module=events_front_end&function=view_error_false&view_error=false"));
     $('.pagination').html('');
     reset();
   });//End of $.post autocomplete

@@ -41,7 +41,7 @@ class controller_events_front_end{
 
   public function autocomplete_events(){
 
-      if((isset($_POST["autocomplete"]))&& ($_POST["autocomplete"]==="true")){
+      if((isset($_GET["aux"]))&& ($_GET["aux"]==="true")){
         // echo json_encode("estic al autocomplete events");
         // exit;
 
