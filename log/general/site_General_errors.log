@@ -72,3 +72,432 @@
 06/12/16 03:35:53 AM|error loadView general|pricing/view|response400
 06/12/16 03:35:55 AM|error loadView general|pricing|response400
 06/12/16 03:35:56 AM|error loadView general|pricing/view|response400
+18/12/16 04:14:49 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:15:19 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:15:26 PM|error paint_template_error|events_front_end|response200
+18/12/16 04:16:18 PM|error paint_template_error|events_front_end|response200
+18/12/16 04:16:18 PM|error paint_template_error|events_front_end|response200
+18/12/16 04:16:21 PM|error paint_template_error|events_front_end|response200
+18/12/16 04:16:21 PM|error paint_template_error|events_front_end|response200
+18/12/16 04:16:25 PM|error paint_template_error|events_front_end|response200
+18/12/16 04:16:25 PM|error paint_template_error|events_front_end|response200
+18/12/16 04:16:45 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:17:00 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:17:06 PM|error paint_template_error|events_front_end|response200
+18/12/16 04:27:16 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:29:23 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:29:36 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:30:21 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:30:30 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:34:17 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:34:29 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:34:57 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:36:09 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:37:29 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:37:35 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:37:41 PM|error paint_template_error|events_front_end|response200
+18/12/16 04:37:54 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:40:57 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:41:37 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:43:04 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:43:04 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:43:04 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:43:25 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:43:25 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:43:25 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:43:42 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:43:42 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:43:43 PM|error paint_template_search|events_front_end|response200
+18/12/16 04:43:43 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:43:43 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:43:43 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:44:07 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:44:07 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:44:07 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:44:23 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:44:23 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:44:25 PM|error paint_template_search|events_front_end|response200
+18/12/16 04:44:26 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:44:26 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:44:26 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:44:42 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:44:42 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:44:42 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:44:48 PM|ERROR -404 NO DATA|events_front_end|response200
+18/12/16 04:45:12 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:45:12 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:45:12 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:45:20 PM|ERROR -404 NO DATA|events_front_end|response200
+18/12/16 04:46:58 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:46:58 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:46:58 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:47:13 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:47:13 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:47:15 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:47:15 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:47:16 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:47:16 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:47:18 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:47:18 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:50:12 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:50:12 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 04:50:12 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 04:50:19 PM|ERROR -404 NO DATA|events_front_end|response200
+18/12/16 04:50:23 PM|ERROR -404 NO DATA|events_front_end|response200
+18/12/16 04:50:23 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:05:05 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:05:05 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:05:05 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:05:07 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:05:07 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:05:07 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:05:14 PM|ERROR -404 NO DATA|events_front_end|response200
+18/12/16 05:06:31 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:06:31 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:06:32 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:06:56 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:06:56 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:06:56 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:07:09 PM|ERROR -404 NO DATA|events_front_end|response200
+18/12/16 05:07:50 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:07:50 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:07:50 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:10:02 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:10:02 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:10:02 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:10:05 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:10:05 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:10:05 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:11:23 PM|ERROR -404 NO DATA|events_front_end|response200
+18/12/16 05:12:04 PM|ERROR -404 NO DATA|events_front_end|response200
+18/12/16 05:12:04 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:17:46 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:17:46 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:17:46 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:17:48 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:17:48 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:17:48 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:17:55 PM|ERROR -404 NO DATA|events_front_end|response200
+18/12/16 05:18:26 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:18:26 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:18:26 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:22:00 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:22:00 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:22:00 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:22:10 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:22:10 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:22:16 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:22:16 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:22:19 PM|error paint_template_search|events_front_end|response200
+18/12/16 05:22:19 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:22:19 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:22:19 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:24:34 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:24:34 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:24:34 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:24:45 PM|ERROR -404 NO DATA|events_front_end|response200
+18/12/16 05:25:11 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:25:11 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 05:25:11 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:26:29 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:28:58 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:30:00 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:31:27 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:32:13 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:33:21 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:34:25 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:34:45 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:35:16 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:35:33 PM|error paint_template_error|events_front_end|response200
+18/12/16 05:50:02 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:51:18 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:51:36 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:55:03 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:55:11 PM|error paint_template_search|events_front_end|response200
+18/12/16 05:55:11 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:55:23 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 05:55:48 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:36:41 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:38:21 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:41:06 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:41:30 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:41:38 PM|error paint_template_search|events_front_end|response200
+18/12/16 06:41:39 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:43:40 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:43:49 PM|error paint_template_search|events_front_end|response200
+18/12/16 06:43:50 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:45:26 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:45:49 PM|error paint_template_search|events_front_end|response200
+18/12/16 06:45:52 PM|error paint_template_search|events_front_end|response200
+18/12/16 06:45:54 PM|error paint_template_search|events_front_end|response200
+18/12/16 06:45:55 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:51:58 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:58:04 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:59:09 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 06:59:29 PM|error paint_template_search|events_front_end|response200
+18/12/16 06:59:29 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:01:53 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:03:59 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:06:21 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:06:49 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:07:01 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:27:19 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:28:57 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:32:04 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:32:24 PM|ERROR: [8] Undefined variable: page_number
+Notice on line 378 in file /var/www/html/whoplaystonight/modules/events_front_end/controller/controller_events_front_end.class.php
+|events_front_end|response200
+18/12/16 07:52:38 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:54:56 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:55:26 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:55:31 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:57:33 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:58:16 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:59:03 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:59:12 PM|error paint_template_search|events_front_end|response200
+18/12/16 07:59:12 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 07:59:35 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:00:23 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:05:03 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:05:12 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:05:38 PM|error loadView general|products/events_form|response400
+18/12/16 08:05:39 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:05:41 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:05:47 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:07:47 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:09:25 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:11:09 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:13:05 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:13:43 PM|error paint_template_search|events_front_end|response200
+18/12/16 08:13:43 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:15:27 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:16:02 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:19:09 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:25:12 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:28:10 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:34:24 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:37:06 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:43:09 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:44:33 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:44:59 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:47:03 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:47:58 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:48:07 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:48:53 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:48:53 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:48:53 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:49:30 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:49:30 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:49:30 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:49:50 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:50:05 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:50:05 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:50:05 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:50:57 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:51:07 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:52:03 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:52:14 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:52:43 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:52:50 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:53:27 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:53:27 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:53:27 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:53:36 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:53:36 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:53:36 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:54:31 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:54:31 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:54:31 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:54:50 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:54:50 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:54:50 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:55:18 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:55:29 PM|error paint_template_search|events_front_end|response200
+18/12/16 08:55:29 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:57:05 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 08:58:48 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:58:48 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 08:58:48 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:00:00 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 09:00:00 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 09:00:39 PM|ERROR: [8] Array to string conversion
+Notice on line 16 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 09:00:39 PM|ERROR: [8] Array to string conversion
+Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
+|events_front_end|response200
+18/12/16 09:00:53 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:01:20 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:02:33 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:03:10 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:04:07 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:04:55 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:05:38 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:09:16 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:22:36 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:23:13 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:23:37 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:24:28 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 09:28:47 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 10:11:33 PM|error loadView general|events_front_end/list_events|response400
+18/12/16 10:13:33 PM|error loadView general|events_front_end/list_events|response400

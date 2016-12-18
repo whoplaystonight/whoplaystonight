@@ -80,9 +80,10 @@ class controller_events_front_end{
 
   public function band_names(){
 
-      if(isset($_POST["band_name"])){
 
-        $result=filter_string($_POST["band_name"]);
+      if(isset($_GET["aux"])){
+
+        $result=filter_string($_GET["aux"]);
 
         if($result['resultado']){
 
@@ -92,6 +93,7 @@ class controller_events_front_end{
 
           $criteria='';
         }
+
 
         set_error_handler('ErrorHandler');
         try{
@@ -133,9 +135,9 @@ class controller_events_front_end{
   public function count_events(){
 
 
-      if(isset($_POST["count_event"])){
+      if(isset($_GET["aux"])){
 
-        $result=filter_string($_POST["count_event"]);
+        $result=filter_string($_GET["aux"]);
         if($result['resultado']){
 
           $criteria=$result['datos'];
@@ -190,15 +192,15 @@ class controller_events_front_end{
     // exit;
 
 
-      //if((isset($_GET["aux"])) && ($_GET["aux"]==="true")){
+      if((isset($_GET["aux"])) && ($_GET["aux"]==="true")){
         // echo json_encode("Estic al number_pages_events");
         // exit;
-      if((isset($_POST["num_pages"])) && ($_POST["num_pages"]==="true")){
+      //if((isset($_POST["num_pages"])) && ($_POST["num_pages"]==="true")){
 
 
-        if(isset($_POST["keyword"])){
+        if(isset($_GET["aux2"])){
 
-          $result=filter_string($_POST["keyword"]);
+          $result=filter_string($_GET["aux2"]);
           if($result['resultado']){
 
             $criteria=$result['datos'];
@@ -208,7 +210,8 @@ class controller_events_front_end{
             $criteria='';
 
           }
-
+          // echo json_encode($criteria);
+          // exit;
         }else{
 
           $criteria='';
@@ -328,17 +331,25 @@ class controller_events_front_end{
   //////////////////////////////////////////////////////////////////////////////
 
   public function obtain_events(){
-
+    // debugECHO("Estic al obtain events");
+    // exit;
 
         $item_per_page=3;
 
         if(isset($_POST["page_num"])){
           $result=filter_num_int($_POST["page_num"]);
-            if($result['resultado']){
-              $page_number=$result['datos'];
-              // debugECHO($page_number);
-              // exit;
+          if($result['resultado']){
+            $page_number=$result['datos'];
+            // debugECHO($page_number);
+            // exit;
             }
+        // if(isset($_GET["aux"])&& $_GET["aux"]=="page_num"){
+        //   $result=filter_num_int($_GET["aux"]);
+        //     if($result['resultado']){
+        //       $page_number=$result['datos'];
+        //
+        //     }
+        //}
 
         }else{
 
@@ -348,8 +359,8 @@ class controller_events_front_end{
 
         }
 
-        if(isset($_GET["keyword"])){
-          $result=filter_string($_GET["keyword"]);
+        if(isset($_GET["aux"])){
+          $result=filter_string($_GET["aux"]);
           if($result['resultado']){
               $criteria=$result['datos'];
           }else{
@@ -358,17 +369,20 @@ class controller_events_front_end{
         }else{
             $criteria='';
         }
+        //debugECHO($criteria);
+        // exit;
 
-        if(isset($_POST["keyword"])){
-          $result=filter_string($_POST["keyword"]);
-          if($result['resultado']){
-              $criteria=$result['datos'];
-          }else{
-              $criteria='';
-          }
-        }else{
-          $criteria='';
-        }
+
+        // if(isset($_POST["aux"])){
+        //   $result=filter_string($_POST["aux"]);
+        //   if($result['resultado']){
+        //       $criteria=$result['datos'];
+        //   }else{
+        //       $criteria='';
+        //   }
+        // }else{
+        //   $criteria='';
+        // }
 
 
         set_error_handler('ErrorHandler');
@@ -383,7 +397,7 @@ class controller_events_front_end{
             'limit'=> $limit
           );
           $arrValue=loadModel(EVENTS_MODEL_MODEL, "events_fe_model","select_like_limit_events", $arrArgument);
-          // debugECHO($arrValue);
+          //debugECHO($arrValue);
           // exit;
 
         }catch(Exception $e){

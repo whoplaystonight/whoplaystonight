@@ -21,43 +21,42 @@ function search(keyword){
   //console.log(keyword);
   //console.log("estic al search keyword");
   //var urlbase="index.php?module=events_front_end&function=";
-  var urlbase="../../events_front_end/";
-  //var urlbase="?module=events_front_end&function=";
+  //var urlbase="../../events_front_end/";
+  var urlbase="?module=events_front_end&function=";
 
   if(!keyword){
   //url=urlbase + "number_pages_events&num_pages=true";
-  url=urlbase + "number_pages_events/,";
-  option={'num_pages':true};
-  //url=urlbase + "number_pages_events&num_pages=true";
+  // url=urlbase + "number_pages_events/,";
+  // option={'num_pages':true};
+  url=urlbase + "number_pages_events&aux=true";
   //console.log(url);
 
   }else{
   //url=urlbase + "number_pages_events&num_pages=true&keyword=" + keyword;
-  url=urlbase + "number_pages_events/,";
-  option={'num_pages':true,'keyword':keyword};
-  //url=urlbase + "number_pages_events&num_pages=true&keyword=" + keyword;
-
+  // url=urlbase + "number_pages_events/,";
+  // option={'num_pages':true,'keyword':keyword};
+  url=urlbase + "number_pages_events&aux=true&aux2=" + keyword;
   //console.log(url);
   }
-  //var url="?module=events_front_end&function=number_pages_events&aux=num_pages";
-  $.post(url,option,function(data,status){
-  //$.post(amigable(url),function(data,status)
+  //$.post(url,option,function(data,status)
+  $.post(amigable(url),function(data,status){
     //console.log(data);
     var json=JSON.parse(data);
     var pages=json.pages;
-    //console.log(pages);
+    // console.log(pages);
     if(!keyword){
       url=urlbase + "obtain_events";
-      //console.log(url);
+      // console.log(url);
     }else{
-      url=urlbase + "obtain_events";
-      option={'keyword':keyword};
-      //console.log(url,option);
+      // url=urlbase + "obtain_events";
+      // option={'keyword':keyword};
+      url=urlbase + "obtain_events&aux="+keyword;
+      // console.log(url);
     }
-    // var url1="?module=events_front_end&function=obtain_events";
-    $("#results").load(url,option);
+    $("#results").load(amigable(url));
 
     if(pages !==0){
+      //console.log("If pages");
       refresh();
       $(".pagination").bootpag({
         total:pages,
@@ -68,21 +67,26 @@ function search(keyword){
       }).on("page",function(e,num){
         e.preventDefault();
         if(!keyword){
-          $("#results").load(url,{'page_num':num});
+          // console.log(url);
+          //$("#results").load(url,{'page_num':num});
+          $("#results").load(amigable(url),{'page_num':num});
+
         }else{
-          $("#results").load(url,{'page_num':num, 'keyword':keyword});
+          // console.log(url);
+          //$("#results").load(url,{'page_num':num, 'keyword':keyword});
+          $("#results").load(amigable(url),{'page_num':num});
           reset();
         }
       });//end on
     }else{
-      $("#results").load("../../events_front_end/view_error_false/",{'view_error':false});
+      $("#results").load(amigable("?module=events_front_end&function=view_error_false&view_error=false"));
       $('.pagination').html('');
       reset();
     }//Endif pages!==0
     reset();
 
   }).fail(function(xhr){
-    $("#results").load("../../events_front_end/view_error_true/",{'view_error':true});
+    $("#results").load(amigable("?module=events_front_end&function=view_error_true&view_error=true"));
     $('.pagination').html('');
     reset();
   });
@@ -91,7 +95,9 @@ function search(keyword){
 
 function search_event(keyword){
   //$.get("index.php?module=events_front_end&function=band_names&band_name=" + keyword, function(data,status){
-  $.post("../../events_front_end/band_names/",{'band_name':keyword},function(data,status){
+  //$.post("../../events_front_end/band_names/",{'band_name':keyword},function(data,status)
+  $.post(amigable("?module=events_front_end&function=band_names&aux=" + keyword),function(data,status){
+    //console.log(data);
     var json=JSON.parse(data);
     var event_=json.event_autocomplete;
     //console.log(data);
@@ -111,7 +117,7 @@ function search_event(keyword){
 
   }).fail(function(xhr){
 
-    $("#results").load("../../events_front_end/view_error_false/",{'view_error':false});
+    $("#results").load(amigable("?module=events_front_end&function=view_error_true&view_error=true"));
     $('.pagination').html('');
     reset();
 
@@ -122,17 +128,20 @@ function search_event(keyword){
 
 function count_event(keyword){
   // $.get("index.php?module=events_front_end&function=count_events&count_event=" + keyword, function(data,status){
-  $.post("../../events_front_end/count_events",{'count_event':keyword}, function(data,status){
-    //console.log(data);
+  //$.post("../../events_front_end/count_events",{'count_event':keyword}, function(data,status){
+  $.post(amigable("?module=events_front_end&function=count_events&aux="+keyword), function(data,status){
+
+    // console.log(data);
     var json=JSON.parse(data);
     var num_events=json.num_events;
     alert("num_events:" + num_events);
     //console.log(num_events);
     if(num_events===0){
 
-      $("#results").load("../../events_front_end/view_error_false/",{'view_error':false});
+      $("#results").load(amigable("?module=events_front_end&function=view_error_false&view_error=false"));
       $('.pagination').html('');
       reset();
+
     }
 
     if(num_events==1){
@@ -144,7 +153,7 @@ function count_event(keyword){
       search(keyword);
     }
   }).fail(function(){
-    $("#results").load("../../events_front_end/view_error_true/",{'view_error':true});
+    $("#results").load(amigable("?module=events_front_end&function=view_error_true&view_error=true"));
     $('.pagination').html('');
     reset();
   });
@@ -261,7 +270,7 @@ function setCookie(cname, cvalue, exdays){
       minLength: 1,
       select: function(event, ui){
         //AQUI NO ENTRA
-        console.log("Estic al select");
+        //console.log("Estic al select");
         var keyword =ui.item.label;
         count_event(keyword);
       }
