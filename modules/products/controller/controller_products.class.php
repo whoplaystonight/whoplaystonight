@@ -205,7 +205,7 @@ class controller_products{
   public function load_event(){
     //debugECHO("HOLA");
 
-    if (isset($_POST["load"])&& $_POST["load"]==true){
+    if (isset($_GET["aux"])&& $_GET["aux"]=="load"){
       // echo json_encode("Estic al load event");
       // exit;
       $jsondata=array();

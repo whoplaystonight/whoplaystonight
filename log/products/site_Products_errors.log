@@ -501,3 +501,11 @@ error loadView general|18.12.2016 09:24:28| User: |events_front_end/list_events|
 error loadView general|18.12.2016 09:28:47| User: |events_front_end/list_events|response400
 error loadView general|18.12.2016 10:11:33| User: |events_front_end/list_events|response400
 error loadView general|18.12.2016 10:13:33| User: |events_front_end/list_events|response400
+error loadView general|19.12.2016 12:02:39| User: |events_front_end/list_events|response400
+error loadView general|19.12.2016 12:03:29| User: |products/events_form|response400
+error loadView general|19.12.2016 12:04:51| User: |products|response400
+error loadView general|19.12.2016 12:05:42| User: |events_front_end/list_events|response400
+error loadView general|19.12.2016 12:08:52| User: |events_front_end/list_events|response400
+error loadView general|19.12.2016 12:08:53| User: |products/events_form|response400
+error loadView general|19.12.2016 12:09:03| User: |products/events_form|response400
+error loadView general|19.12.2016 12:09:54| User: |products|response400

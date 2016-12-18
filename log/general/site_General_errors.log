@@ -501,3 +501,11 @@ Notice on line 18 in file /var/www/html/whoplaystonight/tools/tools.inc.php
 18/12/16 09:28:47 PM|error loadView general|events_front_end/list_events|response400
 18/12/16 10:11:33 PM|error loadView general|events_front_end/list_events|response400
 18/12/16 10:13:33 PM|error loadView general|events_front_end/list_events|response400
+19/12/16 12:02:39 AM|error loadView general|events_front_end/list_events|response400
+19/12/16 12:03:29 AM|error loadView general|products/events_form|response400
+19/12/16 12:04:51 AM|error loadView general|products|response400
+19/12/16 12:05:42 AM|error loadView general|events_front_end/list_events|response400
+19/12/16 12:08:52 AM|error loadView general|events_front_end/list_events|response400
+19/12/16 12:08:53 AM|error loadView general|products/events_form|response400
+19/12/16 12:09:03 AM|error loadView general|products/events_form|response400
+19/12/16 12:09:54 AM|error loadView general|products|response400
