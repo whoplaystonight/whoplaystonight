@@ -10,10 +10,6 @@ class controller_events_front_end{
 
     include(EVENTS_TOOLS. "tools_fe.inc.php");
     include LOG_CLASS;
-    // include (TOOLS . "filters.inc.php");
-    // include (TOOLS . "tools.inc.php");
-    // include (TOOLS . "response_code.inc.php");
-    //include (TOOLS . "common.inc.php");
 
     $_SESSION['module']="events_front_end";
 
@@ -25,12 +21,7 @@ class controller_events_front_end{
 
   public function list_events(){
 
-    require_once(VIEW_PATH_INC . "header.php");
-    require_once(VIEW_PATH_INC . "menu.php");
-
     loadView('modules/events_front_end/view/' , 'list_products.php');
-
-    require_once(VIEW_PATH_INC . "footer.php");
 
   }//end of list_events
 
@@ -41,7 +32,7 @@ class controller_events_front_end{
 
   public function autocomplete_events(){
 
-      if((isset($_POST["autocomplete"]))&& ($_POST["autocomplete"]==="true")){
+      if((isset($_GET["aux"]))&& ($_GET["aux"]==="true")){
         // echo json_encode("estic al autocomplete events");
         // exit;
 
@@ -80,9 +71,10 @@ class controller_events_front_end{
 
   public function band_names(){
 
-      if(isset($_POST["band_name"])){
 
-        $result=filter_string($_POST["band_name"]);
+      if(isset($_GET["aux"])){
+
+        $result=filter_string($_GET["aux"]);
 
         if($result['resultado']){
 
@@ -92,6 +84,7 @@ class controller_events_front_end{
 
           $criteria='';
         }
+
 
         set_error_handler('ErrorHandler');
         try{
@@ -133,9 +126,9 @@ class controller_events_front_end{
   public function count_events(){
 
 
-      if(isset($_POST["count_event"])){
+      if(isset($_GET["aux"])){
 
-        $result=filter_string($_POST["count_event"]);
+        $result=filter_string($_GET["aux"]);
         if($result['resultado']){
 
           $criteria=$result['datos'];
@@ -186,17 +179,19 @@ class controller_events_front_end{
   //////////////////////////////////////////////////////////////////////////////
 
   public function number_pages_events(){
+    // echo json_encode("Estic al number_pages_events");
+    // exit;
 
 
-
-      if((isset($_POST["num_pages"])) && ($_POST["num_pages"]==="true")){
+      if((isset($_GET["aux"])) && ($_GET["aux"]==="true")){
         // echo json_encode("Estic al number_pages_events");
         // exit;
+      //if((isset($_POST["num_pages"])) && ($_POST["num_pages"]==="true")){
 
 
-        if(isset($_POST["keyword"])){
+        if(isset($_GET["aux2"])){
 
-          $result=filter_string($_POST["keyword"]);
+          $result=filter_string($_GET["aux2"]);
           if($result['resultado']){
 
             $criteria=$result['datos'];
@@ -206,7 +201,8 @@ class controller_events_front_end{
             $criteria='';
 
           }
-
+          // echo json_encode($criteria);
+          // exit;
         }else{
 
           $criteria='';
@@ -326,15 +322,17 @@ class controller_events_front_end{
   //////////////////////////////////////////////////////////////////////////////
 
   public function obtain_events(){
+    // debugECHO("Estic al obtain events");
+    // exit;
 
         $item_per_page=3;
 
         if(isset($_POST["page_num"])){
           $result=filter_num_int($_POST["page_num"]);
-            if($result['resultado']){
-              $page_number=$result['datos'];
-              // debugECHO($page_number);
-              // exit;
+          if($result['resultado']){
+            $page_number=$result['datos'];
+            // debugECHO($page_number);
+            // exit;
             }
 
         }else{
@@ -345,8 +343,8 @@ class controller_events_front_end{
 
         }
 
-        if(isset($_GET["keyword"])){
-          $result=filter_string($_GET["keyword"]);
+        if(isset($_GET["aux"])){
+          $result=filter_string($_GET["aux"]);
           if($result['resultado']){
               $criteria=$result['datos'];
           }else{
@@ -355,18 +353,8 @@ class controller_events_front_end{
         }else{
             $criteria='';
         }
-
-        if(isset($_POST["keyword"])){
-          $result=filter_string($_POST["keyword"]);
-          if($result['resultado']){
-              $criteria=$result['datos'];
-          }else{
-              $criteria='';
-          }
-        }else{
-          $criteria='';
-        }
-
+        //debugECHO($criteria);
+        // exit;
 
         set_error_handler('ErrorHandler');
         try{
@@ -380,7 +368,7 @@ class controller_events_front_end{
             'limit'=> $limit
           );
           $arrValue=loadModel(EVENTS_MODEL_MODEL, "events_fe_model","select_like_limit_events", $arrArgument);
-          // debugECHO($arrValue);
+          //debugECHO($arrValue);
           // exit;
 
         }catch(Exception $e){

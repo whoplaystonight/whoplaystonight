@@ -1,2 +1,0 @@
-RewriteEngine on
-RewriteRule ^clientes/(\w+)/?$ clientes.php?id=$1

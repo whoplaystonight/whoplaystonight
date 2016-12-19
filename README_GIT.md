@@ -8,7 +8,7 @@ trabajo correcto con GIT, el sistema de control de versiones empleado.
 
             git clone https://github.com/whoplaystonight/whoplaystonight.git
 
-    Con esto noss habremo bajado la rama master del proyecto.
+    Con esto nos habremos bajado la rama master del proyecto.
 
 
   Paso 2: CREAR BRANCH O RAMA
@@ -47,7 +47,7 @@ trabajo correcto con GIT, el sistema de control de versiones empleado.
 
                                 git merge Sergio
 
-    Esta accion no nos añadirá los cambio de master la rama propia, solo los
+    Esta accion no nos añadirá los cambios de master a la rama propia, solo los
     de la rama propia sobre master.
 
   Paso 4: SUBIR CAMBIOS AL REPOSITORIO REMOTO
@@ -73,7 +73,7 @@ trabajo correcto con GIT, el sistema de control de versiones empleado.
       entrando en los ficheros afectados y borrando el codigo que no deseemos
       mantener. El codigo añadido por nosotros se encontrara entre <<<<<HEAD y
       =====. Entre ====== y >>>>>>>> tendremos el codigo descargado de remoto.
-      Borraremos el que proceda y Una vez borrado, haremos git add . para añadir los
+      Borraremos el que proceda y una vez borrado, haremos git add . para añadir los
       archivo modificados y el commmit correspondiente.
 
       Con esto habremos fusionado los últimos cambios del master remoto al master local
@@ -102,7 +102,7 @@ trabajo correcto con GIT, el sistema de control de versiones empleado.
 
       Subiendo a continuación los cambios a la rama propia remota:
 
-                            git push -u Sergio
+                            git push -u origin Sergio
 
 
       Siguiendoe estos 4 pasos conseguiremos tener sincronizadas las 4 ramas

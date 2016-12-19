@@ -1,4 +1,6 @@
 <?php
+//header('Content-Type: text/html; charset=UTF-8');
+
 function enviar_email($arr) {
   $html = '';
   $subject = '';
@@ -21,7 +23,7 @@ function enviar_email($arr) {
 
       case 'contact':
       $subject = 'Tu Petici&oacute;n a Who_Plays_Tonight ha sido enviada<br>';
-      $ruta = '<a href=' . 'http://localhost/whoplaystonight'. '>aqu&iacute;</a>';
+      $ruta = '<a href=' . 'http://plastmagysl.com/whoplaystonight'. '>aqu&iacute;</a>';
       $body = 'Para visitar nuestra web, pulsa ' . $ruta;
       break;
 

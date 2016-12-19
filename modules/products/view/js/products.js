@@ -292,7 +292,8 @@ $(document).ready(function(){
 
 
     //$.get("index.php?module=products&function=load_data_event&load_data=true",
-    $.post("../../products/load_data_event/",{'load_data':true},
+    //$.post("../../products/load_data_event/",{'load_data':true},
+    $.post(amigable("?module=products&function=load_data_event&aux=load_data"),
           function(response){
             //console.log(response);
             if(response.event===""){
@@ -358,7 +359,9 @@ $(document).ready(function(){
 
     /*Dropzone function */
 $("#dropzone").dropzone({
-    url: "../../products/upload_avatar/",//"index.php?module=products&function=upload_avatar&upload=true",
+    //url: "index.php?module=products&function=upload_avatar&upload=true",
+    //url: "../../products/upload_avatar/",
+    url: amigable("?module=products&function=upload_avatar"),
     params:{'upload':true},
     addRemoveLinks: true,
     maxFileSize: 200,
@@ -388,8 +391,9 @@ $("#dropzone").dropzone({
         var name = file.name;
         $.ajax({
             type: "POST",
-            url:"../../products/delete_events/",//"index.php?module=products&function=delete_events&delete=true"
-            data: {"filename":name,"delete":true},
+            //url:"index.php?module=products&function=delete_events&delete=true"
+            url:amigable("?module=products&function=delete_events&delete=true"),
+            data: {"filename":name},
             success: function (data) {
             //console.log(data);
 
@@ -794,7 +798,9 @@ function validate_user(){
     /*To convert the JavaScript array in a JSON string*/
     var event_data_JSON=JSON.stringify(data);
 
-    $.post("../../products/register_event",//'index.php?module=products&function=register_event'
+    //$.post('index.php?module=products&function=register_event'
+    //$.post("../../products/register_event",
+    $.post(amigable("?modules=products&function=register_event"),
             {register_event_json:event_data_JSON},
     function(response){
 
@@ -923,7 +929,9 @@ function load_countries_v2(cad){
 function load_countries_v1(){
   //console.log("Estic al load countries");
   //$.get("index.php?module=products&function=load_country_events&load_country=true"
-  $.post("../../products/load_country_events/",{'load_country':true},
+  //$.post("../../products/load_country_events/",{'load_country':true},
+  //console.log(amigable("?module=products&function=load_country_events&aux=load_country"));
+  $.post(amigable("?module=products&function=load_country_events&aux=load_country"),
       function(response){
         //console.log(response);
         if(response.match(/error/)){
@@ -931,7 +939,8 @@ function load_countries_v1(){
           load_countries_v2("../../resources/ListOfCountryNamesByName.json");
         }else{
           //console.log("else");
-          load_countries_v2("../../products/load_country_events/",{'load_country':true});
+          // load_countries_v2("../../products/load_country_events/",{'load_country':true});
+          load_countries_v2("../../resources/ListOfCountryNamesByName.json");
         }
       })//End $.get
       .fail(function(response){
@@ -961,7 +970,10 @@ function load_provinces_v2(){
 function load_provinces_v1(){
   //console.log("Estic al load_provinces_V1");
   //$.get("index.php?module=products&function=load_provinces_events&load_provinces=true"
-  $.post("../../products/load_provinces_events/",{'load_provinces':true},
+  //$.post("../../products/load_provinces_events/",{'load_provinces':true},
+  //console.log(amigable("?module=products&function=load_provinces_events&aux=load_provinces"));
+  $.post(amigable("?module=products&function=load_provinces_events&aux=load_provinces"),
+
           function(response){
             //console.log(response);
             $("#province").empty();
@@ -1008,7 +1020,8 @@ function load_towns_v2(prov) {
 function load_towns_v1(prov){
   //"index.php?module=products&function=load_towns"
   var data={idPoblac:prov};
-  $.post('../../products/load_towns/',data, function(response){
+   //$.post('../../products/load_towns/',data, function(response)
+   $.post(amigable("?module=products&function=load_towns"),data,function(response){
     //console.log(response);
     var json=JSON.parse(response);
     var towns=json.towns;

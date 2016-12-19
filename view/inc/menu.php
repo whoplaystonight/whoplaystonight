@@ -8,6 +8,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">WHO PLAYS TONIGHT?</a>
+
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="<?php if(isset($_GET['module']) === 'main'){echo 'active';} else {echo 'deactivate';}?>">
@@ -49,6 +50,7 @@
             </div>
         </div>
     </div>
+  </div>
     <br>
     <!-- Modal login -->
     <div id="LoginModal" class="modal_login modal fade" tabindex="-1" role="dialog" aria-hidden="true">

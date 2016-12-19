@@ -76,7 +76,7 @@ function upload_files(){
         */
 
         ////////////////////////////////////////////////////////////////////////////
-    $upfile = MEDIA_PATH.$_FILES['file']['name'];
+    $upfile = MEDIA_ROOT.$_FILES['file']['name'];
     if (is_uploaded_file($_FILES['file']['tmp_name'])){
         if (is_file($_FILES['file']['tmp_name'])) {
             $idUnico = rand();
@@ -84,7 +84,7 @@ function upload_files(){
             //$_SESSION['nombreFichero']=$nombreFichero;
             $copiarFichero = true;
             // I use absolute route to move_uploaded_file because this happens when i run ajax
-            $upfile = MEDIA_PATH.$nombreFichero;
+            $upfile = MEDIA_ROOT.$nombreFichero;
         }else{
                 $error .=   "Invalid File...";
         }
@@ -116,8 +116,8 @@ function remove_files(){
 
   $name=$_POST["filename"];
 
-  if(file_exists(MEDIA_PATH.$name)){
-    unlink(MEDIA_PATH.$name);
+  if(file_exists(MEDIA_ROOT.$name)){
+    unlink(MEDIA_ROOT.$name);
     return true;
   }else{
     return false;

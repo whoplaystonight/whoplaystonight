@@ -43,11 +43,14 @@ function loadView($path_view='', $file_view='',$data=''){
         // debugECHO("Estic al file exists");
         // debugECHO($view_path);
 
+      if(isset($data)){
+        $arrData=$data;
+      }
 
-        if(isset($data)){
-            $arrData=$data;
-        }
-        include_once($view_path);
+      require_once(VIEW_PATH_INC."header.php");
+      require_once(VIEW_PATH_INC."menu.php");
+      include_once($view_path);
+      require_once(VIEW_PATH_INC."footer.php");
 
     }else{
 
@@ -67,7 +70,10 @@ function loadView($path_view='', $file_view='',$data=''){
 
         $result=response_code($path_view);
         $arrData=$result;
+        require_once(VIEW_PATH_INC."header.php");
+        require_once(VIEW_PATH_INC."menu.php");
         require_once VIEW_PATH_INC_ERROR . 'error.php';
+        require_once(VIEW_PATH_INC."footer.php");
         //die();
     }//end if else $data
 }//end of loadView function

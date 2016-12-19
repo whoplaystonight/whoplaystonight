@@ -9,16 +9,10 @@ class controller_products{
   public function __construct(){
     include(PRODUCTS_TOOLS. "functions_products.inc.php");
     include(TOOLS . "upload.php");
-    //include(TOOLS . "common.inc.php");
     include(LOG_CLASS);
     $_SESSION['module']="products";
   }
 
-
-  // public function test(){
-  //   echo json_encode("I'm in test");
-  //   exit;
-  // }
   ////////////////////////////////////////////////////////////////////////////
                           /* CREATE EVENTS FUNCION  */
   ////////////////////////////////////////////////////////////////////////////
@@ -26,13 +20,8 @@ class controller_products{
   /*To invoke and show the create events form*/
 
   public function events_form(){
-    //debugECHO("HOLA");
-    require_once(VIEW_PATH_INC . "header.php");
-    require_once(VIEW_PATH_INC . "menu.php");
 
     loadView('modules/products/view/','create_products.php');
-
-    require_once(VIEW_PATH_INC . "footer.php");
 
   }
 
@@ -44,12 +33,7 @@ class controller_products{
 
   public function results_view(){
 
-    require_once(VIEW_PATH_INC . "header.php");
-    require_once(VIEW_PATH_INC . "menu.php");
-
-    echo '<br><br><br><br><br><br><br><br>';
     loadView('modules/products/view/','results_products.php');
-    require_once(VIEW_PATH_INC . "footer.php");
 
   }
 
@@ -187,7 +171,7 @@ class controller_products{
   //////////////////////////////////////////////////////////////////////////////
 
   public function delete_events(){
-    if(isset($_POST["delete"])&& ($_POST["delete"]==true)){
+    if(isset($_GET["aux"])&& ($_GET["aux"]==true)){
       $_SESSION['result_avatar']=array();
       $result=remove_files();
       if($result===true){
@@ -205,7 +189,7 @@ class controller_products{
   public function load_event(){
     //debugECHO("HOLA");
 
-    if (isset($_POST["load"])&& $_POST["load"]==true){
+    if (isset($_GET["aux"])&& $_GET["aux"]=="load"){
       // echo json_encode("Estic al load event");
       // exit;
       $jsondata=array();
@@ -237,7 +221,8 @@ class controller_products{
   //////////////////////////////////////////////////////////////////////////////
 
   public function load_data_event(){
-    if ((isset($_POST["load_data"]))&& ($_POST["load_data"]==true)){
+
+    if ((isset($_GET["aux"]))&& ($_GET["aux"]=="load_data")){
       $jsondata=array();
 
       if (isset($_SESSION['event'])){
@@ -259,14 +244,13 @@ class controller_products{
 
   public function load_country_events(){
 
-
-    if((isset($_POST["load_country"])) && ($_POST["load_country"]==true)){
-      //  echo json_encode("Estic al load_country_events");
-      //  exit;
+      if((isset($_GET["aux"])) && ($_GET["aux"]=="load_country")){
+        //  echo json_encode("Estic al load_country_events");
+        //  exit;
 
       $json=array();
 
-      $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
+      $url = 'https://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
 
       set_error_handler('ErrorHandler');
       try{
@@ -310,10 +294,10 @@ class controller_products{
   //////////////////////////////////////////////////////////////////////////////
 
   public function load_provinces_events(){
-
-    if((isset($_POST["load_provinces"])) && ($_POST["load_provinces"]==true)){
-      //  echo json_encode("Estic al load_provinces_events");
-      //  exit;
+    //if((isset($_POST["load_provinces"])) && ($_POST["load_provinces"]==true)){
+    if((isset($_GET["aux"])) && ($_GET["aux"]=="load_provinces")){
+      // echo json_encode("Estic al load_provinces_events");
+      // exit;
       $jsondata=array();
       $json=array();
 

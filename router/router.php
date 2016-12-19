@@ -1,50 +1,47 @@
 <?php
 
-require_once("paths.php");
-require 'autoload.php';
-include(TOOLS . "common.inc.php");
-include(TOOLS . "filters.inc.php");
-include(TOOLS . "response_code.inc.php");
-include(TOOLS . "tools.inc.php");
+  require_once("paths.php");
+  require 'autoload.php';
+  include(TOOLS . "common.inc.php");
+  include(TOOLS . "filters.inc.php");
+  include(TOOLS . "response_code.inc.php");
+  include(TOOLS . "tools.inc.php");
+  include(TOOLS . "mail.inc.php");
 
-if(PRODUCTION){
-    ini_set('display_errors',1);
-    ini_set('error_reporting',E_ERROR | E_WARNING | E_NOTICE);
-}else{
-    ini_set('display_errors',0);
-    ini_set('error_reporting',0);
-}
+  if(PRODUCTION){
+  	ini_set('display_errors',1);
+  	ini_set('error_reporting',E_ERROR | E_WARNING | E_NOTICE);
+  }else{
+  	ini_set('display_errors',0);
+  	ini_set('error_reporting',0);
+  }
 
-session_start();
-$_SESSION['module']="";
-
-function handlerRouter() {
-
-
-    if (!empty($_GET['module'])) {
-        $URI_module = $_GET['module'];
-        //debugECHO($URI_module);
-    } else {
-        $URI_module = 'main';
-    }
+  	session_start();
+  	$_SESSION['module']="";
 
 
+    function handlerRouter() {
 
-    if (!empty($_GET['function'])) {
-        $URI_function = $_GET['function'];
-        //debugECHO($URI_function);
-    } else {
-        $URI_function = 'begin';
-        //debugECHO($URI_function);
+	    if (!empty($_GET['module'])) {
+			     $URI_module = $_GET['module'];
+           //debugECHO($URI_module);
+  		} else {
+  			   $URI_module = 'main';
+  		}
 
-    }
+      if (!empty($_GET['function'])) {
+          $URI_function = $_GET['function'];
+          //debugECHO($URI_function);
+      } else {
+          $URI_function = 'begin';
+          //debugECHO($URI_function);
+
+      }
 
     handlerModule($URI_module, $URI_function);
 
+  	}//end of handlerRouter function
 
-
-
-}//end of handlerRouter function
 
 
 
@@ -70,13 +67,11 @@ function handlerModule($URI_module, $URI_function){
 
                 $obj = new $controllerClass;
 
-                
+
             }else{
                 //debugECHO("Estic al else");
                 showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
-
             }
-
             handlerfunction(((String)$module->name), $obj, $URI_function);
             break;
         }
