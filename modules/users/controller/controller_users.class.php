@@ -326,8 +326,7 @@ class controller_users {
             'column' => array('token'),
             'like' => array($pass['token']),
             'field' => array('password'),
-            //'new' => array(password_hash($pass['password'], PASSWORD_BCRYPT))
-            'new' => array($pass['password'])
+            'new' => array(password_hash($pass['password'], PASSWORD_BCRYPT))
         );
         set_error_handler('ErrorHandler');
         try {
