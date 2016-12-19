@@ -86,3 +86,29 @@ function get_gravatar($email, $s = 80, $d = 'wavatar', $r = 'g', $img = false, $
     }
     return $url;
 }
+
+function validate_email($email) {
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (filter_var($email, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^.{5,50}$/')))) {
+            return $email;
+        }
+    }
+    return false;
+}
+
+function sendtoken($arrArgument, $type) {
+    $mail = array(
+        'type' => $type,
+        'token' => $arrArgument['token'],
+        'inputEmail' => $arrArgument['email']
+    );
+    set_error_handler('ErrorHandler');
+    try {
+        enviar_email($mail);
+        return true;
+    } catch (Exception $e) {
+        return false;
+    }
+    restore_error_handler();
+}

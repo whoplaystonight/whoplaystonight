@@ -51,4 +51,8 @@ class user_bll {
     public function select_BLL($arrArgument) {
         return $this->dao->select_DAO($this->db, $arrArgument);
     }
+
+    public function update_BLL($arrArgument) {
+        return $this->dao->update_DAO($this->db, $arrArgument);
+    }
 }

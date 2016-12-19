@@ -21,12 +21,8 @@
     <div class="social form-contact">
         <ul class="icons log">
             <li>
-                <a class="icon rounded fa-facebook" id="fb" href="#"><!--<span class="label">-->Facebook<!--</span>--></a>
+                <a class="fa fa-facebook" id="fb" href="#"><span class="label">Facebook</span> Login Facebook</a>
             </li>
-<!--
-            <li>
-                <a class="icon rounded fa-twitter" id="twlogin" href="#"><span class="label">Twitter</span></a>
-            </li> -->
         </ul>
     </div>
     <div class="form-contact reg ">

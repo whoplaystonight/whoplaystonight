@@ -4,7 +4,7 @@ class controller_users {
         include (USERS_UTILS_FUNCTIONS);
         include(SITE_ROOT . "libs/password_compat-master/lib/password.php");
         include(TOOLS . "upload.php");
-        $_SESSION['module'] = "user";
+        //include (TOOLS . "mail.inc.php");
     }
 
     public function sign_up(){
@@ -219,7 +219,7 @@ class controller_users {
             $json = array();
 
             // $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
-            $url = 'http://plastmagysl.com/repoCountryNamesByName.json';
+            $url = 'http://localhost/repoCountryNamesByName.json';
             $path_model=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/users/model/model/';
             $json = loadModel($path_model, "user_model", "obtain_countries", $url);
             // echo json_encode("load pais"); exit;
@@ -291,11 +291,11 @@ class controller_users {
         restore_error_handler();
 
         if (!$arrValue[0]["total"]) {
-            if ($user['email'])
-            $avatar = 'https://graph.facebook.com/' . ($user['id']) . '/picture';
-            else
-            $avatar = get_gravatar($mail, $s = 400, $d = 'identicon', $r = 'g', $img = false, $atts = array());
-
+            if ($user['email']){
+                $avatar = 'https://graph.facebook.com/' . ($user['id']) . '/picture';
+            }else{
+                $avatar = get_gravatar($mail, $s = 400, $d = 'identicon', $r = 'g', $img = false, $atts = array());
+            }
             $arrArgument = array(
                 'username' => $user['id'],
                 'name' => $user['name'],
@@ -305,7 +305,6 @@ class controller_users {
                 'avatar' => $avatar,
                 'activated' => "1"
             );
-
             set_error_handler('ErrorHandler');
 
             try {
@@ -332,6 +331,134 @@ class controller_users {
             echo json_encode($user);
         } else {
             echo json_encode(array('error' => true, 'datos' => 503));
+        }
+    }
+    ///////// restore ////
+    function restore() {
+        require_once(VIEW_PATH_INC . "header.php");
+        require_once(VIEW_PATH_INC . "menu.php");
+        loadView('modules/users/view/', 'restore.php');
+        require_once(VIEW_PATH_INC . "footer.php");
+    }
+
+    public function process_restore() {
+        $result = array();
+        if (isset($_POST['inputEmail'])) {
+            $result = validate_email($_POST['inputEmail']);
+            if ($result) {
+                $column = array(
+                    'email'
+                );
+                $like = array(
+                    $_POST['inputEmail']
+                );
+                $field = array(
+                    'token'
+                );
+
+                $token = "Cha" . md5(uniqid(rand(), true));
+                $new = array(
+                    $token
+                );
+
+                $arrArgument = array(
+                    'column' => $column,
+                    'like' => $like,
+                    'field' => $field,
+                    'new' => $new
+                );
+                $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "count", $arrArgument);
+
+                if ($arrValue[0]['total'] == 1) {
+                    $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "update", $arrArgument);
+
+                    if ($arrValue) {
+                        //////////////// Envio del correo al usuario
+                        $arrArgument = array(
+                            'token' => $token,
+                            'email' => $_POST['inputEmail']
+                        );
+                        if (sendtoken($arrArgument, "modificacion"))
+                            echo "Tu nueva contraseña ha sido enviada al email";
+                        else
+                            echo "Error en el servidor. Intentelo más tarde";
+                    }
+                } else {
+                    echo "El email introducido no existe ";
+                }
+            } else {
+                echo "El email no es válido";
+            }
+        }
+    }
+    ////////////// change password
+    function changepass() {
+        if (substr($_GET['aux'], 0, 3) == "Cha") {
+            require_once(VIEW_PATH_INC . "header.php");
+            require_once(VIEW_PATH_INC . "menu.php");
+            loadView('modules/users/view/', 'changepass.php');
+            require_once(VIEW_PATH_INC . "footer.php");
+        } else {
+            showErrorPage(1, "", 'HTTP/1.0 503 Service Unavailable', 503);
+        }
+    }
+
+    function update_pass() {
+        $jsondata = array();
+        $pass = json_decode($_POST['passw'], true);
+
+        $arrArgument = array(
+            'column' => array('token'),
+            'like' => array($pass['token']),
+            'field' => array('password'),
+            //'new' => array(password_hash($pass['password'], PASSWORD_BCRYPT))
+            'new' => array($pass['password'])
+        );
+        set_error_handler('ErrorHandler');
+        try {
+            $value = loadModel(USERS_MODEL_MODEL, "user_model", "update", $arrArgument);
+        } catch (Exception $e) {
+            $value = false;
+        }
+        restore_error_handler();
+
+        if ($value) {
+            $url = amigable('?module=main&function=begin&aux=rest', true);
+            $jsondata["success"] = true;
+            $jsondata["redirect"] = $url;
+            exit;
+        } else {
+            $url = amigable('?module=main&function=begin&aux=503', true);
+            $jsondata["success"] = true;
+            $jsondata["redirect"] = $url;
+            echo json_encode($jsondata);
+            exit;
+        }
+    }
+    ///////////////// Verify
+    function verify() {
+        echo json_encode(substr($_GET['aux'], 0, 3));exit;
+        if (substr($_GET['aux'], 0, 3) == "Ver") {
+            $arrArgument = array(
+                'column' => array('token'),
+                'like' => array($_GET['aux']),
+                'field' => array('activado'),
+                'new' => array('1')
+            );
+            echo json_encode($arrArgument);exit;
+            set_error_handler('ErrorHandler');
+            try {
+                $value = loadModel(USERS_MODEL_MODEL, "user_model", "update", $arrArgument);
+            } catch (Exception $e) {
+                $value = false;
+            }
+            restore_error_handler();
+
+            if ($value) {
+                loadView('modules/main/view/', 'main.php');
+            } else {
+                showErrorPage(1, "", 'HTTP/1.0 503 Service Unavailable', 503);
+            }
         }
     }
 }

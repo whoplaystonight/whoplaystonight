@@ -11,19 +11,19 @@ function enviar_email($arr) {
   switch ($arr['type']) {
     case 'alta':
     $subject = 'Tu Alta en Who Plays Tonight';
-    $ruta = "<a href='" . amigable("?module=login&function=activar&aux=A" . $arr['token'], true) . "'>aqu&iacute;</a>";
+    $ruta = "<a href='" . amigable("?module=users&function=verify&aux=A" . $arr['token'], true) . "'>aqu&iacute;</a>";
     $body = 'Gracias por unirte a nuestra aplicaci&oacute;n<br> Para finalizar el registro, pulsa ' . $ruta;
     break;
 
     case 'modificacion':
-      $subject = 'Tu Nuevo Password en Rural_Shop<br>';
-      $ruta = '<a href="' . amigable("?module=login&function=activar&aux=F" . $arr['token'], true) . '">aqu&iacute;</a>';
+      $subject = 'Tu Nuevo Password en Who_Plays_Tonight<br>';
+      $ruta = '<a href="' . amigable("?module=users&function=changepass&aux=" . $arr['token'], true) . '">aqu&iacute;</a>';
       $body = 'Para recordar tu password pulsa ' . $ruta;
       break;
 
       case 'contact':
       $subject = 'Tu Petici&oacute;n a Who_Plays_Tonight ha sido enviada<br>';
-      $ruta = '<a href=' . 'http://plastmagysl.com/whoplaystonight'. '>aqu&iacute;</a>';
+      $ruta = '<a href=' . 'https://localhost/whoplaystonight'. '>aqu&iacute;</a>';
       $body = 'Para visitar nuestra web, pulsa ' . $ruta;
       break;
 
