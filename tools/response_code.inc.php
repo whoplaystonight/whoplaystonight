@@ -4,147 +4,146 @@ function response_code($code = NULL) {
     if ($code !== NULL) {
         switch ($code) {
             case 100: $text = 'Continue';
-                break;
+            break;
             case 101: $text = 'Switching Protocols';
-                break;
+            break;
             case 200: $text = 'OK';
-                break;
+            break;
             case 201: $text = 'Created';
-                break;
+            break;
             case 202: $text = 'Accepted';
-                break;
+            break;
             case 203: $text = 'Non-Authoritative Information';
-                break;
+            break;
             case 204: $text = 'No Content';
-                break;
+            break;
             case 205: $text = 'Reset Content';
-                break;
+            break;
             case 206: $text = 'Partial Content';
-                break;
+            break;
             case 300: $text = 'Multiple Choices';
-                break;
+            break;
             case 301: $text = 'Moved Permanently';
-                break;
+            break;
             case 302: $text = 'Moved Temporarily';
-                break;
+            break;
             case 303: $text = 'See Other';
-                break;
+            break;
             case 304: $text = 'Not Modified';
-                break;
+            break;
             case 305: $text = 'Use Proxy';
-                break;
+            break;
             case 400: $text = 'Bad Request';
-                break;
+            break;
             case 401: $text = 'Unauthorized';
-                break;
+            break;
             case 402: $text = 'Payment Required';
-                break;
+            break;
             case 403: $text = 'Forbidden';
-                break;
+            break;
             case 404: $text = 'Not Found';
-                break;
+            break;
             case 405: $text = 'Method Not Allowed';
-                break;
+            break;
             case 406: $text = 'Not Acceptable';
-                break;
+            break;
             case 407: $text = 'Proxy Authentication Required';
-                break;
+            break;
             case 408: $text = 'Request Time-out';
-                break;
+            break;
             case 409: $text = 'Conflict';
-                break;
+            break;
             case 410: $text = 'Gone';
-                break;
+            break;
             case 411: $text = 'Length Required';
-                break;
+            break;
             case 412: $text = 'Precondition Failed';
-                break;
+            break;
             case 413: $text = 'Request Entity Too Large';
-                break;
+            break;
             case 414: $text = 'Request-URI Too Large';
-                break;
+            break;
             case 415: $text = 'Unsupported Media Type';
-                break;
+            break;
             case 500: $text = 'Internal Server Error';
-                break;
+            break;
             case 501: $text = 'Not Implemented';
-                break;
+            break;
             case 502: $text = 'Bad Gateway';
-                break;
+            break;
             case 503: $text = 'Service Unavailable';
-                break;
+            break;
             case 504: $text = 'Gateway Time-out';
-                break;
+            break;
             case 505: $text = 'HTTP Version not supported';
-                break;
+            break;
             default:
-                exit('Unknown http status code "' . htmlentities($code) . '"');
-                break;
+            exit('Unknown http status code "' . htmlentities($code) . '"');
+            break;
         }
     } else {
         $code = 200;
     }
     return $return = array('code' => $code, 'text' => $text);
 
-}//End of response_code function
+}
 
 function showErrorPage($code = 0, $message ="", $http="", $num_http=0){
-  switch ($code){
-    case 0:
-      paint_template_error($message);
-      die();
-      break;
-    case 1:
-      //header($http, true, $num_http);
-      loadView($num_http);
-      break;
-    case 2:
-      $log =log::getInstance();
-      $log->add_log_general($message,$_SESSION['module'],"response". http_response_code());
-      $log->add_log_user($message,"",$_SESSION['module'],"response".http_response_code());
+    switch ($code){
+        case 0:
+            paint_template_error($message);
+            die();
+            break;
+        case 1:
+            //header($http, true, $num_http);
+            loadView($num_http);
+            break;
+        case 2:
+            $log =log::getInstance();
+            $log->add_log_general($message,$_SESSION['module'],"response". http_response_code());
+            $log->add_log_user($message,"",$_SESSION['module'],"response".http_response_code());
 
-      $jsondata['error']=$message;
-      //header($http, true, $num_http);
-      echo json_encode($jsondata);
-      exit;
-      break;
-    case 3:
-      paint_template_search($message);
-      exit;
-      break;
-    case 4:
-      require_once(VIEW_PATH_INC."header.php");
-      require_once(VIEW_PATH_INC."menu.php");
-      loadView($num_http);
-      require_once(VIEW_PATH_INC."footer.php");
-      break;
-
-  }//end of switch
-}//end of showErrorPage function
+            $jsondata['error']=$message;
+            //header($http, true, $num_http);
+            echo json_encode($jsondata);
+            exit;
+            break;
+        case 3:
+            paint_template_search($message);
+            exit;
+            break;
+        case 4:
+            require_once(VIEW_PATH_INC."header.php");
+            require_once(VIEW_PATH_INC."menu.php");
+            loadView($num_http);
+            require_once(VIEW_PATH_INC."footer.php");
+            break;
+    }
+}
 
 
 function ErrorHandler($errno,$errstr,$errfile,$errline){
-  $error="";
-  switch($errno){
-    case E_NOTICE:
-    case E_USER_NOTICE:
-      $error="Notice";
-      break;
-    case E_WARNING:
-    case E_USER_WARNING:
-      $error="Warning";
-      break;
-    case E_ERROR:
-    case E_USER_ERROR:
-      $error ="Fatal Error";
-      break;
-    default:
-      $error="Unknown Error";
-      break;
-  }//end of switch
-  $msg="ERROR: [$errno] $errstr\r\n" . "$error on line $errline in file $errfile\r\n";
+    $error="";
+    switch($errno){
+        case E_NOTICE:
+        case E_USER_NOTICE:
+        $error="Notice";
+        break;
+        case E_WARNING:
+        case E_USER_WARNING:
+        $error="Warning";
+        break;
+        case E_ERROR:
+        case E_USER_ERROR:
+        $error ="Fatal Error";
+        break;
+        default:
+        $error="Unknown Error";
+        break;
+    }
+    $msg="ERROR: [$errno] $errstr\r\n" . "$error on line $errline in file $errfile\r\n";
 
-  $log=log::getInstance();
-  $log->add_log_general($msg, $_SESSION['module'], "response" . http_response_code());
-  $log->add_log_user($msg, "",$_SESSION['module'],"response" . http_response_code());
+    $log=log::getInstance();
+    $log->add_log_general($msg, $_SESSION['module'], "response" . http_response_code());
+    $log->add_log_user($msg, "",$_SESSION['module'],"response" . http_response_code());
 }

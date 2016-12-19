@@ -69,9 +69,9 @@
     <!-- CORE JQUERY  -->
     <!--<script src="view/plugins/jquery-1.10.2.js"></script>-->
     <!-- BOOTSTRAP SCRIPTS  -->
-    <script src="<?php echo VIEW_PLUGINS ?>bootstrap.js"></script>
+    <!-- <script src="<?php echo VIEW_PLUGINS ?>bootstrap.js"></script> -->
   <!-- CUSTOM SCRIPTS  -->
-    <script src="<?php echo VIEW_JS ?>custom.js"></script>
+    <!-- <script src="<?php echo VIEW_JS ?>custom.js"></script> -->
 
 </body>
 </html>

@@ -7,5 +7,6 @@ function amigable(url) {
         var aux = url[i].split("=");
         link +=  "/"+aux[1];
     }
-    return "http://localhost/whoplaystonight" + link;
+    return "https://localhost/whoplaystonight" + link;
+
   }

@@ -29,88 +29,86 @@
   			   $URI_module = 'main';
   		}
 
+      if (!empty($_GET['function'])) {
+          $URI_function = $_GET['function'];
+          //debugECHO($URI_function);
+      } else {
+          $URI_function = 'begin';
+          //debugECHO($URI_function);
 
+      }
 
-  		if (!empty($_GET['function'])) {
-  			   $URI_function = $_GET['function'];
-           //debugECHO($URI_function);
-  		} else {
-  			   $URI_function = 'begin';
-           //debugECHO($URI_function);
-
-  		}
-
-  	  handlerModule($URI_module, $URI_function);
-
+    handlerModule($URI_module, $URI_function);
 
   	}//end of handlerRouter function
 
 
 
-    function handlerModule($URI_module, $URI_function){
 
-      $modules=simplexml_load_file('resources/modules.xml');
-      $exist=false;
+function handlerModule($URI_module, $URI_function){
 
-      foreach($modules->module as $module){
+    $modules=simplexml_load_file('resources/modules.xml');
+    $exist=false;
+
+    foreach($modules->module as $module){
 
         if(($URI_module===(String)$module->uri)){
-          $exist=true;
+            $exist=true;
 
-          $path=MODULES_PATH . $URI_module."/controller/controller_". $URI_module. ".class.php";
-          //debugECHO($path);
+            $path=MODULES_PATH . $URI_module."/controller/controller_". $URI_module. ".class.php";
+            //debugECHO($path);
 
-          if(file_exists($path)){
-          //debugECHO("Estic al if");
+            if(file_exists($path)){
+                //debugECHO("Estic al if");
 
-            require($path);
-            $controllerClass="controller_". $URI_module;
-            //debugECHO($controllerClass);
-            $obj = new $controllerClass;
+                require($path);
+                $controllerClass="controller_". $URI_module;
+                //debugECHO($controllerClass);
 
-          }else{
-            //debugECHO("Estic al else");
-            showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
+                $obj = new $controllerClass;
 
-          }
 
-          handlerfunction(((String)$module->name), $obj, $URI_function);
-          break;
+            }else{
+                //debugECHO("Estic al else");
+                showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
+            }
+            handlerfunction(((String)$module->name), $obj, $URI_function);
+            break;
         }
 
-      }//end foreach
+    }//end foreach
 
-      if(!$exist){
+    if(!$exist){
         // debugECHO("Estic al !exist");
         showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
 
-      }//End of if exist
+    }//End of if exist
 
-    }//end of handlerModule function
+}//end of handlerModule function
 
 
-    function handlerFunction($module, $obj, $URI_function){
-      //debugECHO($URI_function);
-      $functions = simplexml_load_file(MODULES_PATH . $module . "/resources/functions.xml");
-      $exist=false;
+function handlerFunction($module, $obj, $URI_function){
+    //debugECHO($URI_function);
+    $functions = simplexml_load_file(MODULES_PATH . $module . "/resources/functions.xml");
+    $exist=false;
 
-      foreach($functions->function as $function){
+    foreach($functions->function as $function){
         if(($URI_function === (String)$function->uri)){
-          $exist=true;
-          $event=(String)$function->name;
-          //debugECHO($event);
-          break;
+            $exist=true;
+            $event=(String)$function->name;
+            //debugECHO($event);
+            break;
         }//enf if
 
-      }//End foreach
+    }//End foreach
 
-      if(!$exist){
+    if(!$exist){
         // debugECHO("entra al exists false");
         showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
-      }else{
+    }else{
         //debugECHO($event);
         call_user_func(array($obj,$event));
-      }
     }
+}
 
-    handlerRouter();
+handlerRouter();

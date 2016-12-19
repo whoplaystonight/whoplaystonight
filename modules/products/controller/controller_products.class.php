@@ -250,7 +250,7 @@ class controller_products{
 
       $json=array();
 
-      $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
+      $url = 'https://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
 
       set_error_handler('ErrorHandler');
       try{

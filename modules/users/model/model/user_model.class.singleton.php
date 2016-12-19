@@ -40,4 +40,12 @@ class user_model {
     public function obtain_towns($arrArgument) {
         return $this->bll->obtain_towns_BLL($arrArgument);
     }
+
+    public function count($arrArgument) {
+        return $this->bll->count_BLL($arrArgument);
+    }
+
+    public function select($arrArgument) {
+        return $this->bll->select_BLL($arrArgument);
+    }
 }

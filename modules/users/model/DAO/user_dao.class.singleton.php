@@ -14,12 +14,13 @@ class userDAO {
     }
 
     public function create_user_DAO($db, $arrArgument) {
+
         $username = $arrArgument['username'];
         $email = $arrArgument['email'];
         $password = $arrArgument['password'];
         $birthday = $arrArgument['birthday'];
         $interests = $arrArgument['interests'];
-        $avatar = "";
+        $avatar = $arrArgument['avatar'];
         // $avatar = $_SESSION["nombre_fichero"];
 
         $rock = 0;
@@ -38,11 +39,12 @@ class userDAO {
         $country = $arrArgument['country'];
         $province = $arrArgument['province'];
         $town = $arrArgument['town'];
+        $type = $arrArgument['type'];
+        $activated = $arrArgument['activated'];
 
-        $sql = "INSERT INTO users (username, email, password, birthday, rock, jazz, blues, avatar, country, province, town)
+        $sql = "INSERT INTO users (username, email, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activated)
         VALUES ('" . $username . "','" . $email ."','" . $password . "','" . $birthday . "', '" . $rock . "', '" . $jazz . "', '" . $blues . "', '" .
-         $avatar . "','" . $country . "','" . $province . "','" . $town . "')";
-
+         $avatar . "','" . $country . "','" . $province . "','" . $town . "','" . $type . "', '" . $activated . "')";
         return $db->execute($sql);
     }
 
@@ -102,5 +104,45 @@ class userDAO {
         $sql = "SELECT * FROM users WHERE id='".$id."'";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
+    }
+
+    public function count_DAO($db, $arrArgument) {
+        $i = count($arrArgument['column']);
+
+        $sql = "SELECT COUNT(*) as total FROM users WHERE ";
+
+        for ($j = 0; $j < $i; $j++) {
+            if ($i > 1 && $j != 0)
+                $sql.=" AND ";
+            $sql .= $arrArgument['column'][$j] . " like '" . $arrArgument['like'][$j] . "'";
+        }
+        $stmt = $db->execute($sql);
+        return $db->listing($stmt);
+    }
+
+    public function select_DAO($db, $arrArgument) {
+
+        $i = count($arrArgument['column']);
+        $k = count($arrArgument['field']);
+        $sql1 = "SELECT ";
+        $sql2 = " FROM users WHERE ";
+
+        for ($j = 0; $j < $i; $j++) {
+            if ($i > 1 && $j != 0)
+                $sql.=" AND ";
+            $sql .= $arrArgument['column'][$j] . " like '" . $arrArgument['like'][$j] . "'";
+        }
+
+        for ($l = 0; $l < $k; $l++) {
+            if ($l > 1 && $k != 0)
+                $fields.=", ";
+            $fields .= $arrArgument['field'][$l];
+        }
+
+
+        $sql = $sql1 . $fields . $sql2 . $sql;
+        
+        $stmt = $db->execute($sql);
+        return $db->listing($stmt);
     }
 }

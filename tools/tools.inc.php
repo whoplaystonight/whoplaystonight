@@ -1,13 +1,13 @@
 <?php
 
-  function debugPHP($array){
-		echo "<pre>";
-		print_r($array);
-		echo "</pre><br>";
-		//die(); no va
-	}
+function debugPHP($array){
+    echo "<pre>";
+    print_r($array);
+    echo "</pre><br>";
+    //die(); no va
+}
 
-  function debugECHO($var){
+function debugECHO($var){
     echo "<br>";
     echo "<br>";
     echo "<br>";
@@ -22,30 +22,30 @@
     echo "<br>";
     echo "<br>";
     echo "<br>";
-  }
+}
 
-	function redirect($url){
-		die('<script>top.location.href="'.$url .'";</script>');
-	}
+function redirect($url){
+    die('<script>top.location.href="'.$url .'";</script>');
+}
+
 
   //////////////////////////////////////////////////////////////////////////////
                             /*CLOSE SESSION FUNCTION*/
   //////////////////////////////////////////////////////////////////////////////
 
-  function close_session(){
+
+function close_session(){
     unset($_SESSION['event']);
     unset($_SESSION['message']);
     $_SESSION=array();
     session_destroy();
-
-  }//end of close_session
-
+}
 
   //////////////////////////////////////////////////////////////////////////////
                             /*AMIGABLE FUNCTION*/
   //////////////////////////////////////////////////////////////////////////////
 
-  function amigable($url, $return = false) {
+function amigable($url, $return = false) {
     $amigableson = URL_AMIGABLES;
     $link = "";
     if ($amigableson) {
