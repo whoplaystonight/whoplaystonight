@@ -1,4 +1,73 @@
-<section  class="note-sec" >
+<!--footer-->
+<div class="footer-w3l">
+  <div class="container">
+    <div class="footer-grids">
+      <div class="col-md-3 footer-grid">
+        <h4>About</h4>
+        <ul>
+          <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1398 W El Camino Real</li>
+          <li><i class="glyphicon glyphicon-phone" aria-hidden="true"></i>1 599-033-5036</li>
+          <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:whoplaystonight@gmail.com"> whoplaystonight@gmail.com</a></li>
+          <li><i class="glyphicon glyphicon-time" aria-hidden="true"></i>Mon-Sun 08:00 am to 23:00 pm</li>
+        </ul>
+        <div class="social-icon">
+          <a href="#"><i class="icon"></i></a>
+          <a href="#"><i class="icon1"></i></a>
+          <a href="#"><i class="icon2"></i></a>
+          <a href="#"><i class="icon3"></i></a>
+        </div>
+      </div>
+      <div class="col-md-3 footer-grid">
+        <h4>Our Special</h4>
+        <ul>
+          <li>Eiusmod tempor incididunt</li>
+          <li>Adipisicing elit, sed</li>
+          <li>Mod tempor incididunt ut</li>
+          <li>Dipisicing elit, sed do</li>
+          <li>Econsectetur adipisicing</li>
+          <li>Adipisicing elit, sed</li>
+          <li>Mod tempor incididunt ut</li>
+        </ul>
+      </div>
+      <div class="col-md-3 footer-grid">
+        <h4>Popular</h4>
+        <ul>
+          <li>Pop</li>
+          <li>Rock</li>
+          <li>Electro</li>
+          <li>Ensemble</li>
+          <li>Jazz</li>
+          <li>Blues</li>
+        </ul>
+      </div>
+      <div class="col-md-3 footer-grid">
+        <h4> Friendly Links</h4>
+        <ul>
+          <li>Eiusmod tempor incididunt</li>
+          <li>Adipisicing elit, sed</li>
+          <li>Mod tempor incididunt ut</li>
+          <li>Dipisicing elit, sed do</li>
+          <li>Econsectetur adipisicing</li>
+          <li>Adipisicing elit, sed</li>
+          <li>Mod tempor incididunt ut</li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+<!--footer-->
+<!--copy-->
+<div class="copy-section">
+  <div class="container">
+    <div class="footer-top">
+      <p>&copy; 2016 Roasting. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+    </div>
+  </div>
+</div>
+<!--copy-->
+
+<!-- <section  class="note-sec" >
 
                <div class="container">
            <div class="row text-center pad-row" >
@@ -15,9 +84,9 @@
                </div>
             </div>
 
-       </section>
+       </section> -->
     <!--/.NOTE END-->
-     <section id="clients"  >
+     <!-- <section id="clients"  >
 
 
             <div class="container">
@@ -28,9 +97,9 @@
 
                </div>
         </div>
-        </section>
+        </section> -->
      <!--/.CLIENTS END-->
-    <section id="footer-sec" >
+    <!-- <section id="footer-sec" >
 
             <div class="container">
            <div class="row  pad-bottom" >
@@ -63,15 +132,15 @@
                 </div>
                </div>
             </div>
-    </section>
+    </section> -->
     <!--/.FOOTER END-->
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
     <!-- CORE JQUERY  -->
     <!--<script src="view/plugins/jquery-1.10.2.js"></script>-->
     <!-- BOOTSTRAP SCRIPTS  -->
-    <!-- <script src="<?php echo VIEW_PLUGINS ?>bootstrap.js"></script> -->
+    <!-- <script src="<?php //echo VIEW_PLUGINS ?>bootstrap.js"></script> -->
   <!-- CUSTOM SCRIPTS  -->
-    <!-- <script src="<?php echo VIEW_JS ?>custom.js"></script> -->
+    <!-- <script src="<?php //echo VIEW_JS ?>custom.js"></script> -->
 
 </body>
 </html>
