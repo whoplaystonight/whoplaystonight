@@ -3,18 +3,10 @@
 <link rel="stylesheet" type="text/css" href="<?php echo EVENTS_VIEW_CSS ?>main.css">
 
 
-
-
 <br><br>
 <center>
   <form name="search_event" id="search_event" class="search_event">
     <input type="text" value="" placeholder="Search event..." class="input_search" id="keyword" list="datalist"/>
-    <!-- <input type="text" value="" placeholder="Test" id="test" list="datalist"/>
-    <script>
-        $( "#test" ).autocomplete({
-          source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ]
-      });
-    </script> -->
     <input name="Submit" id="Submit" class="button_search" type="button">
 
   </form>
@@ -29,14 +21,6 @@
 <!-- modal window details_product -->
 <section id="product">
 
-    <!--<div id="details_prod" hidden>-->
-
-        <!--<ol class="breadcrumb">
-            <li><a href="index.php?module=products">Products</a></li>
-            <li class="active">Details Product</li>
-        </ol>
-        <br>
-        <br>-->
         <center>
         <div id="details">
             <div id="poster" class="prodImg"></div>
@@ -54,11 +38,9 @@
                 <h2> <strong><div id="date_event"></div></strong> </h5>
                 <button type="button" id="back">Back</button>
 
-
             </div>
 
         </div>
       </center>
 
-    <!--</div>-->
 </section>

@@ -10,10 +10,6 @@ class controller_events_front_end{
 
     include(EVENTS_TOOLS. "tools_fe.inc.php");
     include LOG_CLASS;
-    // include (TOOLS . "filters.inc.php");
-    // include (TOOLS . "tools.inc.php");
-    // include (TOOLS . "response_code.inc.php");
-    //include (TOOLS . "common.inc.php");
 
     $_SESSION['module']="events_front_end";
 
@@ -25,12 +21,7 @@ class controller_events_front_end{
 
   public function list_events(){
 
-    require_once(VIEW_PATH_INC . "header.php");
-    require_once(VIEW_PATH_INC . "menu.php");
-
     loadView('modules/events_front_end/view/' , 'list_products.php');
-
-    require_once(VIEW_PATH_INC . "footer.php");
 
   }//end of list_events
 
@@ -343,13 +334,6 @@ class controller_events_front_end{
             // debugECHO($page_number);
             // exit;
             }
-        // if(isset($_GET["aux"])&& $_GET["aux"]=="page_num"){
-        //   $result=filter_num_int($_GET["aux"]);
-        //     if($result['resultado']){
-        //       $page_number=$result['datos'];
-        //
-        //     }
-        //}
 
         }else{
 
@@ -371,19 +355,6 @@ class controller_events_front_end{
         }
         //debugECHO($criteria);
         // exit;
-
-
-        // if(isset($_POST["aux"])){
-        //   $result=filter_string($_POST["aux"]);
-        //   if($result['resultado']){
-        //       $criteria=$result['datos'];
-        //   }else{
-        //       $criteria='';
-        //   }
-        // }else{
-        //   $criteria='';
-        // }
-
 
         set_error_handler('ErrorHandler');
         try{

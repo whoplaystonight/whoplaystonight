@@ -7,11 +7,9 @@ class controller_users {
     }
 
     public function sign_up(){
-        require_once(VIEW_PATH_INC . "header.php");
-        require_once(VIEW_PATH_INC . "menu.php");
-        loadView('modules/users/view/','create_users.php');
 
-        require_once(VIEW_PATH_INC . "footer.html");
+        loadView('modules/users/view/','create_users.php');
+        
     }
 
     // if ((isset($_GET["upload"])) && ($_GET["upload"] == true)) {

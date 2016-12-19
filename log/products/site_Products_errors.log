@@ -1,9 +1,3 @@
-error loadView general|19.12.2016 12:23:38| User: |events_front_end/list_events|response400
-error loadView general|19.12.2016 12:23:40| User: |events_front_end/list_events|response400
-error loadView general|19.12.2016 12:23:47| User: |events_front_end/list_events|response400
-error loadView general|19.12.2016 12:24:24| User: |products/events_form|response400
-error loadView general|19.12.2016 12:24:26| User: |events_front_end/list_events|response400
-error loadView general|19.12.2016 12:24:50| User: |events_front_end/list_events|response400
-error loadView general|19.12.2016 12:25:11| User: |events_front_end/list_events|response400
-error loadView general|19.12.2016 12:25:21| User: |events_front_end/list_events|response400
-error loadView general|19.12.2016 12:25:36| User: |events_front_end/list_events|response400
+error loadView general|19.12.2016 01:38:24| User: |events_front_end/list_events|response400
+error loadView general|19.12.2016 01:38:46| User: |products/events_form|response400
+error loadView general|19.12.2016 01:39:16| User: |events_front_end/list_events|response400

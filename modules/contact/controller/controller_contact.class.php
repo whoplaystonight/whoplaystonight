@@ -11,12 +11,9 @@ class controller_contact {
   }
 
   public function contact() {
-    require_once(VIEW_PATH_INC."header.php");
-    require_once(VIEW_PATH_INC."menu.php");
 
     loadView(CONTACT_VIEW_PATH, 'contact.php');
 
-    require_once(VIEW_PATH_INC."footer.html");
   }
 
   public function process_contact() {

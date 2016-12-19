@@ -9,16 +9,10 @@ class controller_products{
   public function __construct(){
     include(PRODUCTS_TOOLS. "functions_products.inc.php");
     include(TOOLS . "upload.php");
-    //include(TOOLS . "common.inc.php");
     include(LOG_CLASS);
     $_SESSION['module']="products";
   }
 
-
-  // public function test(){
-  //   echo json_encode("I'm in test");
-  //   exit;
-  // }
   ////////////////////////////////////////////////////////////////////////////
                           /* CREATE EVENTS FUNCION  */
   ////////////////////////////////////////////////////////////////////////////
@@ -26,13 +20,8 @@ class controller_products{
   /*To invoke and show the create events form*/
 
   public function events_form(){
-    //debugECHO("HOLA");
-    require_once(VIEW_PATH_INC . "header.php");
-    require_once(VIEW_PATH_INC . "menu.php");
 
     loadView('modules/products/view/','create_products.php');
-
-    require_once(VIEW_PATH_INC . "footer.php");
 
   }
 
@@ -44,12 +33,7 @@ class controller_products{
 
   public function results_view(){
 
-    require_once(VIEW_PATH_INC . "header.php");
-    require_once(VIEW_PATH_INC . "menu.php");
-
-    echo '<br><br><br><br><br><br><br><br>';
     loadView('modules/products/view/','results_products.php');
-    require_once(VIEW_PATH_INC . "footer.php");
 
   }
 

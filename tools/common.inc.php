@@ -34,7 +34,7 @@
 
 
   function loadView($path_view='', $file_view='',$data=''){
-    
+
     $view_path=$path_view . $file_view;
     //debugECHO($view_path);
     $arrData='';
@@ -47,7 +47,11 @@
       if(isset($data)){
         $arrData=$data;
       }
+
+      require_once(VIEW_PATH_INC."header.php");
+      require_once(VIEW_PATH_INC."menu.php");
       include_once($view_path);
+      require_once(VIEW_PATH_INC."footer.php");
 
       }else{
 
@@ -67,7 +71,10 @@
 
         $result=response_code($path_view);
         $arrData=$result;
+        require_once(VIEW_PATH_INC."header.php");
+        require_once(VIEW_PATH_INC."menu.php");
         require_once VIEW_PATH_INC_ERROR . 'error.php';
+        require_once(VIEW_PATH_INC."footer.php");
         //die();
       }//end if else $data
 
