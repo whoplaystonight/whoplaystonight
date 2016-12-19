@@ -9,6 +9,10 @@
         <uri>login</uri>
     </function>
     <function>
+        <name>login2</name>
+        <uri>login2</uri>
+    </function>
+    <function>
         <name>alta_users</name>
         <uri>alta_users</uri>
     </function>

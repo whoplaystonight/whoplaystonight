@@ -2,6 +2,7 @@
 class controller_users {
     public function __construct(){
         include (USERS_UTILS_FUNCTIONS);
+        include(SITE_ROOT . "libs/password_compat-master/lib/password.php");
         include(TOOLS . "upload.php");
         $_SESSION['module'] = "user";
     }
@@ -18,6 +19,8 @@ class controller_users {
         require_once(VIEW_PATH_INC . "menu.php");
         loadView('modules/users/view/', 'modal.html');
         require_once(VIEW_PATH_INC . "footer.php");
+    }
+    public function login2(){
         if((isset($_POST['login_json']))){
             $user = json_decode($_POST['login_json'], true);
             $column = array(
@@ -36,30 +39,32 @@ class controller_users {
             try {
                 //loadModel
                 $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "select", $arrArgument);
-                echo json_encode($arrValue);exit;
                 $arrValue = password_verify($user['pass'], $arrValue[0]['password']);
+                // $hi2 = password_hash("123456", PASSWORD_BCRYPT);
+                // $hi = password_verify("123456", $hi2);
             } catch (Exception $e) {
                 $arrValue = "error";
             }
             restore_error_handler();
-
+            // $arrValue=true;
             if ($arrValue !== "error") {
                 if ($arrValue) { //OK
                     set_error_handler('ErrorHandler');
                     try {
                         $arrArgument = array(
-                            'column' => array("usuario", "activado"),
+                            'column' => array("username", "activado"),
                             'like' => array($user['usuario'], "1")
                         );
-                        $arrValue = loadModel(MODEL_USER, "user_model", "count", $arrArgument);
+                        $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "count", $arrArgument);
 
                         if ($arrValue[0]["total"] == 1) {
                             $arrArgument = array(
-                                'column' => array("usuario"),
+                                'column' => array("username"),
                                 'like' => array($user['usuario']),
                                 'field' => array('*')
                             );
-                            $user = loadModel(MODEL_USER, "user_model", "select", $arrArgument);
+
+                            $user = loadModel(USERS_MODEL_MODEL, "user_model", "select", $arrArgument);
                             echo json_encode($user);
                             exit();
                         } else {
@@ -119,7 +124,8 @@ class controller_users {
             $arrArgument = array(
                 'username' => ucfirst($result['datos']['username']),
                 'email' => ucfirst($result['datos']['email']),
-                'password' => $result['datos']['password'],
+                // 'password' => $result['datos']['password'],
+                'password' => password_hash($result['datos']['password'], PASSWORD_BCRYPT),
                 'birthday' => $result['datos']['birthday'],
                 'interests' => $result['datos']['interests'],
                 'country' => $result['datos']['country'],

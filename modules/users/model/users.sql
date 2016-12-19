@@ -19,7 +19,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `username` varchar(100) DEFAULT NULL,
   `email` varchar(300) DEFAULT NULL,
-  `password` varchar(10) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
   `birthday` varchar(10) NOT NULL,
   `rock` tinyint(1) DEFAULT NULL,
   `jazz` tinyint(1) DEFAULT NULL,

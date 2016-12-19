@@ -43,7 +43,7 @@ class userDAO {
         // $type = $arrArgument['type'];
         $type = "";
         // $activated = $arrArgument['activated'];
-        $activated = "";
+        $activated = "1";
         $token = "";
 
         $sql = "INSERT INTO users (username, email, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activado, token)

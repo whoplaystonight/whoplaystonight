@@ -31,10 +31,10 @@
                         <li id="LogProf" class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>">
                             <a href="<?php amigable('?module=users&function=sign_up'); ?>">SIGN UP</a>
                         </li>
-                        <li id="LogProf">
-                            <a href="<?php echo USERS_VIEW_PATH . "modal.html"; ?>"
+                        <!-- <li id="LogProf">
+                            <a href="<?php echo USERS_VIEW_PATH . "modal.php"; ?>"
                             class="button special" data-toggle="modal" id="Login" data-target="#LoginModal">Login</a>
-                        </li>
+                        </li> -->
                         <li class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>">
                             <a href="<?php amigable('?module=users&function=login'); ?>">Login</a>
                         </li>

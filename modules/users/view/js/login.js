@@ -43,13 +43,13 @@ function login() {
     var data = {"usuario": user, "pass": pass};
     var login_JSON = JSON.stringify(data);
     if (value){
-        console.log(amigable('?module=users&function=login'));
-        $.post(amigable("?module=users&function=login"), {login_json: login_JSON},
+        console.log(amigable('?module=users&function=login2'));
+        $.post(amigable("?module=users&function=login2"), {login_json: login_JSON},
         function (response) {
             console.log(response);
             if (!response.error) {
                 //create session cookies
-                Tools.createCookie("user", response[0]['usuario'] + "|" + response[0]['avatar'] + "|" + response[0]['tipo'] + "|" + response[0]['nombre'], 1);
+                Tools.createCookie("user", response[0]['username'] + "|" + response[0]['avatar'] + "|" + response[0]['type'] + "|" + response[0]['username'], 1);
                 window.location.href = amigable("?module=main");
             } else {
                 if (response.datos == 503)
