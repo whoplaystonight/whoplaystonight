@@ -44,8 +44,7 @@ function getUserInfo() {
             var data = {"id": response.id, "name": response.first_name, "surname": response.last_name, "email": response.email};
             var datos_social = JSON.stringify(data);
             console.log(datos_social);
-            //$.post(amigable('?module=contact&function=social_signin'), {user: datos_social},
-            $.post(('../../users/social_signin'), {user: datos_social},
+            $.post(amigable('?module=users&function=social_signin'), {user: datos_social},
             function (response) {
                 if (!response.error) {
                     console.log(response)

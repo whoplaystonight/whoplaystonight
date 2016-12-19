@@ -1,6 +1,6 @@
 $(document).ready(start);
 function start() {
-    $.post("../../locate/maploader", {value: {send: true}},
+    $.post(amigable("?module=locate&function=maploader"), {value: {send: true}},
     function (response) {
         //console.log(response);
         if (response.success) {

@@ -14,11 +14,10 @@ function paint(dataString) {
     // Enable button after processing
     $('#restoreBtn').attr('disabled', false);
 
-    //$url = amigable('?module=main/');
-    /*$url = '../../module=main/';
+    $url = amigable('?module=main/');
     setTimeout(function () {
         window.location.href = $url;
-    }, 3000);*/
+    }, 3000);
 }
 
 $(document).ready(function () {
@@ -57,8 +56,7 @@ $(document).ready(function () {
 
             $.ajax({
                 type: "POST",
-                //url: amigable("?module=users&function=process_restore"),
-                url: "../users/process_restore",
+                url: amigable("?module=users&function=process_restore"),
                 data: dataString,
                 success: function (dataString) {
                     paint(dataString);
