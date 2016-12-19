@@ -1,48 +1,54 @@
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">WHO PLAYS TONIGHT?</a>
-
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="<?php if(isset($_GET['module']) === 'main'){echo 'active';} else {echo 'deactivate';}?>">
-                            <a href="<?php amigable('?module=main'); ?>">HOME</a>
-                        </li>
-                        <li class="<?php if(isset($_GET['module']) === 'services'){echo'active';} else {echo 'deactivate';}?>">
-                            <a href="<?php amigable('?module=services'); ?>">SERVICES</a>
-                        </li>
-                        <li class="<?php if(isset($_GET['module']) === 'products'){echo'active';} else {echo 'deactivate';}?>">
-                            <a href="<?php amigable('?module=products&function=events_form'); ?>">EVENTS</a>
-                        </li>
-                        <li class="<?php if(isset($_GET['module']) === 'events_front_end') {echo'active';} else {echo 'deactivate';}?>">
-                            <a href="<?php amigable('?module=events_front_end&function=list_events');?>">LIST EVENT</a>
-                        </li>
-                        <li class="<?php if(isset($_GET['module']) === 'portfolio'){echo'active';} else {echo 'deactivate';}?>">
-                            <a href="<?php amigable('?module=portfolio'); ?>">PORTFOLIO</a>
-                        </li>
-                        <li class="<?php if(isset($_GET['module']) === 'pricing'){echo'active';} else {echo 'deactivate';}?>">
-                            <a href="<?php amigable('?module=pricing'); ?>">PRICING</a>
-                        </li>
-                        <li id="LogProf" class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>">
-                            <a href="<?php amigable('?module=users&function=sign_up'); ?>">SIGN UP</a>
-                        </li>
-                        <li class="<?php if(isset($_GET['module']) === 'contact') {echo 'active';} else {echo 'deactivate';}?>">
-                            <a href="<?php amigable('?module=contact&function=contact'); ?>">CONTACT</a>
-                        </li>
-                        <li class="<?php if(isset($_GET['module']) === 'locate'){echo 'active';} else {echo 'deactivate';}?>">
-                            <a href="<?php amigable('?module=locate&function=locate'); ?>">LOCATE</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <div class="banner">
+  <div class="header-top">
+    <div class="container">
+      <div class="indicat">
+        <span><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1398 W El Camino Real, Mountain View,UK</span>
+      </div>
+      <div class="detail">
+        <ul>
+          <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i> + 1 599-033-5036</li>
+          <li><i class="glyphicon glyphicon-time" aria-hidden="true"></i> Mon-Sun 8:00 am to 23:00 pm </li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
     </div>
+  </div>
+  <div class="container">
+    <div class="navigation navi">
+      <div class="logo">
+        <h1><a href="index.html">WHO PLAYS TONIGHT?</a></h1>
+      </div>
+      <div class="navigation-right">
+        <span class="menu"><img src="images/menu.png" alt=" " /></span>
+        <nav class="link-effect-3" id="link-effect-3">
+          <ul class="nav1 nav nav-wil">
+            <li class="<?php if(isset($_GET['module']) === 'main'){echo 'active';} else {echo 'deactivate';}?>"><a data-hover="Home"  href="<?php amigable('?module=main');?>">Home</a></li>
+            <li class="<?php if(isset($_GET['module']) === 'products'){echo'active';} else {echo 'deactivate';}?>"><a data-hover="Events"  href="<?php amigable('?module=products&function=events_form');?>">Events</a></li>
+            <li class="<?php if(isset($_GET['module']) === 'events_front_end') {echo'active';} else {echo 'deactivate';}?>"><a data-hover="List Events" href="<?php amigable('?module=events_front_end&function=list_events');?>">List Events</a></li>
+            <li class="<?php if(isset($_GET['module']) === 'services'){echo'active';} else {echo 'deactivate';}?>"><a data-hover="Services"  href="<?php amigable('?module=services'); ?>">Services</a></li>
+            <li class="<?php if(isset($_GET['module']) === 'portfolio'){echo'active';} else {echo 'deactivate';}?>"><a data-hover="Portfolio" href="<?php amigable('?module=portfolio'); ?>">Portfolio</a></li>
+            <li class="<?php if(isset($_GET['module']) === 'pricing'){echo'active';} else {echo 'deactivate';}?>"><a data-hover="Pricing" href="<?php amigable('?module=pricing'); ?>">Pricing</a></li>
+            <li class="<?php if(isset($_GET['module']) === 'contact') {echo 'active';} else {echo 'deactivate';}?>"><a data-hover="Contact" href="<?php amigable('?module=contact&function=contact'); ?>">Contact</a></li>
+            <li id="LogProf" class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>"><a data-hover="Sign Up" href="<?php amigable('?module=users&function=sign_up'); ?>">Sign Up</a></li>
+            <li class="<?php if(isset($_GET['module']) === 'locate'){echo 'active';} else {echo 'deactivate';}?>"><a data-hover="Locate" href="<?php amigable('?module=locate&function=locate'); ?>">Locate</a></li>
+          </ul>
+        </nav>
+            <!-- script-for-menu -->
+              <script>
+                 $( "span.menu" ).click(function() {
+                 $( "ul.nav1" ).slideToggle( 300, function() {
+                 // Animation complete.
+                  });
+                 });
+              </script>
+            <!-- /script-for-menu -->
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+  </div>
+</div>
   </div>
     <br>
     <section id="title" class="emerald">
