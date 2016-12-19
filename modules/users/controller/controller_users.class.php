@@ -306,4 +306,74 @@ class controller_users {
             }
         }
     }
+    ////////////// change password
+    function changepass() {
+        if (substr($_GET['aux'], 0, 3) == "Cha") {
+            require_once(VIEW_PATH_INC . "header.php");
+            require_once(VIEW_PATH_INC . "menu.php");
+            loadView('modules/users/view/', 'changepass.php');
+            require_once(VIEW_PATH_INC . "footer.php");
+        } else {
+            showErrorPage(1, "", 'HTTP/1.0 503 Service Unavailable', 503);
+        }
+    }
+
+    function update_pass() {
+        $jsondata = array();
+        $pass = json_decode($_POST['passw'], true);
+
+        $arrArgument = array(
+            'column' => array('token'),
+            'like' => array($pass['token']),
+            'field' => array('password'),
+            //'new' => array(password_hash($pass['password'], PASSWORD_BCRYPT))
+            'new' => array($pass['password'])
+        );
+        set_error_handler('ErrorHandler');
+        try {
+            $value = loadModel(USERS_MODEL_MODEL, "user_model", "update", $arrArgument);
+        } catch (Exception $e) {
+            $value = false;
+        }
+        restore_error_handler();
+
+        if ($value) {
+            $url = amigable('?module=main&function=begin&aux=rest', true);
+            $jsondata["success"] = true;
+            $jsondata["redirect"] = $url;
+            exit;
+        } else {
+            $url = amigable('?module=main&function=begin&aux=503', true);
+            $jsondata["success"] = true;
+            $jsondata["redirect"] = $url;
+            echo json_encode($jsondata);
+            exit;
+        }
+    }
+    ///////////////// Verify
+    function verify() {
+        echo json_encode(substr($_GET['aux'], 0, 3));exit;
+        if (substr($_GET['aux'], 0, 3) == "Ver") {
+            $arrArgument = array(
+                'column' => array('token'),
+                'like' => array($_GET['aux']),
+                'field' => array('activado'),
+                'new' => array('1')
+            );
+            echo json_encode($arrArgument);exit;
+            set_error_handler('ErrorHandler');
+            try {
+                $value = loadModel(USERS_MODEL_MODEL, "user_model", "update", $arrArgument);
+            } catch (Exception $e) {
+                $value = false;
+            }
+            restore_error_handler();
+
+            if ($value) {
+                loadView('modules/main/view/', 'main.php');
+            } else {
+                showErrorPage(1, "", 'HTTP/1.0 503 Service Unavailable', 503);
+            }
+        }
+    }
 }

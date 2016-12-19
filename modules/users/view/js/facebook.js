@@ -47,7 +47,6 @@ function getUserInfo() {
             //$.post(amigable('?module=contact&function=social_signin'), {user: datos_social},
             $.post(('../../users/social_signin'), {user: datos_social},
             function (response) {
-                console.log("--------------------------");
                 if (!response.error) {
                     console.log(response)
                     Tools.createCookie("user", response[0]['username'] + "|" + response[0]['avatar'] + "|" + response[0]['type'] + "|" + response[0]['name'], 1);

@@ -32,4 +32,16 @@
         <name>process_restore</name>
         <uri>process_restore</uri>
     </function>
+    <function>
+        <name>verify</name>
+        <uri>verify</uri>
+    </function>
+    <function>
+        <name>changepass</name>
+        <uri>changepass</uri>
+    </function>
+    <function>
+        <name>update_pass</name>
+        <uri>update_pass</uri>
+    </function>
 </functions>

@@ -65,7 +65,7 @@
     <div class="social form-contact">
         <ul class="icons log">
             <li>
-                <a class="icon rounded fa-facebook" id="fb" href="#"><span class="label">Facebook</span>Facebook</a>
+                <a class="fa fa-facebook" id="fb" href="#"><span class="label">Facebook</span></a>
             </li>
         </ul>
 

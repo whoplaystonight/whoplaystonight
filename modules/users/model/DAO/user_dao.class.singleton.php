@@ -41,7 +41,10 @@ class userDAO {
         $province = $arrArgument['province'];
         $town = $arrArgument['town'];
         $type = $arrArgument['type'];
-        $activated = $arrArgument['activated'];
+        if ($arrArgument['activated'])
+            $activated = $arrArgument['activated'];
+        else
+            $activated = 0;
 
         $sql = "INSERT INTO users (username, email, name, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activated)
         VALUES ('" . $username . "','" . $email ."','" . $name ."','" . $password . "','" . $birthday . "', '" . $rock . "', '" . $jazz . "', '" . $blues . "', '" .
@@ -166,7 +169,7 @@ class userDAO {
         }
 
         $sql = $sql1 . $change . $sql2 . $sql;
-
+        
         return $db->execute($sql);
     }
 }
