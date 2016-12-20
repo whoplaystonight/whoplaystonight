@@ -19,6 +19,7 @@ class controller_users {
         loadView('modules/users/view/', 'modal.html');
         require_once(VIEW_PATH_INC . "footer.php");
     }
+
     public function login2(){
         if((isset($_POST['login_json']))){
             $user = json_decode($_POST['login_json'], true);
@@ -219,7 +220,7 @@ class controller_users {
             $json = array();
 
             // $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
-            $url = 'http://localhost/repoCountryNamesByName.json';
+            $url = 'http://plastmagysl.com/repoCountryNamesByName.json';
             $path_model=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/users/model/model/';
             $json = loadModel($path_model, "user_model", "obtain_countries", $url);
             // echo json_encode("load pais"); exit;

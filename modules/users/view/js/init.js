@@ -27,7 +27,7 @@ $(document).ready(function () {
         } else if (user[2] === "admin") {
             $("#LogProf").before("<li><a href=" + amigable('?module=admin') + ">Administrar</a></li>")
         }
-        $("head").append("<script src='https://localhost/whoplaystonight/modules/users/view/js/logout.js'></script>");
+        $("head").append("<script src='https://plastmagysl.com/whoplaystonight/modules/users/view/js/logout.js'></script>");
     }
 
     var url = window.location.href;

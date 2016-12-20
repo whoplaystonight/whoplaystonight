@@ -50,7 +50,7 @@ function login() {
             if (!response.error) {
                 //create session cookies
                 Tools.createCookie("user", response[0]['username'] + "|" + response[0]['avatar'] + "|" + response[0]['type'] + "|" + response[0]['username'], 1);
-                window.location.href = amigable("?module=main");
+                window.location.href = amigable("?module=main/");
             } else {
                 if (response.datos == 503)
                     window.location.href = amigable("?module=main&fn=begin&param=503");
