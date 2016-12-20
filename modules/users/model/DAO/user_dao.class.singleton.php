@@ -31,11 +31,11 @@ class userDAO {
 
         foreach ($interests as $indice) {
             if ($indice === 'rock')
-            $rock = 1;
+                $rock = 1;
             if ($indice === 'jazz')
-            $jazz = 1;
+                $jazz = 1;
             if ($indice === 'blues')
-            $blues = 1;
+                $blues = 1;
         }
 
         $country = $arrArgument['country'];
@@ -43,10 +43,11 @@ class userDAO {
         $town = $arrArgument['town'];
 
         $type = $arrArgument['type'];
+        // $type = "client";
         if ($arrArgument['activated'])
             $activated = $arrArgument['activated'];
         else
-            $activated = 0;
+            $activated = 1;
         $token = "";
 
         $sql = "INSERT INTO users (username, email, name, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activated)

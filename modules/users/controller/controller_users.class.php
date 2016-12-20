@@ -52,7 +52,7 @@ class controller_users {
                     set_error_handler('ErrorHandler');
                     try {
                         $arrArgument = array(
-                            'column' => array("username", "activado"),
+                            'column' => array("username", "activated"),
                             'like' => array($user['usuario'], "1")
                         );
                         $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "count", $arrArgument);
@@ -131,6 +131,9 @@ class controller_users {
                 'country' => $result['datos']['country'],
                 'province' => $result['datos']['province'],
                 'town' => $result['datos']['town'],
+                'name' => "",
+                'type' => "cliente",
+                'activated' => "1",
             );
 
             ///////////// Insert into BD /////////////
@@ -443,7 +446,7 @@ class controller_users {
             $arrArgument = array(
                 'column' => array('token'),
                 'like' => array($_GET['aux']),
-                'field' => array('activado'),
+                'field' => array('activated'),
                 'new' => array('1')
             );
             echo json_encode($arrArgument);exit;
