@@ -666,7 +666,7 @@ a.button1 {
     line-height:1.8em;
 	padding-top:1em;
 }
-.cuisine input[type="text"],.book_date input[type="text"],select#country,select#country1,.phone_email input[type="text"],.phone_email1 input[type="mail"]{
+/*.cuisine input[type="text"],.book_date input[type="text"],select#country,select#country1,.phone_email input[type="text"],.phone_email1 input[type="mail"]{
 	width: 100%;
     color: #000;
     font-size: 14px;
@@ -674,7 +674,7 @@ a.button1 {
     outline: none;
     background: #eee;
     border: 1px solid #eee;
-}
+}*/
 .phone_email1{
 	float:right;
 }
@@ -1376,10 +1376,10 @@ h3.tittle1 {
 .team-gd:nth-child(3),.team-gd:nth-child(4) {
     margin-top: 2em;
 }
-.cuisine input[type="text"], .book_date input[type="text"], select#country, select#country1, .phone_email input[type="text"], .phone_email1 input[type="mail"] {
+/*.cuisine input[type="text"], .book_date input[type="text"], select#country, select#country1, .phone_email input[type="text"], .phone_email1 input[type="mail"] {
     font-size: 13px;
     padding: 8px 10px 10px 31px;
-}
+}*/
 .gallery-grids-left {
     padding: 0 0px;
     width: 70%;
@@ -1473,10 +1473,10 @@ h3.tittle1 {
     left: 31%;
     bottom: -26%;
 }
-.cuisine input[type="text"], .book_date input[type="text"], select#country, select#country1, .phone_email input[type="text"], .phone_email1 input[type="mail"] {
+/*.cuisine input[type="text"], .book_date input[type="text"], select#country, select#country1, .phone_email input[type="text"], .phone_email1 input[type="mail"] {
     font-size: 13px;
     padding: 8px 10px 10px 40px;
-}
+}*/
 }
 @media(max-width:600px){
 .link-effect-3 a {
