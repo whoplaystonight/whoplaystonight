@@ -17,9 +17,10 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `username` varchar(100) DEFAULT NULL,
+  `username` varchar(100) NOT NULL,
   `email` varchar(300) DEFAULT NULL,
-  `password` varchar(10) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
   `birthday` varchar(10) NOT NULL,
   `rock` tinyint(1) DEFAULT NULL,
   `jazz` tinyint(1) DEFAULT NULL,
@@ -28,6 +29,9 @@ CREATE TABLE `users` (
   `country` varchar(50) NOT NULL,
   `province` varchar(50) NOT NULL,
   `town` varchar(50) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `activated` tinyint(1) DEFAULT 0,
+  `token` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

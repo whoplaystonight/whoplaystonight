@@ -74,7 +74,7 @@ trabajo correcto con GIT, el sistema de control de versiones empleado.
       mantener. El codigo añadido por nosotros se encontrara entre <<<<<HEAD y
       =====. Entre ====== y >>>>>>>> tendremos el codigo descargado de remoto.
       Borraremos el que proceda y una vez borrado, haremos git add . para añadir los
-      archivo modificados y el commmit correspondiente.
+      archivo modificados y el commit correspondiente.
 
       Con esto habremos fusionado los últimos cambios del master remoto al master local
       Ahora ejecutaremos de nuevo:

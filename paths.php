@@ -1,4 +1,6 @@
 <?php
+//PROYECTO
+define('PROJECT', '/whoplaystonight/');
 //SITE_ROOT
 $root = $_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/';
 define('SITE_ROOT',$root);
@@ -35,7 +37,7 @@ define('MODEL_PATH',SITE_ROOT.'model/');
 //VIEW
 define('VIEW_IMG',SITE_PATH.'view/img/');
 define('VIEW_PATH_JS',SITE_ROOT.'view/js/');
-
+define('VIEW_PATH_JS2',SITE_PATH.'view/js/');
 //MODULES_PATH
 define('MODULES_PATH', SITE_ROOT.'modules/');
 
@@ -70,7 +72,7 @@ define('USERS_UTILS_FUNCTIONS', SITE_ROOT . 'modules/users/utils/functions_user.
 define('USERS_MODEL_MODEL', SITE_ROOT.'modules/users/model/model/');
 define('USERS_JS_PATH', SITE_PATH . 'modules/users/view/js/');
 define('USERS_VIEW_CSS', SITE_PATH . 'modules/users/view/css/');
-
+define('USERS_VIEW_PATH', SITE_PATH . 'modules/users/view/');
 
 //module contact
 define('CONTACT_JS_PATH', SITE_PATH . 'modules/contact/view/js/');

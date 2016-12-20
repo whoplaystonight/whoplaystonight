@@ -18,12 +18,12 @@ $(document).ready(function () {
     ////**user menu*///
     var user = Tools.readCookie("user");
     if (user) {
-        //console.log(user); //yomogan|https://projects-alumnes-yomogan.c9users.io/proj_final_login/JoinElderly//media/flowers.png|client|yomogan
+        //console.log(user); //yomogan|https://plastmagysl.com/JoinElderly//media/flowers.png|client|yomogan
         user = user.split("|");
         $("#LogProf").html("<a href=" + amigable('?module=user&function=profile') + "><img id='menuImg' class='icon rounded' src='" + user[1] + "'/>" + user[3] + "</a>");
         $("#LogProf").after("<li><a id='logout' href='#' >Log Out</a></li>");
         if ( (user[2] === "worker") || (user[2] === "client")  ) {
-            $("#LogProf").before("<li><a href=" + amigable('?module=main') + ">EVENTS</a></li>")
+            $("#LogProf").before("<li><a href=" + amigable('?module=ofertas') + ">Mis ofertas</a></li>")
         } else if (user[2] === "admin") {
             $("#LogProf").before("<li><a href=" + amigable('?module=admin') + ">Administrar</a></li>")
         }
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     var url = window.location.href;
     url = url.split("/");
-    if (url[6] === "activar" && url[7].substring(0, 3) == "Ver"){
+    if (url[6] === "verify" && url[7].substring(0, 3) == "Ver"){
         $("#alertbanner").html("<a href='#alertbanner' class='alertbanner'>Su email ha sido verificado, disfrute de nuestros servicios</div>");
     }else if(url[7]==="503"){
          $("#alertbanner").html("<a href='#alertbanner' class='alertbanner alertbannerErr'>Hay un problema en la base de datos, inténtelo más tarde</div>");

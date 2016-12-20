@@ -2616,6 +2616,7 @@ shortcodes page css
   margin-left: 15px;
 }
 
+<<<<<<< HEAD
 #videoMain{
   height:700px;
   display:flex;
@@ -2634,7 +2635,20 @@ shortcodes page css
 }
 
 #BackHome{
-  
+
   float:right;
 
+}
+
+/*Modal login*/
+#modalLog form{
+    display: inline-block;
+    width: 50%;
+}
+
+#modalLog .social{
+    display: inline-block;
+    max-width: 40%;
+    vertical-align: top;
+    padding-left: 27px;
 }

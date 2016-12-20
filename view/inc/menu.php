@@ -1,4 +1,5 @@
 <body>
+
   <div class="banner">
   <div class="header-top">
     <div class="container">
@@ -12,7 +13,6 @@
         </ul>
       </div>
       <div class="clearfix"></div>
-    </div>
   </div>
   <div class="container">
     <div class="navigation navi">
@@ -50,6 +50,13 @@
 </div>
   </div>
     <br>
+
+    <!-- Modal login -->
+    <div id="LoginModal" class="modal_login modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content"></div>
+        </div>
+    </div>
 
         <div class="container">
             <div class="row">
@@ -96,5 +103,3 @@
                 </div>
             </div>
         </div>
-
-    <!-- MENU END-->

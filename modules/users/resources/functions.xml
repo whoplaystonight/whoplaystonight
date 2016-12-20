@@ -5,6 +5,14 @@
         <uri>sign_up</uri>
     </function>
     <function>
+        <name>login</name>
+        <uri>login</uri>
+    </function>
+    <function>
+        <name>login2</name>
+        <uri>login2</uri>
+    </function>
+    <function>
         <name>alta_users</name>
         <uri>alta_users</uri>
     </function>
@@ -23,5 +31,25 @@
     <function>
         <name>social_signin</name>
         <uri>social_signin</uri>
+    </function>
+    <function>
+        <name>restore</name>
+        <uri>restore</uri>
+    </function>
+    <function>
+        <name>process_restore</name>
+        <uri>process_restore</uri>
+    </function>
+    <function>
+        <name>verify</name>
+        <uri>verify</uri>
+    </function>
+    <function>
+        <name>changepass</name>
+        <uri>changepass</uri>
+    </function>
+    <function>
+        <name>update_pass</name>
+        <uri>update_pass</uri>
     </function>
 </functions>

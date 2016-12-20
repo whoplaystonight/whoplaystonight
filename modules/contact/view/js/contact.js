@@ -55,7 +55,7 @@ $(document).ready(function(){
         var dataString = $("#contact_form").serialize();
         $.ajax({
           type: "POST",
-          url: "../../contact/process_contact",
+          url: amigable("?module=contact&function=process_contact"),
           data: dataString,
           success: function(dataString) {
             paint(dataString);

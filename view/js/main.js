@@ -8,5 +8,4 @@ function amigable(url) {
         link +=  "/"+aux[1];
     }
     return "https://localhost/whoplaystonight" + link;
-
-  }
+}
