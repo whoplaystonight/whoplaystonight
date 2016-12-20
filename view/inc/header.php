@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="https://www.w3.org/1999/xhtml">
 <head>
-<<<<<<< HEAD
   <title><?php
           if(!isset($_GET['module'])){
             echo "Home";
