@@ -15,6 +15,7 @@ define('IMG_PATH', SITE_PATH.'view/img/');
 define('VIEW_PATH_INC',SITE_ROOT.'view/inc/');
 define('VIEW_PATH_INC_ERROR',SITE_ROOT.'view/inc/templates_error/');
 define('VIEW_PLUGINS', SITE_PATH.'view/plugins/');
+define('VIEW_VIDEO',SITE_PATH.'view/videos/');
 
 //CLASSES
 define('CLASSES', SITE_ROOT . 'classes/');

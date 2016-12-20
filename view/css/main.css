@@ -2616,6 +2616,30 @@ shortcodes page css
   margin-left: 15px;
 }
 
+<<<<<<< HEAD
+#videoMain{
+  height:700px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bannerMain{
+  height:300px;
+}
+
+#searcherMain{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#BackHome{
+
+  float:right;
+
+}
+
 /*Modal login*/
 #modalLog form{
     display: inline-block;
