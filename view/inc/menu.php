@@ -31,6 +31,7 @@
             <li class="<?php if(isset($_GET['module']) === 'pricing'){echo'active';} else {echo 'deactivate';}?>"><a data-hover="Pricing" href="<?php amigable('?module=pricing'); ?>">Pricing</a></li>
             <li class="<?php if(isset($_GET['module']) === 'contact') {echo 'active';} else {echo 'deactivate';}?>"><a data-hover="Contact" href="<?php amigable('?module=contact&function=contact'); ?>">Contact</a></li>
             <li id="LogProf" class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>"><a data-hover="Sign Up" href="<?php amigable('?module=users&function=sign_up'); ?>">Sign Up</a></li>
+            <li id="LogProf" class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>"><a href="<?php amigable('?module=users&function=login'); ?>">Login</a></li>
             <li class="<?php if(isset($_GET['module']) === 'locate'){echo 'active';} else {echo 'deactivate';}?>"><a data-hover="Locate" href="<?php amigable('?module=locate&function=locate'); ?>">Locate</a></li>
           </ul>
         </nav>
