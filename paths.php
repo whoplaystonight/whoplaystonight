@@ -13,6 +13,7 @@ define('IMG_PATH', SITE_PATH.'view/img/');
 define('VIEW_PATH_INC',SITE_ROOT.'view/inc/');
 define('VIEW_PATH_INC_ERROR',SITE_ROOT.'view/inc/templates_error/');
 define('VIEW_PLUGINS', SITE_PATH.'view/plugins/');
+define('VIEW_VIDEO',SITE_PATH.'view/videos/');
 
 //CLASSES
 define('CLASSES', SITE_ROOT . 'classes/');
@@ -69,7 +70,7 @@ define('USERS_UTILS_FUNCTIONS', SITE_ROOT . 'modules/users/utils/functions_user.
 define('USERS_MODEL_MODEL', SITE_ROOT.'modules/users/model/model/');
 define('USERS_JS_PATH', SITE_PATH . 'modules/users/view/js/');
 define('USERS_VIEW_CSS', SITE_PATH . 'modules/users/view/css/');
-define('USERS_JS_PATH', SITE_PATH . 'modules/users/view/js/');
+
 
 //module contact
 define('CONTACT_JS_PATH', SITE_PATH . 'modules/contact/view/js/');

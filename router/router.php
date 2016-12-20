@@ -79,7 +79,7 @@ function handlerModule($URI_module, $URI_function){
     }//end foreach
 
     if(!$exist){
-        // debugECHO("Estic al !exist");
+        //debugECHO("Estic al !exist");
         showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
 
     }//End of if exist
@@ -103,7 +103,7 @@ function handlerFunction($module, $obj, $URI_function){
     }//End foreach
 
     if(!$exist){
-        // debugECHO("entra al exists false");
+        //debugECHO("entra al exists false");
         showErrorPage(4,"",'HTTP/1.0 400 Bad Request', 400);
     }else{
         //debugECHO($event);

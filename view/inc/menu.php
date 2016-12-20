@@ -17,13 +17,13 @@
   <div class="container">
     <div class="navigation navi">
       <div class="logo">
-        <h1><a href="index.html">WHO PLAYS TONIGHT?</a></h1>
+        <h1><a href="<?php amigable('?module=main');?>">WHO PLAYS TONIGHT?</a></h1>
       </div>
       <div class="navigation-right">
         <span class="menu"><img src="images/menu.png" alt=" " /></span>
         <nav class="link-effect-3" id="link-effect-3">
           <ul class="nav1 nav nav-wil">
-            <li class="<?php if(isset($_GET['module']) === 'main'){echo 'active';} else {echo 'deactivate';}?>"><a data-hover="Home"  href="<?php amigable('?module=main');?>">Home</a></li>
+            <li class="<?php if(isset($_GET['module']) === 'main'){echo 'active';} else {echo 'deactivate';}?>"><a  data-hover="Home" href="<?php amigable('?module=main');?>">Home</a></li>
             <li class="<?php if(isset($_GET['module']) === 'products'){echo'active';} else {echo 'deactivate';}?>"><a data-hover="Events"  href="<?php amigable('?module=products&function=events_form');?>">Events</a></li>
             <li class="<?php if(isset($_GET['module']) === 'events_front_end') {echo'active';} else {echo 'deactivate';}?>"><a data-hover="List Events" href="<?php amigable('?module=events_front_end&function=list_events');?>">List Events</a></li>
             <li class="<?php if(isset($_GET['module']) === 'services'){echo'active';} else {echo 'deactivate';}?>"><a data-hover="Services"  href="<?php amigable('?module=services'); ?>">Services</a></li>
@@ -46,37 +46,55 @@
       </div>
       <div class="clearfix"></div>
     </div>
-
   </div>
 </div>
   </div>
     <br>
-    <section id="title" class="emerald">
 
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
                     <h1><?php
                     if (!isset($_GET['module'])) {
-                        echo "Home";
+                        echo '<a href="#">Home</a>';
                     }else{
                         switch($_GET['module']){
-                            case 'services':
-                            echo '<a href="<?php amigable(\'?module=services\'); ?>">SERVICES</a>';
-                            break;
                             case 'products':
-                            echo '<a href="<?php amigable(\'?module=products&function=events_form\'); ?>">EVENTS</a>';
+                            echo '<a href="<?php amigable(\'?module=products&function=events_form\');?>">Events</a>';
+                            break;
+                            case 'events_front_end':
+                            echo '<a href="<?php amigable(\'?module=events_front_end&function=list_events\');?>">List Events</a></li>';
+                            break;
+                            case 'services':
+                            echo '<a href="#">Services</a>';
+                            break;
+                            case 'portfolio':
+                            echo '<a href="#">Portfolio</a>';
+                            break;
+                            case 'pricing':
+                            echo '<a href="#">Pricing</a>';
+                            break;
+                            case 'contact':
+                            echo '<a href="<?php amigable(\'?module=contact&function=contact\');?>">Contact</a>';
+                            break;
+                            case 'users':
+                            echo '<a href="<?php amigable(\'?module=users&function=sign_up\');?>">Sign Up</a>';
+                            break;
+                            case 'locate':
+                            echo '<a href="<?php amigable(\'?module=locate&function=locate\');?>">Locate</a>';
                             break;
                             default:
-                            echo '<a href="<?php amigable(\'?module=main\'); ?>">HOME</a>';
+                            echo '<a href="#">Home</a>';
                             break;
                         }
                     }
                     ?></h1>
                     <strong>WEB TEST</strong>
                 </div>
-                <h2 class="BackHome"><a href="<?php amigable('?module=main'); ?>">Back Home</a></h2>
+                <div>
+                <h1 id="BackHome"><a href="<?php amigable('?module=main'); ?>">Back Home</a></h1>
+                </div>
             </div>
         </div>
-    </section>
+
     <!-- MENU END-->

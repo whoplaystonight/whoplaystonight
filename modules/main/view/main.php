@@ -1,149 +1,22 @@
-<section id="home" class="text-center">
+<script src="<?php echo VIEW_PLUGINS ?>jquery.vide.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo EVENTS_VIEW_CSS ?>main.css">
+<div data-vide-bg="<?php echo VIEW_VIDEO ?>concert1.mp4" id="videoMain">
 
-         <div id="carousel-example" class="carousel slide" data-ride="carousel">
+  <div class="w3ls_banner_info" id="bannerMain">
+    <h3>Welcome To  Who Plays Tonight ?</h3>
+    <p>The APP for live music followers.</p>
+    <p>Please enter the name of band to search concerts</p>
+    <br>
+    <section id="searcherMain">
+      <div class="col-lg-6 in-gp-tb">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Search for...">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button">Go!</button>
+									</span>
+								</div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+    </section>
+  </div>
 
-             <div class="carousel-inner">
-                 <div class="item active">
-
-                     <img src="<?php echo IMG_PATH ?>1.jpg" alt="" />
-                     <div class="carousel-caption" >
-                         <h4 class="back-light">Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.</h4>
-                     </div>
-                 </div>
-                 <div class="item">
-                     <img src="<?php echo IMG_PATH ?>2.jpg" alt="" />
-                     <div class="carousel-caption ">
-                         <h4 class="back-light">Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.</h4>
-                     </div>
-                 </div>
-                 <div class="item">
-                     <img src="<?php echo IMG_PATH ?>3.jpg" alt="" />
-                     <div class="carousel-caption ">
-                         <h4 class="back-light">Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.</h4>
-                     </div>
-                 </div>
-             </div>
-
-             <ol class="carousel-indicators">
-                 <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-                 <li data-target="#carousel-example" data-slide-to="1"></li>
-                 <li data-target="#carousel-example" data-slide-to="2"></li>
-             </ol>
-         </div>
-
-</section>
-<!--/.SLIDESHOW END-->
-
-
- <section id="intro">
-     <div class="container">
-    <div class="row text-center" >
-     <div class="col-md-12">
-
-          <div class="row text-center pad-row  ">
-<div class="col-md-4 col-sm-4 ">
-                 <img class="img-circle" src="<?php echo IMG_PATH ?>team1.png" alt="" />
-                    <h3><strong>Jhon Deo Alex</strong> </h3>
-                <p>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     </p>
-                     <a href="#" class="btn btn-primary" >Read Details</a>
-             </div>
-              <div class="col-md-4 col-sm-4 ">
-                 <img class="img-circle" src="<?php echo IMG_PATH ?>team2.jpg" alt="" />
-                    <h3><strong>Jhon Deo Alex</strong> </h3>
-                <p>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     </p>
-                     <a href="#" class="btn btn-primary" >Read Details</a>
-             </div>
-              <div class="col-md-4 col-sm-4" >
-                  <div class="alert alert-success">
-                    <div class="skill-name">CLIENT SATISFACTION 100%</div>
-                     <div class="progress progress-striped active progress-adjust">
-<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-<span class="sr-only">100% Complete</span>
 </div>
-</div>
-                 </div>
-                  <div class="alert alert-danger">
-                    <div class="skill-name">PERFORMANCE DELIVERED 100%</div>
-                     <div class="progress progress-striped active progress-adjust">
-<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-<span class="sr-only">100% Complete</span>
-</div>
-</div>
-                 </div>
-                  <div class="alert alert-info">
-                    <div class="skill-name">DELIVERY DONE 100%</div>
-                     <div class="progress progress-striped active progress-adjust">
-<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-<span class="sr-only">100% Complete</span>
-</div>
-</div>
-                 </div>
-              </div>
-
-          </div>
-
-     </div>
-
-        </div>
- </div>
- </section>
-
-<!--/.INTRO END-->
-<section id="offer"  >
-    <div class="container">
-    <div class="row   alert alert-info" >
-          <div class="col-md-8 col-sm-8">
-               <h1>  Download Deatils Now For Latest Offers</h1>
-          </div>
-          <div class="col-md-4 col-sm-4" style="padding-top: 15px;">
-              <a href="#" class=" btn btn-primary btn-lg">GRAB IT HERE NOW</a>
-          </div>
-
-        </div>
-        </div>
-</section>
-<!--/.OFFFER END-->
-  <section id="just-intro">
-      <div class="container">
-      <div class="row text-center pad-row">
-     <div class="col-md-4  col-sm-4">
-          <i class="fa fa-desktop fa-5x"></i>
-                     <h4> <strong>Sure Quique Menu</strong> </h4>
-                     <p>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     </p>
-                <a href="#" class="btn btn-primary" >Read Details</a>
-         </div>
-      <div class="col-md-4  col-sm-4">
-          <i class="fa fa-flask  fa-5x"></i>
-                     <h4> <strong>Sure Quique Menu</strong> </h4>
-                     <p>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     </p>
-                    <a href="#" class="btn btn-primary" >Read Details</a>
-         </div>
-     <div class="col-md-4  col-sm-4">
-           <i class="fa fa-pencil  fa-5x"></i>
-                     <h4> <strong>Sure Quique Menu</strong> </h4>
-                     <p>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     </p>
-                <a href="#" class="btn btn-primary" >Read Details</a>
-         </div>
-
-     </div>
-          </div>
-  </section>
-<!--/.JUST-INTRO END-->

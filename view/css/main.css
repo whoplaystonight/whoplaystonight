@@ -2615,3 +2615,26 @@ shortcodes page css
   display: inline-block;
   margin-left: 15px;
 }
+
+#videoMain{
+  height:700px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bannerMain{
+  height:300px;
+}
+
+#searcherMain{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#BackHome{
+  
+  float:right;
+
+}
