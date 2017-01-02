@@ -62,6 +62,6 @@
     </fieldset>
     <button type="button" id="submit_user" name="submit_user">Sign Up</button>
     <p>
-        <a href="https://plastmagysl.com/whoplaystonight/users/restore" id="linkRest">¿Has olvidado tu contraseña?</a>
+        <a href="https://localhost/whoplaystonight/users/restore" id="linkRest">¿Has olvidado tu contraseña?</a>
     </p>
 </form>

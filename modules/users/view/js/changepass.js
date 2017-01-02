@@ -37,9 +37,10 @@ function changepass() {
 
         var data = {"password": password, "token": token[6]};
         var change_JSON = JSON.stringify(data);
-        console.log(change_JSON)
+
         $.post(amigable("?module=users&function=update_pass"), {passw: change_JSON},
         function (response) {
+            console.log(response)
             if (response.success) {
                 window.location.href = response.redirect;
             }

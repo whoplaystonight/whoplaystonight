@@ -14,20 +14,21 @@ $(document).ready(function () {
             '</div>' +
             '</div>';
     $("#LoginModal").append(modalbase);
-
+    $("#Events").hide()
     ////**user menu*///
     var user = Tools.readCookie("user");
     if (user) {
-        //console.log(user); //yomogan|https://plastmagysl.com/JoinElderly//media/flowers.png|client|yomogan
         user = user.split("|");
         $("#LogProf").html("<a href=" + amigable('?module=user&function=profile') + "><img id='menuImg' class='icon rounded' src='" + user[1] + "'/>" + user[3] + "</a>");
         $("#LogProf").after("<li><a id='logout' href='#' >Log Out</a></li>");
+        $("#SignUp").hide();
         if ( (user[2] === "worker") || (user[2] === "client")  ) {
-            $("#LogProf").before("<li><a href=" + amigable('?module=ofertas') + ">Mis ofertas</a></li>")
+            //$("#LogProf").before("<li><a href=" + amigable('?module=ofertas') + ">Mis ofertas</a></li>")
         } else if (user[2] === "admin") {
-            $("#LogProf").before("<li><a href=" + amigable('?module=admin') + ">Administrar</a></li>")
+            //$("#LogProf").before("<li><a href=" + amigable('?module=products&function=events_form') + ">Events</a></li>")
+            $("#Events").show()
         }
-        $("head").append("<script src='https://plastmagysl.com/whoplaystonight/modules/users/view/js/logout.js'></script>");
+        $("head").append("<script src='https://localhost/whoplaystonight/modules/users/view/js/logout.js'></script>");
     }
 
     var url = window.location.href;

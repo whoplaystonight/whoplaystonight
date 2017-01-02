@@ -23,7 +23,7 @@ function enviar_email($arr) {
 
       case 'contact':
       $subject = 'Tu Petici&oacute;n a Who_Plays_Tonight ha sido enviada<br>';
-      $ruta = '<a href=' . 'https://plastmagysl.com/whoplaystonight'. '>aqu&iacute;</a>';
+      $ruta = '<a href=' . 'https://localhost/whoplaystonight'. '>aqu&iacute;</a>';
       $body = 'Para visitar nuestra web, pulsa ' . $ruta;
       break;
 

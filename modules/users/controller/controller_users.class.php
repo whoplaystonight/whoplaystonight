@@ -223,7 +223,7 @@ class controller_users {
             $json = array();
 
             // $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
-            $url = 'http://plastmagysl.com/repoCountryNamesByName.json';
+            $url = 'http://localhost/repoCountryNamesByName.json';
             $path_model=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/users/model/model/';
             $json = loadModel($path_model, "user_model", "obtain_countries", $url);
             // echo json_encode("load pais"); exit;

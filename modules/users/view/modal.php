@@ -1,7 +1,7 @@
 <!-- Modal -->
 <div class="modal-header">
     <script type="text/javascript" src="<?php echo USERS_JS_PATH; ?>login.js"></script>
-    <!-- <script type="text/javascript" src="https://plastmagysl.com/JoinElderly/modules/user/view/js/facebook.js"></script> -->
+    <!-- <script type="text/javascript" src="https://localhost/JoinElderly/modules/user/view/js/facebook.js"></script> -->
 
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <h4 class="modal-title" id="myModalLabel">Acceder</h4>
