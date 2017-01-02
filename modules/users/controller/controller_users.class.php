@@ -430,6 +430,7 @@ class controller_users {
             $url = amigable('?module=main&function=begin&aux=rest', true);
             $jsondata["success"] = true;
             $jsondata["redirect"] = $url;
+            echo json_encode($jsondata);
             exit;
         } else {
             $url = amigable('?module=main&function=begin&aux=503', true);

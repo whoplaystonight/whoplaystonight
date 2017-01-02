@@ -45,8 +45,7 @@ function changepass() {
                 window.location.href = response.redirect;
             }
         }, "json").fail(function (xhr, textStatus, errorThrown) {
-            console.log(xhr.responseText);
-            /*if( (xhr.responseJSON === undefined) || (xhr.responseJSON === null) ){
+            if( (xhr.responseJSON === undefined) || (xhr.responseJSON === null) ){
                 xhr.responseJSON = JSON.parse(xhr.responseText);
             }
             if (xhr.status === 0) {
@@ -63,7 +62,7 @@ function changepass() {
                 alert('Ajax request aborted.');
             } else {
                 alert('Uncaught Error: ' + xhr.responseText);
-            }*/
+            }
         });
     }
 }
