@@ -29,7 +29,7 @@ function validate_product($paramether) {
 
         'n_participants'=> array(
             'filter'=> FILTER_VALIDATE_REGEXP,
-            'options'=> array('regexp'=>'/^[1-9]{1,3}$/'),
+            'options'=> array('regexp'=>'/^0*([1-9]|1[0-9]|[1-9][0-9]|[1-9][0-9][0-9])$/'),
         ),//end of description array
 
 

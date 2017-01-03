@@ -18,7 +18,7 @@ $(document).ready(function () {
     ////**user menu*///
     var user = Tools.readCookie("user");
     if (user) {
-        //console.log(user); //yomogan|https://plastmagysl.com/JoinElderly//media/flowers.png|client|yomogan
+        
         user = user.split("|");
         $("#LogProf").html("<a href=" + amigable('?module=user&function=profile') + "><img id='menuImg' class='icon rounded' src='" + user[1] + "'/>" + user[3] + "</a>");
         $("#LogProf").after("<li><a id='logout' href='#' >Log Out</a></li>");

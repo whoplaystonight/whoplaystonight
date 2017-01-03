@@ -137,11 +137,10 @@ class controller_products{
               $callback="../../products/results_view";//"index.php?module=products&function=results_view"
               // echo json_encode($callback);
               // exit;
+
               $jsondata["success"]=true;
               $jsondata["redirect"]=$callback;
 
-              // $jsondata["success"]=true;
-              // $jsondata["redirect"]=$callback;
               echo json_encode($jsondata);
               exit;
 
