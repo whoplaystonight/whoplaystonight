@@ -442,7 +442,6 @@ class controller_users {
     }
     ///////////////// Verify
     function verify() {
-        echo json_encode(substr($_GET['aux'], 0, 3));exit;
         if (substr($_GET['aux'], 0, 3) == "Ver") {
             $arrArgument = array(
                 'column' => array('token'),
@@ -450,7 +449,6 @@ class controller_users {
                 'field' => array('activated'),
                 'new' => array('1')
             );
-            echo json_encode($arrArgument);exit;
             set_error_handler('ErrorHandler');
             try {
                 $value = loadModel(USERS_MODEL_MODEL, "user_model", "update", $arrArgument);

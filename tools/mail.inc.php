@@ -10,21 +10,21 @@ function enviar_email($arr) {
 
   switch ($arr['type']) {
     case 'alta':
-    $subject = 'Tu Alta en Who Plays Tonight';
+    $subject = 'Your sign up in Who Plays Tonight?';
     $ruta = "<a href='" . amigable("?module=users&function=verify&aux=A" . $arr['token'], true) . "'>aqu&iacute;</a>";
-    $body = 'Gracias por unirte a nuestra aplicaci&oacute;n<br> Para finalizar el registro, pulsa ' . $ruta;
+    $body = 'Thanks for sign up in Who Plays Tonight?<br> To complete the registration press ' . $ruta;
     break;
 
     case 'modificacion':
-      $subject = 'Tu Nuevo Password en Who_Plays_Tonight<br>';
+      $subject = 'Your new password in Who Plays Tonight?';
       $ruta = '<a href="' . amigable("?module=users&function=changepass&aux=" . $arr['token'], true) . '">aqu&iacute;</a>';
-      $body = 'Para recordar tu password pulsa ' . $ruta;
+      $body = 'To change your password press ' . $ruta;
       break;
 
       case 'contact':
-      $subject = 'Tu Petici&oacute;n a Who_Plays_Tonight ha sido enviada<br>';
+      $subject = 'Your petition to Who Plays Tonight? has been sent';
       $ruta = '<a href=' . 'https://localhost/whoplaystonight'. '>aqu&iacute;</a>';
-      $body = 'Para visitar nuestra web, pulsa ' . $ruta;
+      $body = 'To visit our web press here ' . $ruta;
       break;
 
       case 'admin':
@@ -41,7 +41,7 @@ function enviar_email($arr) {
     $html .= "<h4>". $subject ."</h4>";
     $html .= $body;
     $html .= "<br><br>";
-    $html .= "<p>Sent by Who_Plays_Tonight</p>";
+    $html .= "<p>Sent by Who Plays Tonight?</p>";
     $html .= "</body>";
     $html .= "</html>";
 
