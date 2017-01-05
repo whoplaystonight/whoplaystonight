@@ -6,8 +6,8 @@
 <div class="container">
     <form id="restore_form" name="restore_form" class="form-contact">
         <br />
-        <div class="form-title"><h2 class="form-contact-heading">¿Has olvidado la contraseña?</h2></div>
-        <p>Por favor introduce tu email. En breve recibirás un correo con un enlace para cambiar tu contraseña.</p>
+        <div class="form-title"><h2 class="form-contact-heading">Forgot your password?</h2></div>
+        <p>Please enter your email. You will receive a link to change your password.</p>
 
         <div class="control-group">
             <input type="text" id="inputEmail" name="inputEmail" placeholder="Email" class="input-block-level" maxlength="100">

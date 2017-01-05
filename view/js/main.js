@@ -7,5 +7,7 @@ function amigable(url) {
         var aux = url[i].split("=");
         link +=  "/"+aux[1];
     }
+
     return "https://localhost/whoplaystonight" + link;
+    //return "https://plastmagysl.com/whoplaystonight" + link;
 }

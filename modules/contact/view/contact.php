@@ -21,18 +21,18 @@
         <div class="control-group">
             <label for="sel1">Subject</label>
             <select class="form-control" id="inputSubject" name="inputSubject" title="Choose subject">
-                <option value="compra">Info relativa a tu compra</option>
-                <option value="evento">Celebra un evento con nosotros</option>
-                <option value="programacion">Contacta con nuestro dpto de programacion</option>
-                <option value="Trabaja">Trabaja con nosotros</option>
-                <option value="proyectos">Deseas proponernos proyectos</option>
-                <option value="sugerencias">Haznos sugerencias</option>
-                <option value="reclamaciones">Atendemos tus reclamaciones</option>
-                <option value="club">Club rural_shop</option>
-                <option value="sociales">Proyectos sociales</option>
-                <option value="festivos">Apertura de festivos</option>
-                <option value="novedades">Te avisamos de nuestras novedades</option>
-                <option value="diferente">Algo diferente</option>
+                <option value="compra">About your purchase</option>
+                <option value="evento">Celebrate an event with us</option>
+                <option value="programacion">Contact our programming department</option>
+                <option value="Trabaja">Work with us</option>
+                <option value="proyectos">Do you want to propose projects</option>
+                <option value="sugerencias">Make us suggestions</option>
+                <option value="reclamaciones">We handle your claims</option>
+                <option value="club">Club Who Plays Tonight?</option>
+                <option value="sociales">Social projects</option>
+                <option value="festivos">Holiday opening</option>
+                <option value="novedades">We'll let you know about our news</option>
+                <option value="diferente">Something different</option>
             </select>
         </div>
         <div class="control-group">

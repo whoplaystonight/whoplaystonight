@@ -11,20 +11,20 @@ function enviar_email($arr) {
   switch ($arr['type']) {
     case 'alta':
     $subject = 'Your sign up in Who Plays Tonight?';
-    $ruta = "<a href='" . amigable("?module=users&function=verify&aux=A" . $arr['token'], true) . "'>aqu&iacute;</a>";
+    $ruta = "<a href='" . amigable("?module=users&function=verify&aux=" . $arr['token'], true) . "'>here</a>";
     $body = 'Thanks for sign up in Who Plays Tonight?<br> To complete the registration press ' . $ruta;
     break;
 
     case 'modificacion':
       $subject = 'Your new password in Who Plays Tonight?';
-      $ruta = '<a href="' . amigable("?module=users&function=changepass&aux=" . $arr['token'], true) . '">aqu&iacute;</a>';
+      $ruta = '<a href="' . amigable("?module=users&function=changepass&aux=" . $arr['token'], true) . '">here</a>';
       $body = 'To change your password press ' . $ruta;
       break;
 
       case 'contact':
       $subject = 'Your petition to Who Plays Tonight? has been sent';
-      $ruta = '<a href=' . 'https://localhost/whoplaystonight'. '>aqu&iacute;</a>';
-      $body = 'To visit our web press here ' . $ruta;
+      $ruta = '<a href=' . 'https://localhost/whoplaystonight'. '>here</a>';
+      $body = 'To visit our web press ' . $ruta;
       break;
 
       case 'admin':

@@ -44,15 +44,13 @@ class userDAO {
 
         $type = $arrArgument['type'];
         // $type = "client";
-        if ($arrArgument['activated'])
-            $activated = $arrArgument['activated'];
-        else
-            $activated = 1;
-        $token = "";
 
-        $sql = "INSERT INTO users (username, email, name, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activated)
+        $activated = $arrArgument['activated'];
+        $token = $arrArgument['token'];
+
+        $sql = "INSERT INTO users (username, email, name, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activated, token)
         VALUES ('" . $username . "','" . $email ."','" . $name ."','" . $password . "','" . $birthday . "', '" . $rock . "', '" . $jazz . "', '" . $blues . "', '" .
-        $avatar . "','" . $country . "','" . $province . "','" . $town . "','" . $type . "', '" . $activated . "')";
+        $avatar . "','" . $country . "','" . $province . "','" . $town . "','" . $type . "', '" . $activated . "', '" . $token . "')";
 
         return $db->execute($sql);
     }

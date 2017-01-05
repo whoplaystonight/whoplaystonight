@@ -133,22 +133,60 @@ class controller_users {
                 'town' => $result['datos']['town'],
                 'name' => "",
                 'type' => "cliente",
-                'activated' => "1",
+                'activated' => "0",
+                'token' => ""
             );
 
             ///////////// Insert into BD /////////////
             $arrValue = false;
             $path_model = USERS_MODEL_MODEL;
-            $arrValue = loadModel($path_model, "user_model", "create_user", $arrArgument);
+            try {
+                //loadModel
+                $arrArgument['token'] = "Ver" . md5(uniqid(rand(), true));
+                $arrValue = loadModel($path_model, "user_model", "create_user", $arrArgument);
+            } catch (Exception $e) {
+                $arrValue = false;
+            }
+            restore_error_handler();
+            //$arrValue = loadModel($path_model, "user_model", "create_user", $arrArgument);
 
-            if ($arrValue)
+            if ($arrValue) {
+                //////////////// Envio del correo al usuario
+                $arrArgument = array(
+                    'token' => $arrArgument['token'],
+                    'email' => $arrArgument['email']
+                );
+
+                if (sendtoken($arrArgument, "alta")){
+                    $mensaje = "User has been successfully registered";
+                    //echo "Tu nueva contraseña ha sido enviada al email";
+                }
+                else {
+                    $mensaje = "Error in the register process. Try it later.";
+                    $jsondata["success"] = true;
+                    $jsondata["redirect"] = $url;
+                    echo json_encode($jsondata);
+                    //echo "Error en el servidor. Intentelo más tarde";
+                }
+            }
+            /*if ($arrValue){
                 $mensaje = "User has been successfully registered";
-            else
+                sendtoken($arrArgument, "alta");
+                $url = amigable('?module=main&function=begin&param=reg', true);
+                $jsondata["success"] = true;
+                $jsondata["redirect"] = $url;
+                echo json_encode($jsondata);
+                exit;
+            } else {
                 $mensaje = "Error in the register process. Try it later.";
-
+                $url = amigable('?module=main&function=begin&param=503', true);
+                $jsondata["success"] = true;
+                $jsondata["redirect"] = $url;
+                echo json_encode($jsondata);
+            }*/
             //redirigir a otra pagina con los datos de $arrArgument y $mensaje
             $_SESSION['user'] = $arrArgument;
-            $_SESSION['msje'] = $mensaje;
+            //$_SESSION['msje'] = $mensaje;
 
             // $callback = "index.php?module=users&function=result_users";
             $callback = "index.php?module=main";
