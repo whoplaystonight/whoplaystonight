@@ -145,7 +145,6 @@ class userDAO {
         }
 
         $sql = $sql1 . $fields . $sql2 . $sql;
-
         $stmt = $db->execute($sql);
         return $db->listing($stmt);
     }

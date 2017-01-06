@@ -516,4 +516,35 @@ class controller_users {
         loadView('modules/users/view/', 'profile.php');
     }
 
+    function profile_filler() {
+        if (isset($_POST['usuario'])) {
+            set_error_handler('ErrorHandler');
+            try {
+                $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "select", array(column => array('username'), like => array($_POST['usuario']), field => array('*')));
+            } catch (Exception $e) {
+                $arrValue = false;
+            }
+            restore_error_handler();
+
+            if ($arrValue) {
+                $jsondata["success"] = true;
+                $jsondata['user'] = $arrValue[0];
+                echo json_encode($jsondata);
+                exit();
+            } else {
+                $url = amigable('?module=main', true);
+                $jsondata["success"] = false;
+                $jsondata['redirect'] = $url;
+                echo json_encode($jsondata);
+                exit();
+            }
+        } else {
+            $url = amigable('?module=main', true);
+            $jsondata["success"] = false;
+            $jsondata['redirect'] = $url;
+            echo json_encode($jsondata);
+            exit();
+        }
+    }
+
 }
