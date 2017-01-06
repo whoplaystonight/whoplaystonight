@@ -368,10 +368,10 @@ $("#dropzone").dropzone({
     dictResponseError: "Ha ocurrido un error en el server",
     acceptedFiles: 'image/*,.jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.rar,application/pdf,.psd',
      init: function () {
-       //sconsole.log("estic dins del upload");
+       //console.log("estic dins del upload");
 
           this.on("success", function (file, response) {
-            //console.log(response);
+            // console.log(response);
             $("#progress").show();
             $("#bar").width('100%');
             $("#percent").html('100%');
@@ -522,7 +522,11 @@ $("#province").change(function(){
 //////////////////////////////////////////////////////////////////////////////////
 
 function validate_user(){
+  // console.log("Estic al validate user");
+  /*To remove the previous error message */
+  $(".error").remove();
   var result=true;
+
 
   var event_id=document.getElementById('event_id').value;
   var band_id=document.getElementById('band_id').value;
@@ -563,11 +567,8 @@ function validate_user(){
   var band_id_re=/^[B]{1}[0-9]{10}$/;
   var band_name_re=/^(.){1,50}$/;
   var description_re=/^(.){20,500}$/;
-  var n_participants_re=/^[1-9]{1,3}$/;
+  var n_participants_re=/^0*([1-9]|1[0-9]|[1-9][0-9]|[1-9][0-9][0-9])$/;
   var date_event_re=/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/;
-
-  /*To remove the previous error message */
-  $(".error").remove();
 
   /*CHECK event_id FIELD*/
   /*To avoid the field event_id is empty*/
@@ -665,18 +666,17 @@ function validate_user(){
 
 
 
-  /*CHECK n_participants FIELD*/
-  /*To avoid the field n_participants is empty*/
-  if($("#n_participants").val()===""||$("#n_participants").val()==="Enter number of particpants"){
-      $("#n_participants").focus().after("<span class='error'>Enter number of particpants</span>");
+  // /*CHECK n_participants FIELD*/
+  // /*To avoid the field n_participants is empty*/
+  if($("#n_participants").val()===""||$("#n_participants").val()==="Enter number of participants"){
+      $("#n_participants").focus().after("<span class='error'>Enter number of participants</span>");
       return false;
       /*to test the regular expression*/
   }else if(!n_participants_re.test($("#n_participants").val())){
       $("#n_participants").focus().after("<span class='error'>Number of participants must be between 1 and 999</span>");
       return false;
   }//end of else if
-  /*END OF FUNCTION*/
-
+  // /*END OF FUNCTION*/
 
 
   /*CHECK date_event FIELD*/
@@ -766,7 +766,7 @@ function validate_user(){
 ////////////////////////////////////////////////////////////////////////////////
 
   if(result){
-
+    //console.log("Estic al result");
     // if(country===null){
     //     country='default_country';
     // }else if(country.length===0){
@@ -797,6 +797,7 @@ function validate_user(){
 
     /*To convert the JavaScript array in a JSON string*/
     var event_data_JSON=JSON.stringify(data);
+    //console.log(event_data_JSON);
 
     //$.post('index.php?module=products&function=register_event'
     //$.post("../../products/register_event",

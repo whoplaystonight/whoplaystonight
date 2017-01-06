@@ -123,16 +123,16 @@ function cargarmap(arrArguments) {
     function showError(error){
         switch (error.code){
             case error.PERMISSION_DENIED:
-            x.innerHTML = "Denegada la peticion de Geolocalización en el navegador.";
+            x.innerHTML = "Geolocation request denied in browser.";
             break;
             case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "La información de la localización no esta disponible.";
+            x.innerHTML = "Location information is not available.";
             break;
             case error.TIMEOUT:
-            x.innerHTML = "El tiempo de petición ha expirado.";
+            x.innerHTML = "Request time has expired.";
             break;
             case error.UNKNOWN_ERROR:
-            x.innerHTML = "Ha ocurrido un error desconocido.";
+            x.innerHTML = "An unknown error has occurred.";
             break;
         }
     }

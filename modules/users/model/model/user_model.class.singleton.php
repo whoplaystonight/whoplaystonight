@@ -19,6 +19,7 @@ class user_model {
 
     public function create_user($arrArgument) {
         return $this->bll->create_user_BLL($arrArgument);
+
     }
 
     public function list_users(){
@@ -48,7 +49,7 @@ class user_model {
     public function select($arrArgument) {
         return $this->bll->select_BLL($arrArgument);
     }
-    
+
     public function update($arrArgument) {
         return $this->bll->update_BLL($arrArgument);
     }

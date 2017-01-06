@@ -30,9 +30,9 @@
         <div id="e_birthday"></div>
 
         <label>Interests:</label>
-        Rock <input type="checkbox" name="interests[]" class="messageCheckbox" value="rock">
-        Jazz  <input type="checkbox" name="interests[]" class="messageCheckbox" value="jazz">
-        Blues  <input type="checkbox" name="interests[]" class="messageCheckbox" value="blues">
+        Rock <input type="checkbox" name="interests[]" id="interests" class="messageCheckbox" value="rock">
+        Jazz  <input type="checkbox" name="interests[]" id="interests" class="messageCheckbox" value="jazz">
+        Blues  <input type="checkbox" name="interests[]" id="interests" class="messageCheckbox" value="blues">
         <div id="e_interests"></div>
 
         <!-- Dropzone img-->
@@ -61,7 +61,4 @@
 
     </fieldset>
     <button type="button" id="submit_user" name="submit_user">Sign Up</button>
-    <p>
-        <a href="https://plastmagysl.com/whoplaystonight/users/restore" id="linkRest">¿Has olvidado tu contraseña?</a>
-    </p>
 </form>

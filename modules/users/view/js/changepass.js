@@ -37,15 +37,15 @@ function changepass() {
 
         var data = {"password": password, "token": token[6]};
         var change_JSON = JSON.stringify(data);
-        console.log(change_JSON)
+
         $.post(amigable("?module=users&function=update_pass"), {passw: change_JSON},
         function (response) {
+            console.log(response)
             if (response.success) {
                 window.location.href = response.redirect;
             }
         }, "json").fail(function (xhr, textStatus, errorThrown) {
-            console.log(xhr.responseText);
-            /*if( (xhr.responseJSON === undefined) || (xhr.responseJSON === null) ){
+            if( (xhr.responseJSON === undefined) || (xhr.responseJSON === null) ){
                 xhr.responseJSON = JSON.parse(xhr.responseText);
             }
             if (xhr.status === 0) {
@@ -62,7 +62,7 @@ function changepass() {
                 alert('Ajax request aborted.');
             } else {
                 alert('Uncaught Error: ' + xhr.responseText);
-            }*/
+            }
         });
     }
 }

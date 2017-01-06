@@ -86,7 +86,7 @@ trabajo correcto con GIT, el sistema de control de versiones empleado.
       contiene los cambios de nuestra rama propia local) al master remoto.
 
 
-      PASO 4: FUNDIR RAMA MASTER CON RAMA LOCAL
+      PASO 4: FUNDIR RAMA MASTER CON RAMA PROPIA
 
       El último paso a realizar, solo en el caso de que queramos continuar
       trabajando con ella, es sincronizar los cambios de nuestra rama

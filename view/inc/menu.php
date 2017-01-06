@@ -24,13 +24,13 @@
         <nav class="link-effect-3" id="link-effect-3">
           <ul class="nav1 nav nav-wil">
             <li class="<?php if(isset($_GET['module']) === 'main'){echo 'active';} else {echo 'deactivate';}?>"><a  data-hover="Home" href="<?php amigable('?module=main');?>">Home</a></li>
-            <li class="<?php if(isset($_GET['module']) === 'products'){echo'active';} else {echo 'deactivate';}?>"><a data-hover="Events"  href="<?php amigable('?module=products&function=events_form');?>">Events</a></li>
+            <li id="Events" class="<?php if(isset($_GET['module']) === 'products'){echo'active';} else {echo 'deactivate';}?>"><a data-hover="Events"  href="<?php amigable('?module=products&function=events_form');?>">Events</a></li>
             <li class="<?php if(isset($_GET['module']) === 'events_front_end') {echo'active';} else {echo 'deactivate';}?>"><a data-hover="List Events" href="<?php amigable('?module=events_front_end&function=list_events');?>">List Events</a></li>
             <li class="<?php if(isset($_GET['module']) === 'services'){echo'active';} else {echo 'deactivate';}?>"><a data-hover="Services"  href="<?php amigable('?module=services'); ?>">Services</a></li>
             <li class="<?php if(isset($_GET['module']) === 'portfolio'){echo'active';} else {echo 'deactivate';}?>"><a data-hover="Portfolio" href="<?php amigable('?module=portfolio'); ?>">Portfolio</a></li>
             <li class="<?php if(isset($_GET['module']) === 'pricing'){echo'active';} else {echo 'deactivate';}?>"><a data-hover="Pricing" href="<?php amigable('?module=pricing'); ?>">Pricing</a></li>
             <li class="<?php if(isset($_GET['module']) === 'contact') {echo 'active';} else {echo 'deactivate';}?>"><a data-hover="Contact" href="<?php amigable('?module=contact&function=contact'); ?>">Contact</a></li>
-            <li id="LogProf" class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>"><a data-hover="Sign Up" href="<?php amigable('?module=users&function=sign_up'); ?>">Sign Up</a></li>
+            <li id="SignUp" class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>"><a data-hover="Sign Up" href="<?php amigable('?module=users&function=sign_up'); ?>">Sign Up</a></li>
             <li id="LogProf" class="<?php if(isset($_GET['module']) === 'users'){echo 'active';} else {echo 'deactivate';}?>"><a href="<?php amigable('?module=users&function=login'); ?>">Login</a></li>
             <li class="<?php if(isset($_GET['module']) === 'locate'){echo 'active';} else {echo 'deactivate';}?>"><a data-hover="Locate" href="<?php amigable('?module=locate&function=locate'); ?>">Locate</a></li>
           </ul>

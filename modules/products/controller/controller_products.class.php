@@ -49,8 +49,8 @@ class controller_products{
       // exit;
       $result_avatar = upload_files();
       $_SESSION['result_avatar']=$result_avatar;
-      //This is to debub on dropzone console.log()
-      //echo debugPHP($_SESSION['result_avatar']);
+      //This is to debug on dropzone console.log()
+      // echo debugPHP($_SESSION['result_avatar']);
     }
   }//enf of upload avatar function
 
@@ -137,11 +137,10 @@ class controller_products{
               $callback="../../products/results_view";//"index.php?module=products&function=results_view"
               // echo json_encode($callback);
               // exit;
+
               $jsondata["success"]=true;
               $jsondata["redirect"]=$callback;
 
-              // $jsondata["success"]=true;
-              // $jsondata["redirect"]=$callback;
               echo json_encode($jsondata);
               exit;
 

@@ -4,7 +4,7 @@
 <!-- <link rel="stylesheet" type="text/css" href="<?php echo LOCATE_CSS_PATH; ?>locate.css"> -->
 <link rel="stylesheet" type="text/css" href="https://plastmagysl.com/whoplaystonight/modules/locate/view/css/locate.css">
 
-<!-- <link rel="stylesheet" type="text/css" href="https://plastmagysl.com/whoplaystonight/modules/locate/view/css/locate.css">  -->
+<!-- <link rel="stylesheet" type="text/css" href="https://localhost/whoplaystonight/modules/locate/view/css/locate.css">  -->
 <section id="main" class="wrapper">
     <div class="container">
 

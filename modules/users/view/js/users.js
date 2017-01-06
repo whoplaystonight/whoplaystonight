@@ -1,6 +1,7 @@
 /* To fix Uncaugh Error: Dropzone already attached*/
 Dropzone.autoDiscover=false;
 $(document).ready(function() {
+
     $(function() {
         $("#birthday").datepicker({
             dateFormat: 'dd/mm/yy',
@@ -20,17 +21,21 @@ $(document).ready(function() {
     //Security control. If you go back the data is removed.
     remove_data_ifback();
 
+
     //Dropzone function //////////////////////////////////
     $("#dropzone").dropzone({
-        url: "modules/users/controller/controller_users.class.php?upload=true",
+        //url: "modules/users/controller/controller_users.class.php?upload=true",
+        url: amigable("?module=users&function=upload_user_avatar"),
+        params:{'upload':true},
         addRemoveLinks: true,
         maxFileSize: 1000,
         dictResponseError: "Ha ocurrido un error en el server",
         acceptedFiles: 'image/*,.jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.rar,application/pdf,.psd',
         init: function() {
+          //console.log("estic dins del upload");
             this.on("success", function(file, response) {
                 //alert(response);
-                console.log(response);
+                //console.log(response);
                 $("#progress").show();
                 $("#bar").width('100%');
                 $("#percent").html('100%');
@@ -52,10 +57,11 @@ $(document).ready(function() {
             var name = file.name;
             $.ajax({
                 type: "POST",
-                url: "modules/users/controller/controller_users.class.php?delete=true",
+                // url: "modules/users/controller/controller_users.class.php?delete=true",
+                url: amigable("?module=users&function=delete_user_avatar&delete=true"),
                 data: "filename=" + name,
                 success: function(data) {
-                    console.log("eliminar");
+                    //console.log("eliminar");
                     $("#progress").hide();
                     $('.msg').text('').removeClass('msg_ok');
                     $('.msg').text('').removeClass('msg_error');
@@ -341,16 +347,17 @@ function validate_user() {
         // $.post('index.php?module=users&function=alta_users&alta_users=true',{
         //     alta_users_json: data_users_JSON
         // },
-        $.post('../../users/alta_users/', { alta_users_json: data_users_JSON},
+        //$.post('../../users/alta_users/', { alta_users_json: data_users_JSON},
+        $.post(amigable("?module=users&function=alta_users"), { alta_users_json: data_users_JSON},
         function(response) {
-            console.log(typeof(response));
+            //console.log(typeof(response));
             //var responseObj = JSON.parse(response); //I convert the string to a object!
-            console.log(response);
+            //console.log(response);
             // console.log(response.success);
             if (response.success) {
                 alert("Thanks for signing up!");
-                remove_data();
-                // window.location.href = response.redirect;
+                //remove_data()
+                window.location.href = response.redirect;
             }
 
         }, "json").fail(function(xhr) {
@@ -394,22 +401,30 @@ function validate_user() {
 }
 
 function remove_data_ifback() {
-    $.get("modules/users/controller/controller_users.class.php?load_data=true",
+  //console.log("Estic al ifback");
+    //$.get("modules/users/controller/controller_users.class.php?load_data=true",
+    $.post(amigable("?module=users&function=load_data_users&aux=load_data"),
     function(response) {
         //alert(response.user);
-        console.log(response);
+        //console.log(response);
         if (response.user === "") {
             $("#username").val('');
             $("#email").val('');
             $("#password").val('');
             $("#birthday").val('');
             $("#dropzone").val('');
-            var inputElements = document.getElementsByClassName('interests');
-            for (var i = 0; i < inputElements.length; i++) {
-                if (inputElements[i].checked) {
-                    inputElements[i].checked = false;
-                }
-            }
+            // var inputElements = document.getElementsByClassName('interests');
+            // for (var i = 0; i < inputElements.length; i++) {
+            //     if (inputElements[i].checked) {
+            //         inputElements[i].checked = false;
+            //     }
+            // }
+            var interests_d=document.getElementsByName('interests[]');
+            for(i=0;i<interests_d.length; i++){
+              if(interests_d[i].checked){
+                interests_d[i].checked=false;
+              }//end if checked
+            }//end for
             //siempre que creemos un plugin debemos llamarlo, sino no funcionará
             $(this).fill_or_clean();
         } else {
@@ -418,16 +433,25 @@ function remove_data_ifback() {
             $("#password").val(response.user.password);
             $("#birthday").val(response.user.birthday);
             $("#dropzone").val(response.user.dropzone);
-
-            var inputElements = document.getElementsByClassName('messageCheckbox');
-            for (var i = 0; i < interests.length; i++) {
-                for (var j = 0; j < inputElements.length; j++) {
-                    if (interests[i] === inputElements[j])
-                    inputElements[j].checked = true;
-                }
-            }
+            // var inputElements = document.getElementsByClassName('messageCheckbox');
+            // for (var i = 0; i < interests.length; i++) {
+            //     for (var j = 0; j < inputElements.length; j++) {
+            //         if (interests[i] === inputElements[j])
+            //         inputElements[j].checked = true;
+            //     }
+            // }
+            var interests_checked=response.user.interests;
+            var interests_f=document.getElementsByName('interests[]');
+            for (var z=0; z<interests_checked.length;z++){
+              for(var y=0; y<interests_f.length;y++){
+                if(interests_checked[z]===interests_f[y]){
+                  interests_f[y].checked=true;
+                }//end if
+              }//end 2nd for
+            }//end 1st for
         }
     }, "json");
+
 }
 
 function remove_data() {
@@ -441,13 +465,16 @@ function remove_data() {
 
 function load_countries_v1() {
     // $.get( "index.php?module=users&function=load_pais&load_pais=true",
-    $.post( "../../users/load_pais/", { load_pais:true },
+    //$.post( "../../users/load_pais/", { load_pais:true },
+    $.post(amigable("?module=users&function=load_pais_users&aux=load_pais"),
+
         function( response ) {
             // console.log(response);
             if(response.match(/error/)){
                 load_countries_v2("../../resources/ListOfCountryNamesByName.json");
             }else{
-                load_countries_v2("../../users/load_pais/", { load_pais:true });
+                //load_countries_v2("../../users/load_pais/", { load_pais:true });
+                load_countries_v2("../../resources/ListOfCountryNamesByName.json");
             }
     })
     .fail(function(response) {
@@ -471,7 +498,8 @@ function load_countries_v2(cad) {
 
 function load_provincias_v1() { //provinciasypoblaciones.xml - xpath
     // $.get( "index.php?module=users&function=load_provincias&load_provincias=true",
-    $.post( "../../users/load_provincias_users/", { load_provincias:true },
+    // $.post( "../../users/load_provincias_users/", { load_provincias:true },
+    $.post(amigable("?module=users&function=load_provincias_users&aux=load_provincias"),
     function( response ) {
         // console.log(response);
         $("#provincia").empty();
@@ -516,7 +544,8 @@ function load_provincias_v2() {
 function load_poblaciones_v1(prov) { //provinciasypoblaciones.xml - xpath
     var datos = { idPoblac : prov  };
     // $.post("index.php?module=users&function=load_poblaciones&load_poblaciones=true", datos, function(response) {
-    $.post("../../users/load_poblaciones/", datos, function(response) {
+    //$.post("../../users/load_poblaciones/", datos, function(response) {
+    $.post(amigable("?module=users&function=load_poblaciones"),datos, function(response){
         // console.log(response);
         var json = JSON.parse(response);
         var poblaciones=json.poblaciones;

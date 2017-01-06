@@ -21,9 +21,7 @@ class userDAO {
         $password = $arrArgument['password'];
         $birthday = $arrArgument['birthday'];
         $interests = $arrArgument['interests'];
-        // $avatar = $arrArgument['avatar'];
-        $avatar = "";
-        // $avatar = $_SESSION["nombre_fichero"];
+        $avatar = $arrArgument['avatar'];
 
         $rock = 0;
         $jazz = 0;
@@ -44,15 +42,13 @@ class userDAO {
 
         $type = $arrArgument['type'];
         // $type = "client";
-        if ($arrArgument['activated'])
-            $activated = $arrArgument['activated'];
-        else
-            $activated = 1;
-        $token = "";
 
-        $sql = "INSERT INTO users (username, email, name, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activated)
-        VALUES ('" . $username . "','" . $email ."','" . $name ."','" . $password . "','" . $birthday . "', '" . $rock . "', '" . $jazz . "', '" . $blues . "', '" .
-        $avatar . "','" . $country . "','" . $province . "','" . $town . "','" . $type . "', '" . $activated . "')";
+        $activated = $arrArgument['activated'];
+        $token = $arrArgument['token'];
+
+        $sql = "INSERT INTO users (username, email, name, password, birthday, rock, jazz, blues, avatar, country, province, town, type, activated, token)
+       VALUES ('" . $username . "','" . $email ."','" . $name ."','" . $password . "','" . $birthday . "', '" . $rock . "', '" . $jazz . "', '" . $blues . "', '" .
+       $avatar . "','" . $country . "','" . $province . "','" . $town . "','" . $type . "', '" . $activated . "', '" . $token . "')";
 
         return $db->execute($sql);
     }

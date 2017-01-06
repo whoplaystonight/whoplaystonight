@@ -98,17 +98,28 @@ class controller_users {
             }
         }
     }
-    // if ((isset($_GET["upload"])) && ($_GET["upload"] == true)) {
-    //     $result_avatar = upload_files();
-    //     $_SESSION["result_avatar"] = $result_avatar;
-    // }
-    //
-    // if ((isset($_POST['alta_users_json']))) {
-    //     // echo json_encode("Hola mundo");exit;
-    //     alta_users();
-    // }
+
+    public function upload_user_avatar(){
+      // echo debugPHP("estic al upload_user_avatar");
+      // exit;
+      if ((isset($_POST["upload"])) && ($_POST["upload"] == true)) {
+          // echo json_encode("Estic al if del upload_avatar");
+          // exit;
+          $result_avatar = upload_files();
+          $_SESSION["result_avatar"] = $result_avatar;
+          //This is to debub on dropzone console.log()
+          echo debugPHP($_SESSION['result_avatar']);
+      }
+
+    }
+
 
     public function alta_users() {
+        // echo json_encode("Estic a alta_users");
+        // exit;
+        if ((isset($_POST['alta_users_json']))) {
+
+
         $jsondata = array();
         $usersJSON = json_decode($_POST["alta_users_json"], true);
         $result = validate_user($usersJSON);
@@ -128,27 +139,49 @@ class controller_users {
                 'password' => password_hash($result['datos']['password'], PASSWORD_BCRYPT),
                 'birthday' => $result['datos']['birthday'],
                 'interests' => $result['datos']['interests'],
+                'avatar' =>$result_avatar['datos'],
                 'country' => $result['datos']['country'],
                 'province' => $result['datos']['province'],
                 'town' => $result['datos']['town'],
                 'name' => "",
                 'type' => "cliente",
-                'activated' => "1",
+                'activated' => "0",
+                'token' => ""
             );
 
             ///////////// Insert into BD /////////////
             $arrValue = false;
             $path_model = USERS_MODEL_MODEL;
-            $arrValue = loadModel($path_model, "user_model", "create_user", $arrArgument);
+            try {
+                //loadModel
+                $arrArgument['token'] = "Ver" . md5(uniqid(rand(), true));
+                $arrValue = loadModel($path_model, "user_model", "create_user", $arrArgument);
+            } catch (Exception $e) {
+                $arrValue = false;
+            }
+            restore_error_handler();
+            //$arrValue = loadModel($path_model, "user_model", "create_user", $arrArgument);
 
-            if ($arrValue)
-                $mensaje = "User has been successfully registered";
-            else
-                $mensaje = "Error in the register process. Try it later.";
+            if ($arrValue) {
+                //////////////// Envio del correo al usuario
+                $arrArgument = array(
+                    'token' => $arrArgument['token'],
+                    'email' => $arrArgument['email']
+                );
 
-            //redirigir a otra pagina con los datos de $arrArgument y $mensaje
-            $_SESSION['user'] = $arrArgument;
-            $_SESSION['msje'] = $mensaje;
+                if (sendtoken($arrArgument, "alta")){
+                    $mensaje = "User has been successfully registered";
+                } else {
+                    $mensaje = "Error in the register process. Try it later.";
+                    $jsondata["success"] = true;
+                    $jsondata["redirect"] = $url;
+                    echo json_encode($jsondata);
+                }
+            }
+
+             $_SESSION['user'] = $arrArgument;
+            // $_SESSION['msje'] = $mensaje;
+
 
             // $callback = "index.php?module=users&function=result_users";
             $callback = "index.php?module=main";
@@ -167,24 +200,34 @@ class controller_users {
             header('HTTP/1.0 400 Bad error');
             echo json_encode($jsondata);
         }
+      }
     }
 
-    // if (isset($_GET["delete"]) && $_GET["delete"] == true) {
-    //     $result = remove_files();
-    //     //echo json_encode($result);
-    //     //exit;
-    //
-    //     $_SESSION['result_avatar'] = array();
-    //     $result = remove_files();
-    //     if ($result === true) {
-    //         echo json_encode(array("res" => true));
-    //     } else {
-    //         echo json_encode(array("res" => false));
-    //     }
-    //     //echo remove_files();
-    //     // echo remove_files();
-    // }
-    //
+
+    public function delete_user_avatar(){
+
+      if (isset($_GET["aux"]) && $_GET["aux"] == true) {
+
+          $result = remove_files();
+          //echo json_encode($result);
+          //exit;
+
+          $_SESSION['result_avatar'] = array();
+          $result = remove_files();
+          if ($result === true) {
+              echo json_encode(array("res" => true));
+          } else {
+              echo json_encode(array("res" => false));
+          }
+          //echo remove_files();
+          // echo remove_files();
+      }
+
+    }
+
+
+
+
     // ///////////////////////////// Load data //////////////////////////////////
     // if (isset($_GET["load"]) && $_GET["load"] == true) {
     //     $jsondata = array();
@@ -201,29 +244,33 @@ class controller_users {
     //     echo json_encode($jsondata);
     //     exit;
     // }
-    //
+
+
     // //////////////// load_data (deletes the form when you go back) ////////////////
-    // if ((isset($_GET["load_data"])) && ($_GET["load_data"] == true)) {
-    //     $jsondata = array();
-    //
-    //     if (isset($_SESSION['user'])) {
-    //         $jsondata["user"] = $_SESSION['user'];
-    //         echo json_encode($jsondata);
-    //         exit;
-    //     } else {
-    //         $jsondata["user"] = "";
-    //         echo json_encode($jsondata);
-    //         exit;
-    //     }
-    // }
+    public function load_data_users(){
+
+      if ((isset($_GET["aux"])) && ($_GET["aux"] == "load_data")) {
+          $jsondata = array();
+
+          if (isset($_SESSION['user'])) {
+              $jsondata["user"] = $_SESSION['user'];
+              echo json_encode($jsondata);
+              exit;
+          } else {
+              $jsondata["user"] = "";
+              echo json_encode($jsondata);
+              exit;
+          }
+      }
+    }
+
 
     //////////// load_pais //////////////
     public function load_pais_users(){
         if((isset($_POST["load_pais"])) && ($_POST["load_pais"] == true)){
             $json = array();
-
-            // $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
-            $url = 'http://plastmagysl.com/repoCountryNamesByName.json';
+            $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
+            //$url = 'http://plastmagysl.com/repoCountryNamesByName.json';
             $path_model=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/users/model/model/';
             $json = loadModel($path_model, "user_model", "obtain_countries", $url);
             // echo json_encode("load pais"); exit;
@@ -240,7 +287,7 @@ class controller_users {
 
     //////////// load_provincias //////////////
     public function load_provincias_users(){
-        if((isset($_POST["load_provincias"])) && ($_POST["load_provincias"] == true)){
+        if((isset($_GET["aux"])) && ($_GET["aux"] == "load_provincias")){
             // echo json_encode("pizzapizza");exit;
             $jsondata = array();
             $json = array();
@@ -430,6 +477,7 @@ class controller_users {
             $url = amigable('?module=main&function=begin&aux=rest', true);
             $jsondata["success"] = true;
             $jsondata["redirect"] = $url;
+            echo json_encode($jsondata);
             exit;
         } else {
             $url = amigable('?module=main&function=begin&aux=503', true);
@@ -441,7 +489,6 @@ class controller_users {
     }
     ///////////////// Verify
     function verify() {
-        echo json_encode(substr($_GET['aux'], 0, 3));exit;
         if (substr($_GET['aux'], 0, 3) == "Ver") {
             $arrArgument = array(
                 'column' => array('token'),
@@ -449,7 +496,6 @@ class controller_users {
                 'field' => array('activated'),
                 'new' => array('1')
             );
-            echo json_encode($arrArgument);exit;
             set_error_handler('ErrorHandler');
             try {
                 $value = loadModel(USERS_MODEL_MODEL, "user_model", "update", $arrArgument);
