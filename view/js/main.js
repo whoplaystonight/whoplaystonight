@@ -8,6 +8,6 @@ function amigable(url) {
         link +=  "/"+aux[1];
     }
    return "https://plastmagysl.com/whoplaystonight" + link;
-  //return "https://localhost/whoplaystonight" + link;
+   //return "https://localhost/whoplaystonight" + link;
 
 }

@@ -368,10 +368,10 @@ $("#dropzone").dropzone({
     dictResponseError: "Ha ocurrido un error en el server",
     acceptedFiles: 'image/*,.jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.rar,application/pdf,.psd',
      init: function () {
-       //sconsole.log("estic dins del upload");
+       //console.log("estic dins del upload");
 
           this.on("success", function (file, response) {
-            //console.log(response);
+            // console.log(response);
             $("#progress").show();
             $("#bar").width('100%');
             $("#percent").html('100%');
