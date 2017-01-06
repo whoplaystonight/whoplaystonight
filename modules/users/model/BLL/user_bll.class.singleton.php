@@ -22,6 +22,7 @@ class user_bll {
 
     public function create_user_BLL($arrArgument) {
         return $this->dao->create_user_DAO($this->db, $arrArgument);
+
     }
 
     public function list_users_BLL(){

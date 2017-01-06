@@ -13,8 +13,20 @@
         <uri>login2</uri>
     </function>
     <function>
+        <name>upload_user_avatar</name>
+        <uri>upload_user_avatar</uri>
+    </function>
+    <function>
         <name>alta_users</name>
         <uri>alta_users</uri>
+    </function>
+    <function>
+        <name>delete_user_avatar</name>
+        <uri>delete_user_avatar</uri>
+    </function>
+    <function>
+        <name>load_data_users</name>
+        <uri>load_data_users</uri>
     </function>
     <function>
         <name>load_pais_users</name>

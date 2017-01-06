@@ -49,8 +49,8 @@ class controller_products{
       // exit;
       $result_avatar = upload_files();
       $_SESSION['result_avatar']=$result_avatar;
-      //This is to debub on dropzone console.log()
-      //echo debugPHP($_SESSION['result_avatar']);
+      //This is to debug on dropzone console.log()
+      // echo debugPHP($_SESSION['result_avatar']);
     }
   }//enf of upload avatar function
 
