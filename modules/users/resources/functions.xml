@@ -52,4 +52,8 @@
         <name>update_pass</name>
         <uri>update_pass</uri>
     </function>
+    <function>
+        <name>profile</name>
+        <uri>profile</uri>
+    </function>
 </functions>

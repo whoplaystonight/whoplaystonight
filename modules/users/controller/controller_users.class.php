@@ -465,4 +465,9 @@ class controller_users {
             }
         }
     }
+
+    public function profile() {
+        loadView('modules/users/view/', 'profile.php');
+    }
+
 }
