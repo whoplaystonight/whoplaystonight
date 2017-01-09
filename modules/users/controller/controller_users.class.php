@@ -179,7 +179,7 @@ class controller_users {
                 }
             }
 
-             $_SESSION['user'] = $arrArgument;
+            //  $_SESSION['user'] = $arrArgument;
             // $_SESSION['msje'] = $mensaje;
 
 
