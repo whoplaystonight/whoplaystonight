@@ -547,4 +547,56 @@ class controller_users {
         }
     }
 
+    function modify() {
+        $jsondata = array();
+        $userJSON = json_decode($_POST['mod_user_json'], true);
+        $result = validate_modify($userJSON);
+        if ($result['resultado']) {
+            $arrArgument = array(
+                'username' => $result['datos']['username'],
+                'email' => $result['datos']['email'],
+                'birthday' => $result['datos']['birthday'],
+                'rock' => $result['datos']['rock'],
+                'jazz' => $result['datos']['jazz'],
+                'blues' => $result['datos']['blues']
+            );
+
+            $arrayDatos = array(
+                column => array('username'),
+                like => array($arrArgument['username'])
+            );
+            $j = 0;
+            foreach ($arrArgument as $clave => $valor) {
+                if ($valor != "") {
+                    $arrayDatos['field'][$j] = $clave;
+                    $arrayDatos['new'][$j] = $valor;
+                    $j++;
+                }
+            }
+
+            set_error_handler('ErrorHandler');
+            try {
+                $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "update", $arrayDatos);
+            } catch (Exception $e) {
+                $arrValue = false;
+            }
+            restore_error_handler();
+            if ($arrValue) {
+                $url = amigable('?module=users&function=profile&param=done', true);
+                $jsondata["success"] = true;
+                $jsondata["redirect"] = $url;
+                echo json_encode($jsondata);
+                exit;
+            } else {
+                $jsondata["success"] = false;
+                $jsondata["redirect"] = $url = amigable('?module=users&function=profile&param=503', true);
+                echo json_encode($jsondata);
+            }
+        } else {
+            $jsondata["success"] = false;
+            $jsondata['datos'] = $result;
+            echo json_encode($jsondata);
+        }
+    }
+
 }

@@ -158,17 +158,16 @@ class userDAO {
 
         for ($j = 0; $j < $i; $j++) {
             if ($i > 1 && $j != 0)
-            $change.=", ";
+                $change.=", ";
             $change .= $arrArgument['field'][$j] . "='" . $arrArgument['new'][$j] . "'";
         }
         for ($l = 0; $l < $k; $l++) {
             if ($k > 1 && $l != 0)
-            $sql.=" AND ";
+                $sql.=" AND ";
             $sql .= $arrArgument['column'][$l] . " like '" . $arrArgument['like'][$l] . "'";
         }
 
         $sql = $sql1 . $change . $sql2 . $sql;
-
         return $db->execute($sql);
     }
 }

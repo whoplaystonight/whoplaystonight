@@ -72,4 +72,8 @@
         <name>profile_filler</name>
         <uri>profile_filler</uri>
     </function>
+    <function>
+        <name>modify</name>
+        <uri>modify</uri>
+    </function>
 </functions>

@@ -2,7 +2,6 @@
 Dropzone.autoDiscover=false;
 $(document).ready(function() {
     var user = Tools.readCookie("user");
-    console.log("I'm in the profile");
 
     if (user) {
         user = user.split("|");
@@ -11,13 +10,13 @@ $(document).ready(function() {
             console.log(response);
             if (response.success) {
                 fill(response.user);
-                load_countries_v1(response.user['pais']);
-                if (response.user['pais'] === "ES") {
-                    $("#provincia").prop('disabled', false);
-                    $("#poblacion").prop('disabled', false);
-                    load_provincias_v1(response.user['provincia']);
-                    load_poblaciones_v1(response.user['provincia'], response.user['poblacion']);
-                }
+                // load_countries_v1(response.user['pais']);
+                // if (response.user['pais'] === "ES") {
+                //     $("#provincia").prop('disabled', false);
+                //     $("#poblacion").prop('disabled', false);
+                //     load_provincias_v1(response.user['provincia']);
+                //     load_poblaciones_v1(response.user['provincia'], response.user['poblacion']);
+                // }
             } else {
                 window.location.href = response.redirect;
             }
@@ -43,6 +42,10 @@ $(document).ready(function() {
         alert('Please log in');
     }
 
+    $('#change_data').click(function () {
+        validate_modify_user();
+    });
+
     $(function() {
         $("#birthday").datepicker({
             dateFormat: 'dd/mm/yy',
@@ -61,73 +64,73 @@ $(document).ready(function() {
 
 
     //Dropzone function //////////////////////////////////
-    $("#dropzone").dropzone({
-        //url: "modules/users/controller/controller_users.class.php?upload=true",
-        url: amigable("?module=users&function=upload_user_avatar"),
-        params:{'upload':true},
-        addRemoveLinks: true,
-        maxFileSize: 1000,
-        dictResponseError: "Ha ocurrido un error en el server",
-        acceptedFiles: 'image/*,.jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.rar,application/pdf,.psd',
-        init: function() {
-          //console.log("estic dins del upload");
-            this.on("success", function(file, response) {
-                //alert(response);
-                //console.log(response);
-                $("#progress").show();
-                $("#bar").width('100%');
-                $("#percent").html('100%');
-                $('.msg').text('').removeClass('msg_error');
-                $('.msg').text('Success Upload image!!').addClass('msg_ok').animate({
-                    'right': '300px'
-                }, 300);
-            });
-        },
-        complete: function(file) {
-            //if(file.status == "success"){
-            //alert("El archivo se ha subido correctamente: " + file.name);
-            //}
-        },
-        error: function(file) {
-            //alert("Error subiendo el archivo " + file.name);
-        },
-        removedfile: function(file, serverFileName) {
-            var name = file.name;
-            $.ajax({
-                type: "POST",
-                // url: "modules/users/controller/controller_users.class.php?delete=true",
-                url: amigable("?module=users&function=delete_user_avatar&delete=true"),
-                data: "filename=" + name,
-                success: function(data) {
-                    //console.log("eliminar");
-                    $("#progress").hide();
-                    $('.msg').text('').removeClass('msg_ok');
-                    $('.msg').text('').removeClass('msg_error');
-                    $("#e_avatar").html("");
-
-                    var json = JSON.parse(data);
-                    if (json.res === true) {
-                        var element;
-                        if ((element = file.previewElement) !== null) {
-                            element.parentNode.removeChild(file.previewElement);
-                            //alert("Imagen eliminada: " + name);
-                            //console.log("dentro2");
-                        } else {
-                            false;
-                        }
-                    } else { //json.res == false, elimino la imagen también
-                        var element;
-                        if ((element = file.previewElement) !== null) {
-                            element.parentNode.removeChild(file.previewElement);
-                        } else {
-                            false;
-                        }
-                    }
-                }
-            });
-        }
-    });
-    // End dropzone
+    // $("#dropzone").dropzone({
+    //     //url: "modules/users/controller/controller_users.class.php?upload=true",
+    //     url: amigable("?module=users&function=upload_user_avatar"),
+    //     params:{'upload':true},
+    //     addRemoveLinks: true,
+    //     maxFileSize: 1000,
+    //     dictResponseError: "Ha ocurrido un error en el server",
+    //     acceptedFiles: 'image/*,.jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.rar,application/pdf,.psd',
+    //     init: function() {
+    //       //console.log("estic dins del upload");
+    //         this.on("success", function(file, response) {
+    //             //alert(response);
+    //             //console.log(response);
+    //             $("#progress").show();
+    //             $("#bar").width('100%');
+    //             $("#percent").html('100%');
+    //             $('.msg').text('').removeClass('msg_error');
+    //             $('.msg').text('Success Upload image!!').addClass('msg_ok').animate({
+    //                 'right': '300px'
+    //             }, 300);
+    //         });
+    //     },
+    //     complete: function(file) {
+    //         //if(file.status == "success"){
+    //         //alert("El archivo se ha subido correctamente: " + file.name);
+    //         //}
+    //     },
+    //     error: function(file) {
+    //         //alert("Error subiendo el archivo " + file.name);
+    //     },
+    //     removedfile: function(file, serverFileName) {
+    //         var name = file.name;
+    //         $.ajax({
+    //             type: "POST",
+    //             // url: "modules/users/controller/controller_users.class.php?delete=true",
+    //             url: amigable("?module=users&function=delete_user_avatar&delete=true"),
+    //             data: "filename=" + name,
+    //             success: function(data) {
+    //                 //console.log("eliminar");
+    //                 $("#progress").hide();
+    //                 $('.msg').text('').removeClass('msg_ok');
+    //                 $('.msg').text('').removeClass('msg_error');
+    //                 $("#e_avatar").html("");
+    //
+    //                 var json = JSON.parse(data);
+    //                 if (json.res === true) {
+    //                     var element;
+    //                     if ((element = file.previewElement) !== null) {
+    //                         element.parentNode.removeChild(file.previewElement);
+    //                         //alert("Imagen eliminada: " + name);
+    //                         //console.log("dentro2");
+    //                     } else {
+    //                         false;
+    //                     }
+    //                 } else { //json.res == false, elimino la imagen también
+    //                     var element;
+    //                     if ((element = file.previewElement) !== null) {
+    //                         element.parentNode.removeChild(file.previewElement);
+    //                     } else {
+    //                         false;
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //     }
+    // });
+    // // End dropzone
 
     var email_reg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
     var date_reg = /(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/]((175[7-9])|(17[6-9][0-9])|(1[8-9][0-9][0-9])|([2-9][0-9][0-9][0-9]))/i;
@@ -152,13 +155,6 @@ $(document).ready(function() {
         }
     });
 
-    $("#password").keyup(function() {
-        if ($(this).val() !== "" && pass_reg.test($(this).val())) {
-            $(".error").fadeOut();
-            return false;
-        }
-    });
-
     $("#birthday").keyup(function() {
         if ($(this).val() !== "" && date_reg.test($(this).val())) {
             $(".error").fadeOut();
@@ -166,44 +162,226 @@ $(document).ready(function() {
         }
     });
 
-
-
     // 3 combobox
-    load_countries_v1();
-    $("#provincia").empty();
-    $("#provincia").append('<option value="" selected="selected">Selecciona una Provincia</option>');
-    $("#provincia").prop('disabled', true);
-    $("#poblacion").empty();
-    $("#poblacion").append('<option value="" selected="selected">Selecciona una Poblacion</option>');
-    $("#poblacion").prop('disabled', true);
-
-    $("#pais").change(function() {
-        var pais = $(this).val();
-        var provincia = $("#provincia");
-        var poblacion = $("#poblacion");
-
-        if(pais !== 'ES'){
-            provincia.prop('disabled', true);
-            poblacion.prop('disabled', true);
-            $("#provincia").empty();
-            $("#poblacion").empty();
-        }else{
-            provincia.prop('disabled', false);
-            poblacion.prop('disabled', false);
-            load_provincias_v1();
-        }
-    });
-
-    $("#provincia").change(function() {
-        var prov = $(this).val();
-        if(prov > 0){
-            load_poblaciones_v1(prov);
-        }else{
-            $("#poblacion").prop('disabled', false);
-        }
-    });
+    // load_countries_v1();
+    // $("#provincia").empty();
+    // $("#provincia").append('<option value="" selected="selected">Selecciona una Provincia</option>');
+    // $("#provincia").prop('disabled', true);
+    // $("#poblacion").empty();
+    // $("#poblacion").append('<option value="" selected="selected">Selecciona una Poblacion</option>');
+    // $("#poblacion").prop('disabled', true);
+    //
+    // $("#pais").change(function() {
+    //     var pais = $(this).val();
+    //     var provincia = $("#provincia");
+    //     var poblacion = $("#poblacion");
+    //
+    //     if(pais !== 'ES'){
+    //         provincia.prop('disabled', true);
+    //         poblacion.prop('disabled', true);
+    //         $("#provincia").empty();
+    //         $("#poblacion").empty();
+    //     }else{
+    //         provincia.prop('disabled', false);
+    //         poblacion.prop('disabled', false);
+    //         load_provincias_v1();
+    //     }
+    // });
+    //
+    // $("#provincia").change(function() {
+    //     var prov = $(this).val();
+    //     if(prov > 0){
+    //         load_poblaciones_v1(prov);
+    //     }else{
+    //         $("#poblacion").prop('disabled', false);
+    //     }
+    // });
 
 });
+
+function fill(user) {
+    $("#name").append(user['username']);
+    $("#username").val(user['username']);
+    $("#email").val(user['email']);
+    $("#birthday").val(user['birthday']);
+    if(user['rock'] == 1){
+        $('#rock').attr('checked', true);
+    } else {
+        $('#rock').attr('checked', false);
+    }
+    if(user['jazz'] == 1){
+        $('#jazz').attr('checked', true);
+    } else {
+        $('#jazz').attr('checked', false);
+    }
+    if(user['blues'] == 1){
+        $('#blues').attr('checked', true);
+    } else {
+        $('#blues').attr('checked', false);
+    }
+}
+
+function validate_modify_user() {
+    console.log("Modify");
+    var result = true;
+
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var birthday = document.getElementById("birthday").value;
+    var rock = document.getElementById("rock").checked;
+    var jazz = document.getElementById("jazz").checked;
+    var blues = document.getElementById("blues").checked;
+
+    // var pais = document.getElementById("pais").value;
+    // var provincia = document.getElementById("provincia").value;
+    // var poblacion = document.getElementById("poblacion").value;
+    // console.log(username + email + password + birthday + interests + pais + provincia + poblacion);
+    var email_reg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+    var date_reg = /(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/]((175[7-9])|(17[6-9][0-9])|(1[8-9][0-9][0-9])|([2-9][0-9][0-9][0-9]))/i;
+    var address_reg = /^[a-z0-9- -.]+$/i;
+    var pass_reg = /^[0-9a-zA-Z]{6,32}$/;
+    var string_reg = /^[A-Za-z]{2,30}$/;
+    var longstring_reg = /^[A-Za-z]{2,300}$/;
+    var usr_reg = /^[0-9a-zA-Z]{2,20}$/;
+    var number_reg = /^\d+$/;
+
+    $(".error").remove();
+    if ($("#username").val() === "" || $("#username").val() == "Introduce username") {
+        $("#username").focus().after("<span class='error'>Introduce username</span>");
+        result = false;
+        return false;
+    } else if (!string_reg.test($("#username").val())) {
+        $("#username").focus().after("<span class='error'>Name must be 2 to 30 letters</span>");
+        result = false;
+        return false;
+    }
+
+    if ($("#email").val() === "") {
+        $("#email").focus().after("<span class='error'>Introduce your email</span>");
+        result = false;
+        return false;
+    } else if (!email_reg.test($("#email").val())) {
+        $("#email").focus().after("<span class='error'>Your eamil must be valid</span>");
+        result = false;
+        return false;
+    }
+
+    if ($("#birthday").val() === "" || $("#birthday").val() == "Introduce your birthday") {
+        $("#birthday").focus().after("<span class='error'>Introduce your birthday</span>");
+        result = false;
+        return false;
+    } else if (!date_reg.test($("#birthday").val())) {
+        $("#birthday").focus().after("<span class='error'>Your birthday is incorrect</span>");
+        result = false;
+        return false;
+    }
+
+    // if ($("#pais").val() === "" || $("#pais").val() == "Selecciona un Pais") {
+    //     $("#pais").focus().after("<span class='error'>Introduce pais</span>");
+    //     result = false;
+    //     return false;
+    // }
+    //
+    // if ($("#provincia").val() === "" || $("#provincia").val() == "Selecciona una Provincia") {
+    //     if ($("#pais").val() == "ES"){
+    //         $("#provincia").focus().after("<span class='error'>Introduce provincia</span>");
+    //         result = false;
+    //         return false;
+    //     } else {
+    //         $("#provincia").val("default_provincia");
+    //     }
+    // }
+    //
+    // if ($("#poblacion").val() === "" || $("#poblacion").val() == "Selecciona una Poblacion") {
+    //     if ($("#pais").val() == "ES"){
+    //         $("#poblacion").focus().after("<span class='error'>Introduce poblacion</span>");
+    //         result = false;
+    //         return false;
+    //     } else {
+    //         $("#poblacion").val("default_poblacion");
+    //     }
+    // }
+
+    if (result) {
+        console.log("Validated by JS")
+        // if (provincia == null) {
+        //     provincia = '';
+        // } else if (provincia.length == 0) {
+        //     provincia = '';
+        // } else if (provincia === 'Selecciona una Provincia') {
+        //     return '';
+        // }
+        //
+        // if (poblacion == null) {
+        //     poblacion = '';
+        // } else if (poblacion.length == 0) {
+        //     poblacion = '';
+        // } else if (poblacion === 'Selecciona una Poblacion') {
+        //     return '';
+        // }
+        //
+        var data = {"username": username, "email": email, "birthday": birthday, "rock": rock, "jazz": jazz, "blues": blues};
+        var data_users_JSON = JSON.stringify(data);
+        console.log(data_users_JSON)
+        $.post(amigable('?module=users&function=modify'), {mod_user_json: data_users_JSON},
+        function (response) {
+            // if (response.success) {
+            //     window.location.href = response.redirect;
+            // }
+            window.location.href = "?module=users&function=profile";
+            // } else {
+            //     if (response.redirect) {
+            //         window.location.href = response.redirect;
+            //     }
+                // if (response["datos"]["nombre"] !== undefined && response["datos"]["nombre"] !== null) {
+                //     $("#inputName").focus().after("<span class='error'>" + response["datos"]["nombre"] + "</span>");
+                // }
+                // if (response["datos"]["apellidos"] !== undefined && response["datos"]["apellidos"] !== null) {
+                //     $("#inputSurn").focus().after("<span class='error'>" + response["datos"]["apellidos"] + "</span>");
+                // }
+                // if (response["datos"]["password"] !== undefined && response["datos"]["password"] !== null) {
+                //     $("#inputPass").focus().after("<span class='error'>" + response.error.password + "</span>");
+                // }
+                // if (response["datos"]["date_birthday"] !== undefined && response["datos"]["date_birthday"] !== null) {
+                //     $("#inputBirth").focus().after("<span class='error'>" + response["datos"]["date_birthday"] + "</span>");
+                // }
+                // if (response["datos"]["bank"] !== undefined && response["datos"]["bank"] !== null) {
+                //     $("#inputBank").focus().after("<span class='error'>" + response["datos"]["bank"] + "</span>");
+                // }
+                // if (response["datos"]["dni"] !== undefined && response["datos"]["dni"] !== null) {
+                //     $("#inputDni").focus().after("<span class='error'>" + response["datos"]["dni"] + "</span>");
+                // }
+                // if (response["datos"]["pais"] !== undefined && response["datos"]["pais"] !== null) {
+                //     $("#pais").focus().after("<span class='error'>" + response["datos"]["pais"] + "</span>");
+                // }
+                // if (response["datos"]["provincia"] !== undefined && response["datos"]["provincia"] !== null) {
+                //     $("#provincia").focus().after("<span class='error'>" + response["datos"]["provincia"] + "</span>");
+                // }
+                // if (response["datos"]["poblacion"] !== undefined && response["datos"]["poblacion"] !== null) {
+                //     $("#poblacion").focus().after("<span class='error'>" + response["datos"]["poblacion"] + "</span>");
+                // }
+            // }
+        }/*, "json"*/).fail(function (xhr, textStatus, errorThrown) {
+            if (xhr.responseJSON === undefined || xhr.responseJSON === null)
+                xhr.responseJSON = JSON.parse(xhr.responseText);
+            if (xhr.status === 0) {
+                alert('Not connect: Verify Network.');
+            } else if (xhr.status === 404) {
+                alert('Requested page not found [404]');
+            } else if (xhr.status === 500) {
+                alert('Internal Server Error [500].');
+            } else if (textStatus === 'parsererror') {
+                alert('Requested JSON parse failed.');
+            } else if (textStatus === 'timeout') {
+                alert('Time out error.');
+            } else if (textStatus === 'abort') {
+                alert('Ajax request aborted.');
+            } else {
+                alert('Uncaught Error: ' + xhr.responseText);
+            }
+        });
+    }
+}
 
 jQuery.fn.fill_or_clean = function() {
     this.each(function() {
