@@ -139,7 +139,7 @@ class controller_users {
                 'password' => password_hash($result['datos']['password'], PASSWORD_BCRYPT),
                 'birthday' => $result['datos']['birthday'],
                 'interests' => $result['datos']['interests'],
-                'avatar' =>$result_avatar['datos'],
+                'avatar' => "https://plastmagysl.com/whoplaystonight/" . $result_avatar['datos'],
                 'country' => $result['datos']['country'],
                 'province' => $result['datos']['province'],
                 'town' => $result['datos']['town'],
@@ -551,7 +551,9 @@ class controller_users {
         $jsondata = array();
         $userJSON = json_decode($_POST['mod_user_json'], true);
         $result = validate_modify($userJSON);
+
         if ($result['resultado']) {
+
             $arrArgument = array(
                 'username' => $result['datos']['username'],
                 'email' => $result['datos']['email'],
@@ -560,21 +562,22 @@ class controller_users {
                 'jazz' => $result['datos']['jazz'],
                 'blues' => $result['datos']['blues']
             );
-
+            // echo json_encode($arrArgument);exit;
+            set_error_handler('ErrorHandler');
             $arrayDatos = array(
                 column => array('username'),
                 like => array($arrArgument['username'])
             );
             $j = 0;
             foreach ($arrArgument as $clave => $valor) {
-                if ($valor != "") {
+                if ($valor !== "") {
                     $arrayDatos['field'][$j] = $clave;
                     $arrayDatos['new'][$j] = $valor;
                     $j++;
                 }
             }
 
-            set_error_handler('ErrorHandler');
+
             try {
                 $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "update", $arrayDatos);
             } catch (Exception $e) {

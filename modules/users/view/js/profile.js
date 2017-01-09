@@ -325,43 +325,45 @@ function validate_modify_user() {
         console.log(data_users_JSON)
         $.post(amigable('?module=users&function=modify'), {mod_user_json: data_users_JSON},
         function (response) {
-            // if (response.success) {
-            //     window.location.href = response.redirect;
+            console.log(response);
+            if (response.success) {
+                window.location.href = response.redirect;
             // }
-            window.location.href = "?module=users&function=profile";
-            // } else {
-            //     if (response.redirect) {
-            //         window.location.href = response.redirect;
-            //     }
-                // if (response["datos"]["nombre"] !== undefined && response["datos"]["nombre"] !== null) {
-                //     $("#inputName").focus().after("<span class='error'>" + response["datos"]["nombre"] + "</span>");
-                // }
-                // if (response["datos"]["apellidos"] !== undefined && response["datos"]["apellidos"] !== null) {
-                //     $("#inputSurn").focus().after("<span class='error'>" + response["datos"]["apellidos"] + "</span>");
-                // }
-                // if (response["datos"]["password"] !== undefined && response["datos"]["password"] !== null) {
-                //     $("#inputPass").focus().after("<span class='error'>" + response.error.password + "</span>");
-                // }
-                // if (response["datos"]["date_birthday"] !== undefined && response["datos"]["date_birthday"] !== null) {
-                //     $("#inputBirth").focus().after("<span class='error'>" + response["datos"]["date_birthday"] + "</span>");
-                // }
-                // if (response["datos"]["bank"] !== undefined && response["datos"]["bank"] !== null) {
-                //     $("#inputBank").focus().after("<span class='error'>" + response["datos"]["bank"] + "</span>");
-                // }
-                // if (response["datos"]["dni"] !== undefined && response["datos"]["dni"] !== null) {
-                //     $("#inputDni").focus().after("<span class='error'>" + response["datos"]["dni"] + "</span>");
-                // }
-                // if (response["datos"]["pais"] !== undefined && response["datos"]["pais"] !== null) {
-                //     $("#pais").focus().after("<span class='error'>" + response["datos"]["pais"] + "</span>");
-                // }
-                // if (response["datos"]["provincia"] !== undefined && response["datos"]["provincia"] !== null) {
-                //     $("#provincia").focus().after("<span class='error'>" + response["datos"]["provincia"] + "</span>");
-                // }
-                // if (response["datos"]["poblacion"] !== undefined && response["datos"]["poblacion"] !== null) {
-                //     $("#poblacion").focus().after("<span class='error'>" + response["datos"]["poblacion"] + "</span>");
-                // }
-            // }
-        }/*, "json"*/).fail(function (xhr, textStatus, errorThrown) {
+
+            // window.location.href = "?module=users&function=profile";
+            } else {
+                if (response.redirect) {
+                    window.location.href = response.redirect;
+                }
+                if (response["datos"]["nombre"] !== undefined && response["datos"]["nombre"] !== null) {
+                    $("#inputName").focus().after("<span class='error'>" + response["datos"]["nombre"] + "</span>");
+                }
+                if (response["datos"]["apellidos"] !== undefined && response["datos"]["apellidos"] !== null) {
+                    $("#inputSurn").focus().after("<span class='error'>" + response["datos"]["apellidos"] + "</span>");
+                }
+                if (response["datos"]["password"] !== undefined && response["datos"]["password"] !== null) {
+                    $("#inputPass").focus().after("<span class='error'>" + response.error.password + "</span>");
+                }
+                if (response["datos"]["date_birthday"] !== undefined && response["datos"]["date_birthday"] !== null) {
+                    $("#inputBirth").focus().after("<span class='error'>" + response["datos"]["date_birthday"] + "</span>");
+                }
+                if (response["datos"]["bank"] !== undefined && response["datos"]["bank"] !== null) {
+                    $("#inputBank").focus().after("<span class='error'>" + response["datos"]["bank"] + "</span>");
+                }
+                if (response["datos"]["dni"] !== undefined && response["datos"]["dni"] !== null) {
+                    $("#inputDni").focus().after("<span class='error'>" + response["datos"]["dni"] + "</span>");
+                }
+                if (response["datos"]["pais"] !== undefined && response["datos"]["pais"] !== null) {
+                    $("#pais").focus().after("<span class='error'>" + response["datos"]["pais"] + "</span>");
+                }
+                if (response["datos"]["provincia"] !== undefined && response["datos"]["provincia"] !== null) {
+                    $("#provincia").focus().after("<span class='error'>" + response["datos"]["provincia"] + "</span>");
+                }
+                if (response["datos"]["poblacion"] !== undefined && response["datos"]["poblacion"] !== null) {
+                    $("#poblacion").focus().after("<span class='error'>" + response["datos"]["poblacion"] + "</span>");
+                }
+            }
+        }, "json").fail(function (xhr, textStatus, errorThrown) {
             if (xhr.responseJSON === undefined || xhr.responseJSON === null)
                 xhr.responseJSON = JSON.parse(xhr.responseText);
             if (xhr.status === 0) {
