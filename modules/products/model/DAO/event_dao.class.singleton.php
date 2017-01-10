@@ -98,8 +98,8 @@ class event_dao{
 
    $sql="INSERT INTO event ( event_id,band_id, band_name, description, country, province, town,type_event,n_participants,date_event,type_access,date_ticket, openning,start, end,poster)
          VALUES('$event_id','$band_id','$band_name','$description','$country','$province','$town','$type_event','$n_participants','$date_event','$type_access_string','$date_ticket','$openning','$start','$end','$avatar')";
-  //  echo json_encode($sql);
-  //  exit;
+   // echo json_encode($sql);
+   // exit;
    return $db->execute($sql);
 
  }//end of create_event_DAO

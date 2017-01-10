@@ -139,7 +139,7 @@ class controller_users {
                 'password' => password_hash($result['datos']['password'], PASSWORD_BCRYPT),
                 'birthday' => $result['datos']['birthday'],
                 'interests' => $result['datos']['interests'],
-                'avatar' =>$result_avatar['datos'],
+                'avatar' => "https://plastmagysl.com/whoplaystonight/" . $result_avatar['datos'],
                 'country' => $result['datos']['country'],
                 'province' => $result['datos']['province'],
                 'town' => $result['datos']['town'],
@@ -179,7 +179,8 @@ class controller_users {
                 }
             }
 
-            //$_SESSION['user'] = $arrArgument;
+
+            //  $_SESSION['user'] = $arrArgument;
             // $_SESSION['msje'] = $mensaje;
 
 
@@ -511,4 +512,95 @@ class controller_users {
             }
         }
     }
+
+    public function profile() {
+        loadView('modules/users/view/', 'profile.php');
+    }
+
+    function profile_filler() {
+        if (isset($_POST['usuario'])) {
+            set_error_handler('ErrorHandler');
+            try {
+                $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "select", array(column => array('username'), like => array($_POST['usuario']), field => array('*')));
+            } catch (Exception $e) {
+                $arrValue = false;
+            }
+            restore_error_handler();
+
+            if ($arrValue) {
+                $jsondata["success"] = true;
+                $jsondata['user'] = $arrValue[0];
+                echo json_encode($jsondata);
+                exit();
+            } else {
+                $url = amigable('?module=main', true);
+                $jsondata["success"] = false;
+                $jsondata['redirect'] = $url;
+                echo json_encode($jsondata);
+                exit();
+            }
+        } else {
+            $url = amigable('?module=main', true);
+            $jsondata["success"] = false;
+            $jsondata['redirect'] = $url;
+            echo json_encode($jsondata);
+            exit();
+        }
+    }
+
+    function modify() {
+        $jsondata = array();
+        $userJSON = json_decode($_POST['mod_user_json'], true);
+        $result = validate_modify($userJSON);
+
+        if ($result['resultado']) {
+
+            $arrArgument = array(
+                'username' => $result['datos']['username'],
+                'email' => $result['datos']['email'],
+                'birthday' => $result['datos']['birthday'],
+                'rock' => $result['datos']['rock'],
+                'jazz' => $result['datos']['jazz'],
+                'blues' => $result['datos']['blues']
+            );
+            // echo json_encode($arrArgument);exit;
+            set_error_handler('ErrorHandler');
+            $arrayDatos = array(
+                column => array('username'),
+                like => array($arrArgument['username'])
+            );
+            $j = 0;
+            foreach ($arrArgument as $clave => $valor) {
+                if ($valor !== "") {
+                    $arrayDatos['field'][$j] = $clave;
+                    $arrayDatos['new'][$j] = $valor;
+                    $j++;
+                }
+            }
+
+
+            try {
+                $arrValue = loadModel(USERS_MODEL_MODEL, "user_model", "update", $arrayDatos);
+            } catch (Exception $e) {
+                $arrValue = false;
+            }
+            restore_error_handler();
+            if ($arrValue) {
+                $url = amigable('?module=users&function=profile&param=done', true);
+                $jsondata["success"] = true;
+                $jsondata["redirect"] = $url;
+                echo json_encode($jsondata);
+                exit;
+            } else {
+                $jsondata["success"] = false;
+                $jsondata["redirect"] = $url = amigable('?module=users&function=profile&param=503', true);
+                echo json_encode($jsondata);
+            }
+        } else {
+            $jsondata["success"] = false;
+            $jsondata['datos'] = $result;
+            echo json_encode($jsondata);
+        }
+    }
+
 }
