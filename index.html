@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-app lang="en">
+
+<head>
+    <title>WhoPlaysTonight</title>
+    <!--for-mobile-apps-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta property="og:title" content="Vide" />
+    <meta name="keywords" content="Roasting Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <!--//for-mobile-apps-->
+    <!-- <script src="js/jquery.min.js"></script> -->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="frontend/view/img/favicon.png" />
+
+    <!--JS-->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="frontend/view/js/main.js"></script>
+    <script type="text/javascript" src="frontend/view/js/cookies.js"></script>
+    <!--<script type="text/javascript" src="frontend/modules/users/view/js/init.js"></script>-->
+
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="frontend/view/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="frontend/view/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="frontend/view/css/main.css" rel="stylesheet">
+    <link href="frontend/modules/cookies/view/css/cookies.css" rel="stylesheet" />
+
+    <!-- FONTAWESOME STYLE CSS -->
+    <link href="frontend/view/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700,300,200' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div ng-include='"frontend/view/inc/menu.view.html"'></div>
+    <div ng-view></div>
+    <div ng-include='"frontend/view/inc/accept_cookies.view.html"'></div>
+    <div ng-include='"frontend/view/inc/footer.view.html"'></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-cookies.min.js"></script>
+
+    <script src="frontend/app.js"></script>
+
+    <script src="frontend/modules/main/controller/main.controller.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="frontend/apiconnector.js"></script>
+    <script src="frontend/common.service.js"></script>
+
+
+    <script src="frontend/modules/cookies/controller/cookies.controller.js"></script>
+    <script src="frontend/modules/cookies/services/accept_cookies.services.js"></script>
+    <script src="frontend/modules/cookies/services/localstorage_acceptcookies.services.js"></script>
