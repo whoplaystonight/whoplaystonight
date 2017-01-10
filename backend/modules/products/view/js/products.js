@@ -805,7 +805,7 @@ function validate_user(){
             {register_event_json:event_data_JSON},
     function(response){
 
-      //console.log(response);
+    //   console.log(response);
       if(response.success){
         window.location.href=response.redirect;
       }

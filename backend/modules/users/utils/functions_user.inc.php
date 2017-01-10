@@ -56,6 +56,44 @@ function validate_user($value) {
     return $return = array('resultado' => $valido, 'error' => $error, 'datos' => $result);
 }
 
+function validate_modify($value) {
+    $error = array();
+    $valido = true;
+    $filter = array(
+        'username' => array(
+            'filter' => FILTER_VALIDATE_REGEXP,
+            'options' => array('regexp' => '/^[A-Za-z]{2,30}$/')
+        ),
+        'email' => array(
+            'filter' => FILTER_VALIDATE_REGEXP,
+            'options' => array('regexp' => '/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/')
+        ),
+        'birthday' => array(
+            'filter' => FILTER_VALIDATE_REGEXP,
+            'options' => array('regexp' => '/^[a-z0-9- -.]/')
+        ),
+    );
+    $result = filter_var_array($value, $filter);
+    $result['rock'] = $value['rock'];
+    $result['jazz'] = $value['jazz'];
+    $result['blues'] = $value['blues'];
+    if (!$result['username']) {
+        $error['username'] = 'Username must be 2 to 30 letters';
+        $valido = false;
+    }
+    if (!$result['birthday']) {
+        if ($_POST['birthday'] == "") {
+            $error['birthday'] = "birthday can't be empty";
+            $valido = false;
+        } else {
+            $error['birthday'] = 'format date error (dd/mm/yyyy)';
+            $valido = false;
+        }
+    }
+
+    return $return = array('resultado' => $valido, 'error' => $error, 'datos' => $result);
+}
+
 function validate_dates($enter_date, $obsolescence_date) {
     $day1 = substr($enter_date, 0, 2);
     $month1 = substr($enter_date, 3, 2);

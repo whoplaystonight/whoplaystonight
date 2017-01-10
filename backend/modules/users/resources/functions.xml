@@ -64,4 +64,16 @@
         <name>update_pass</name>
         <uri>update_pass</uri>
     </function>
+    <function>
+        <name>profile</name>
+        <uri>profile</uri>
+    </function>
+    <function>
+        <name>profile_filler</name>
+        <uri>profile_filler</uri>
+    </function>
+    <function>
+        <name>modify</name>
+        <uri>modify</uri>
+    </function>
 </functions>
