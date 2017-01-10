@@ -1,0 +1,370 @@
+error loadView general|08.01.2017 08:40:50| User: |images|response400
+error loadView general|08.01.2017 08:40:50| User: |view|response400
+error loadView general|08.01.2017 08:40:50| User: |view|response400
+error loadView general|08.01.2017 08:40:50| User: |view|response400
+error loadView general|08.01.2017 08:40:50| User: |view|response400
+error loadView general|08.01.2017 08:40:50| User: |view|response400
+error loadView general|08.01.2017 08:40:53| User: |main|response400
+error loadView general|08.01.2017 08:40:53| User: |main|response400
+error loadView general|08.01.2017 08:40:53| User: |view|response400
+error loadView general|08.01.2017 08:40:53| User: |view|response400
+error loadView general|08.01.2017 08:40:53| User: |view|response400
+error loadView general|08.01.2017 08:40:53| User: |view|response400
+error loadView general|08.01.2017 08:40:53| User: |view|response400
+error loadView general|08.01.2017 08:40:53| User: |main|response400
+error loadView general|08.01.2017 08:40:54| User: |view|response400
+error loadView general|08.01.2017 08:40:54| User: |events_front_end/list_events|response400
+error loadView general|08.01.2017 08:40:56| User: |services|response400
+error loadView general|08.01.2017 08:40:57| User: |services|response400
+error loadView general|08.01.2017 08:40:57| User: |view|response400
+error loadView general|08.01.2017 08:40:57| User: |services|response400
+error loadView general|08.01.2017 08:45:16| User: |main|response400
+error loadView general|08.01.2017 08:45:17| User: |view|response400
+error loadView general|08.01.2017 08:45:17| User: |view|response400
+error loadView general|08.01.2017 08:45:17| User: |view|response400
+error loadView general|08.01.2017 08:45:17| User: |view|response400
+error loadView general|08.01.2017 08:45:17| User: |view|response400
+error loadView general|08.01.2017 08:45:17| User: |main|response400
+error loadView general|08.01.2017 08:51:36| User: |view|response400
+ERROR: [8] Undefined variable: fields
+Notice on line 48 in file /var/www/html/whoplaystonight/modules/locate/model/dao/locate_dao.class.singleton.php
+|08.01.2017 08:51:36| User: |locate|response200
+error loadView general|08.01.2017 08:51:36| User: |locate/locate|response400
+error loadView general|09.01.2017 10:59:47| User: |images|response400
+error loadView general|09.01.2017 10:59:47| User: |view|response400
+error loadView general|09.01.2017 10:59:47| User: |view|response400
+error loadView general|09.01.2017 10:59:47| User: |view|response400
+error loadView general|09.01.2017 10:59:47| User: |view|response400
+error loadView general|09.01.2017 10:59:47| User: |view|response400
+error loadView general|09.01.2017 10:59:50| User: |view|response400
+error loadView general|09.01.2017 10:59:50| User: |users/sign_up|response400
+error loadView general|09.01.2017 11:00:54| User: |view|response400
+error loadView general|09.01.2017 11:00:54| User: |users/sign_up|response400
+error loadView general|09.01.2017 11:08:02| User: |main|response400
+error loadView general|09.01.2017 11:08:03| User: |view|response400
+error loadView general|09.01.2017 11:08:03| User: |view|response400
+error loadView general|09.01.2017 11:08:03| User: |view|response400
+error loadView general|09.01.2017 11:08:03| User: |view|response400
+error loadView general|09.01.2017 11:08:03| User: |view|response400
+error loadView general|09.01.2017 11:08:03| User: |main|response400
+error loadView general|09.01.2017 11:08:10| User: |view|response400
+error loadView general|09.01.2017 11:08:10| User: |users/sign_up|response400
+error loadView general|09.01.2017 11:14:11| User: |main|response400
+error loadView general|09.01.2017 11:14:11| User: |main|response400
+error loadView general|09.01.2017 11:14:12| User: |view|response400
+error loadView general|09.01.2017 11:14:12| User: |view|response400
+error loadView general|09.01.2017 11:14:12| User: |view|response400
+error loadView general|09.01.2017 11:14:12| User: |view|response400
+error loadView general|09.01.2017 11:14:12| User: |view|response400
+error loadView general|09.01.2017 11:14:12| User: |main|response400
+error loadView general|09.01.2017 11:14:15| User: |main|response400
+error loadView general|09.01.2017 11:14:15| User: |view|response400
+error loadView general|09.01.2017 11:14:15| User: |view|response400
+error loadView general|09.01.2017 11:14:15| User: |view|response400
+error loadView general|09.01.2017 11:14:15| User: |view|response400
+error loadView general|09.01.2017 11:14:15| User: |view|response400
+error loadView general|09.01.2017 11:14:15| User: |main|response400
+error loadView general|09.01.2017 11:14:20| User: |main|response400
+error loadView general|09.01.2017 11:14:20| User: |main|response400
+error loadView general|09.01.2017 11:14:20| User: |view|response400
+error loadView general|09.01.2017 11:14:20| User: |view|response400
+error loadView general|09.01.2017 11:14:20| User: |view|response400
+error loadView general|09.01.2017 11:14:20| User: |view|response400
+error loadView general|09.01.2017 11:14:20| User: |view|response400
+error loadView general|09.01.2017 11:14:20| User: |main|response400
+error loadView general|09.01.2017 11:14:22| User: |main|response400
+error loadView general|09.01.2017 11:14:23| User: |main|response400
+error loadView general|09.01.2017 11:14:23| User: |view|response400
+error loadView general|09.01.2017 11:14:23| User: |view|response400
+error loadView general|09.01.2017 11:14:23| User: |view|response400
+error loadView general|09.01.2017 11:14:23| User: |view|response400
+error loadView general|09.01.2017 11:14:23| User: |view|response400
+error loadView general|09.01.2017 11:14:23| User: |main|response400
+error loadView general|09.01.2017 11:14:25| User: |view|response400
+error loadView general|09.01.2017 11:14:25| User: |users/sign_up|response400
+error loadView general|09.01.2017 11:15:24| User: |images|response400
+error loadView general|09.01.2017 11:15:24| User: |images|response400
+error loadView general|09.01.2017 11:15:24| User: |view|response400
+error loadView general|09.01.2017 11:15:24| User: |view|response400
+error loadView general|09.01.2017 11:15:24| User: |view|response400
+error loadView general|09.01.2017 11:15:24| User: |view|response400
+error loadView general|09.01.2017 11:15:24| User: |view|response400
+error loadView general|09.01.2017 11:15:35| User: |view|response400
+error loadView general|09.01.2017 11:15:35| User: |users/sign_up|response400
+ERROR: [8] Undefined index: inputName
+Notice on line 51 in file /var/www/html/whoplaystonight/tools/mail.inc.php
+|09.01.2017 11:16:35| User: ||response200
+error loadView general|09.01.2017 11:16:39| User: |view|response400
+error loadView general|09.01.2017 11:16:39| User: |users/sign_up|response400
+error loadView general|09.01.2017 11:28:53| User: |view|response400
+error loadView general|09.01.2017 11:28:53| User: |users/sign_up|response400
+error loadView general|09.01.2017 11:29:40| User: |images|response400
+error loadView general|09.01.2017 11:29:40| User: |images|response400
+error loadView general|09.01.2017 11:29:40| User: |view|response400
+error loadView general|09.01.2017 11:29:40| User: |view|response400
+error loadView general|09.01.2017 11:29:40| User: |view|response400
+error loadView general|09.01.2017 11:29:40| User: |view|response400
+error loadView general|09.01.2017 11:29:40| User: |view|response400
+error loadView general|09.01.2017 11:32:40| User: |view|response400
+error loadView general|09.01.2017 11:32:40| User: |users/sign_up|response400
+ERROR: [8] Undefined index: inputName
+Notice on line 51 in file /var/www/html/whoplaystonight/tools/mail.inc.php
+|09.01.2017 11:33:24| User: ||response200
+error loadView general|09.01.2017 11:33:27| User: |view|response400
+error loadView general|09.01.2017 11:33:27| User: |users/sign_up|response400
+ERROR: [8] Undefined variable: change
+Notice on line 163 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 11:36:01| User: ||response200
+ERROR: [8] Undefined variable: sql
+Notice on line 168 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 11:36:01| User: ||response200
+error loadView general|09.01.2017 11:36:01| User: |users/verify|response400
+error loadView general|09.01.2017 11:36:02| User: |users/verify/Verd57de38bcb4afc3e0b2bcc52d64eea59|response400
+error loadView general|09.01.2017 11:36:02| User: |users/verify|response400
+error loadView general|09.01.2017 11:36:02| User: |view|response400
+error loadView general|09.01.2017 11:36:02| User: |view|response400
+error loadView general|09.01.2017 11:36:02| User: |view|response400
+error loadView general|09.01.2017 11:36:02| User: |view|response400
+error loadView general|09.01.2017 11:36:02| User: |view|response400
+error loadView general|09.01.2017 11:44:21| User: |images|response400
+error loadView general|09.01.2017 11:44:21| User: |images|response400
+error loadView general|09.01.2017 11:44:21| User: |view|response400
+error loadView general|09.01.2017 11:44:21| User: |view|response400
+error loadView general|09.01.2017 11:44:21| User: |view|response400
+error loadView general|09.01.2017 11:44:21| User: |view|response400
+error loadView general|09.01.2017 11:44:21| User: |view|response400
+error loadView general|09.01.2017 11:44:32| User: |view|response400
+error loadView general|09.01.2017 11:44:32| User: |users/sign_up|response400
+ERROR: [8] Undefined index: inputName
+Notice on line 51 in file /var/www/html/whoplaystonight/tools/mail.inc.php
+|09.01.2017 11:45:38| User: ||response200
+error loadView general|09.01.2017 11:45:42| User: |view|response400
+error loadView general|09.01.2017 11:45:42| User: |users/sign_up|response400
+error loadView general|09.01.2017 11:47:26| User: |view|response400
+error loadView general|09.01.2017 11:47:26| User: |users/sign_up|response400
+error loadView general|09.01.2017 11:47:39| User: |images|response400
+error loadView general|09.01.2017 11:47:39| User: |view|response400
+error loadView general|09.01.2017 11:47:39| User: |view|response400
+error loadView general|09.01.2017 11:47:39| User: |view|response400
+error loadView general|09.01.2017 11:47:39| User: |view|response400
+error loadView general|09.01.2017 11:47:39| User: |view|response400
+error loadView general|09.01.2017 11:48:03| User: |view|response400
+error loadView general|09.01.2017 11:48:03| User: |users/sign_up|response400
+ERROR: [8] Undefined index: inputName
+Notice on line 51 in file /var/www/html/whoplaystonight/tools/mail.inc.php
+|09.01.2017 11:48:51| User: ||response200
+error loadView general|09.01.2017 11:48:54| User: |view|response400
+error loadView general|09.01.2017 11:48:54| User: |users/sign_up|response400
+error loadView general|09.01.2017 11:49:37| User: |view|response400
+error loadView general|09.01.2017 11:49:37| User: |users/sign_up|response400
+ERROR: [8] Undefined index: inputName
+Notice on line 51 in file /var/www/html/whoplaystonight/tools/mail.inc.php
+|09.01.2017 11:50:48| User: ||response200
+error loadView general|09.01.2017 11:50:52| User: |view|response400
+error loadView general|09.01.2017 11:50:52| User: |users/sign_up|response400
+error loadView general|09.01.2017 12:09:53| User: |images|response400
+error loadView general|09.01.2017 12:09:53| User: |images|response400
+error loadView general|09.01.2017 12:09:53| User: |view|response400
+error loadView general|09.01.2017 12:09:53| User: |view|response400
+error loadView general|09.01.2017 12:09:53| User: |view|response400
+error loadView general|09.01.2017 12:09:53| User: |view|response400
+error loadView general|09.01.2017 12:09:53| User: |view|response400
+error loadView general|09.01.2017 12:10:05| User: |view|response400
+error loadView general|09.01.2017 12:10:06| User: |users/sign_up|response400
+error loadView general|09.01.2017 12:11:00| User: |view|response400
+error loadView general|09.01.2017 12:11:00| User: |users/sign_up|response400
+error loadView general|09.01.2017 12:11:06| User: |view|response400
+error loadView general|09.01.2017 12:11:06| User: |users/sign_up|response400
+error loadView general|09.01.2017 12:14:59| User: |view|response400
+error loadView general|09.01.2017 12:14:59| User: |users/login|response400
+error loadView general|09.01.2017 12:15:32| User: |view|response400
+error loadView general|09.01.2017 12:15:32| User: |users/login|response400
+error loadView general|09.01.2017 12:15:58| User: |view|response400
+error loadView general|09.01.2017 12:15:59| User: |users/login|response400
+error loadView general|09.01.2017 12:17:31| User: |images|response400
+error loadView general|09.01.2017 12:17:31| User: |view|response400
+error loadView general|09.01.2017 12:17:31| User: |view|response400
+error loadView general|09.01.2017 12:17:31| User: |view|response400
+error loadView general|09.01.2017 12:17:31| User: |view|response400
+error loadView general|09.01.2017 12:17:31| User: |view|response400
+error loadView general|09.01.2017 12:17:38| User: |view|response400
+error loadView general|09.01.2017 12:17:38| User: |users/login|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 138 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 12:18:33| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 144 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 12:18:33| User: ||response200
+ERROR: [8] Undefined variable: sql
+Notice on line 138 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 12:18:33| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 144 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 12:18:33| User: ||response200
+error loadView general|09.01.2017 12:18:33| User: |main|response400
+error loadView general|09.01.2017 12:18:33| User: |main|response400
+error loadView general|09.01.2017 12:18:33| User: |view|response400
+error loadView general|09.01.2017 12:18:33| User: |main|response400
+error loadView general|09.01.2017 12:18:33| User: |view|response400
+error loadView general|09.01.2017 12:18:33| User: |view|response400
+error loadView general|09.01.2017 12:18:33| User: |view|response400
+error loadView general|09.01.2017 12:18:33| User: |view|response400
+error loadView general|09.01.2017 12:18:33| User: |main|response400
+error loadView general|09.01.2017 12:18:37| User: |user|response400
+error loadView general|09.01.2017 12:18:37| User: |user|response400
+error loadView general|09.01.2017 12:18:37| User: |user|response400
+error loadView general|09.01.2017 12:18:37| User: |view|response400
+error loadView general|09.01.2017 12:18:37| User: |user|response400
+error loadView general|09.01.2017 12:18:37| User: |user|response400
+error loadView general|09.01.2017 12:19:19| User: |user|response400
+error loadView general|09.01.2017 12:19:19| User: |main|response400
+error loadView general|09.01.2017 12:19:19| User: |view|response400
+error loadView general|09.01.2017 12:19:19| User: |view|response400
+error loadView general|09.01.2017 12:19:19| User: |view|response400
+error loadView general|09.01.2017 12:19:19| User: |view|response400
+error loadView general|09.01.2017 12:19:19| User: |view|response400
+error loadView general|09.01.2017 12:19:19| User: |main|response400
+error loadView general|09.01.2017 12:19:21| User: |view|response400
+error loadView general|09.01.2017 12:19:21| User: |users/login|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 138 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 12:19:44| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 144 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 12:19:44| User: ||response200
+ERROR: [8] Undefined offset: 0
+Notice on line 42 in file /var/www/html/whoplaystonight/modules/users/controller/controller_users.class.php
+|09.01.2017 12:19:44| User: ||response200
+ERROR: [8] Undefined variable: sql
+Notice on line 138 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 12:20:37| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 144 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 12:20:37| User: ||response200
+ERROR: [8] Undefined offset: 0
+Notice on line 42 in file /var/www/html/whoplaystonight/modules/users/controller/controller_users.class.php
+|09.01.2017 12:20:37| User: ||response200
+ERROR: [8] Undefined variable: sql
+Notice on line 138 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 12:21:22| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 144 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 12:21:22| User: ||response200
+ERROR: [8] Undefined offset: 0
+Notice on line 42 in file /var/www/html/whoplaystonight/modules/users/controller/controller_users.class.php
+|09.01.2017 12:21:22| User: ||response200
+error loadView general|09.01.2017 12:46:10| User: |view|response400
+error loadView general|09.01.2017 12:46:10| User: |users/login|response400
+error loadView general|09.01.2017 12:46:36| User: |view|response400
+error loadView general|09.01.2017 12:46:36| User: |view|response400
+error loadView general|09.01.2017 12:47:57| User: |users/login|response400
+error loadView general|09.01.2017 12:56:18| User: |images|response400
+error loadView general|09.01.2017 12:56:18| User: |view|response400
+error loadView general|09.01.2017 12:56:18| User: |view|response400
+error loadView general|09.01.2017 12:56:18| User: |view|response400
+error loadView general|09.01.2017 12:56:18| User: |view|response400
+error loadView general|09.01.2017 12:56:18| User: |view|response400
+error loadView general|09.01.2017 12:56:24| User: |view|response400
+error loadView general|09.01.2017 12:56:25| User: |users/login|response400
+error loadView general|09.01.2017 12:56:27| User: |users/login|response400
+error loadView general|09.01.2017 12:58:12| User: |users/login|response400
+error loadView general|09.01.2017 12:58:34| User: |view|response400
+error loadView general|09.01.2017 12:58:35| User: |users/login|response400
+error loadView general|09.01.2017 12:58:40| User: |users/login|response400
+error loadView general|09.01.2017 01:11:36| User: |images|response400
+error loadView general|09.01.2017 01:11:36| User: |images|response400
+error loadView general|09.01.2017 01:11:36| User: |view|response400
+error loadView general|09.01.2017 01:11:36| User: |view|response400
+error loadView general|09.01.2017 01:11:36| User: |view|response400
+error loadView general|09.01.2017 01:11:36| User: |view|response400
+error loadView general|09.01.2017 01:11:36| User: |view|response400
+error loadView general|09.01.2017 01:12:18| User: |view|response400
+error loadView general|09.01.2017 01:12:18| User: |events_front_end/list_events|response400
+error loadView general|09.01.2017 01:20:05| User: |view|response400
+error loadView general|09.01.2017 01:20:05| User: |events_front_end/list_events|response400
+error loadView general|09.01.2017 01:20:06| User: |main|response400
+error loadView general|09.01.2017 01:20:06| User: |main|response400
+error loadView general|09.01.2017 01:20:06| User: |view|response400
+error loadView general|09.01.2017 01:20:06| User: |view|response400
+error loadView general|09.01.2017 01:20:06| User: |view|response400
+error loadView general|09.01.2017 01:20:06| User: |view|response400
+error loadView general|09.01.2017 01:20:06| User: |view|response400
+error loadView general|09.01.2017 01:20:07| User: |main|response400
+error loadView general|09.01.2017 01:20:11| User: |view|response400
+error loadView general|09.01.2017 01:20:12| User: |users/login|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 138 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 01:20:29| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 144 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 01:20:29| User: ||response200
+ERROR: [8] Undefined variable: change
+Notice on line 163 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 01:21:01| User: ||response200
+ERROR: [8] Undefined variable: sql
+Notice on line 168 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 01:21:01| User: ||response200
+error loadView general|09.01.2017 01:21:01| User: |users/verify|response400
+error loadView general|09.01.2017 01:21:01| User: |users/verify|response400
+error loadView general|09.01.2017 01:21:02| User: |users/verify/Verded67a62ca1fc70c3b6ea39500e6570e|response400
+error loadView general|09.01.2017 01:21:02| User: |view|response400
+error loadView general|09.01.2017 01:21:02| User: |view|response400
+error loadView general|09.01.2017 01:21:02| User: |view|response400
+error loadView general|09.01.2017 01:21:02| User: |view|response400
+error loadView general|09.01.2017 01:21:02| User: |view|response400
+ERROR: [8] Undefined variable: change
+Notice on line 163 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 01:21:10| User: ||response200
+ERROR: [8] Undefined variable: sql
+Notice on line 168 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 01:21:10| User: ||response200
+error loadView general|09.01.2017 01:21:10| User: |users/verify|response400
+error loadView general|09.01.2017 01:21:10| User: |users/verify|response400
+error loadView general|09.01.2017 01:21:10| User: |users/verify/Verbd3a0dac4fba1fe9069bad3c06a8533e|response400
+error loadView general|09.01.2017 01:21:10| User: |view|response400
+error loadView general|09.01.2017 01:21:10| User: |view|response400
+error loadView general|09.01.2017 01:21:10| User: |view|response400
+error loadView general|09.01.2017 01:21:10| User: |view|response400
+error loadView general|09.01.2017 01:21:10| User: |view|response400
+ERROR: [8] Undefined variable: change
+Notice on line 163 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 01:21:14| User: ||response200
+ERROR: [8] Undefined variable: sql
+Notice on line 168 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 01:21:14| User: ||response200
+error loadView general|09.01.2017 01:21:14| User: |users/verify|response400
+error loadView general|09.01.2017 01:21:15| User: |view|response400
+error loadView general|09.01.2017 01:21:15| User: |view|response400
+error loadView general|09.01.2017 01:21:15| User: |view|response400
+error loadView general|09.01.2017 01:21:15| User: |view|response400
+error loadView general|09.01.2017 01:21:15| User: |view|response400
+error loadView general|09.01.2017 01:21:24| User: |view|response400
+error loadView general|09.01.2017 01:21:24| User: |users/login|response400
+ERROR: [8] Undefined variable: sql
+Notice on line 138 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 01:21:48| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 144 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 01:21:48| User: ||response200
+ERROR: [8] Undefined variable: sql
+Notice on line 138 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 01:21:48| User: ||response200
+ERROR: [8] Undefined variable: fields
+Notice on line 144 in file /var/www/html/whoplaystonight/modules/users/model/DAO/user_dao.class.singleton.php
+|09.01.2017 01:21:48| User: ||response200
+error loadView general|09.01.2017 01:21:48| User: |main|response400
+error loadView general|09.01.2017 01:21:49| User: |main|response400
+error loadView general|09.01.2017 01:21:49| User: |view|response400
+error loadView general|09.01.2017 01:21:49| User: |main|response400
+error loadView general|09.01.2017 01:21:49| User: |view|response400
+error loadView general|09.01.2017 01:21:49| User: |view|response400
+error loadView general|09.01.2017 01:21:49| User: |view|response400
+error loadView general|09.01.2017 01:21:49| User: |view|response400
+error loadView general|09.01.2017 01:21:49| User: |main|response400
+error loadView general|09.01.2017 01:21:57| User: |view|response400
+error loadView general|09.01.2017 01:22:07| User: |products/events_form|response400
+error loadView general|09.01.2017 01:23:20| User: |products|response400
+error loadView general|09.01.2017 01:23:20| User: |products|response400
+error loadView general|09.01.2017 01:23:20| User: |view|response400
+error loadView general|09.01.2017 01:23:20| User: |products|response400
+error loadView general|09.01.2017 01:23:20| User: |products|response400
