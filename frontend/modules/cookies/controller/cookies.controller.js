@@ -1,4 +1,4 @@
-app.controller('cookiesCtrl', function ($scope, $rootScope, $http, accept_cookies_service, cookiesService) {
+app.controller('cookiesCtrl', function ($scope, $rootScope, $http, accept_cookies_service) {
 
     $scope.close = function () {
         $rootScope.accept_cookies = false;

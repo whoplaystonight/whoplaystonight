@@ -5,7 +5,9 @@ app.config(['$routeProvider',
         $routeProvider
                 // Home
                 .when("/", {templateUrl: "frontend/modules/main/view/main.view.html", controller: "mainCtrl"})
-                
+
+                .when("/listevents", {templateUrl: "frontend/modules/events_front_end/view/list.view.html", controller: "listCtrl"})
+
                 // cookies
                 .when("/cookies", {templateUrl: "frontend/modules/cookies/view/cookies.view.html", controller: "cookiesCtrl"})
 
