@@ -28,7 +28,7 @@ $(document).ready(function () {
             //$("#LogProf").before("<li><a href=" + amigable('?module=products&function=events_form') + ">Events</a></li>")
             $("#Events").show()
         }
-        $("head").append("<script src='https://plastmagysl.com/whoplaystonight/modules/users/view/js/logout.js'></script>");
+        $("head").append("<script src='https://localhost/whoplaystonight/modules/users/view/js/logout.js'></script>");
     }
 
     var url = window.location.href;

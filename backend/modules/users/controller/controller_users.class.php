@@ -139,7 +139,7 @@ class controller_users {
                 'password' => password_hash($result['datos']['password'], PASSWORD_BCRYPT),
                 'birthday' => $result['datos']['birthday'],
                 'interests' => $result['datos']['interests'],
-                'avatar' => "https://plastmagysl.com/whoplaystonight/" . $result_avatar['datos'],
+                'avatar' => "https://localhost/whoplaystonight/" . $result_avatar['datos'],
                 'country' => $result['datos']['country'],
                 'province' => $result['datos']['province'],
                 'town' => $result['datos']['town'],
@@ -271,6 +271,7 @@ class controller_users {
         if((isset($_POST["load_pais"])) && ($_POST["load_pais"] == true)){
             $json = array();
             $url = 'http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName/JSON';
+            //This is a local repository on Nacho VPS
             //$url = 'http://plastmagysl.com/repoCountryNamesByName.json';
             $path_model=$_SERVER['DOCUMENT_ROOT'].'/whoplaystonight/modules/users/model/model/';
             $json = loadModel($path_model, "user_model", "obtain_countries", $url);

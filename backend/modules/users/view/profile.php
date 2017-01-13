@@ -16,7 +16,7 @@
         <input type="text" id="email" class="form-control" placeholder="email" name="email" value=""></input>
         <div id="e_email"></div>
 
-        <label>For changing the password click <a href="https://plastmagysl.com/whoplaystonight/users/restore">here</a></label>
+        <label>For changing the password click <a href="https://localhost/whoplaystonight/users/restore">here</a></label>
 
     </fieldset>
     <br>
